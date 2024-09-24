@@ -1,0 +1,98 @@
+
+
+<pre>
+		
+	<nav>
+		<header>Move</header>
+		
+		https://aptos.dev/en/build/smart-contracts/book/package-upgrades
+		
+	</nav>
+
+	<main>
+		<article>
+			<header>publish</header>
+			<code>
+		
+				cd /Metro/foam_pet/vehicles_moves/01_Moves/02_Garbage
+				
+				aptos init --assume-yes
+				
+				#
+				#
+				#	change the address in "story_1.py" to the
+				# 	one that was added from "init"
+				#
+				#
+				
+				#
+				#
+				#	Change the "module name" and "pack name"
+				#
+				#
+				python3 story_1.py publish
+			</code>
+		</article>
+		
+		<article>
+			<header>activities</header>
+			<article>
+				<header>create</header>
+				<code>
+					python3 story_1.py publish
+				</code>
+			</article>
+		</article>
+		
+		<article>
+			<header>version change</header>
+			<p>
+							
+				change the package version:
+				
+					For example: 
+						version = "0.1.0"
+						version = "0.1.0"
+			</p>
+		
+			<header>name change</header>
+			<p>
+			
+				change the module name:
+					
+					For example: 11 to 12:
+						module the_address::notes_11
+						module the_address::notes_12
+							
+							
+				change the package name:
+				
+					For example: 
+						[package]
+						name = "notes_11"
+						
+						[package]
+						name = "notes_12"
+			</p>		
+		</article>
+	
+		<article>
+			<header>clean</header>
+			<code>(rm -rf .aptos && rm -rf build)</code>
+		</article>
+	
+		<article>
+			<header>publish</header>
+					
+			<code>aptos init</code>
+				@ devnet
+				@ generate new key
+				
+			<code>bash story.sh</code>
+		</article>
+		
+		
+	</main>
+
+</pre>
+

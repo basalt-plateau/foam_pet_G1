@@ -1,0 +1,33 @@
+
+#
+#	# delete containers
+#	docker rm -f $(docker ps -aq)
+#
+
+
+
+#
+#
+# 	docker network create --subnet=192.168.0.0/24 bios_net
+#
+
+#version: '3'
+
+services:
+  jumps:
+    image: jumps:v2.1.0
+    container_name: template_poetry_uv.1
+    networks:
+      bios_net:
+        ipv4_address: 192.168.0.10
+    volumes:
+      - .:/habitat
+    stdin_open: true
+    tty: true
+    privileged: true
+
+networks:
+  bios_net:
+    external: true
+
+

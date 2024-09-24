@@ -1,0 +1,95 @@
+
+
+
+<pre>
+
+
+	<header>open</header>
+		@ logistics
+
+	<header>Quests</header>
+	
+		[ ] Vultr VM
+			
+			[ ] connect to VM
+			[ ] Download 
+			
+			
+			[ ] start:
+				
+				apt update
+				apt install python3 haproxy python3.11-venv -y
+				
+				mkdir /Metro && cd /Metro
+				python3 -m venv v_env
+				. /Metro/v_env/bin/activate
+				
+				#
+				#
+				#	Firewall
+				#
+				#
+				ufw status
+				ufw allow 443
+				ufw allow 80
+				ufw allow 22000
+				ufw deny 8080
+				
+				#
+				#
+				#	foam_pet
+				#
+				#
+				pip install foam_pet==1.6.1
+				
+				foam_pet build
+				foam_pet demux_hap build_unverified_certificates
+				foam_pet ventures on
+				
+				# foam_pet ventures on --name sanique
+				# systemctl status haproxy
+				# systemctl restart haproxy
+				
+			[ ] point domain to IP
+				[ ] Cloudflare
+			
+			
+			[ ] certbot Cert
+				[ ] foam_pet ventures off --name demux_hap
+				
+				[ ] apt install certbot -y
+				[ ] certbot certonly --standalone --preferred-challenges http -m address@foam.hair -d foam.hair
+				[ ] cp /etc/letsencrypt/live/foam.hair/fullchain.pem /etc/haproxy/SSL/certificate.pem
+				[ ] cp /etc/letsencrypt/live/foam.hair/privkey.pem /etc/haproxy/SSL/certificate.pem.key
+				
+				
+				#
+				#
+				#	self signed certs issue, therefore
+				#
+				#
+				[ ] systemctl restart haproxy
+				[ ] foam_pet ventures on --name sanique
+				
+				
+				#
+				#
+				#	next version
+				#
+				#
+				
+				
+				snap install --classic certbot
+				
+				
+				
+
+
+				
+				
+				
+				
+				
+				
+				
+</pre>

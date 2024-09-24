@@ -1,0 +1,221 @@
+include:
+  - file: /Scan/trivy.yml
+    project: jitesoft/gitlab-ci-lib
+  - file: /OCI/sign.yml
+    project: jitesoft/gitlab-ci-lib
+
+stages:
+  - check
+  - download
+  - build
+  - sign
+  - scan
+
+variables:
+  REGISTRY_IMAGES: "${CI_REGISTRY_IMAGE},jitesoft/debian,ghcr.io/jitesoft/debian"
+
+check-version:
+  parallel:
+    matrix:
+      - { SUITE: "stable", GIT_STRATEGY: none }
+      - { SUITE: "oldstable", GIT_STRATEGY: none }
+      #- { SUITE: "testing", GIT_STRATEGY: none }
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHECK'
+      when: always
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - if: '$CI_PIPELINE_SOURCE == "trigger"'
+      when: never
+  stage: check
+  variables:
+    URI: https://doi-janky.infosiftr.net/job/tianon/job/debuerreotype/job
+    GIT_STRATEGY: none
+  cache:
+    key: debian-version-${SUITE}
+    paths:
+      - version.txt
+    policy: pull
+  script:
+    - apk add --no-cache wget grep curl
+    - VERSION=$(wget -qO- ${URI}/amd64/lastSuccessfulBuild/artifact/${SUITE}/rootfs.debian_version)
+    - CODENAME=$(wget -qO- ${URI}/amd64/lastSuccessfulBuild/artifact/${SUITE}/Release | grep -oP "(?<=Codename:\ )(.*)(?![\/]|\n)" | awk '{print $1}')
+    - VERSION=$(echo $VERSION | grep -q '/' && (echo $VERSION | cut -f2 -d"/") || echo "${VERSION}")
+    - | # TODO: Version check won't work for sid for now.
+      if [ ! -z "${FORCE_BUILD+x}" ] || [ "$(cat version.txt)" != "${VERSION}" ]; then
+        echo "Should build new container for ${SUITE} version ${VERSION} with codename ${CODENAME}"
+        curl -F token=${CI_JOB_TOKEN} -F ref=master -F "variables[CODENAME]=${CODENAME}" -F "variables[SUITE]=${SUITE}" -F "variables[VERSION]=${VERSION}" -F "variables[BUILD]=true" https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline
+      fi
+
+download:
+  rules:
+    - if: "$BUILD && $SUITE && $VERSION"
+      when: always
+    - when: never
+  stage: download
+  parallel:
+    matrix:
+      - { DERU_ARCH: "amd64", DOCKER_ARCH: "amd64" }
+      - { DERU_ARCH: "arm32v7", DOCKER_ARCH: "arm" }
+      - { DERU_ARCH: "arm64v8", DOCKER_ARCH: "arm64" }
+      - { DERU_ARCH: "ppc64le", DOCKER_ARCH: "ppc64le" }
+      - { DERU_ARCH: "s390x", DOCKER_ARCH: "s390x" }
+      - { DERU_ARCH: "i386", DOCKER_ARCH: "386" }
+  variables:
+    URI: https://doi-janky.infosiftr.net/job/tianon/job/debuerreotype/job
+    GIT_STRATEGY: none
+  before_script:
+    - apk add --no-cache coreutils curl grep tar xz
+    - mkdir -p artifacts/slim
+  script:
+    # Full
+    - curl -OlsS ${URI}/${DERU_ARCH}/lastSuccessfulBuild/artifact/${SUITE}/rootfs.tar.xz
+    - curl -OlsS ${URI}/${DERU_ARCH}/lastSuccessfulBuild/artifact/${SUITE}/rootfs.tar.xz.sha256
+    - echo "$(cat rootfs.tar.xz.sha256) rootfs.tar.xz" | sha256sum -c -
+    - rm rootfs.tar.xz.sha256
+    - mkdir tmp
+    - tar -xJhf rootfs.tar.xz -C tmp/
+    - $(cd tmp && tar -czf ${CI_PROJECT_DIR}/artifacts/rootfs-${DOCKER_ARCH}-full.tar.gz *)
+    - rm -rf tmp
+    - rm rootfs.tar.xz
+    # Slim
+    - curl -OlsS ${URI}/${DERU_ARCH}/lastSuccessfulBuild/artifact/${SUITE}/slim/rootfs.tar.xz
+    - curl -OlsS ${URI}/${DERU_ARCH}/lastSuccessfulBuild/artifact/${SUITE}/slim/rootfs.tar.xz.sha256
+    - echo "$(cat rootfs.tar.xz.sha256) rootfs.tar.xz" | sha256sum -c -
+    - rm rootfs.tar.xz.sha256
+    - mkdir tmp
+    - tar -xJhf rootfs.tar.xz -C tmp/
+    - $(cd tmp && tar -czf ${CI_PROJECT_DIR}/artifacts/rootfs-${DOCKER_ARCH}-slim.tar.gz *)
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - artifacts/
+
+build:full:
+  stage: build
+  rules:
+    - if: "$BUILD && $SUITE && $VERSION"
+      when: on_success
+    - when: never
+  variables:
+    ARCH_LIST: "linux/amd64,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x,linux/386"
+  needs:
+    - job: download
+      artifacts: true
+  image: registry.gitlab.com/jitesoft/dockerfiles/misc:latest
+  tags: [ jitesoft, buildx, protected ]
+  script:
+    - TAGS=$(helper taglist "${REGISTRY_IMAGES}" "${VERSION},${CODENAME},${SUITE}")
+    - |
+      if [ "${SUITE}" = "stable" ]; then
+        TEMP_LIST=$(helper taglist "${REGISTRY_IMAGES}" "latest")
+        TAGS="${TAGS} ${TEMP_LIST}"
+      fi
+    - docker buildx build --platform ${ARCH_LIST} --progress plain --push ${TAGS} --build-arg TYPE=full --build-arg VERSION=${VERSION} --build-arg BUILD_TIME="$(date -Iseconds)" --build-arg SUITE=${SUITE} --build-arg CODENAME=${CODENAME} .
+    - echo -e "${VERSION}" > version.txt
+  cache:
+    paths:
+      - version.txt
+    policy: push
+    key: debian-version-${SUITE}
+
+build:slim:
+  stage: build
+  rules:
+    - if: "$BUILD && $SUITE && $VERSION"
+      when: on_success
+    - when: never
+  variables:
+    ARCH_LIST: "linux/amd64,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x,linux/386"
+  needs:
+    - job: download
+      artifacts: true
+  image: registry.gitlab.com/jitesoft/dockerfiles/misc:latest
+  tags: [ jitesoft, buildx, protected ]
+  script:
+    - TAGS=$(helper taglist "${REGISTRY_IMAGES}" "${VERSION}-slim,${CODENAME}-slim,${SUITE}-slim")
+    - |
+      if [ "${SUITE}" = "stable" ]; then
+        TEMP_LIST=$(helper taglist "${REGISTRY_IMAGES}" "latest-slim")
+        TAGS="${TAGS} ${TEMP_LIST}"
+      fi
+    - docker buildx build --platform ${ARCH_LIST} --progress plain --push ${TAGS} --build-arg TYPE=slim --build-arg VERSION=${VERSION} --build-arg SUITE=${SUITE} --build-arg BUILD_TIME="$(date -Iseconds)" --build-arg CODENAME=${CODENAME} .
+    - echo -e "${VERSION}" > version.txt
+  cache:
+    paths:
+      - version.txt
+    policy: push
+    key: debian-version-${SUITE}
+
+scan:full:
+  stage: scan
+  rules:
+    - if: "$BUILD && $SUITE && $VERSION"
+      when: on_success
+    - when: never
+  extends: .scan.container.trivy.remote
+  before_script:
+    - export SCANNING_IMAGE_NAME="${CI_REGISTRY_IMAGE}:${VERSION}"
+
+scan:slim:
+  stage: scan
+  rules:
+    - if: "$BUILD && $SUITE && $VERSION"
+      when: on_success
+    - when: never
+  extends: .scan.container.trivy.remote
+  before_script:
+    - export SCANNING_IMAGE_NAME="${CI_REGISTRY_IMAGE}:${VERSION}"
+
+scan:all:full:
+  stage: scan
+  extends: .scan.container.trivy.remote
+  rules:
+    - if: "$SCAN"
+      when: always
+    - when: never
+  parallel:
+    matrix:
+      - { SUITE: "stable", GIT_STRATEGY: none }
+      - { SUITE: "oldstable", GIT_STRATEGY: none }
+      - { SUITE: "testing", GIT_STRATEGY: none }
+  cache:
+    key: debian-version-${SUITE}
+    paths:
+      - version.txt
+    policy: pull
+  before_script:
+    - export SCANNING_IMAGE_NAME="${CI_REGISTRY_IMAGE}:$(cat version.txt)"
+
+scan:all:slim:
+  stage: scan
+  extends: .scan.container.trivy.remote
+  rules:
+    - if: "$SCAN"
+      when: always
+    - when: never
+  parallel:
+    matrix:
+      - { SUITE: "stable", GIT_STRATEGY: none }
+      - { SUITE: "oldstable", GIT_STRATEGY: none }
+      - { SUITE: "testing", GIT_STRATEGY: none }
+  cache:
+    key: debian-version-${SUITE}
+    paths:
+      - version.txt
+    policy: pull
+  before_script:
+    - export SCANNING_IMAGE_NAME="${CI_REGISTRY_IMAGE}/slim:$(cat version.txt)"
+
+sign:
+  extends: .sign
+  tags: [ jitesoft, protected, buildx ]
+  stage: sign
+  variables:
+    COSIGN_ANNOTATIONS: "-a sig=jitesoft-bot"
+    SIGN_TAGS: "${VERSION},${CODENAME},${SUITE},${VERSION}-slim,${CODENAME}-slim,${SUITE}-slim,latest,latest-slim"
+    SIGN_IMAGES: "${REGISTRY_IMAGES}"
+  rules:
+    - if: "$BUILD"
+      when: on_success
+    - when: never

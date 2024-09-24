@@ -1,0 +1,126 @@
+
+
+
+
+<pre>
+	
+	<nav>
+		<header>moves</header>
+		
+			@ Tutorial
+			@ Scrolls
+		
+			https://aptos.dev/en/network/blockchain/move
+		
+	</nav>
+		
+	
+	
+	<header>ranked</header>
+		
+		Upgrades:
+			upgrade_policy: compatible
+			upgrade_number: 0
+			
+		
+		
+		Accounts:
+			https://learn.aptoslabs.com/aptos-101/account
+		
+			https://aptos.dev/en/network/blockchain/accounts
+			
+			
+			Each account has storage.
+			
+			
+		
+		Functions:
+			https://learn.aptoslabs.com/aptos-101/functions
+			
+			https://aptos.dev/en/build/smart-contracts/book/functions
+
+			Friends:
+				https://aptos.dev/en/build/smart-contracts/book/friends
+			
+			Entry Functions:
+				These are public.
+				These are utilized by 
+			
+				https://aptos.dev/en/build/cli/working-with-move-contracts/arguments-in-json-tutorial#entry-functions
+			
+				[examples]
+					public entry fun set_name (owner: signer, name: String) { }
+
+			
+			Public Functions:
+				These can be utilized by other modules:
+				
+				[examples]
+					public fun some_fun (owner_addr: address) { }
+				
+			View:
+				#[view]
+				public fun retrieve_plant (user_addr: address): String acquires Plant { }
+
+			Inline:
+				inline fun retrieve_plant_internally (creator_addr: &address) { }
+				
+			Private:
+				fun retrieve_plant_address (creator_addr: &address): (address) { }
+
+				These can't be utilized by external modules.
+				
+			Acquires:
+				A function must use acquires if it uses:
+				
+					move_from<>
+					
+					borrow_global_mut<>
+						
+					borrow_global<>
+				
+		Packages:
+			https://learn.aptoslabs.com/aptos-101/packages
+
+
+
+		Events:
+			https://aptos.dev/en/network/blockchain/events
+
+
+
+		Resources:
+			@ access control
+			@ unusualness
+			
+			https://learn.aptoslabs.com/aptos-101/resource
+			
+			Signer
+		
+		
+		Object:
+			https://learn.aptoslabs.com/aptos-101/object
+		
+		
+		Modules:
+		
+			Events:
+				https://learn.aptoslabs.com/aptos-101/module-event
+				
+				@ global
+				
+		Gas:
+		
+		
+		Move Script:
+			https://learn.aptoslabs.com/aptos-101/move-script
+
+
+	<header>parties</header>
+		
+		https://www.aptosnames.com/
+
+
+
+
+</pre>

@@ -1,0 +1,93 @@
+
+
+<pre>
+
+	<header>Objects</header>
+	
+		"Resources" can be grouped together with "Objects".
+		
+		
+		These:
+			own "resources"
+			have an "address"
+
+
+	<header>Types</header>
+		
+		<header>Normal</header>
+			Random Address
+			Can be Deleted
+			
+			<code>
+			
+				module address_of_signer::object_1 {
+					use std::signer;
+					use aptos_framework::object;
+
+					entry fun create_my_object (caller: &signer) {
+						let caller_address = signer::address_of (caller);
+						let constructor_ref = object::create_object (caller_address);
+					
+					}
+				}
+
+			
+			</code>
+			
+			
+	<header>Named</header>
+			Deterministic Address
+			Cannot be Deleted
+			
+			<code>
+			
+				module address_of_signer::object_1 {
+					use std::signer;
+					use aptos_framework::object;
+
+					
+					// 
+					//	This name needs to be unique to the creator's address.
+					//
+					//
+					const NAME: vector<u8> = b"MyAwesomeObject";
+
+					entry fun create_my_object (caller: &signer) {
+						let caller_address = signer::address_of(caller);
+						let constructor_ref = object::create_named_object(caller, NAME);
+					}
+
+					#[view]
+					fun has_object(creator: address): bool {
+						let object_address = object::create_object_address(&creator, NAME);
+						object_exists<0x1::object::ObjectCore>(object_address)
+					}
+				}
+			
+			
+			</code>
+			
+			
+					
+		<header>Sticky</header>
+			Random Address
+			Cannot be Deleted
+
+			<code>
+			
+			
+			
+			
+			</code>
+
+
+
+
+
+
+
+
+
+
+
+</pre>

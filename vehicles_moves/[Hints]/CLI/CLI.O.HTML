@@ -1,0 +1,32 @@
+
+
+
+
+<pre>
+	<nav>
+		<header>CLI</header>
+	</nav>
+
+	<main>
+		<header>important</header>
+		
+		https://aptos.dev/en/build/cli/working-with-move-contracts/arguments-in-json-tutorial#entry-functions
+		
+			aptos move run \
+		--function-id $ace_addr::cli_args::set_vals \
+		--type-args \
+			0x1::account::Account \
+			0x1::chain_id::ChainId \
+		--args \
+			u8:123 \
+			"hex:0x1234" \
+			"string:hello, world\! ♥" \
+			"bool:[false, true, false, false]" \
+			'address:[["0xace", "0xbee"], ["0xcad"], []]' \
+		--private-key-file ace.key \
+		--assume-yes
+
+	
+	
+	</main>
+</pre>
