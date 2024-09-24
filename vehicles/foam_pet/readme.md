@@ -10,8 +10,7 @@ Foam can interact with Aptos from an offline laptop.
 ---
 
 ## Rules (License) 
-This is a wild pet.  
-
+This is a friendly pet.  
 Please be friendly and festive with your pet and follow the rules.
 Playing with, training, and cloning your pet is most likely 100% legit.  
 

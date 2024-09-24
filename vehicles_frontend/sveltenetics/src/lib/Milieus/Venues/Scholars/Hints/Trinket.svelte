@@ -30,6 +30,10 @@ import Preparation_Tutorial from './Preparation_Tutorial/Trinket.svelte'
 //
 const tutorial_2 = '/pictures/tutorial_2.svg';
 const machines_picture = '/pictures/machines.svg';
+const pets = '/pictures/Foam_pet.svg';
+const pet = '/pictures/pet.svg';
+const pet_2 = '/pictures/pet_2.svg';
+
 //
 ////
 
@@ -95,11 +99,43 @@ let seeds_language = (
 	
 		<header 
 			style="
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 5%;
+				
+				margin: 0 auto;
+				
+				width: 100%;
+				max-width: 600px;
+				
+				
+			
 				font-size: 2.5em; 
 				text-align: center;
 				font-family: sans-serif !important;
 			"
-		><Slang text="Label" style="font-family: serif;" /></header>
+		>
+			<img 
+				style="
+					height: 1cm;
+				"
+				src={ pet } 
+				alt="pet" 
+			/>
+			
+			<Slang text="Label" style="font-family: serif;" />
+			
+			<img 
+				style="
+					height: 1cm;
+				"
+				src={ pet_2 } 
+				alt="pet 2" 
+			/>
+		</header>
+		
+		
 		
 		<div style="height: 1cm"></div>
 	</div>
@@ -119,7 +155,7 @@ let seeds_language = (
 				justify-content: center;
 			"
 		>
-			<img src={ machines_picture } alt="Machines" />
+			<img src={ pets } alt="Machines" />
 		</div>
 		<div 
 			style="
@@ -443,9 +479,25 @@ let seeds_language = (
 	>
 		<ol class="list">
 			<li>
-				<span class="badge p-4 variant-soft-primary">source</span>
-				<span class="flex-auto">
-					<a class="anchor" href="https://gitlab.com/basalt_plateau/foam_pet_2">https://gitlab.com/basalt_plateau/foam_pet_2</a>
+				<span class="badge p-4 variant-soft-primary">Anatomy</span>
+				<span 
+					style="
+						line-height: 2em;
+					"
+					class="flex-auto"
+				>
+					<a 
+						style="display: block"
+						class="anchor" 
+						href="https://gitlab.com/basalt_plateau/foam_pet"
+						target="_blank"
+					>https://gitlab.com/basalt_plateau/foam_pet</a>
+					<a 
+						style="display: block"
+						class="anchor" 
+						href="https://github.com/basalt-plateau/foam_pet"
+						target="_blank"
+					>https://github.com/basalt-plateau/foam_pet</a>
 				</span>
 			</li>
 		</ol>

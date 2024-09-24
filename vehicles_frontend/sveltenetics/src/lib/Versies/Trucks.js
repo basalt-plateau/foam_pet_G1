@@ -20,6 +20,9 @@ import { the_ledger_ask_loop_creator } from './Screenplays/is_connected'
 //
 ////
 
+import { rhythm_filter } from 'procedures/dates/rhythm-filter'
+
+
 let the_ledger_ask_loop;
 
 const trucks = {}
@@ -32,6 +35,24 @@ const trucks = {}
 const monitor_local_storage = () => {}
 
 
+var window_size_changed;
+const monitor_window = ({ truck }) => {
+	console.log ({ truck })	
+	
+	var RF = rhythm_filter ({
+		every: 200
+	});
+	window_size_changed = (event) => {
+		RF.attempt (({ ellipse, is_last }) => {
+			console.log ("window size changed", { event })
+			
+			truck.freight.window_width = window.innerWidth;
+		});
+	}
+
+	window.addEventListener ("resize", window_size_changed);
+}
+
 
 export const lease_roomies_truck = () => {
 	const the_domain = window.location.hostname;
@@ -39,6 +60,8 @@ export const lease_roomies_truck = () => {
 	let net_path = "https://api.mainnet.aptoslabs.com/v1"
 	let net_name = "mainnet"
 	let mode = "business"
+	
+	
 	
 	
 	// let origin_address = "http://localhost:22000"
@@ -85,6 +108,8 @@ export const lease_roomies_truck = () => {
 			net_name,
 			net_connected: "no",
 			
+			window_width: window.innerWidth,
+			
 			layout: {
 				leaf_styles: parse_styles ({
 					margin: '0 auto',
@@ -102,15 +127,23 @@ export const lease_roomies_truck = () => {
 		}
 	})
 	
+	
+	monitor_window ({
+		truck: trucks [1]
+	});
+	
 	the_ledger_ask_loop = the_ledger_ask_loop_creator ();
 	the_ledger_ask_loop.play ();
 }
+
+
 
 export const ask_for_freight = () => {
 	return trucks [1].freight;
 }
 export const give_back_roomies_truck = () => {
 	the_ledger_ask_loop.stop ();
+	window.removeEventListener ("resize", window_size_changed)
 	delete trucks [1];
 }
 export const check_roomies_truck = () => {
@@ -118,7 +151,7 @@ export const check_roomies_truck = () => {
 }
 export const monitor_roomies_truck = (action) => {	
 	return trucks [1].monitor (({ freight }) => {
-		console.info ('Seeds Truck_Monitor', { freight })
+		// console.info ('Seeds Truck_Monitor', { freight })
 		
 		localStorage.setItem ("location", JSON.stringify (freight.location))
 		

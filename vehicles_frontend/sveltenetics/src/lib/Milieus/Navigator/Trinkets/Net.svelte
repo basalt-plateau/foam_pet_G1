@@ -9,6 +9,10 @@ import {
 } from '$lib/Versies/Trucks'
 
 
+import Radial_Progress from '$lib/trinkets/Progress/Radial/Trinket.svelte'
+
+import _get from 'lodash/get'
+
 let RT_Prepared = "no"
 let RT_Monitor;
 let RT_Freight;
@@ -27,7 +31,20 @@ onDestroy (() => {
 	RT_Monitor.stop ()
 }); 
 
+let layout_style = `
+	position: relative;
+	font-size: 1em;
+`
+if (RT_Freight && RT_Freight.window_width) {
+	layout_style += `
+		flex-direction: column;
+		gap: 0.2cm;
+	`
+}
+
 </script>
+
+
 
 {#if RT_Prepared === "yes" }
 <div
@@ -46,31 +63,72 @@ onDestroy (() => {
 		"
 	>
         <div 
-			class="badge variant-soft"
-			style="
-					position: relative;
-					font-size: 1em;
-				"
+			class="badge"
+			style={ `
+				position: relative;
+				font-size: 1em;
+				
+				${ RT_Freight.window_width <= 700 ? "flex-direction: column; gap: 0.2cm;" : "" }
+			` }
 		>
-			<span>net</span>
-			
-			<span style="width: 0.1cm"></span>
-			
-			<span
-				class="badge variant-filled-surface"
+			<div
 				style="
-					margin: 0;
+					display: inline-flex;
+					gap: 0.2cm;
+					align-items: center;
 				"
-			>{ RT_Freight.net_name }</span>
+			>
+				<span>net</span>
+				
+				
+				<span
+					class="badge variant-filled-surface"
+					style="
+						margin: 0;
+					"
+				>{ RT_Freight.net_name }</span>
+				
+				<span
+					class="badge variant-filled-surface"
+					style="
+						margin: 0;
+					"
+				>{ RT_Freight.net_path }</span>
+			</div>
 			
-			<span style="width: 0.1cm"></span>
-			
-			<span
-				class="badge variant-filled-surface"
+			<div
 				style="
-					margin: 0;
+					display: inline-flex;
+					gap: 0.2cm;
+					align-items: center;
 				"
-			>{ RT_Freight.net_path }</span>
+			>
+				{#if RT_Freight.net_connected === "yes" }
+				<span
+					class="badge variant-filled-success"
+					style="
+						margin: 0;
+					"
+				>connected</span>
+				{:else}
+				<span
+					class="badge variant-filled-error"
+					style="
+						margin: 0;
+					"
+				>disconnected</span>
+				{/if}
+				
+				<div
+					style="
+						position: relative;
+						top: 0;
+						right: 0;
+					"
+				>		
+					<Radial_Progress />
+				</div>
+			</div>
         </div>
     </aside>
 </div>
