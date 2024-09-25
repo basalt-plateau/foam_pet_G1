@@ -17,17 +17,17 @@
 			
 			
 			#
+			#	maybe:
+			#		docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
+			#		docker container stop foam; docker container rm foam; 
 			#
-			#	docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
-			#	docker rmi foam_pet:v1.0.0-1
+			#		docker rmi foam_pet:v1.0.0-1
 			#
-			#	docker container stop foam; docker container rm foam; 
+			
+			
 			#
-			#	images:
-			#		docker image list
-			#		
-			#	TODO:
-			#		have this script in a volume: -v 
+			#
+			#	pull the debian image
 			#
 			#
 			[OS] docker pull jitesoft/debian 
@@ -37,10 +37,17 @@
 			#	
 			#	cd vehicles_actual_docker/building
 			#	
+			#	-td starts the container in the background and keeps it on
 			#	
-			[OS] docker run --name foam -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v .:/building -it jitesoft/debian 
-
-
+			[OS] docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian 
+			
+			#
+			#
+			#	Open the container..
+			#
+			#
+			[OS] docker exec -it foam_pet bash -c "bash"
+			
 			#
 			#	Change These to the Latest Version:
 			#
@@ -49,11 +56,13 @@
 			#
 			[Boat] bash /building/build.sh
 			
-			#
-			#	ls /habitat/v_env/lib/python3.11/site-packages/foam_pet/sveltnetics_packets
-			#	nano /habitat/foam_pet_essence.py
-			#
 			
+			#	
+			#	maybe:
+			#		ls /habitat/v_env/lib/python3.11/site-packages/foam_pet/sveltnetics_packets
+			#		cat /Metro/foam_pet_essence.py
+			#
+
 			
 			#
 			#
@@ -65,56 +74,21 @@
 			
 			
 			
-		<header>make image</header>
+		<header>save image</header>
 		
-			#
-			#	cd foam_pet_docker
-			#
-			#	[OS] docker rmi foam_pet:v1.0.0
-			#
-			[OS] docker container list --all
-			[OS] docker commit foam foam:v1_6_1.0
-			[OS] docker save -o foam_pet_v1_6_1.tar foam:v1_6_1.0
-			# [OS] gzip foam_pet_v1.0.0.tar
-			[OS] zip foam_pet_v1.0.0-1.tar.zip foam_pet_v1.0.0-1.tar
+			[OS] python3 breaks.py save_docker_image
 			
-			#
-			#	sha256sum: 32f60c2abaab4aa1d291b7d799f5a6b1061ca50d040a87b9e78bfa1a7eb3d173
-			#	
-			#
-			sha256sum foam_pet_v1.0.0-1.tar.zip
-			
-			#
-			#	79edcad08ba23f20d6450debd381bd4ec6dea89a42682016e2747fa2e7d5c67f  Foam_v1_6_1.0.Docker_image.tar
-			#	f45375320c63809711512e22126e25ea425d812f9a3f95307d852f6f11e84501  Foam_v1_6_1.0.Docker_image.tar.zip
-			#
-			
-		<header>licenses</header>
-			apt install git
-			git clone https://github.com/daald/dpkg-licenses.git
-			./dpkg-licenses/dpkg-licenses -c > licenses.csv
+
+		<header>check the image</header>	
 			
 			
-		<header>bundle</header>	
-			[dir] foam_pet_v1.0.0-1.zip
-				[file] foam_pet_v1.0.0.docker_image.tar
-				[file] licenses_of_features.csv
-				[file] License.HTML
-			
-			
-			
-		<header>open container from image</header>
+			[OS] python3 breaks.py check_image
 			
 			#
 			#
-			#	[OS] docker rmi foam_pet:v1.0.0
+			#	Run the Selenium Checks
 			#
 			#
-			[OS] unzip foam_pet_v1.0.0-1.tar.zip
-			[OS] docker load -i foam_pet_v1.0.0-1.tar
-			[OS] docker run --name foam_pet.1 -e HOST_IP=host.docker.internal -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -it foam_pet:v1.0.0 bash
-			[Container]	cd /habitat && . v_env/bin/activate && foam_pet ventures on
-		
 		
 		<header>open container that off</header>
 			
@@ -123,18 +97,7 @@
 			cd /habitat && . v_env/bin/activate && foam_pet ventures on
 			
 			
-			
-			
-			
-		#
-		#
-		#	Selenium..
-		#
-		#
-			
-	<header>pypi .venv</header>
-	
-		There's a lot that could be troublesome here.
+
 
 
 </pre>

@@ -44,7 +44,7 @@ The pet is at:
 ******
 
 ## Docker
-To adopting a pet that drives a docker vehicle,  
+To adopt a pet that drives a docker vehicle,  
 please check out:  
 [https://github.com/basalt-plateau/foam-docker-images](https://github.com/basalt-plateau/foam-docker-images)  
 
