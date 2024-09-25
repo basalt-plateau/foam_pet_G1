@@ -79,9 +79,16 @@ def clique ():
 	#
 	#
 	try:
+		from ventures.clique import ventures_clique
+		group.add_command (ventures_clique ({
+			"ventures": retrieve_ventures ()
+		}))
+		
+		''''
 		group.add_command (importlib.import_module ("ventures.clique").ventures_clique ({
 			"ventures": retrieve_ventures ()
 		}))
+		"'''
 		
 		from foam_pet.adventures.demux_hap._plays._clique import demux_hap_clique
 		group.add_command (demux_hap_clique ())

@@ -178,6 +178,7 @@ rpds-py==0.20.0
     #   referencing
 sanic==23.12.2
     # via
+    #   foam-pet (pyproject.toml)
     #   biotech
     #   emergency
     #   sanic-limiter

@@ -7,20 +7,41 @@
 import os
 import click
 
+
+from os.path import dirname, join, normpath
+import pathlib
+import sys
+
+this_folder = pathlib.Path (__file__).parent.resolve ()
+
+
 version = "v1_3_0.0"
+name = "Foam_Pet"
+
 container_name = "foam_pet"
 image_name = "foam_pet"
-
 image = f"{ image_name }:{ version }"
 
-name = "Foam_Pet"
 
 file_name = f"{name}_{ version }.Docker_image.tar"
 zip_file_name = f"{ file_name }.zip"
 
+packet = f"Foam_Pet_{ version }"
+packet_zip = f"Foam_Pet_{ version }.zip"
 
-tar_file = f"image/{file_name}"
-zip_tar_file = f"image/{file_name}.zip"
+tar_file = f"{ packet }/{file_name}"
+zip_tar_file = f"packet_zip/{file_name}.zip"
+
+paths = {
+	"rules_origin": str (normpath (join (this_folder, f"building/Foam_Pet.Rules.{ version }.E.HTML"))),
+	"rules_dest": str (normpath (join (
+		this_folder, 
+		f"{ packet }/Rules.{ version }.E.HTML"
+	))),
+	
+	"image_built": str (normpath (join (this_folder, f"{name}_{ version }.Docker_image.tar")))
+}
+
 
 def run (screenplay):
 	print ()
@@ -90,7 +111,7 @@ def save_docker_image ():
 
 	run (f"docker commit { container_name } { image }")
 	run (f"docker save -o { tar_file } { image }")
-	run (f"(cd image && zip {zip_file_name} {file_name})")
+	run (f"(zip -r { packet_zip } { packet })")
 
 	#
 	#
@@ -98,7 +119,7 @@ def save_docker_image ():
 	#		# [OS] gzip foam_pet_v1.0.0.tar
 	#
 	run (f"sha256sum {tar_file}")
-	run (f"sha256sum {zip_tar_file}")
+	run (f"sha256sum { packet_zip }")
 
 
 

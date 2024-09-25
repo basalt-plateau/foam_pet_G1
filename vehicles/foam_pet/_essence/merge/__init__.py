@@ -81,6 +81,14 @@ def merge_essence (external_essence, essence_path):
 				"to": "0.0.0.0:22000"
 			},
 			
+			#
+			#
+			#	web:	This is where "sanic" process is available.
+			#
+			#	dist:
+			#
+			"sanique_mode": "web",
+			
 			"sanique": {
 				"directory": str (normpath (join (
 					the_mix_directory, 

@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "foam_pet"
-version = "1.3.0"
+version = "0.0.2"
 description = "A foam pet that can play with Aptos from offline."
 authors = []
 readme = "vehicles/foam_pet/readme.md"
@@ -32,6 +32,7 @@ click = "^8.1.7"
 pydash = "^8.0.1" 
 ships = "^1.3.8"
 ventures = "^1.6.0" 
+sanic = "^23.12.0"
 
 ecdsa = "0.18.0"
 h2 = "^4.1.0"
@@ -45,3 +46,11 @@ foam_pet = 'foam_pet:clique'
 
 
 
+[tool.cxfreeze]
+executables = [
+    { script = "start.py", base = "gui"}
+]
+
+[tool.cxfreeze.build_exe]
+excludes = []
+includes = [ "foam_pet" ]

@@ -1,7 +1,5 @@
 
 
-essence = {
-	"mode": "nurture"
-}
+essence = {}
 	
 	

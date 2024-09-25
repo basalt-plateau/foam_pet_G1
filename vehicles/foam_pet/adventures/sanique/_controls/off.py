@@ -31,6 +31,9 @@ import sys
 #
 #\
 
+from foam_pet.adventures.sanique.process_location import find_sanic_process_location
+
+
 def background (procedure, CWD):
 	show_variable ("procedure:", procedure)
 	process = subprocess.Popen (procedure, cwd = CWD)
@@ -48,9 +51,13 @@ def turn_off_sanique (packet):
 		#port = physics ["sanique"] ["inspector"] ["port"]
 		#URL = f"http://{ host }:{ port }"
 		
+		# sanic_process = "sanic"
+		sanic_process = find_sanic_process_location ();
+		
+		
 		process = background (
 			procedure = [
-				"sanic",
+				sanic_process,
 				"inspect",
 				"shutdown",
 				f"--port",

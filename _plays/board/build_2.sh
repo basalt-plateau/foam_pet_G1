@@ -8,7 +8,6 @@
 
 
 deactivate
-#. /root/.bashrc
 . /Metro/.venv/bin/activate
 
 

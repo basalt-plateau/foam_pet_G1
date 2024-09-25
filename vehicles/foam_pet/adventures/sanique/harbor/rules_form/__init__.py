@@ -156,8 +156,6 @@ def rules_form (packet):
 			location.reload ();
 		}
 		
-		
-		
 		document.addEventListener("DOMContentLoaded", function() {
 			var domain = window.location.hostname;
 			console.log (domain);
