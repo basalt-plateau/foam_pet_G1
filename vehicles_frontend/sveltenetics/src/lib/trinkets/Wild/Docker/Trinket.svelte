@@ -56,7 +56,7 @@ let the_panel = 1
 					<div style="height: 1cm"></div>
 	
 					<p style="text-align: center; font-size: 1.5em">
-						<span>This entire site can be run offline with docker.</span>
+						<span><Slang text="Labels" /> can live entirely offline with docker.</span>
 					</p>
 					<p style="text-align: center; font-size: 1.5em">
 						<a class="anchor" target="_blank" href="https://docker.com">https://docker.com</a>

@@ -30,7 +30,7 @@ can be built from here.
 
 ## PyPI
 This is the pet with a PyPI vehicle.  
-https://pypi.org/project/foam_hair
+https://pypi.org/project/foam_pet
 
 ----
 

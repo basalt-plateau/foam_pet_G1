@@ -30,8 +30,7 @@
 			(cd /Metro/vehicles_frontend/sveltenetics && bun run build)
 			(cd /Metro/vehicles_frontend/sveltenetics && bun run licensing_csv)
 			(cd /Metro/vehicles_frontend/sveltenetics && bun run licensing_details)
-			foam_pet_1 ventures refresh
-		
+			
 			#
 			#
 			#	Frontend: Build + Licenses
@@ -67,29 +66,26 @@
 			pip install pip-licenses
 			pip-licenses > /Metro/vehicles/foam_pet/PyPI.licenses.txt
 			
-			#
-			#	from: vehicles/foam_pet/.gitignore
-			#		
-			#		temporarily remove: sveltnetics_packets
-			#
+			
 			
 			#
 			#	poetry auth
 			#
 			#
 			poetry config pypi-token.pypi {}
-			(cd /Metro && rm -rf dist && poetry build --format sdist --verbose && chmod -R 777 /Metro && du -sh /Metro/dist)
 			
 			
 			
-
+			#
+			#	from: vehicles/foam_pet/.gitignore
+			#		temporarily remove: sveltnetics_packets
 			#
 			#	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			#	!!!!! Important, After publish, add: sveltnetics_packets, 
 			#	!!!!! back to vehicles/foam_pet/.gitignore
 			#	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			#
-			#
+			(cd /Metro && rm -rf dist && poetry build --format sdist --verbose && chmod -R 777 /Metro && du -sh /Metro/dist)
 			poetry publish --verbose;
 			
 			
@@ -102,13 +98,19 @@
 			du -h --max-depth=1 .
 		
 		
-		<header>verify publication</header>
+		<header>verify publication PyPI</header>
+			#
+			#
+			#	Maybe skip to PyPI docker for now..
+			#
+			#
+			
 			#
 			#
 			#	After publishing
 			#
 			#
-			cd /Metro/vehicles_pypi_docker
+			cd /Metro/vehicles_pypi
 			docker run --name hemoglycin_docker_1 -e HOST_IP=host.docker.internal -p 22000:22000 -p 443:443 -p 80:80 -it jumps:v2.1.0 bash
 			pip install foam_pet
 		

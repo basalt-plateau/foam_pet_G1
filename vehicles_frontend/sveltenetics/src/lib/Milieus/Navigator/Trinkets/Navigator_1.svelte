@@ -8,6 +8,9 @@ import { onMount, onDestroy } from 'svelte'
 import { check_Milieus_truck, monitor_Milieus_truck } from '$lib/Milieus/Truck'
 import { check_roomies_truck } from '$lib/Versies/Trucks'
 	
+import Relatives from '$lib/Letters/Relatives.svelte'
+	
+	
 let mode = check_roomies_truck ().freight.mode;
 
 let Scholars_Trucks_Prepared = "no"
@@ -43,9 +46,23 @@ let seeds_name = (
 let friends_name = (
 	"ጓደኛዎች"
 )
+
+// "ᎤᏓᏅᏙᏗ"
 let relatives_name = (
-	"ᎤᏓᏅᏙᏗ"
+	"ᐊᔭᖅ"
 )
+
+let relatives_name_2 = '/pictures/relatives.svg';
+
+/*
+	<img 
+		style="
+			height: 1.4cm;
+		"
+		src={ pet } 
+		alt="pet" 
+	/>
+*/
 
 </script>
 
@@ -70,14 +87,22 @@ let relatives_name = (
 		location={[ "Friends", "Vacations" ]}
 		is_open_location={[ "Friends" ]}
 	/>
-	<Milieus_Button
+	<!-- <Milieus_Button
 		monitor="Relatives"
 	
 		name={ relatives_name }
 		location={[ "Relatives", "Hints" ]}
 		is_open_location={[ "Relatives" ]}
-	/>
+	/> -->
 	
+	<Milieus_Button
+		monitor="Relatives"
+	
+		location={[ "Relatives", "Hints" ]}
+		is_open_location={[ "Relatives" ]}
+		
+		component={ Relatives }
+	/>
 	
 	{#if mode === "nurture" }
 	<!-- <div style="width: 0.5cm"></div> -->

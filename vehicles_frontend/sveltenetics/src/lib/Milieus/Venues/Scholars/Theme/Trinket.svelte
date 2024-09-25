@@ -221,6 +221,7 @@ a {
 				<RadioItem bind:group={theme} name="justify" value="Atolls">Atolls</RadioItem>
 				<RadioItem bind:group={theme} name="justify" value="PTO">PTO</RadioItem>
 				<RadioItem bind:group={theme} name="justify" value="rhubarb">Rhubarb</RadioItem>
+				<RadioItem bind:group={theme} name="justify" value="Hacienda">Hacienda</RadioItem>
 			</RadioGroup>
 		</div>
 		

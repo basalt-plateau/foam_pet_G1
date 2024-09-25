@@ -8,8 +8,8 @@ export const English_1 = {
 	"label": "foam pet",
 	"labels": "foam pets",		
 		
-	"Label": "Foam pet",	
-	"Labels": "Foam pets",	
+	"Label": "Foam Pet",	
+	"Labels": "Foam Pets",	
 	
 	//
 	//	ICANN+IANA Lagrange Neural Lattice

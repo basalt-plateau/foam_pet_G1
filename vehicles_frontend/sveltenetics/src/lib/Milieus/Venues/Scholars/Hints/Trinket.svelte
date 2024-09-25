@@ -72,7 +72,10 @@ let seeds_language = (
 
 
 <style>
-.accordion-control {
+.gradient-heading {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	@apply bg-gradient-to-br;
+	@apply from-primary-400 via-secondary-500 to-primary-500;
 }
 
 </style>
@@ -111,24 +114,34 @@ let seeds_language = (
 				
 				
 			
-				font-size: 2.5em; 
+				font-size: 4em; 
 				text-align: center;
 				font-family: sans-serif !important;
 			"
 		>
 			<img 
 				style="
-					height: 1cm;
+					height: 1.4cm;
 				"
 				src={ pet } 
 				alt="pet" 
 			/>
 			
-			<Slang text="Label" style="font-family: serif;" />
+			<header 
+				style="
+					font-weight: bold;
+					font-family: serif;
+				"
+				class="gradient-heading"
+			>Foam Pet</header>
+			
+			
+			<!-- <Slang text="Label" /> -->
+			
 			
 			<img 
 				style="
-					height: 1cm;
+					height: 1.4cm;
 				"
 				src={ pet_2 } 
 				alt="pet 2" 
@@ -172,10 +185,10 @@ let seeds_language = (
 					style="text-align: center"
 				><Slang text="Offline Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
-					<span class="badge variant-soft-primary">% Offline Machine</span>
-					<span class="badge variant-soft-primary">% Offline Computer</span>
-					<span class="badge variant-soft-primary">% Beacon with Limited Connectivity</span>
-					<span class="badge variant-soft-primary">% Key Ring</span>
+					<span class="badge bg-initial">% Offline Machine</span>
+					<span class="badge bg-initial">% Offline Computer</span>
+					<span class="badge bg-initial">% Beacon with Limited Connectivity</span>
+					<span class="badge bg-initial">% Key Ring</span>
 				</p>
 			</div>
 			
@@ -191,11 +204,11 @@ let seeds_language = (
 					style="text-align: center"
 				><Slang text="Online Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
-					<span class="badge variant-soft-primary">% Online Machine</span>
-					<span class="badge variant-soft-primary">% Online Computer</span>
-					<span class="badge variant-soft-primary">% Internet Connected Beacon</span>
-					<span class="badge variant-soft-primary">% SOS Beacon</span>
-					<span class="badge variant-soft-primary">% Howl Beacon</span>
+					<span class="badge bg-initial">% Online Machine</span>
+					<span class="badge bg-initial">% Online Computer</span>
+					<span class="badge bg-initial">% Internet Connected Beacon</span>
+					<span class="badge bg-initial">% SOS Beacon</span>
+					<span class="badge bg-initial">% Howl Beacon</span>
 				</p>
 			</div>
 		</div>

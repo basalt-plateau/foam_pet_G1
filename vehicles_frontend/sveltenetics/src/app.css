@@ -38,6 +38,34 @@ header {
 }
 
 
+/*
+	
+	SVG
+
+*/
+
+/* the button is pressed */
+.variant-filled .glyph-svg path {
+	fill: white !important;
+}
+.dark .variant-filled .glyph-svg path {
+	fill: black !important;
+}
+
+/* the button isn't pressed */
+.variant-filled-primary .glyph-svg path {
+	fill: black !important;
+}
+
+/* the button isn't pressed */
+.glyph-svg path {
+	fill: black !important;
+}
+.dark .glyph-svg path {
+	fill: white !important;
+}
+
+
 
 
 

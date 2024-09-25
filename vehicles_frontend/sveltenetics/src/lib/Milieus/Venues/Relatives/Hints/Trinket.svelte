@@ -20,17 +20,53 @@ import Beacons from './Beacons/Trinket.svelte'
 //
 ////
 
+import Relatives from '$lib/Letters/Relatives.svelte'
+
+
 /*
 let relatives_name = (
 	"家庭"	
 )
 */
 
-let relatives_name = (
+
+/*
+// 
+//
+//
+//
+//
+var relatives_name = (
 	"ᎤᏓᏅᏙᏗ"
 )
-let relatives_language = "Cherokee";
-let relatives_pronunciation = "udanvdo"
+var relatives_language = "Cherokee";
+var relatives_pronunciation = "udanvdo"
+
+
+// 
+//
+//
+//
+//
+let relatives_name = (
+	"ᐊᔭᖅ"
+)
+let relatives_language = "Inuktitut";
+let relatives_pronunciation = "ajaaq"
+*/
+
+
+// 
+//
+//
+//
+//
+var relatives_name = "Foam"
+var relatives_language = "Foam Pet";
+var relatives_pronunciation = ""
+
+
+
 
 let tabSet = 0
 
@@ -63,8 +99,20 @@ let tabSet = 0
 		<p
 			style="
 				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			"
-		>"{ relatives_name }", pronounced "{ relatives_pronunciation }", might be { relatives_language } for "relatives".</p>
+		>
+			<span
+				style="
+					display: inline-flex;
+					align-items: center;
+				"
+			><Relatives /></span>
+			<span style="width: 10px"> </span>
+			<span>might be { relatives_language } for "relatives".</span>
+		</p>
 	</div>
 
 	<div style="height: 0.2cm"></div>
@@ -78,6 +126,7 @@ let tabSet = 0
 	>
 		<header
 			style="
+				display: none;
 				font-size: 2.5em;
 				text-align: center;
 			"

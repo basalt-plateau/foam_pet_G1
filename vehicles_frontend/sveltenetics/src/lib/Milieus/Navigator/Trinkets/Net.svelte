@@ -105,7 +105,7 @@ if (RT_Freight && RT_Freight.window_width) {
 			>
 				{#if RT_Freight.net_connected === "yes" }
 				<span
-					class="badge variant-filled-success"
+					class="badge bg-gradient-to-br variant-gradient-primary-secondary"
 					style="
 						margin: 0;
 					"
