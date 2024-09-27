@@ -20,7 +20,7 @@ name = "Foam_Pet"
 
 container_name = "foam_pet"
 image_name = "foam_pet"
-image = f"{ image_name }:{ version }"
+image_name_plus_version = f"{ image_name }:{ version }"
 
 
 file_name = f"{name}_{ version }.Docker_image.tar"
@@ -36,10 +36,24 @@ paths = {
 	"rules_origin": str (normpath (join (this_folder, f"building/Foam_Pet.Rules.{ version }.E.HTML"))),
 	"rules_dest": str (normpath (join (
 		this_folder, 
-		f"{ packet }/Rules.{ version }.E.HTML"
+		f"the_build/{ packet }/Rules.{ version }.E.HTML"
 	))),
 	
-	"image_built": str (normpath (join (this_folder, f"{name}_{ version }.Docker_image.tar")))
+	"image_built": str (normpath (join (this_folder, f"the_build/{ packet }/{name}_{ version }.Docker_image.tar"))),
+	
+	"the_build": str (normpath (join (
+		this_folder, 
+		f"the_build"
+	))),
+	
+	"distribution_directory": str (normpath (join (
+		this_folder, 
+		f"the_build/{ packet }"
+	))),
+	"distribution_zip": str (normpath (join (
+		this_folder, 
+		f"the_build/{ packet_zip }"
+	)))
 }
 
 
@@ -63,7 +77,6 @@ def check_image ():
 	#		[OS] docker load -i image/Foam_Pet_v1_3_0.0.Docker_image.tar
 	#
 
-	#
 	#
 	#	maybe:
 	#		docker exec -it foam_pet_1 bash -c "bash"
@@ -93,12 +106,15 @@ def save_docker_image ():
 
 	# run (f"docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian ");
 
+	run (f"cp '{ rules_origin }' '{ rules_dest }'");
+
+
 	#
 	#
 	#
 	#
 	#
-	run (f"docker rmi { image }");
+	run (f"docker rmi { image_name_plus_version }");
 
 
 	#
@@ -109,9 +125,9 @@ def save_docker_image ():
 	run (f"docker stop { container_name }");
 
 
-	run (f"docker commit { container_name } { image }")
-	run (f"docker save -o { tar_file } { image }")
-	run (f"(zip -r { packet_zip } { packet })")
+	run (f"docker commit { container_name } { image_name_plus_version }")
+	run (f"docker save -o { paths ['image_built'] } { image_name_plus_version }")
+	run (f"(cd '{ paths ['the_build'] }' && zip -r { packet_zip } { packet })")
 
 	#
 	#
@@ -122,7 +138,7 @@ def save_docker_image ():
 	run (f"sha256sum { packet_zip }")
 
 
-
+	run (f"chmod -R 777 '{ this_folder }'")
 
 	#
 	#	79edcad08ba23f20d6450debd381bd4ec6dea89a42682016e2747fa2e7d5c67f  Foam_v1_6_1.0.Docker_image.tar

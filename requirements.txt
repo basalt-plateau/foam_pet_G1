@@ -152,7 +152,7 @@ pynacl==1.5.0
     # via foam-pet (pyproject.toml)
 pyyaml==6.0.2
     # via sanic-ext
-redis==5.0.8
+redis==5.1.0
     # via
     #   biotech
     #   emergency

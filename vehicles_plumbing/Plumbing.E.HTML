@@ -20,27 +20,23 @@
 				apt update
 				apt install python3 haproxy python3.11-venv -y
 				
-				mkdir /Metro && cd /Metro
-				python3 -m venv v_env
-				. /Metro/v_env/bin/activate
+				mkdir /Metro && cd /Metro && python3 -m venv v_env && . /Metro/v_env/bin/activate
 				
 				#
 				#
 				#	Firewall
 				#
 				#
-				ufw status
-				ufw allow 443
-				ufw allow 80
-				ufw allow 22000
+				ufw allow 443 && ufw allow 80 && ufw allow 22000
 				ufw deny 8080
+				ufw status
 				
 				#
 				#
 				#	foam_pet
 				#
 				#
-				pip install foam_pet==1.6.1
+				pip install foam_pet==1.3.0 
 				
 				foam_pet build
 				foam_pet demux_hap build_unverified_certificates
@@ -53,14 +49,15 @@
 			[ ] point domain to IP
 				[ ] Cloudflare
 			
-			
 			[ ] certbot Cert
+				(cd /Metro && . /Metro/v_env/bin/activate)
+			
 				[ ] foam_pet ventures off --name demux_hap
 				
 				[ ] apt install certbot -y
-				[ ] certbot certonly --standalone --preferred-challenges http -m address@foam.hair -d foam.hair
-				[ ] cp /etc/letsencrypt/live/foam.hair/fullchain.pem /etc/haproxy/SSL/certificate.pem
-				[ ] cp /etc/letsencrypt/live/foam.hair/privkey.pem /etc/haproxy/SSL/certificate.pem.key
+				[ ] certbot certonly --standalone --preferred-challenges http -m address@foam.pet -d foam.pet
+				[ ] cp /etc/letsencrypt/live/foam.pet/fullchain.pem /etc/haproxy/SSL/certificate.pem
+				[ ] cp /etc/letsencrypt/live/foam.pet/privkey.pem /etc/haproxy/SSL/certificate.pem.key
 				
 				
 				#
