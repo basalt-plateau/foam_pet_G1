@@ -22,6 +22,7 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 //
 ////
 
+import Getting_Moving from './Getting_Moving/Trinket.svelte'
 
 import Preparation_Tutorial from './Preparation_Tutorial/Trinket.svelte'
 	
@@ -76,6 +77,10 @@ let seeds_language = (
 	@apply bg-clip-text text-transparent box-decoration-clone;
 	@apply bg-gradient-to-br;
 	@apply from-primary-400 via-secondary-500 to-primary-500;
+}
+
+.badge {
+	white-space: break-spaces;
 }
 
 </style>
@@ -182,13 +187,13 @@ let seeds_language = (
 				class="card p-4"
 			>
 				<p
-					style="text-align: center"
+					style="text-align: center; font-size: 1.5em;"
 				><Slang text="Offline Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
-					<span class="badge bg-initial">% Offline Machine</span>
-					<span class="badge bg-initial">% Offline Computer</span>
-					<span class="badge bg-initial">% Beacon with Limited Connectivity</span>
-					<span class="badge bg-initial">% Key Ring</span>
+					<span class="badge bg-initial">~ Offline Machine</span>
+					<span class="badge bg-initial">~ Offline Computer</span>
+					<span class="badge bg-initial">~ Beacon with Limited Connectivity</span>
+					<span class="badge bg-initial">~ Key Ring</span>
 				</p>
 			</div>
 			
@@ -201,14 +206,14 @@ let seeds_language = (
 				class="card p-4"
 			>
 				<p
-					style="text-align: center"
+					style="text-align: center; font-size: 1.5em;"
 				><Slang text="Online Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
-					<span class="badge bg-initial">% Online Machine</span>
-					<span class="badge bg-initial">% Online Computer</span>
-					<span class="badge bg-initial">% Internet Connected Beacon</span>
-					<span class="badge bg-initial">% SOS Beacon</span>
-					<span class="badge bg-initial">% Howl Beacon</span>
+					<span class="badge bg-initial">~ Online Machine</span>
+					<span class="badge bg-initial">~ Online Computer</span>
+					<span class="badge bg-initial">~ Internet Connected Beacon</span>
+					<span class="badge bg-initial">~ SOS Beacon</span>
+					<span class="badge bg-initial">~ Howl Beacon</span>
 				</p>
 			</div>
 		</div>
@@ -238,36 +243,34 @@ let seeds_language = (
 		<p
 			style="font-size: 1em; text-align: center; line-height: 2em;"
 		>
-			<span><Slang text="Labels" /> know how to drive an Offline Wallet (Cold Wallet, Airgapped Wallet)</span>
-			<br />
-			<span>from an <Slang text="Offline Machine" />.</span>
+			<span>A <Slang text="Label" /> should live on an <Slang text="Online Machine" />.</span>
 		</p> 
-		
-		<div style="height: 1cm"></div>
-		
 		<p
 			style="font-size: 1em; text-align: center; line-height: 2em;"
 		>
-			<span><Slang text="Labels" /> are friendly</span>
-			<br />
-			<span>from <Slang text="Online_Machines" />.</span>
+			<span><Slang text="Domain" /> is a <Slang text="Label" /> living in a <Slang text="Online Machine" />.</span>
+		</p> 
+	
+		<div style="height: 1cm"></div>
+	
+		<p
+			style="font-size: 1em; text-align: center; line-height: 2em;"
+		>
+			<span>Another <Slang text="Label" /> should live on an <Slang text="Offline Machine" />.</span>
+		</p>
+		
+		<p style="font-size: 1em; text-align: center; line-height: 2em;">
+			<span>This is how Offline Wallet (Cold Wallet, Airgapped Wallet) moves happen.</span>
 		</p> 
 		
 		<div style="height: 1cm"></div>
 		
-		<div style="text-align: center;">
-			<span>A <Slang text="Label" /> can be adopted from </span>
-			
-			<Milieus_Button
-				name={ "Wild" }
-				location={[ "Scholars", "Wild" ]}
-				is_open_location={[ "Scholars", "Wild" ]}
-				style="display: inline-block"
-			/>
-		</div>
 		
-		<div style="height: 1cm"></div>
 	</div>
+	
+	<div style="height: 1cm"></div>
+	
+	<Getting_Moving />
 	
 	<div style="height: 1cm"></div>
 	

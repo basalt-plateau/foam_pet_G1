@@ -1,16 +1,18 @@
 
 
 <script>
-import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 
-
+//
+//
 import { onMount, onDestroy } from 'svelte'
+//
+//
+import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
-	
 import Relatives from '$lib/Letters/Relatives.svelte'
-
 import { parse_styles } from '$lib/trinkets/styles/parse'
-	
+//
+//
 	
 let mode = check_roomies_truck ().freight.mode;
 let window_width = check_roomies_truck ().freight.window_width;
@@ -47,9 +49,9 @@ const build = () => {
 	console.log ("build", window_width)
 	
 	if (window_width > 800) {
-		buttons_styles = 'padding: 0.3cm 0.7cm; margin: 0 0.1cm; font-size: 1.2em'
+		buttons_styles = 'padding: 0.2cm 0.6cm; margin: 0 0.1cm; font-size: 1.2em'
 		relatives_button_styles = {
-			height: "31px",
+			height: "27px",
 			width: "60px"
 		}
 	}

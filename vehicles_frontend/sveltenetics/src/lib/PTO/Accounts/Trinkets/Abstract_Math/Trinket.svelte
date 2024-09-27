@@ -2,14 +2,15 @@
 
 <script>
 	
-	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
-	
-	import Slang from '$lib/trinkets/Slang/Trinket.svelte'
-	import { parse_styles } from '$lib/trinkets/styles/parse.js';
+import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+
+import Slang from '$lib/trinkets/Slang/Trinket.svelte'
+import { parse_styles } from '$lib/trinkets/styles/parse.js';
 
 </script>
 
 <div
+	class="card p-2 variant-filled-primary"
 	style="
 		word-wrap: break-word;
 	"

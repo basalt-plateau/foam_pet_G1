@@ -82,7 +82,7 @@ const modify_keys_count = () => {
 			style="
 				text-align: center;
 			"
-		>A <Slang text="Private Key" /> is necessary to suggest changes to the <Slang text="Address" />.</p>
+		><Slang text="An_Account" /> can be <Slang text="driven" /> with a <Slang text="Private Key" /> is necessary to suggest changes to the <Slang text="Address" />.</p>
 		
 		<div style="height: 0.5cm" />
 		
@@ -173,7 +173,7 @@ const modify_keys_count = () => {
 		
 		
 		
-		<div class="card variant-soft-primary p-2">
+		<div class="card p-2 variant-filled-primary">
 			<Accordion>
 				<AccordionItem>
 					<svelte:fragment slot="summary">

@@ -65,6 +65,8 @@ let actual_styles = `
 			
 	font-weight: bold;
 	font-size: 1em;
+	
+	white-space: break-spaces;
 ` + style;
 
 </script>

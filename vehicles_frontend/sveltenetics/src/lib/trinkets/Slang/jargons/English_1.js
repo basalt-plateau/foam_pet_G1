@@ -5,6 +5,8 @@ export const English_1 = {
 	// "Label": "Orbital Covergence Softwhere",	
 	// "Label": "Aptos Softwhere",	
 
+	"Domain": "https://Foam.Pet",
+
 	"label": "foam pet",
 	"labels": "foam pets",		
 		
@@ -33,17 +35,19 @@ export const English_1 = {
 	//
 	"Account": "Ride",
 	"Accounts": "Rides",
-	
+	"an_Account": "a Ride",
+	"An_Account": "A Ride",
+
 	// Character
 	"Address": "Address",
 	"Addresses": "Addresses",
 	
 	//
 	//	Party, Family, Dynasty, Pod
-	//	Islands, Constellation
+	//	Islands, Constellation, Fest
 	//
-	"consensus": "Group",
-	"Consensus": "Group",
+	"consensus": "Fest",
+	"Consensus": "Fest",
 	
 	//
 	//
@@ -83,6 +87,7 @@ export const English_1 = {
 	"Signer": "Signer",		
 	"Signing": "Signing",
 	"Signed": "Signed",
+	"signed": "signed",
 
 	"the_pypi_module": "foam_pet",
 
