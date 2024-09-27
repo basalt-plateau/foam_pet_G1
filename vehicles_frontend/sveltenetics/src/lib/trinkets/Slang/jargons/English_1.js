@@ -31,8 +31,8 @@ export const English_1 = {
 	//
 	//	Characters
 	//
-	"Account": "Account",
-	"Accounts": "Accounts",
+	"Account": "Ride",
+	"Accounts": "Rides",
 	
 	// Character
 	"Address": "Address",

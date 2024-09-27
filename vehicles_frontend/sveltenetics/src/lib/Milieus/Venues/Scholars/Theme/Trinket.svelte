@@ -32,10 +32,10 @@ import * as AptosSDK from "@aptos-labs/ts-sdk";
 //
 //
 import Net_Choices_with_Text from '$lib/PTO/Nets/Choices_with_Text/Trinket.svelte'
-import Refresh_Browser_Storage from '$lib/Versies/Rules/Refresh_Browser_Storage.svelte'
 import Panel from '$lib/trinkets/panel/trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
+import Refresh_Browser_Storage from '$lib/Versies/Rules/Refresh_Browser_Storage.svelte'
 //
 ///
 

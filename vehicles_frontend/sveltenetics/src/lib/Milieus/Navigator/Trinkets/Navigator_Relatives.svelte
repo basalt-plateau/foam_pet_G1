@@ -49,9 +49,9 @@ onDestroy (() => {
 		is_open_location={[ "Relatives", "Hints" ]}
 	/>
 	<Milieus_Button
-		name={ "Accounts" }
-		location={[ "Relatives", "Accounts" ]}
-		is_open_location={[ "Relatives", "Accounts" ]}
+		name={ "Rides" }
+		location={[ "Relatives", "Rides" ]}
+		is_open_location={[ "Relatives", "Rides" ]}
 	/>
 	<Milieus_Button
 		name={ "Signatures" }

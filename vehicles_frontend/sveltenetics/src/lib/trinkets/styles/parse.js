@@ -1,7 +1,7 @@
 
 /*
 	import { parse_styles } from '$lib/trinkets/styles/parse'
-
+	let styles = parse_styles ({})
 
 */
 

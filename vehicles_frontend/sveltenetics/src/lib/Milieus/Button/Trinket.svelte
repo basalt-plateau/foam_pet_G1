@@ -33,6 +33,24 @@ export let location = [ "", "" ]
 export let is_open_location = []
 export let component = ""
 export let style = ""
+export let component_props = {}
+$: {
+	let _component_props = component_props;
+}
+
+
+let actual_style = `
+	padding: 0.1cm 0.25cm;
+	box-shadow: 0 0 0px 2px rgb(var(--color-surface-500));
+	font-size: 1em;
+` + style;
+$: {
+	actual_style = `
+		padding: 0.1cm 0.25cm;
+		box-shadow: 0 0 0px 2px rgb(var(--color-surface-500));
+		font-size: 1em;
+	` + style;
+}
 
 let actual_monitor = ""
 if (monitor.length === 0) {
@@ -91,10 +109,7 @@ let tapped = "variant-filled"
 let untapped = "variant-filled-primary"
 
 
-let actual_style = `
-	padding: 0.1cm 0.25cm;
-	box-shadow: 0 0 0px 2px rgb(var(--color-surface-500));
-` + style;
+
 
 </script>
 
@@ -126,7 +141,7 @@ let actual_style = `
 	}
 >
 	{#if typeof component === "function" }
-	<svelte:component this={ component } />
+	<svelte:component this={ component } {...component_props} />
 	{:else}
 	{ name }
 	{/if}
