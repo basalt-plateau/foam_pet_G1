@@ -39,6 +39,7 @@ onDestroy (() => {
 
 
 let buttons_styles = ""
+let relatives_button_styles = {}
 const build = () => {
 	mode = check_roomies_truck ().freight.mode;
 	window_width = check_roomies_truck ().freight.window_width;
@@ -47,29 +48,31 @@ const build = () => {
 	
 	if (window_width > 800) {
 		buttons_styles = 'padding: 0.3cm 0.7cm; margin: 0 0.1cm; font-size: 1.2em'
+		relatives_button_styles = {
+			height: "31px",
+			width: "60px"
+		}
 	}
 	else {
 		buttons_styles = ''
+		relatives_button_styles = {}
 	}
 }
 
-/*
-let seeds_name = (
-	"পণ্ডিত"
-)
-*/
 
-let seeds_name = (
-	"அறிஞர்கள்"
-)
-let friends_name = (
-	"ጓደኛዎች"
-)
 
 // "ᎤᏓᏅᏙᏗ"
-let relatives_name = (
-	"ᐊᔭᖅ"
-)
+let names = {
+	seeds: (
+		"அறிஞர்கள்"
+	),
+	friends: (
+		"ጓደኛዎች"
+	),
+	relatives: (
+		"ᐊᔭᖅ"
+	)	
+}
 
 let relatives_name_2 = '/pictures/relatives.svg';
 
@@ -97,7 +100,7 @@ let relatives_name_2 = '/pictures/relatives.svg';
 	<Milieus_Button
 		monitor="Scholars"
 		
-		name={ seeds_name }
+		name={ names.seeds }
 		location={[ "Scholars", "Hints" ]}
 		is_open_location={[ "Scholars" ]}
 		
@@ -106,7 +109,7 @@ let relatives_name_2 = '/pictures/relatives.svg';
 	<Milieus_Button
 		monitor="Friends"
 	
-		name={ friends_name }
+		name={ names.friends }
 		location={[ "Friends", "Vacations" ]}
 		is_open_location={[ "Friends" ]}
 		
@@ -121,9 +124,7 @@ let relatives_name_2 = '/pictures/relatives.svg';
 		
 		component={ Relatives }
 		component_props={{
-			style: {
-				width: '100px'
-			}
+			style: relatives_button_styles
 		}}
 		
 		style={ buttons_styles }
