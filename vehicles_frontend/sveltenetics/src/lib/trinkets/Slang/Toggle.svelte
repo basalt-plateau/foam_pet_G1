@@ -73,9 +73,50 @@ onDestroy (() => {
 
 
 {#if Seeds_Trucks_Prepared === "yes"}
-<div class="card p-4">
-	{ Seeds_Trucks_Freight.use_slang } { use_slang_boolean }
+<div 
+	style="
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	"
+	class="card p-4"
+>
+	<div
+		class="card p-2 variant-soft-surface"
+		style="
+			padding: 0.2cm 1cm;
+			margin: 0.2cm 0 0.5cm;
+		"
+	>
+		<header
+			style="
+				font-size: 1.4em;
+				line-height: 100%;
+			"
+		>Slang</header>
+	</div>
 
-	<SlideToggle name="slide" bind:checked={ use_slang_boolean } />
+	<div
+		style="
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			padding: 0.1cm 0.25cm;
+		"
+	>
+		<p
+			style="
+				padding: 0.5cm;
+			"
+		>off</p>
+		<SlideToggle name="slide" bind:checked={ use_slang_boolean } />
+		<p
+			style="
+				padding: 0.5cm;
+			"
+		>on</p>
+	</div>
 </div>
 {/if}
