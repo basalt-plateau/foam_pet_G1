@@ -35,9 +35,6 @@ console.log ({ organized })
 
 
 <div>
-	
-	
-	
 	<div class="table-container">
 		<table class="table table-hover">
 			<thead>

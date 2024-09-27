@@ -14,14 +14,11 @@ var wipe_cookie = (name) => {
 
 var wipe_cookies = () => {
     const cookies = document.cookie.split("; ");
-	
     for (let i = 0; i < cookies.length; i++) {
         const cookie_name = cookies[i].split("=")[0];
         wipe_cookie (cookie_name);
     }
 }
-
-
 
 
 const refresh_storage = () => {

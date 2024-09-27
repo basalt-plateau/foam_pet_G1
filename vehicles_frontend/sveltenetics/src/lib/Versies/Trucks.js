@@ -108,6 +108,8 @@ export const lease_roomies_truck = () => {
 			net_name,
 			net_connected: "no",
 			
+			use_slang: "yes",
+			
 			window_width: window.innerWidth,
 			
 			layout: {

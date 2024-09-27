@@ -42,9 +42,17 @@ const retrieve_search_2 = ({ last, E, words }) => {
 	return search_2;
 }
 
+
+/*
+
+ 
+ 
+
+*/
 export const nocturnalize = ({
 	legend_language,
-	text
+	text,
+	slang = "yes"
 }) => {
 	var saying = []
 	
@@ -65,18 +73,34 @@ export const nocturnalize = ({
 		if (has_field (legend_language, search_1)) {
 			// This checks for 1 word legends
 			
-			saying.push ({
-				text: legend_language [ search_1 ],
-				code: "yes"
-			})
+			if (slang === "yes") {
+				saying.push ({
+					text: legend_language [ search_1 ],
+					code: "yes"
+				})
+			}
+			else {
+				saying.push ({
+					text: search_1,
+					code: "yes"
+				})
+			}
 		}
 		else if (has_field (legend_language, search_2)) {
 			// This checks for 2 word legends
+			if (slang === "yes") {
+				saying.push ({
+					text: legend_language [ search_2 ],
+					code: "yes"
+				})
+			}
+			else {
+				saying.push ({
+					text: search_2,
+					code: "yes"
+				})
+			}
 			
-			saying.push ({
-				text: legend_language [ search_2 ],
-				code: "yes"
-			})
 			E = E + 2;
 		}
 		else {

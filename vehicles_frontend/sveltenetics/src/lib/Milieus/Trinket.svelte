@@ -31,7 +31,7 @@ import Scholars_Wild from './Venues/Scholars/Wild/Trinket.svelte'
 
 import Friends_Vacations from './Venues/Friends/Vacations/Trinket.svelte'
 
-import Relatives_Rides from './Venues/Relatives/Rides/Trinket.svelte'
+import Relatives_Vehicles from './Venues/Relatives/Vehicles/Trinket.svelte'
 import Relatives_Hints from './Venues/Relatives/Hints/Trinket.svelte'
 import Relatives_Signatures from './Venues/Relatives/Signatures/Trinket.svelte'
 
@@ -60,7 +60,7 @@ let Milieus = {
 	},
 	"Relatives": {
 		"Hints": Relatives_Hints,
-		"Rides": Relatives_Rides,
+		"Vehicles": Relatives_Vehicles,
 		"Signatures": Relatives_Signatures
 	},
 	"Technicians": {

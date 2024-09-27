@@ -14,7 +14,7 @@ import Caution from '$lib/trinkets/_Caution/Trinket.svelte'
 //
 import Offline_Machine_Tutorial from '$lib/places/Scholars/Offline_Machine_Tutorial.svelte'
 import Online_Machine_Tutorial from '$lib/places/Scholars/Online_Machine_Tutorial.svelte'
-import Orbital_Wallet_Tutorial from '$lib/places/Scholars/Orbital_Wallet_Tutorial.svelte'
+import Offline_Signing_Hints from '$lib/trinkets/Hints/Offline_Signing/Trinket.svelte'
 //
 import { check_roomies_truck } from '$lib/Versies/Trucks'
 import Slang_Cipher from '$lib/trinkets/Slang/Cipher.svelte'
@@ -34,7 +34,6 @@ const machines_picture = '/pictures/machines.svg';
 const pets = '/pictures/Foam_pet.svg';
 const pet = '/pictures/pet.svg';
 const pet_2 = '/pictures/pet_2.svg';
-
 //
 ////
 
@@ -152,9 +151,7 @@ let seeds_language = (
 				alt="pet 2" 
 			/>
 		</header>
-		
-		
-		
+				
 		<div style="height: 1cm"></div>
 	</div>
 
@@ -270,59 +267,7 @@ let seeds_language = (
 	
 	<div style="height: 1cm"></div>
 	
-	<Getting_Moving />
-	
-	<div style="height: 1cm"></div>
-	
-	<div class="card p-4">
-		<div style="height: 1cm"></div>
-		<p
-			style="font-size: 1em; text-align: center"
-		>
-			<span>An offline machine can communicate with an online machine with a QR code signatures.</span>			
-		</p> 
-		
-		<div style="height: 1cm"></div>
-		
-		<p
-			style="font-size: 1em; text-align: center"
-		>
-			Private Key + Petition -> Signature
-		</p>
-
-		<div style="height: 1cm"></div>
-		
-		<p
-			style="font-size: 1em; text-align: center"
-		>
-			<span>Thus, the <Slang text="Private Key" /> nevers needs to be sent to an online machine.</span>
-		</p>
-		
-		<div style="height: 1cm"></div>
-		
-		<div class="card p-2 variant-soft">
-			<Accordion>
-				<AccordionItem>
-					<svelte:fragment slot="summary">
-						<div
-							style="
-								text-align: center;
-								font-size: 1.5em;
-							"
-						>
-							<p>Offline Signing Tutorial</p>
-						</div>
-					</svelte:fragment>
-					<svelte:fragment slot="content">
-						<Orbital_Wallet_Tutorial />
-					</svelte:fragment>
-				</AccordionItem>
-			</Accordion>
-		</div>
-		
-		<div style="height: 1cm"></div>
-	</div>
-	
+	<Getting_Moving />	
 	
 	<div style="height: 0.5cm"></div>
 	

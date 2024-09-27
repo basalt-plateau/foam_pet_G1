@@ -30,7 +30,8 @@ import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 //\\
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
-	
+import Offline_Signing_Hints from '$lib/trinkets/Hints/Offline_Signing/Trinket.svelte'
+
 
 
 const trends = {
@@ -91,38 +92,9 @@ onMount (() => {
 
 <Leaf>
 <div monitor="signatures leaf">
-	<div class="card text-column"
-		style="
-			display: block;
-			height: auto;
-			padding: 1cm 1cm 1cm;
-		"
-	>
-		<h1>Signatures</h1>
-
-		<div style="height: 1cm"></div>
-
-		<p
-			style="text-align: center"
-		>Signatures are the go ahead necessary for the <Slang text="consensus" /> to add a <Slang text="transaction" /> to the <Slang text="blockchain" />.</p> 
-		
-		<div style="height: 0.5cm"></div>
-		
-		<p
-			style="text-align: center"
-		><Slang text="Private Key" /> + <b>Petition</b> -> <b>Signature</b></p> 
-		
-		<div style="height: 0.5cm"></div>
-		
-		
-		<p style="text-align: center">
-			<span><b>Petition</b> + <b>Signature</b> + <b><Slang text="consensus" /> Signatures</b> -> </span>
-			<span><Slang text="transaction" /> on the <Slang text="blockchain" /></span>
-		</p>
-
-		<div style="height: .5cm"></div>
-	</div>
-
+	<div style="height: 1cm"></div>
+	
+	<Offline_Signing_Hints />
 	
 	<div style="height: 1cm"></div>
 	

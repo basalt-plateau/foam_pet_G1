@@ -6,6 +6,7 @@ export const English_1 = {
 	// "Label": "Aptos Softwhere",	
 
 	"Domain": "https://Foam.Pet",
+	"the_pypi_module": "foam_pet",
 
 	"label": "foam pet",
 	"labels": "foam pets",		
@@ -33,10 +34,10 @@ export const English_1 = {
 	//
 	//	Characters
 	//
-	"Account": "Ride",
-	"Accounts": "Rides",
-	"an_Account": "a Ride",
-	"An_Account": "A Ride",
+	"Account": "Vehicle",
+	"Accounts": "Vehicles",
+	"an_Account": "a Vehicle",
+	"An_Account": "A Vehicle",
 
 	// Character
 	"Address": "Address",
@@ -89,7 +90,7 @@ export const English_1 = {
 	"Signed": "Signed",
 	"signed": "signed",
 
-	"the_pypi_module": "foam_pet",
+	
 
 	// Play
 	// Note

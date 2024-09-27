@@ -24,6 +24,7 @@
 
 //\
 //
+
 import { onMount, onDestroy } from 'svelte'
 import { AppRail, AppRailTile, AppRailAnchor } from '@skeletonlabs/skeleton';
 import { LightSwitch } from '@skeletonlabs/skeleton';
@@ -36,6 +37,8 @@ import Panel from '$lib/trinkets/panel/trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
 import Refresh_Browser_Storage from '$lib/Versies/Rules/Refresh_Browser_Storage.svelte'
+//
+import Slang_Toggle from '$lib/trinkets/Slang/Toggle.svelte'
 //
 ///
 
@@ -173,6 +176,10 @@ a {
 				every_enhance={ every_net_enhance }
 			/>
 		</div>
+		
+		<div style="height: 0.2cm"></div>
+		
+		<Slang_Toggle />
 		
 		<div style="height: 0.2cm"></div>
 		
