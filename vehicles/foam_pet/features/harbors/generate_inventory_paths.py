@@ -4,7 +4,7 @@
 
 
 '''
-	from womb.adventures.sanique.utilities.generate_inventory_paths import generate_inventory_paths
+	from foam.features.generate_inventory_paths import generate_inventory_paths
 	inventory_paths = generate_inventory_paths (directory)
 '''
 
@@ -66,3 +66,4 @@ def generate_inventory_paths (directory):
 			};
 		
 	return inventory_partials
+

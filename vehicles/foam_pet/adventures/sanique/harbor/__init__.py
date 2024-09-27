@@ -45,7 +45,6 @@ from .regions_math import regions_math
 from foam_pet._essence import retrieve_essence, build_essence
 from foam_pet.adventures.alerting import activate_alert
 from foam_pet.adventures.alerting.parse_exception import parse_exception
-from foam_pet.adventures.sanique.utilities.generate_inventory_paths import generate_inventory_paths
 #
 #
 import sanic

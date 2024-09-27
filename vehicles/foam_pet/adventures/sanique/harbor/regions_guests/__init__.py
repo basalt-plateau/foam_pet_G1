@@ -7,7 +7,7 @@
 from foam_pet._essence import retrieve_essence
 from foam_pet.features.pecuniary.APT_to_Octas import convert_APT_to_Octas
 from foam_pet.features.pecuniary.Octas_to_APT import convert_Octas_to_APT
-from foam_pet.adventures.sanique.utilities.generate_inventory_paths import generate_inventory_paths
+from foam_pet.features.harbors.generate_inventory_paths import generate_inventory_paths
 from foam_pet.adventures.sanique.harbor.rules_form import send_rules, check_allow_proceed
 #
 #
