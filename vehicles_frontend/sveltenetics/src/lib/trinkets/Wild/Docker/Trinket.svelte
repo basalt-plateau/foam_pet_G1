@@ -181,7 +181,6 @@ let the_panel = 1
 						<div style="height: 1cm"></div>
 					</div>
 					
-					
 				</div>
 				
 			</svelte:fragment>

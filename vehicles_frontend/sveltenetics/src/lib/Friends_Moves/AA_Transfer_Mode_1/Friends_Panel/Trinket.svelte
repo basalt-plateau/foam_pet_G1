@@ -172,7 +172,7 @@ var modal_style = `
 					text-align: center;
 					font-size: 1.2em;
 				"
-			>Give</header>
+			>APT Throw</header>
 			<hr class="!border-t-2" />
 		</div>
 	

@@ -44,8 +44,12 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 							<span>The Docker Image installation tutorial can be found with the images on Github.</span>
 						</p>
 						<p>
-							<a href="https://github.com/basalt-plateau/foam-docker-images/releases" target="_blank" class="anchor">
-								<span>https://github.com/basalt-plateau/foam-docker-images/releases</span>
+							<a 
+								href="https://github.com/basalt-plateau/foam_pet_docker_images/releases" 
+								target="_blank" 
+								class="anchor"
+							>
+								<span>https://github.com/basalt-plateau/foam_pet_docker_images/releases</span>
 							</a>	
 						</p>
 					</div>
