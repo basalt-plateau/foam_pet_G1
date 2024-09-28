@@ -2,7 +2,7 @@
 
 
 
-// vitest "lib/taverns/math/APT_to_Octas.vitest.js"
+// vitest "lib/taverns/APT/APT_to_Octas.vitest.js"
 
 
 
@@ -10,10 +10,21 @@ import { describe, it, expect } from 'vitest';
 
 import assert from 'assert'
 
-import { ask_convert_APT_to_Octas } from '$lib/taverns/math/APT_to_Octas.js'
-import { remove_fractional_zeroes } from '$lib/taverns/math/APT_to_Octas.js'
+import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
 
-
+const assert_throw = async (digit, exception_string) => {
+	let proceeds;
+	
+	try {
+		proceeds = ask_convert_APT_to_Octas ({ APT: digit })
+	}
+	catch (exception) {
+		assert.equal (exception.message, exception_string);
+		return;
+	}
+	
+	throw new Error (`An exception was not thrown, received: ${ proceeds }`);
+}
 
 describe ("APT to Octas drives", () => {
 	describe ("remove_fractional_zeroes", () => {
@@ -25,7 +36,7 @@ describe ("APT to Octas drives", () => {
 
 
 	describe ("APT to Octas", () => {
-		it.only ("without decimal", async () => {
+		it ("without decimal", async () => {
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "000001233456789" }), "1233456789" + "00000000")
 			
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "1" }), "100000000")
@@ -65,7 +76,6 @@ describe ("APT to Octas drives", () => {
 		
 		
 		it ("throws", async () => {
-			
 			
 			assert_throw ("0.00000000001", `The APT amount after the decimal was not 8 digits.`)
 			assert_throw ("0.0000000001", `The APT amount after the decimal was not 8 digits.`)

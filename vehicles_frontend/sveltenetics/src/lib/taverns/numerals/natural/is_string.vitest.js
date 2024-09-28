@@ -32,27 +32,27 @@ describe ("natural number is string", () => {
 	it ('assert_throw', () => {
 		assert_throw (
 			"1.0",
-			`Digit glyphs need to be one of 01234567890, however at index 1, received: ".".`
+			`Natural numeral glyphs need to be one of 01234567890, however at index 1, received: ".".`
 		)
 		assert_throw (
 			"10!",
-			`Digit glyphs need to be one of 01234567890, however at index 2, received: "!".`
+			`Natural numeral glyphs need to be one of 01234567890, however at index 2, received: "!".`
 		)
 		assert_throw (
 			1,
-			`Digit amount needs to be a string, however received: "number".`
+			`Natural numeral amount needs to be a string, however received: "number".`
 		)
 		assert_throw (
 			NaN,
-			`Digit amount needs to be a string, however received: "number".`
+			`Natural numeral amount needs to be a string, however received: "number".`
 		)
 		assert_throw (
 			null,
-			`Digit amount needs to be a string, however received: "object".`
+			`Natural numeral amount needs to be a string, however received: "object".`
 		)
 		assert_throw (
 			"",
-			`Digit amount needs to be a string of length >= 1`
+			`Natural numeral amount needs to be a string of length >= 1`
 		)
 	})
 });
