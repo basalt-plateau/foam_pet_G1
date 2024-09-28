@@ -14,11 +14,10 @@ import { Uint8Array_from_string } from '$lib/taverns/hexadecimal/Uint8Array_from
 describe ('from_private_key', () => {
 	
 	it ('1', async () => {
-		const { 
-			legacy_address_hexadecimal_string,
-			one_sender_address_hexadecimal_string,
-			
-			public_key_hexadecimal_string 
+		const {
+			public_key_hexadecimal_string,	
+			fresh_address_hexadecimal_string,
+			legacy_address_hexadecimal_string
 		} = await Account_from_private_key ({
 			private_key_hexadecimal_string: "221E8A39C27416F29FD1C58C1CC1C206DE07FCC8BDA2F9678C792CBC3D1CD82D"
 		})
@@ -28,7 +27,7 @@ describe ('from_private_key', () => {
 			"82E4AD0E802C366D3FDE8D07058916DBC1250A76CF0B35D35642801F8B6E6C8D"
 		)
 		assert.equal (
-			one_sender_address_hexadecimal_string,
+			fresh_address_hexadecimal_string,
 			"FD0249C3894380002A3D0A9BFA146A9BF7578165F758ED33BF077CFCA4E1EF8A"
 		)
 		assert.equal (

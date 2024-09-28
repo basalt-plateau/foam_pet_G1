@@ -36,6 +36,9 @@ describe ("Octas to APT", () => {
 	
 	it ("has exceptions", async () => {
 		assert_throw ("", "Natural numeral amount needs to be a string of length >= 1")
-		assert_throw (".", `Natural numeral glyphs need to be one of 01234567890, however at index 0, received: ".".`)
+		assert_throw (
+			".", 
+			`Natural numeral glyphs need to be one of 01234567890, however at index 0, received: ".".`
+		)
 	});
 });

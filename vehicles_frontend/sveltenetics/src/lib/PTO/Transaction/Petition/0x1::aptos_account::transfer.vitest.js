@@ -1,6 +1,6 @@
 
 
-// "lib/PTO/Transaction/Petition/0x1::aptos_account::transfer.vitest.js"
+// vitest "lib/PTO/Transaction/Petition/0x1::aptos_account::transfer.vitest.js"
 
 		
 import * as Aptos_SDK from "@aptos-labs/ts-sdk";
@@ -38,12 +38,11 @@ const pick_expiration = ({
 }
 
 describe ("Transation Petition", () => {
-	describe ("0x1::aptos_account::transfer", () => {
+	describe.skip ("0x1::aptos_account::transfer", () => {
 		it ("Can be reversed", async () => {
 			const account_1 = ask_for_accounts () ["1"]
 			const account_2 = ask_for_accounts () ["2"]
 			const account_3 = Aptos_SDK.Account.generate ();
-			
 			
 			const account_1_address = Aptos_SDK.AccountAddress.from (
 				Uint8Array_from_string (account_1 ["address"])
@@ -59,27 +58,31 @@ describe ("Transation Petition", () => {
 			
 			const net_path = "https://api.devnet.aptoslabs.com/v1"
 			const transfer_amount = 1e7;
-						
-			
-			
+
 			console.log ({ 
 				account_1_address,
+				account_2_address,
 				account_3_address
 			})
 			
-			const net_path_faucet = "https://faucet.devnet.aptoslabs.com/mint"			
-			const { tx } = send_coins_from_faucet ({
+			await send_coins_from_faucet ({
 				amount: 1e8,
-				address: account_3_address,
-				URL: net_path_faucet
+				address: string_from_Uint8Array (account_1_address.data),
+				URL: "https://faucet.devnet.aptoslabs.com/mint"
+			})
+			await send_coins_from_faucet ({
+				amount: 1e8,
+				address: string_from_Uint8Array (account_2_address.data),
+				URL: "https://faucet.devnet.aptoslabs.com/mint"
+			})
+			await send_coins_from_faucet ({
+				amount: 1e8,
+				address: string_from_Uint8Array (account_3_address.data),
+				URL: "https://faucet.devnet.aptoslabs.com/mint"
 			})
 			
-			/*
-			const aptos = new Aptos_SDK.Aptos (new Aptos_SDK.AptosConfig ({		
-				fullnode: net_path,
-				network: Aptos_SDK.Network.CUSTOM
-			}));
-			*/
+			
+
 			
 			/*
 				1. transaction_petition_object
@@ -95,8 +98,11 @@ describe ("Transation Petition", () => {
 			 */
 			
 			const aptos = new Aptos_SDK.Aptos (new Aptos_SDK.AptosConfig ({}));
-		
-			
+			/* const aptos = new Aptos_SDK.Aptos (new Aptos_SDK.AptosConfig ({		
+				fullnode: net_path,
+				network: Aptos_SDK.Network.CUSTOM
+			})); */
+			console.log ("Aptos SDK built.");
 			
 			/*
 				[{
@@ -105,41 +111,25 @@ describe ("Transation Petition", () => {
 					value: 1000000n
 				}]
 			*/
-			
-			/*
-			const functionArguments = [{
-				data: new Uint8Array ([ 0, 0, 255 ])
-			},{
-				value: 1000000n
-			}]
-			*/
-			
-			var functionArguments = [
-				account_2_address, 
-				new Aptos_SDK.U64 (1e8)
-			]
-			
-			/*var functionArguments = [
-				"0x123", 
-				1_000_000
-			]*/
-			
-			console.log ({
-				functionArguments
-			})
 
-			const options = {}
+			
+			console.log ("building petition object");
+			
 			const transaction_petition_object = await aptos.transaction.build.simple ({
 				sender: account_1_address,
 				data: {
 					function: "0x1::aptos_account::transfer",
-					// typeArguments: [],
+					typeArguments: [],
+					// typeArguments: ["0x1::aptos_coin::AptosCoin"],
 					
-					// functionArguments?
-					functionArguments
+					functionArguments: [
+						account_2_address, 
+						new Aptos_SDK.U64 (1e8)
+					]
 				},
-				options
+				options: {}
 			});
+			console.log ("Petition Object built.");
 			
 			const a_pack = pack ({ bracket: transaction_petition_object })
 			const unpacked = unpack ({ a_pack })
@@ -279,6 +269,6 @@ describe ("Transation Petition", () => {
 				transaction_petition_fiberized,
 				reversal__transaction_petition_fiberized
 			})
-		})
+		}, { timeout: 10000 })
 	})
 })

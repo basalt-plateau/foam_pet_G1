@@ -22,7 +22,7 @@ import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/
 //
 //	returns "0" if every digit is a zero
 //
-export const remove_leading_zeroes = ({ Digits }) => {
+export const remove_fractional_zeroes = ({ Digits }) => {
 	assert_is_natural_numeral_string (Digits)
 	
 	let integer_as_string_end = Digits.length - 1;

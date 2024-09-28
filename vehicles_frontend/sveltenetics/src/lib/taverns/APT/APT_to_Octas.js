@@ -58,9 +58,12 @@ export const ask_convert_APT_to_Octas = ({ APT }) => {
 	console.log ({ pair, pair_fractional })
 	
 	const squeeze = pair [0] + pair_fractional;
+	console.log ({ squeeze });
 	
-	return remove_leading_zeroes ({ APT: squeeze })
+	
+	const without_leading_zeroes = remove_leading_zeroes ({ Digits: squeeze })
 
+	return without_leading_zeroes;
 }
 
 

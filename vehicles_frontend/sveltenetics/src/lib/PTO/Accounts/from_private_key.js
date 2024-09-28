@@ -1,7 +1,11 @@
 
 /*
 	import { Account_from_private_key } from '$lib/PTO/Accounts/from_private_key'
-	const single_key_account = await Account_from_private_key ({
+	const {
+		public_key_hexadecimal_string,	
+		fresh_address_hexadecimal_string,
+		legacy_address_hexadecimal_string
+	} = await Account_from_private_key ({
 		private_key_hexadecimal_string: "89ABCDEF89AB8EFD9ACB76051243760512437568C9AFEBDC89FAEDBC07615234"
 	})
 	

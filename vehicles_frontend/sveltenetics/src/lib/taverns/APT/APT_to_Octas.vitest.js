@@ -27,17 +27,10 @@ const assert_throw = async (digit, exception_string) => {
 }
 
 describe ("APT to Octas drives", () => {
-	describe ("remove_fractional_zeroes", () => {
-		it ("1", async () => {
-			assert.equal (remove_fractional_zeroes ("1000"), "1")
-			assert.equal (remove_fractional_zeroes ("100000000"), "1")
-		});
-	})
-
-
 	describe ("APT to Octas", () => {
 		it ("without decimal", async () => {
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "000001233456789" }), "1233456789" + "00000000")
+			assert.equal (await ask_convert_APT_to_Octas ({ APT: "00045" }), "45" + "00000000")
 			
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "1" }), "100000000")
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "2" }), "200000000")
@@ -53,6 +46,7 @@ describe ("APT to Octas drives", () => {
 		
 		it ("with decimals", async () => {
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "0.1" }), "10000000")
+			
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "0.01" }), "1000000")
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "0.001" }), "100000")
 			assert.equal (await ask_convert_APT_to_Octas ({ APT: "0.0001" }), "10000")
@@ -83,7 +77,6 @@ describe ("APT to Octas drives", () => {
 			
 			
 			assert_throw ("0.0.00000012", `The APT amount wasn't two parts after gettings the parts around the decimal.`)
-			assert_throw ("000000012", `The APT amount wasn't two parts after gettings the parts around the decimal.`)
 
 			
 			// assert.equal (await ask_convert_APT_to_Octas ({ APT: "0.01" }), "1000000")

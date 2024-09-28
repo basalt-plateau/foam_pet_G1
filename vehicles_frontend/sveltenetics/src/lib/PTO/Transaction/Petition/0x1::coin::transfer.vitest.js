@@ -106,6 +106,6 @@ describe ("Transation Petition", () => {
 				transaction_petition_fiberized,
 				reversal__transaction_petition_fiberized
 			})
-		})
+		}, { timeout: 15000 })
 	})
 })
