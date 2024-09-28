@@ -14,7 +14,7 @@ This is a friendly pet.
 Please be friendly and festive with your pet and follow the rules.
 Playing with, training, and cloning your pet is most likely 100% legit.  
 
-### Cytes, Tissues, Organs
+### Cytes, Tissues, Organs, Organisms, Climates, Towns
 The aggregate of the licensing rules from Cytes, Tissues, Organs
 laboratories can be found at "foam_pet/frontend_licenses.csv"
 

@@ -34,7 +34,7 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 						text-align: center;
 						font-size: 1.8em;
 					"
-				>Preparing an Offline Machine</header>
+				>1. Preparing an Offline Machine</header>
 			</svelte:fragment>
 			<svelte:fragment slot="content">
 				<div>

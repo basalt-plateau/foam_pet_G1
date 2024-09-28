@@ -33,7 +33,7 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 						text-align: center;
 						font-size: 1.8em;
 					"
-				>Running a Docker Image</header>
+				>3. Running a Docker Image</header>
 			</svelte:fragment>
 			<svelte:fragment slot="content">
 				<div>

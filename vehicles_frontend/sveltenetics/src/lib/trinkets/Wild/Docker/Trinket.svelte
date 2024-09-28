@@ -100,7 +100,7 @@ let the_panel = 1
 											text-align: center;
 											font-size: 1.8em;
 										"
-									>Obtaining a Docker Image</header>
+									>2. Obtaining a Docker Image</header>
 								</svelte:fragment>
 								<svelte:fragment slot="content">
 									<div>
@@ -161,20 +161,32 @@ let the_panel = 1
 					
 					<div style="height: 1cm"></div>
 					
-					<hr class="!border-t-2" />
-					<div style="height: 0.1cm"></div>
-					<hr class="!border-t-2" />
-					<div style="height: 1cm"></div>
-
-					<p style="text-align: center">These are the tutorials for running various versions.</p>
-
-					<div style="height: 0.5cm"></div>
-
-					<Running_Docker_Image_1_0_0 />
 					
-					<div style="height: 1cm"></div>
-				</div>			
+					<div
+						style="
+							display: none;
+						"
+					>
+						<hr class="!border-t-2" />
+						<div style="height: 0.1cm"></div>
+						<hr class="!border-t-2" />
+						<div style="height: 1cm"></div>
+
+						<p style="text-align: center">These are the tutorials for running various versions.</p>
+
+						<div style="height: 0.5cm"></div>
+
+						<Running_Docker_Image_1_0_0 />
+						
+						<div style="height: 1cm"></div>
+					</div>
+					
+					
+				</div>
+				
 			</svelte:fragment>
 		</AccordionItem>
 	</Accordion>
+	
+	
 </div>

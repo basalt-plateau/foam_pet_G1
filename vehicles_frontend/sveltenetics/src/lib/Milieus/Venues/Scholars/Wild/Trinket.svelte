@@ -69,6 +69,6 @@ a {
 	
 		<Installation_with_Docker />
 		
-		<div style="height: 1cm"></div>
+		<div style="height: 3cm"></div>
 	</div>
 </Leaf>

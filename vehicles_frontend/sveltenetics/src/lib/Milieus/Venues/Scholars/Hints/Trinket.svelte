@@ -21,6 +21,8 @@ import { check_roomies_truck } from '$lib/Versies/Trucks'
 import Slang_Cipher from '$lib/trinkets/Slang/Cipher.svelte'
 import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 //
+import Taxonomy from '$lib/trinkets/Taxonomy/Bling.svelte'
+//
 ////
 
 
@@ -142,31 +144,10 @@ let seeds = {
 				
 		<div style="height: 1cm"></div>
 
-		<div 
-			style="
-				display: none;
-				text-align: center;
-			"
-			class="card p-4 variant-filled-primary"
-		>
-			<div>
-				<header>Biological Taxonomy</header>
-			</div>
-		
-			<div style="height: 0.2cm"></div>
-		
-			<span class="badge variant-filled-primary">
-				<span>Dominion</span>
-				<span class="badge variant-filled">Tekcyixor</span>
-			</span>
-			
-			<div style="height: 0.1cm"></div>
-			
-			<span class="badge variant-filled-primary">
-				<span>Royalty</span>
-				<span class="badge variant-filled">Prosthetosym</span>
-			</span>
-		</div>
+		<!-- 
+		<Taxonomy /> 
+		<div style="height: 1cm"></div>
+		-->
 	</div>
 
 	<div style="height: 0.5cm"></div>
@@ -245,9 +226,9 @@ let seeds = {
 				text-align: center;
 			"
 		>
-			<span>Striving to amplify friendliness,</span> 
+			<span>Seeking to amplify friendliness,</span> 
 			<br />
-			<span>slang literature is written throughout.</span>
+			<span>literature with slang can be found throughout.</span>
 		</p>
 		
 		<div style="height: 0.25cm"></div>

@@ -57,10 +57,10 @@ export const English_1 = {
 	//
 	"Block": "Story",
 	
-	//
-	// Map
-	// Story
-	//
+	//			
+	//	Map		
+	//	Story	
+	//			
 	"blockchain": "Dream",
 	"Blockchain": "Dream",
 
