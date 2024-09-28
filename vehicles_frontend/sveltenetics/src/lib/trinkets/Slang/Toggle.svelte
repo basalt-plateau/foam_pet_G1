@@ -10,9 +10,11 @@
 //
 import { onMount, onDestroy } from 'svelte'
 import { SlideToggle } from '@skeletonlabs/skeleton';
+import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 //
 //
 import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
+import Slang_Cipher from '$lib/trinkets/Slang/Cipher.svelte'
 //
 //
 
@@ -117,6 +119,33 @@ onDestroy (() => {
 				padding: 0.5cm;
 			"
 		>on</p>
+	</div>
+	
+	<div style="height: 0.5cm"></div>
+	
+	<div 
+		style="
+			width: 100%;
+		"
+		class="card p-4 variant-filled-primary"
+	>
+		<Accordion>
+			<AccordionItem>
+				<svelte:fragment slot="summary">
+					<div
+						style="
+							text-align: center;
+							font-size: 1.5em;
+						"
+					>
+						<p>Cipher</p>
+					</div>
+				</svelte:fragment>
+				<svelte:fragment slot="content">
+					<Slang_Cipher />
+				</svelte:fragment>
+			</AccordionItem>
+		</Accordion>
 	</div>
 </div>
 {/if}

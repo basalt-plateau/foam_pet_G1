@@ -56,7 +56,7 @@ let the_panel = 1
 					<div style="height: 1cm"></div>
 	
 					<p style="text-align: center; font-size: 1.5em">
-						<span><Slang text="Labels" /> can live entirely offline with docker.</span>
+						<span><Slang text="Pets" /> can live entirely offline with docker.</span>
 					</p>
 					<p style="text-align: center; font-size: 1.5em">
 						<a class="anchor" target="_blank" href="https://docker.com">https://docker.com</a>
@@ -111,7 +111,7 @@ let the_panel = 1
 												text-align: center;
 												line-height: 1.8em;
 											"
-										>A <Slang text="Label" /> Docker image can be sent from<br /> <Slang text="Online Machine" /> to <Slang text="Offline Machine" /> with USB storage hardwear.</p>
+										>A <Slang text="Pet" /> Docker image can be sent from<br /> <Slang text="Online Machine" /> to <Slang text="Offline Machine" /> with USB storage hardwear.</p>
 									
 										<div style="height: 0.5cm"></div>
 									

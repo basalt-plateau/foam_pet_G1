@@ -17,7 +17,9 @@ import { English_1 } from './jargons/English_1'
 
 
 const organize_slang = (bracket) => {
-	const sorted_by_keys = Object.keys (bracket).sort ();
+	const sorted_by_keys = Object.keys (bracket).sort((a, b) => {
+		return a.toLowerCase ().localeCompare (b.toLowerCase ());
+	});
 	
 	const organized = {};
 	for (const key of sorted_by_keys) {
@@ -40,7 +42,7 @@ console.log ({ organized })
 			<thead>
 				<tr>
 					<th style="width: 6cm">Slang</th>
-					<th>Jingle</th>
+					<th>Original</th>
 				</tr>
 			</thead>
 			<tbody>

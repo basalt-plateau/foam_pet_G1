@@ -2,17 +2,17 @@
 
 
 export const English_1 = {
-	// "Label": "Orbital Covergence Softwhere",	
-	// "Label": "Aptos Softwhere",	
+	// "Pet": "Orbital Covergence Softwhere",	
+	// "Pet": "Aptos Softwhere",	
 
-	"Domain": "https://Foam.Pet",
+	"This Domain": "https://Foam.Pet",
 	"the_pypi_module": "foam_pet",
 
 	"label": "foam pet",
 	"labels": "foam pets",		
 		
-	"Label": "Foam Pet",	
-	"Labels": "Foam Pets",	
+	"Pet": "Foam Pet",	
+	"Pets": "Foam Pets",	
 	
 	//
 	//	ICANN+IANA Lagrange Neural Lattice

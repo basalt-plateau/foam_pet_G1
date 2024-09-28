@@ -61,7 +61,7 @@ a {
 				style="
 					text-align: center;
 				"
-			>A <Slang text="Label" /> can be adopted from here.</p>
+			>A <Slang text="Pet" /> can be adopted from here.</p>
 			<div style="height: 0.5cm"></div>
 		</div>
 		

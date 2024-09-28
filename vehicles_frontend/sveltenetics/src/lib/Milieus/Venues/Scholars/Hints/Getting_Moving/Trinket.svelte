@@ -44,7 +44,7 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 					<div style="height: 0.5cm"></div>
 				
 					<div style="text-align: center;">
-						<span>A <Slang text="Label" /> can be adopted from </span>
+						<span>A <Slang text="Pet" /> can be adopted from </span>
 						
 						<Milieus_Button
 							name={ "Wild" }

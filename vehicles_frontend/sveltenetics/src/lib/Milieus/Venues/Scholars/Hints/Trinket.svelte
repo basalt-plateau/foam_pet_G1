@@ -2,6 +2,7 @@
 
 <script>
 
+
 ////
 //
 import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
@@ -22,8 +23,8 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 //
 ////
 
-import Getting_Moving from './Getting_Moving/Trinket.svelte'
 
+import Getting_Moving from './Getting_Moving/Trinket.svelte'
 import Preparation_Tutorial from './Preparation_Tutorial/Trinket.svelte'
 	
 	
@@ -45,29 +46,22 @@ let seeds_name = (
 )
 */
 
-
-
-
-let seeds_name = (
-	"அறிஞர்கள்"
-);
-let seeds_language = "Tamil";
-let seeds_pronunciation = "aṟiñarhal";
-
-
-/*
-let seeds_name = (
-	"විද්‍යාපීඨ"
-);
-let seeds_language = (
-	"Sinhala"
-);
-*/
+let seeds = {
+	name: (
+		"அறிஞர்கள்"
+	),
+	language: (
+		"Tamil"
+	),
+	pronunciation: (
+		"aṟiñarhal"
+	)
+}
 
 </script>
 
 <svelte:head>
-	<title>{ seeds_name }</title>
+	<title>{ seeds.name }</title>
 </svelte:head>
 
 
@@ -96,7 +90,7 @@ let seeds_language = (
 			style="
 				text-align: center;
 			"
-		>"{ seeds_name }", pronounced { seeds_pronunciation }, might be { seeds_language } for "scholars".</p>
+		>"{ seeds.name }", pronounced { seeds.pronunciation }, might be { seeds.language } for "scholars".</p>
 	</div>
 
 	<div style="height: 0.5cm"></div>
@@ -116,8 +110,6 @@ let seeds_language = (
 				width: 100%;
 				max-width: 600px;
 				
-				
-			
 				font-size: 4em; 
 				text-align: center;
 				font-family: sans-serif !important;
@@ -139,10 +131,6 @@ let seeds_language = (
 				class="gradient-heading"
 			>Foam Pet</header>
 			
-			
-			<!-- <Slang text="Label" /> -->
-			
-			
 			<img 
 				style="
 					height: 1.4cm;
@@ -153,6 +141,32 @@ let seeds_language = (
 		</header>
 				
 		<div style="height: 1cm"></div>
+
+		<div 
+			style="
+				display: none;
+				text-align: center;
+			"
+			class="card p-4 variant-filled-primary"
+		>
+			<div>
+				<header>Biological Taxonomy</header>
+			</div>
+		
+			<div style="height: 0.2cm"></div>
+		
+			<span class="badge variant-filled-primary">
+				<span>Dominion</span>
+				<span class="badge variant-filled">Tekcyixor</span>
+			</span>
+			
+			<div style="height: 0.1cm"></div>
+			
+			<span class="badge variant-filled-primary">
+				<span>Royalty</span>
+				<span class="badge variant-filled">Prosthetosym</span>
+			</span>
+		</div>
 	</div>
 
 	<div style="height: 0.5cm"></div>
@@ -219,13 +233,51 @@ let seeds_language = (
 	<div style="height: 0.5cm"></div>
 
 	<div class="card p-4">
+		<header 
+			style="
+				font-size: 2em; 
+				text-align: center;
+				padding: 0.5cm 0;
+			"
+		>Pleasantries</header>
+		<p
+			style="
+				text-align: center;
+			"
+		>
+			<span>Striving to amplify friendliness,</span> 
+			<br />
+			<span>slang literature is written throughout.</span>
+		</p>
+		
+		<div style="height: 0.25cm"></div>
+		
+		<p
+			style="
+				text-align: center;
+			"
+		>
+			<span>The slang cipher can be turned off at</span>
+			<Milieus_Button
+				name={ "Theme" }
+				location={[ "Scholars", "Theme" ]}
+				is_open_location={[ "Scholars", "Theme" ]}
+			/>
+		</p>
+		
+		<div style="height: 1cm"></div>
+	</div>
+	
+	<div style="height: 0.5cm"></div>
+
+	<div class="card p-4">
 		<div style="height: 1cm"></div>
 	
 		<div style="font-size: 1em; text-align: center; line-height: 2em;">
 			<p
 				
 			>
-				<span><Slang text="Labels" /> can interact with <Slang text="Aptos" />.</span>
+				<span><Slang text="Pets" /> can interact with <Slang text="Aptos" />.</span>
 			</p> 
 			<p>
 				<a class="anchor" href="https://Aptos.dev">https://Aptos.dev</a>
@@ -240,12 +292,12 @@ let seeds_language = (
 		<p
 			style="font-size: 1em; text-align: center; line-height: 2em;"
 		>
-			<span>A <Slang text="Label" /> should live on an <Slang text="Online Machine" />.</span>
+			<span>A <Slang text="Pet" /> should live on an <Slang text="Online Machine" />.</span>
 		</p> 
 		<p
 			style="font-size: 1em; text-align: center; line-height: 2em;"
 		>
-			<span><Slang text="Domain" /> is a <Slang text="Label" /> living in a <Slang text="Online Machine" />.</span>
+			<span><Slang text="This Domain" /> is a <Slang text="Pet" /> living in a <Slang text="Online Machine" />.</span>
 		</p> 
 	
 		<div style="height: 1cm"></div>
@@ -253,19 +305,17 @@ let seeds_language = (
 		<p
 			style="font-size: 1em; text-align: center; line-height: 2em;"
 		>
-			<span>Another <Slang text="Label" /> should live on an <Slang text="Offline Machine" />.</span>
+			<span>Another <Slang text="Pet" /> should live on an <Slang text="Offline Machine" />.</span>
 		</p>
 		
 		<p style="font-size: 1em; text-align: center; line-height: 2em;">
 			<span>This is how Offline Wallet (Cold Wallet, Airgapped Wallet) moves happen.</span>
 		</p> 
 		
-		<div style="height: 1cm"></div>
-		
-		
+		<div style="height: 1cm"></div>		
 	</div>
 	
-	<div style="height: 1cm"></div>
+	<div style="height: 0.5cm"></div>
 	
 	<Getting_Moving />	
 	
@@ -383,48 +433,6 @@ let seeds_language = (
 							<span>The <b>Friends</b> region should be used on a <Slang text="Online Machine" /></span>
 						</p>
 					</div>
-				</svelte:fragment>
-			</AccordionItem>
-		</Accordion>
-	</div>
-	
-	<div style="height: 0.5cm"></div>
-
-	<div class="card p-4">
-		<header 
-			style="
-				font-size: 2em; 
-				text-align: center;
-				padding: 0.5cm 0;
-			"
-		>Slanguage</header>
-		<p
-			style="
-				text-align: center;
-			"
-		>
-			Slang that appear like these <Slang text="Consensus" />, <Slang text="Transaction" />, <Slang text="Online Machine" />
-			<span>have equivalent jingles.</span>
-			
-			
-		</p>
-		
-		<div style="height: 0.5cm"></div>
-		
-		<Accordion>
-			<AccordionItem>
-				<svelte:fragment slot="summary">
-					<div
-						style="
-							text-align: center;
-							font-size: 1.5em;
-						"
-					>
-						<p>Mottos</p>
-					</div>
-				</svelte:fragment>
-				<svelte:fragment slot="content">
-					<Slang_Cipher />
 				</svelte:fragment>
 			</AccordionItem>
 		</Accordion>

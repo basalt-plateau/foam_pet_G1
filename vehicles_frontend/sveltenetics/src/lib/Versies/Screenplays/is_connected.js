@@ -8,7 +8,6 @@
 */
 
 
-
 import { loop } from '$lib/taverns/loop'
 import { request_ledger_info } from '$lib/PTO/General/Ledger_Info.API'
 
@@ -53,7 +52,6 @@ export const the_ledger_ask_loop_creator = () => {
 			catch (exception) {
 				freight.net_connected = "no"
 			}
-			
 		}
 	})
 }

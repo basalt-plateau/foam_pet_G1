@@ -15,7 +15,6 @@ import Caution from '$lib/trinkets/_Caution/Trinket.svelte'
 //
 import Offline_Machine_Tutorial from '$lib/places/Scholars/Offline_Machine_Tutorial.svelte'
 import Online_Machine_Tutorial from '$lib/places/Scholars/Online_Machine_Tutorial.svelte'
-import Orbital_Wallet_Tutorial from '$lib/places/Scholars/Orbital_Wallet_Tutorial.svelte'
 //
 //
 import { check_roomies_truck } from '$lib/Versies/Trucks'
@@ -53,7 +52,7 @@ const mode = check_roomies_truck ().freight.mode;
 				text-align: center;
 				padding: 0.5cm 0.25cm;
 			"
-		><Slang text="Label" /></header>
+		><Slang text="Pet" /></header>
 		
 		<p
 			style="
@@ -65,7 +64,7 @@ const mode = check_roomies_truck ().freight.mode;
 		
 		<p
 			style="font-size: 1em; text-align: center"
-		>This <Slang text="Label" /> is a <Slang text="Friends_Habitat" /> + a <Slang text="Relatives_Habitat" />.</p>
+		>This <Slang text="Pet" /> is a <Slang text="Friends_Habitat" /> + a <Slang text="Relatives_Habitat" />.</p>
 
 		
 		<div style="height: 0.25cm"></div>
@@ -74,7 +73,7 @@ const mode = check_roomies_truck ().freight.mode;
 		
 		<p style="font-size: 1em; text-align: center">
 			<span>To keep <Slang text="Private Keys" /> obscure,<br/></span>
-			<span>this <Slang text="Label" /> requires 2 <Slang text="Machines" /></span>
+			<span>this <Slang text="Pet" /> requires 2 <Slang text="Machines" /></span>
 		</p>
 		
 		<div style="height: 0.25cm"></div>
@@ -196,29 +195,7 @@ const mode = check_roomies_truck ().freight.mode;
 				</AccordionItem>
 			</Accordion>
 		</div>
-		
-		<div style="height: 0.25cm"></div>
-		
-		<div class="card p-2 variant-soft">
-			<Accordion>
-				<AccordionItem>
-					<svelte:fragment slot="summary">
-						<div
-							style="
-								text-align: center;
-								font-size: 1.5em;
-							"
-						>
-							<p>Giving APT Tutorial</p>
-						</div>
-					</svelte:fragment>
-					<svelte:fragment slot="content">
-						<Orbital_Wallet_Tutorial />
-					</svelte:fragment>
-				</AccordionItem>
-			</Accordion>
-		</div>
-		
+
 		<div style="height: 0.25cm"></div>
 		
 		<div class="card p-2 variant-soft">
