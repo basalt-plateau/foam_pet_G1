@@ -1,12 +1,12 @@
 
 
 /*
-	import { is_natural_number_string } from '$lib/taverns/numbers/natural/is_string'
+	import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 */
 
 const valid_characters = "01234567890"
 
-export const is_natural_number_string = (digit) => {
+export const assert_is_natural_numeral_string = (digit) => {
 	if (typeof digit !== "string") {
 		throw new Error (`Digit amount needs to be a string, however received: "${ typeof digit }".`)
 	}
@@ -27,3 +27,4 @@ export const is_natural_number_string = (digit) => {
 		}
 	}
 }
+export const is_natural_numeral_string = assert_is_natural_numeral_string;

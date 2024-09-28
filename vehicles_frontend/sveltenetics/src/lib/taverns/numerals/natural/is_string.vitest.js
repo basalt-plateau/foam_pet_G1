@@ -1,6 +1,6 @@
 
 
-import { is_natural_number_string } from '$lib/taverns/numbers/natural/is_string'
+import { is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 
 import { describe, it, expect } from 'vitest';
 
@@ -11,7 +11,7 @@ const assert_throw = async (digit, exception_string) => {
 	let proceeds;
 	
 	try {
-		proceeds = is_natural_number_string (digit)
+		proceeds = is_natural_numeral_string (digit)
 	}
 	catch (exception) {
 		assert.equal (exception.message, exception_string);
@@ -23,10 +23,10 @@ const assert_throw = async (digit, exception_string) => {
 
 describe ("natural number is string", () => {
 	it ('1', () => {
-		is_natural_number_string ("1")
-		is_natural_number_string ("2")
-		is_natural_number_string ("100")
-		is_natural_number_string ("1234567890")
+		is_natural_numeral_string ("1")
+		is_natural_numeral_string ("2")
+		is_natural_numeral_string ("100")
+		is_natural_numeral_string ("1234567890")
 	})
 	
 	it ('assert_throw', () => {

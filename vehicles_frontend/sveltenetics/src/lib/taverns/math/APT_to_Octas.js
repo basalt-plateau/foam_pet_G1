@@ -24,6 +24,9 @@
 //
 ////
 
+import { is_decimal_digit_string } from '$lib/taverns/numerals/decimal/is_string'
+import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
+
 const valid_characters_1 = "01234567890."
 const valid_characters_2 = "01234567890"
 
@@ -81,17 +84,10 @@ export const add_zeroes = ({ fractional }) => {
 //	returns "0" if every digit is a zero
 //
 export const remove_leading_zeroes = ({ APT }) => {
-	console.log ({ APT })
+	assert_is_natural_numeral_string (APT)
 	
-	//
-	//
-	//	TODO: Assert is integer as string..
-	//
-	//
-	assert_valid ({ 
-		APT, 
-		valid_characters: valid_characters_2 
-	})
+	
+	
 	
 	let integer_as_string_end = APT.length - 1;
 	// let integer_as_string_start = 0;
@@ -128,15 +124,7 @@ export const remove_leading_zeroes = ({ APT }) => {
 //  123456000  -> 123456
 //
 export const remove_fractional_zeroes = (Digit) => {
-	//
-	//
-	//	TODO: Assert is integer as string..
-	//
-	//
-	assert_valid ({ 
-		APT: Digit, 
-		valid_characters: valid_characters_2 
-	})
+	assert_is_natural_numeral_string (APT)
 	
 	let integer_as_string_end = Digit.length - 1;
 	// let integer_as_string_start = 0;
@@ -164,7 +152,7 @@ export const remove_fractional_zeroes = (Digit) => {
 }
 
 export const ask_convert_APT_to_Octas = ({ APT }) => {
-	assert_valid ({ APT })
+	is_decimal_digit_string (APT)
 	
 	if (APT.includes (".") !== true) {
 		return remove_leading_zeroes ({
