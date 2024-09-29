@@ -2,7 +2,7 @@
 
 /*
 	import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
-	const { Octas } = await ask_convert_APT_to_Octas ({ APT })
+	const Octas = await ask_convert_APT_to_Octas ({ APT })
 */
 
 //
@@ -27,14 +27,9 @@
 import { is_decimal_digit_string } from '$lib/taverns/numerals/decimal/is_string'
 import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 
-
 import { add_zeroes } from '$lib/taverns/numerals/add_zeroes.js'
 import { remove_leading_zeroes } from '$lib/taverns/numerals/remove_leading_zeroes.js'
 import { remove_fractional_zeroes } from '$lib/taverns/numerals/remove_fractional_zeroes.js'
-
-
-
-
 
 export const ask_convert_APT_to_Octas = ({ APT }) => {
 	is_decimal_digit_string (APT)
@@ -50,7 +45,17 @@ export const ask_convert_APT_to_Octas = ({ APT }) => {
 		throw new Error (`The APT amount wasn't two parts after gettings the parts around the decimal.`)
 	}
 	
+	
 	const pair_fractional = add_zeroes ({ fractional: pair [1] })
+	if (pair_fractional.length >= 9) {
+		throw new Error (`The APT amount after the decimal can't be more than 8 digits.`)
+	}
+	
+	//
+	//	Add zeroes should ensure that 
+	//
+	//
+	
 	if (pair_fractional.length !== 8) {
 		throw new Error (`The APT amount after the decimal was not 8 digits.`)
 	}

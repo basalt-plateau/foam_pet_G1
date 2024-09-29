@@ -13,6 +13,9 @@
 	/>
 */
 
+import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
+
+
 import Amount_Field from '$lib/trinkets/Amount_Field/Trinket.svelte'
 const on_amount_change = ({ 
 	effects,
@@ -25,8 +28,10 @@ const on_amount_change = ({
 
 </script>
 
-<div>
-	<Amount_Field 
-		on_change={ on_amount_change }
-	/>
-</div>
+<Leaf>
+	<div class="card p-4">
+		<Amount_Field 
+			on_change={ on_amount_change }
+		/>
+	</div>
+</Leaf>

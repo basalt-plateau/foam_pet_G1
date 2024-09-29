@@ -26,7 +26,7 @@ import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 //
 import { onMount, onDestroy } from 'svelte';
 import Big from 'big.js'
-// import { ask_convert_APT_to_Octas } from '$lib/origin/math/APT_to_Octas.RPC.js'
+import { ask_convert_APT_to_Octas } from '$lib/origin/math/APT_to_Octas.RPC.js'
 import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitted.js'
 //
 import { has_field } from 'procedures/object/has_field'
@@ -34,26 +34,18 @@ import { has_field } from 'procedures/object/has_field'
 ///
 
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
-import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
 	
 
 export let on_change = () => {}
+export let verify = () => {}
 export let after_mount = () => {}
 
 import { build_truck } from '$lib/trucks'
 const trucks = {}
 
-const placeholders = Object.freeze ({
-	"APT": "Amount of APT",
-	"Octas": "Amount of Octas"
-})
-
-$: amount = ""
+$: amount = "1"
 $: currency = "APT"
-$: placeholder = placeholders ["Octas"]
 $: actual_amount_of_Octas = ""
-
-
 
 let effects = {
 	sci_note_estimate_of_Octas: "",	
@@ -62,12 +54,10 @@ let effects = {
 
 $: {
 	let _amount = amount;
-	console.log ("amount changed")
 	effect_change ()
 }
 $: {
 	let _currency = currency;
-	console.log ("currency changed")
 	effect_change ()
 }
 $: {
@@ -78,28 +68,39 @@ $: {
 const Octas_from_APT = async () => {
 	let proceeds = ""
 	
-	console.log ("Octas_from_APT");
-	
 	try {
-		const Octas = await ask_convert_APT_to_Octas ({ 
+		const { enhanced } = await ask_convert_APT_to_Octas ({
 			APT: amount.toString ()
 		})
-		actual_amount_of_Octas = Octas;
-		effects.problem = ``
-		on_change ({
-			effects,
-			actual_amount_of_Octas,
-			
-			amount,
-			currency
-		})
-		return;
+		if (enhanced.victory === "yes") {
+			actual_amount_of_Octas = enhanced.Octas;
+			on_change ({
+				effects,
+				actual_amount_of_Octas,
+				
+				amount,
+				currency
+			})
+			return;
+		}
+		else {
+			if (has_field (enhanced, "note")) {
+				effects.problem = enhanced.note;
+			}
+			else {
+				effects.problem = verify ({
+					merch,
+					effects
+				})
+			}
+		}
 	}
 	catch (exception) {
 		effects.problem = exception.message;
 	}
 	
 	actual_amount_of_Octas = ""
+	
 	on_change ({
 		effects,
 		actual_amount_of_Octas,
@@ -112,18 +113,14 @@ const Octas_from_APT = async () => {
 
 
 const effect_change = async () => {
-	console.log ("effect_change")
-	
 	effects.problem = ""
 	actual_amount_of_Octas = "" 
 	
-	placeholder = placeholders [ currency ]
-	
-	/*await new Promise (resolve => {
+	await new Promise (resolve => {
 		setTimeout (() => {
 			resolve ()
 		}, 200)
-	})*/
+	})
 	
 	try {
 		if (currency === "APT") {
@@ -138,7 +135,6 @@ const effect_change = async () => {
 			}
 			
 			actual_amount_of_Octas = Octas_as_string;
-			effects.problem = ``
 			
 			on_change ({
 				effects,
@@ -170,7 +166,7 @@ let prepared = "no"
 onMount (async () => {
 	await after_mount ();
 	
-	// effect_change ()
+	effect_change ()
 	
 	prepared = "yes"
 })
@@ -178,11 +174,15 @@ onMount (async () => {
 onDestroy (() => {})
 
 const calculate_exponent = () => {1
+	// console.log ({ calculate_exponent })
+
 	try {
 		let exponent = parseFloat (actual_amount_of_Octas).toExponential () 
 		if (exponent === "NaN") {
 			return ""
 		}
+		
+		// console.log ({ exponent })
 		
 		return exponent;
 	}
@@ -192,6 +192,39 @@ const calculate_exponent = () => {1
 
 	return ""
 }
+
+
+/*	
+	observe, unobserve
+	
+	const resizeObserver = new ResizeObserver ((entries) => {
+		requestAnimationFrame (() => {
+			for (const entry of entries) {
+			
+			}
+		});
+	});
+	resizeObserver.observe (divElem);
+	resizeObserver.unobserve (divElem);
+	
+	<boat	
+		bind:this={ boat }
+		style={parse_styles({
+			
+			
+		})}
+	/>
+	
+	boat.on (({ width }) => {
+		const styles = {}
+		
+		if (width < 300) {
+			styles ["display"] = "block"
+		}
+		
+		return styles;
+	})
+*/
 
 
 
@@ -240,7 +273,7 @@ const calculate_exponent = () => {1
 				class="input" 
 				
 				type="text" 
-				placeholder={ placeholder }
+				placeholder="Amount of Octas" 
 			/>
 		</div>
 	</label>
@@ -339,10 +372,8 @@ const calculate_exponent = () => {1
 		</span>
 	</div>
 	
-	{#if effects.problem.length >= 1 }
 	<Problem_Alert 
 		text={ effects.problem }
 	/>
-	{/if}
 </div>
 {/if}

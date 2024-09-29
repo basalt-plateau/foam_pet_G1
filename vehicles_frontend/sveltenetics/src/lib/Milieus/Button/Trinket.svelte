@@ -28,6 +28,7 @@ import { check_Milieus_truck, monitor_Milieus_truck } from '$lib/Milieus/Truck'
 
 export let monitor = ""
 
+export let scroll_to_top = "yes"
 export let name = ""
 export let location = [ "", "" ]
 export let is_open_location = []
@@ -97,11 +98,17 @@ onDestroy (() => {
 
 let button_tapped = () => {
 	console.log ("button_tapped:", location [0], location [1])
+
 	
 	Scholars_Trucks_Freight.location = [ 
 		location [0],
 		location [1]
 	]
+	
+	if (scroll_to_top === "yes") {
+		//window.scrollTo ({ top: 0, behavior: 'smooth' });
+		window.scrollTo ({ top: 0 });
+	}
 }
 
 let tapped = "variant-filled"

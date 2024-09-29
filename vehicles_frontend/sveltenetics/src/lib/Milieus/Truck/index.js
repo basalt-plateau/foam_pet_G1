@@ -52,13 +52,14 @@ const Location_Bracket = {
 			if (has_field (localStorage, "location")) {
 				let local_storage_location = JSON.parse (localStorage.getItem ("location"));
 				if (Array.isArray (local_storage_location)) {
-					console.info ({ local_storage_location })
 					
+					/*
+					console.info ({ local_storage_location })
 					console.log (
 						"Local Storage Location:", 
 						local_storage_location [0], 
 						local_storage_location [1]
-					)
+					)*/
 					
 					if (local_storage_location.length === 2) {
 						return local_storage_location;
@@ -77,8 +78,17 @@ const Location_Bracket = {
 	}
 }
 
+const intercept = () => {
+	history.pushState(null, null, location.href);
+	window.onpopstate = function (event) {
+		console.log ("onpopstate");
+		history.pushState (null, null, location.href);
+	}
+}
+
 export const lease_Milieus_truck = () => {
 	let location = Location_Bracket.find ()
+	
 	
 	console.log ("Leasing Milieus Truck:", location [0], location [1])
 	

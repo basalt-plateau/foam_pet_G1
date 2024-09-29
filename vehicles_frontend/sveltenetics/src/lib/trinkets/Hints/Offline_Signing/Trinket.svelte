@@ -64,7 +64,7 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	
 	<div style="height: 1cm"></div>
 	
-	<div class="card p-2 variant-soft">
+	<div class="card p-2 variant-filled-primary">
 		<Accordion>
 			<AccordionItem>
 				<svelte:fragment slot="summary">

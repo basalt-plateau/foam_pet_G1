@@ -130,8 +130,8 @@ export const English_1 = {
 	// Organs
 	// Meteor
 	// Machine
-	"Machine": "Machine",
-	"Machines": "Machines",
+	"Machine": "Lodge",
+	"Machines": "Lodges",
 	
 	//
 	// 	Howl

@@ -308,6 +308,18 @@ let seeds = {
 	<div class="card p-4">		
 		<div style="height: 0.25cm"></div>
 		
+		<header 
+			style="
+				font-size: 2em; 
+				text-align: center;
+				padding: 0cm 0;
+			"
+		><Slang text="Machines" /></header>
+		
+		<div style="height: 0.5cm" ></div>
+		<hr class="!border-t-2" />
+		<div style="height: 0.5cm" ></div>
+		
 		<div class="card p-2 variant-soft">
 			<Accordion>
 				<AccordionItem>
