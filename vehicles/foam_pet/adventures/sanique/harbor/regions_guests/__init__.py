@@ -65,8 +65,6 @@ def regions_guests (vue_regions_packet):
 		return await sanic_response.file (the_index)
 			
 		
-		
-		
 	@guest_addresses.route ("/<path:path>")
 	async def assets_route (request, path):
 		if check_allow_proceed (request.cookies) != "yes":

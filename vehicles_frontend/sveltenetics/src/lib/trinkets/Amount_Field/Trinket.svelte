@@ -35,7 +35,8 @@ import { has_field } from 'procedures/object/has_field'
 
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
 import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
-	
+import Alert_Info from '$lib/trinkets/Alerts/Info.svelte'
+
 
 export let on_change = () => {}
 export let after_mount = () => {}
@@ -109,6 +110,11 @@ const Octas_from_APT = async () => {
 	})
 }
 
+
+let first_input_occurred = "no"
+const amount_field_on_key_up = () => {
+	first_input_occurred = "yes"
+}
 
 
 const effect_change = async () => {
@@ -236,6 +242,8 @@ const calculate_exponent = () => {1
 				
 				bind:value={ amount }
 				
+				on:keyup={ amount_field_on_key_up }
+				
 				style="padding: 10px; border: 0"
 				class="input" 
 				
@@ -339,7 +347,16 @@ const calculate_exponent = () => {1
 		</span>
 	</div>
 	
-	{#if effects.problem.length >= 1 }
+	{#if first_input_occurred === "no" }
+	<Alert_Info 
+		text="Waiting for amount"
+		progress={{
+			show: "yes"
+		}}
+	/>
+	{/if}
+	
+	{#if effects.problem.length >= 1 && first_input_occurred === "yes" }
 	<Problem_Alert 
 		text={ effects.problem }
 	/>

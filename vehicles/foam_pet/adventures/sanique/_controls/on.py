@@ -12,13 +12,6 @@
 
 #/
 #
-from ventures.utilities.hike_passive_forks import hike_passive_forks
-from foam_pet._essence import retrieve_essence
-#
-#
-from biotech.topics.show.variable import show_variable
-#
-#
 import atexit
 import json
 import multiprocessing
@@ -34,26 +27,15 @@ import pathlib
 from os.path import dirname, join, normpath
 import sys
 #
+#
+from ventures.utilities.hike_passive_forks import hike_passive_forks
+from foam_pet._essence import retrieve_essence
+#
 #\
 
 
 from foam_pet.adventures.sanique.process_location import find_sanic_process_location
 		
-
-def floating_process (procedure, CWD, env):
-	show_variable ("procedure:", procedure)
-	process = subprocess.Popen (
-		procedure, 
-		
-		cwd = CWD,
-		env = env,
-		shell = True
-	)
-	
-	pid = process.pid
-	
-	show_variable ("sanic pid:", pid)
-
 
 
 def turn_on_sanique_web (packet):
@@ -115,39 +97,6 @@ def turn_on_sanique_web (packet):
 
 
 
-#
-#
-#	This doesn't work
-#
-#
-def turn_on_dist (packet):
-	print ("turn on dist");
-	
-	from foam_pet.adventures.sanique.app import create_1
-	app = create_1 ()
-	
-	
-	
-	def run_app ():
-		app.run (host="0.0.0.0", port = 22000)
-		
-		
-	#threading.Thread (target=run_app).start()
-	
-	p = Process(target=run_app)
-	p.start()
-	
-	time.sleep (30)
-	
-	return;
-
 def turn_on_sanique (packet = {}):
-	essence = retrieve_essence ()
-
-	sanique_mode = essence ["sanique_mode"]
-	if (sanique_mode == "web"):
-		return turn_on_sanique_web (packet);
-
-	
-	return turn_on_dist (packet)
+	return turn_on_sanique_web (packet);
 	

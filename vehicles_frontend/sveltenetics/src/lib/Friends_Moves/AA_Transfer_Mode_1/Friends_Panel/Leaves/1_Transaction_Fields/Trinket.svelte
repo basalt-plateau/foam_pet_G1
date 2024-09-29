@@ -24,7 +24,6 @@ import Amount_Field from '$lib/trinkets/Amount_Field/Trinket.svelte'
 import Address_Qualities_Trinket from '$lib/trinkets/Address_Qualities/Trinket.svelte'
 //
 import { 
-	refresh_truck, 
 	retrieve_truck, 
 	monitor_truck,
 } from '$lib/Friends_Moves/AA_Transfer_Mode_1/Friends_Panel/Logistics/Truck'

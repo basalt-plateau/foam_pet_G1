@@ -1,31 +1,8 @@
 
-
-'''
-	itinerary:
-		[ ] pass the current python path to this procedure
-'''
-
 ''''
 	from foam_pet.adventures.sanique.harbor import create
 	create ()
 "'''
-
-
-'''
-	https://sanic.dev/en/guide/running/manager.html#dynamic-applications
-'''
-
-'''
-	worker manager:
-		https://sanic.dev/en/guide/running/manager.html
-'''
-
-'''
-	Asynchronous Server Gateway Interface, ASGI:
-		https://sanic.dev/en/guide/running/running.html#asgi
-		
-		uvicorn harbor:create
-'''
 
 '''
 	Robyn, rust
@@ -33,13 +10,28 @@
 '''
 
 '''
-	--factory
+	Sanic:
+		Asynchronous Server Gateway Interface, ASGI:
+			https://sanic.dev/en/guide/running/running.html#asgi
+			
+			uvicorn harbor:create
+
+		factory:
+			https://sanic.dev/en/guide/running/running.html#using-a-factory
+			
+			--factory
+			
+		worker manager:
+			https://sanic.dev/en/guide/running/manager.html
+			
+		dynamics:
+			https://sanic.dev/en/guide/running/manager.html#dynamic-applications
 '''
 
 #/
 #
 from .regions_guests import regions_guests
-from .regions_math import regions_math
+# from .regions_math import regions_math
 #
 from foam_pet._essence import retrieve_essence, build_essence
 from foam_pet.adventures.alerting import activate_alert
@@ -57,11 +49,6 @@ import os
 import traceback
 #
 #\_
-
-'''
-	https://sanic.dev/en/guide/running/running.html#using-a-factory
-'''
-
 
 
 def create ():
@@ -118,7 +105,6 @@ def create ():
 	#
 	#
 	app.ext.openapi.add_security_scheme ("api_key", "http")
-	
 	
 	regions_guests ({ "app": app })
 	# regions_math ({ "app": app })
