@@ -41,7 +41,7 @@ let packet = {
 let address_trinket = ""
 const on_prepare = () => {
 	address_trinket.change_address_hexadecimal_string (
-		"522D906C609A3D23B90F072AD0DC74BF857FB002E211B852CE38AD6761D4C8FD"
+		""
 	)
 }
 

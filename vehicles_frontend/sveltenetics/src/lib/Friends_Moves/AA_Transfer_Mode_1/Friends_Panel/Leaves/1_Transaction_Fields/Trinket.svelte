@@ -450,9 +450,6 @@ p {
 				
 				
 				placeholder="" 
-				
-				
-				
 			/>
 		</label>
 	</div>

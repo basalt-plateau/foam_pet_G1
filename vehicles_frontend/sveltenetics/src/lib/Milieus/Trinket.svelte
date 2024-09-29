@@ -45,6 +45,7 @@ import Technicians_Net_Choices_with_Text from './Venues/Technicians/Net_Choices_
 import Technicians_Net_Choices from './Venues/Technicians/Nets_Choices/Trinket.svelte'
 import Technicians_Polytope from './Venues/Technicians/Polytope/Trinket.svelte'
 import Technicians_Slang from './Venues/Technicians/Slang/Trinket.svelte'
+import Technicians_Field from './Venues/Technicians/Field/Trinket.svelte'
 
 //
 ////
@@ -74,7 +75,9 @@ let Milieus = {
 		"Net Choices with Text": Technicians_Net_Choices_with_Text,		
 		"Net Choices": Technicians_Net_Choices,		
 		"Polytope": Technicians_Polytope,		
-		"Slang": Technicians_Slang
+		"Slang": Technicians_Slang,
+		
+		"Field": Technicians_Field
 	}
 }
 

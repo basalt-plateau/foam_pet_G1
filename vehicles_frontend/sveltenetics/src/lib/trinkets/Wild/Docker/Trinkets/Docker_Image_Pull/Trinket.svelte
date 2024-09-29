@@ -16,17 +16,23 @@
 		style="
 			text-align: center;
 		"
-	>There a prebuilt docker images with installation instructions at this link:</p>
+	>There a prebuilt docker images with installation tutorials at this link:</p>
 	
 	<div style="height: 0.1cm"></div>
 
-	<a
-		class="anchor"
-		href="https://github.com/basalt-plateau/foam-docker-images"
+	<p
 		style="
 			text-align: center;
 		"
-	>https://github.com/basalt-plateau/foam-docker-images</a>
+	>
+		<a 
+			href="https://github.com/basalt-plateau/foam_pet_docker_images/releases" 
+			target="_blank" 
+			class="anchor"
+		>
+			<span>https://github.com/basalt-plateau/foam_pet_docker_images/releases</span>
+		</a>	
+	</p>
 	
 	<div style="height: 1cm"></div>
 </div>

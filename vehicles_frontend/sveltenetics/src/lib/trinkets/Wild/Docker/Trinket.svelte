@@ -52,13 +52,13 @@ let the_panel = 1
 				>Offline Wallet with Docker</header>
 			</svelte:fragment>
 			<svelte:fragment slot="content">
-				<div>
+				<div style="text-align: center; font-size: 1.2em">
 					<div style="height: 1cm"></div>
 	
-					<p style="text-align: center; font-size: 1.5em">
+					<p style="text-align: center; font-size: 1.2em">
 						<span><Slang text="Pets" /> can live entirely offline with docker.</span>
 					</p>
-					<p style="text-align: center; font-size: 1.5em">
+					<p style="text-align: center; font-size: 1.2em">
 						<a class="anchor" target="_blank" href="https://docker.com">https://docker.com</a>
 					</p>
 
@@ -79,7 +79,8 @@ let the_panel = 1
 					<p style="text-align: center">
 						These are the steps necessary to run an offline wallet with Docker.
 					</p>
-
+				</div>
+				<div>
 					<div style="height: 1cm"></div>
 
 					<Preparing_Offline_Machine />
@@ -100,7 +101,7 @@ let the_panel = 1
 											text-align: center;
 											font-size: 1.8em;
 										"
-									>2. Obtaining a Docker Image</header>
+									>2. Opening a Docker Image</header>
 								</svelte:fragment>
 								<svelte:fragment slot="content">
 									<div>
@@ -154,12 +155,11 @@ let the_panel = 1
 							</AccordionItem>
 						</Accordion>
 					</div>
-
-					<div style="height: 0.5cm"></div>
+					<div style="height: 2cm"></div>
 					
+					<!-- <div style="height: 0.5cm"></div>
 					<Building_Keys_Beacon />
-					
-					<div style="height: 1cm"></div>
+					<div style="height: 1cm"></div> -->
 					
 					
 					<div
