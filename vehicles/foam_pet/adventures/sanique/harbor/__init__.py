@@ -38,7 +38,6 @@
 
 #/
 #
-from .regions_sockets import regions_sockets
 from .regions_guests import regions_guests
 from .regions_math import regions_math
 #
@@ -122,7 +121,7 @@ def create ():
 	
 	
 	regions_guests ({ "app": app })
-	regions_math ({ "app": app })
+	# regions_math ({ "app": app })
 	
 	
 	return app
