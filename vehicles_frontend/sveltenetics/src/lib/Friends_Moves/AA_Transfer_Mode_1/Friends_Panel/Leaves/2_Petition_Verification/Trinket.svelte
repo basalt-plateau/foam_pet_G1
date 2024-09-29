@@ -37,10 +37,8 @@ import {
 
 	
 import { 
-	refresh_truck, 
 	retrieve_truck, 
 	monitor_truck,
-	verify_land,
 	delete_unsigned_transaction
 } from '$lib/Friends_Moves/AA_Transfer_Mode_1/Friends_Panel/Logistics/Truck'
 //

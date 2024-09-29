@@ -20,10 +20,8 @@ import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
 
 import { 
-	refresh_truck, 
 	retrieve_truck, 
 	monitor_truck,
-	verify_land
 } from '$lib/Friends_Moves/AA_Transfer_Mode_1/Relatives_Panel/Logistics/Truck'
 let prepared = "no"
 let Truck_Monitor;

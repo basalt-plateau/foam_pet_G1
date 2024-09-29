@@ -20,10 +20,8 @@ import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
 
 
 import { 
-	refresh_truck, 
 	retrieve_truck, 
 	monitor_truck,
-	verify_land
 } from '$lib/Friends_Moves/AA_Transfer_Mode_1/Relatives_Panel/Logistics/Truck'
 let prepared = "no"
 let Truck_Monitor;
@@ -36,7 +34,7 @@ onMount (async () => {
 	
 	Truck_Monitor = monitor_truck ((_freight) => {
 		freight = _freight;
-		console.log ("Transaction Fields: Truck_Monitor", { freight })
+		// console.log ("Transaction Fields: Truck_Monitor", { freight })
 	})
 	
 	prepared = "yes"

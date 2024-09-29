@@ -37,10 +37,8 @@ import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 	
 
 import { 
-	refresh_truck, 
 	retrieve_truck, 
 	monitor_truck,
-	verify_land
 } from '$lib/Friends_Moves/AA_Transfer_Mode_1/Friends_Panel/Logistics/Truck'
 
 let prepared = "no"

@@ -15,24 +15,33 @@ import Big from 'big.js';
 const trucks = {}
 
 
+import { is_leaf_1_prepared } from "./Screenplays/is_leaf_1_prepared"
+
 export const verify_land = () => {
 	console.log ('verify land')
 	
 	const freight = trucks [1].freight;
 	const current_land = freight.current.land;
 	
+	trucks [1].freight.current.note = "Unfinished"
+	
 	if (current_land === "Transaction_Fields") {
-		// console.log (freight.lands.transaction_fields)
+		/*
+			from_address_hexadecimal_string
+			to_address_hexadecimal_string
+			amount
+			
+			transaction_expiration
+		*/
 		
-		//const { next, back } = freight.lands.transaction_fields.verify (freight);
-		const next = "yes"
-		const back = "no"
+		if (is_leaf_1_prepared ({ freight }) === "no") {
+			trucks [1].freight.current.back = "no"
+			trucks [1].freight.current.next = "no"
+			return;
+		}
 		
-		trucks [1].freight.lands.Transaction_Fields.next = next
-		trucks [1].freight.lands.Transaction_Fields.back = back
-		
-		trucks [1].freight.current.back = back
-		trucks [1].freight.current.next = next
+		trucks [1].freight.current.back = "no"
+		trucks [1].freight.current.next = "yes"
 	}
 	else if (current_land === "Petition_Verification") {
 		trucks [1].freight.current.back = "yes"
@@ -91,15 +100,18 @@ export const refresh_truck = () => {
 			current: {
 				land: "Transaction_Fields",
 				next: "no",
-				back: "no"
+				back: "no",
+				note: "Unfinished"
 			},
 			
 			lands: {
+				// 1
 				Transaction_Fields: {
 					next: "no",
 					back: "no"
 				},
 				
+				// 2
 				Petition_Verification: {
 					next: "yes",
 					back: "yes"
