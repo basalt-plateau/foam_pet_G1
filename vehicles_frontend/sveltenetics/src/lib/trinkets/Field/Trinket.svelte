@@ -15,7 +15,10 @@
 		field.modify_packet ("600")
 	}
 	
+	// monitor is the input monitor
 	<Field 
+		monitor="max gas amount"
+		
 		logo="Max Gas Amount, in Octas"
 		
 		packet={ }
@@ -37,6 +40,7 @@ import { has_field } from 'procedures/object/has_field'
 import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 
 export let logo = ""
+export let monitor = "field"
 export let packet_type = "number"
 export let on_change = () => {}
 export let on_prepare = () => {}
@@ -117,7 +121,7 @@ onMount (() => {
 			style="display: flex; align-items: center;"
 		>
 			<input 
-				monitor="field"
+				monitor={ monitor }
 			
 				bind:value={ packet }
 				use:typeAction

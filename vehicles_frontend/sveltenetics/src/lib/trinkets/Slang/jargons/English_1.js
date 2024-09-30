@@ -34,10 +34,10 @@ export const English_1 = {
 	//
 	//	Characters
 	//
-	"Account": "Vehicle",
-	"Accounts": "Vehicles",
-	"an_Account": "a Vehicle",
-	"An_Account": "A Vehicle",
+	"Account": "Totem",
+	"Accounts": "Totems",
+	"an_Account": "a Totem",
+	"An_Account": "A Totem",
 
 	// Character
 	"Address": "Address",

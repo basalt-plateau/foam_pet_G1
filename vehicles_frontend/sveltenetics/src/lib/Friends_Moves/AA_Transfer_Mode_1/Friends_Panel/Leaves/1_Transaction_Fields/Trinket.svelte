@@ -36,6 +36,35 @@ import { ask_for_freight } from '$lib/Versies/Trucks'
 import Field from '$lib/trinkets/Field/Trinket.svelte'
 
 
+
+////
+//
+//	Seconds Until Expiration
+//
+//
+let seconds_until_expiration_field = ""
+const seconds_until_expiration_on_change = ({ packet }) => {
+	const actual_packet_type = typeof packet;
+	
+	try {
+		assert_is_natural_numeral_string (packet)
+	}
+	catch (exception) {
+		return {
+			"problem": exception.message
+		}
+	}
+	
+	freight.fields.seconds_until_expiration = packet;
+	
+	return {}
+}
+const seconds_until_expiration_on_prepare = () => {
+	seconds_until_expiration_field.modify_packet ("600")
+}
+//
+////
+
 ////
 //
 //	Max Gas Amount
@@ -65,7 +94,33 @@ const max_gas_amount_on_prepare = () => {
 ////
 
 
-
+////
+//
+//	Gas Unit Price
+//
+//
+let gas_unit_price_field = ""
+const gas_unit_price_on_change = ({ packet }) => {
+	const actual_packet_type = typeof packet;
+	
+	try {
+		assert_is_natural_numeral_string (packet)
+	}
+	catch (exception) {
+		return {
+			"problem": exception.message
+		}
+	}
+	
+	freight.fields.gas_unit_price = packet;
+	
+	return {}
+}
+const gas_unit_price_on_prepare = () => {
+	gas_unit_price_field.modify_packet ("100")
+}
+//
+////
 
 
 let prepared = "no"
@@ -359,92 +414,31 @@ p {
 
 	<div style="height: 0.2cm"></div>
 	
-	<div 
-		class="card variant-soft-primary p-1" 
-		style="
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			grid-template-rows: auto;
-			gap: 0.1cm;
-			
-			color: inherit
-			
-		"
-	>		
-		<span 
-			class="badge variant-soft-primary"
-			style="
-				word-wrap: revert-layer;
-				white-space: preserve;
-			"
-		>Seconds until Expiration</span>
+	<Field 
+		monitor="seconds until expiration"
+		logo="Seconds Until Expiration"
 		
-		<label class="label"
-			style="display: flex; align-items: center;"
-		>
-			<input 
-				class="input"
-				style="
-					text-indent: 10px; 
-					padding: 0.1cm;
-					padding-right: 0.3cm;
-				" 
-				
-				transaction_expiration
-				placeholder="" 
-				
-				type="number" 
-				bind:value={ freight.fields.transaction_expiration }
-			/>
-		</label>
-	</div>
+		bind:this={ seconds_until_expiration_field }
+		on_change={ seconds_until_expiration_on_change }
+		on_prepare={ seconds_until_expiration_on_prepare }
+	/>
 
 	<div style="height: 0.2cm"></div>
 	
-	<div
-		class="card variant-soft-primary p-1" 
-		style="
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			grid-template-rows: auto;
-			gap: 0.1cm;
-			
-			color: inherit
-		"
-	>		
-		<span 
-			class="badge variant-soft-primary"
-			style="
-				word-wrap: revert-layer;
-				white-space: preserve;
-			"
-		>Gas Unit Price, in Octas</span>
+	<Field 
+		monitor="gas unit price"
+		logo="Gas Unit Price, in Octas"
 		
-		<label class="label"
-			style="display: flex; align-items: center;"
-		>
-			<input 
-				transaction_expiration
-			
-				class="input"
-				style="
-					text-indent: 10px; 
-					padding: 0.1cm;
-					padding-right: 0.3cm;
-				" 
-				
-				
-				placeholder="" 
-				
-				type="number" 
-				bind:value={ freight.fields.gas_unit_price }
-			/>
-		</label>
-	</div>
+		
+		bind:this={ gas_unit_price_field }
+		on_change={ gas_unit_price_on_change }
+		on_prepare={ gas_unit_price_on_prepare }
+	/>
 	
 	<div style="height: 0.2cm"></div>
 	
 	<Field 
+		monitor="max gas amount"
 		logo="Max Gas Amount, in Octas"
 		
 		bind:this={ max_gas_amount_field }
