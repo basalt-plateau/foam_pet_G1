@@ -140,6 +140,9 @@ onMount (() => {
 		</label>
 	</div>
 	<div>
+		<slot />
+	</div>
+	<div>
 		{#if problem_alert.length >= 1 }
 		<div style="height: 8px"></div>
 		

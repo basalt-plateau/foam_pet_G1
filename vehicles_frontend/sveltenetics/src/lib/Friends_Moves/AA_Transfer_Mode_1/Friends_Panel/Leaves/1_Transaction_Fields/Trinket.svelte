@@ -24,6 +24,7 @@ import Amount_Field from '$lib/trinkets/Amount_Field/Trinket.svelte'
 import Address_Qualities_Trinket from '$lib/trinkets/Address_Qualities/Trinket.svelte'
 import { ask_for_freight } from '$lib/Versies/Trucks'
 import Field from '$lib/trinkets/Field/Trinket.svelte'
+import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 //
 import { 
 	retrieve_truck, 
@@ -236,6 +237,15 @@ const link = [
 	"/modules/run/aptos_account/transfer"
 ].join ("");
 
+
+const maximum_gas_amount_link = (
+	"https://aptos.dev/en/network/glossary#maximum-gas-amount"
+)
+
+const gas_unit_price_link = (
+	"https://aptos.dev/en/network/glossary#gas-unit-price"
+)
+
 </script>
 
 
@@ -401,8 +411,6 @@ p {
 		class="card variant-soft-primary p-2" 
 		style="color: inherit"
 	>
-		
-		
 		<Address_Qualities_Trinket 
 			name="From Address"
 			bind:this={ origin_address_trinket }
@@ -461,7 +469,20 @@ p {
 		bind:this={ seconds_until_expiration_field }
 		on_change={ seconds_until_expiration_on_change }
 		on_prepare={ seconds_until_expiration_on_prepare }
-	/>
+	>
+		<div 
+			style="
+				margin: 0.1cm 0;
+			"
+			class="card p-1 variant-soft-primary"
+		>
+			<p
+				style="
+					text-align: center;
+				"
+			>After the duration has elapsed, the <Slang text="consensus" /> won't approve the <Slang text="petition" />.</p>
+		</div>
+	</Field>
 
 	<div style="height: 0.2cm"></div>
 	
@@ -473,7 +494,28 @@ p {
 		bind:this={ gas_unit_price_field }
 		on_change={ gas_unit_price_on_change }
 		on_prepare={ gas_unit_price_on_prepare }
-	/>
+	>
+		<div 
+			style="
+				margin: 0.1cm 0;
+			"
+			class="card p-1 variant-soft-primary"
+		>
+			<p
+				style="
+					text-align: center;
+				"
+			>	
+				<span>Details can be found at:</span>
+				<a
+					class="anchor"
+					target="_blank"
+					href={ gas_unit_price_link }
+				>{ gas_unit_price_link }</a>
+			</p>
+		</div>
+	</Field>
+	
 	
 	<div style="height: 0.2cm"></div>
 	
@@ -484,6 +526,27 @@ p {
 		bind:this={ max_gas_amount_field }
 		on_change={ max_gas_amount_on_change }
 		on_prepare={ max_gas_amount_on_prepare }
-	/>
+	>
+		<div 
+			style="
+				margin: 0.1cm 0;
+			"
+			class="card p-1 variant-soft-primary"
+		>
+			<p
+				style="
+					text-align: center;
+				"
+			>	
+				<span>Details can be found at:</span>
+				<a
+					class="anchor"
+					target="_blank"
+					href={ maximum_gas_amount_link }
+				>{ maximum_gas_amount_link }</a>
+			</p>
+		</div>
+	</Field>
+	
 </div>
 {/if}

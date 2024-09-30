@@ -5,6 +5,10 @@
 */
 
 /*
+	[ ] Comma every 4 like music :)
+*/
+
+/*
 	TODO: 1,0000,0000
 */
 

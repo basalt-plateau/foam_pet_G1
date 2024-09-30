@@ -1,6 +1,20 @@
 
 
 
+''''
+throw_APT_vacation ({
+	"friends": {
+		"origin address": "",
+		"to address": "",
+		"amount APT": "",
+	},
+	"relatives": {
+		"origin address private key": ""
+	}
+})
+"'''
+
+
 #\
 #
 import traceback
@@ -15,15 +29,12 @@ from selenium.webdriver.common.by import By
 #
 from vivaciousness._plays import retrieve_plays
 #
-from vivaciousness.Moves.Aptos_Account_Transfer.Friends.open_modal import open_friends_modal
-from vivaciousness.Moves.Aptos_Account_Transfer.Friends.make_petition import make_petition
-from vivaciousness.Moves.Aptos_Account_Transfer.Friends.petition_suggestion import petition_suggestion
+from .Friends.open_modal import open_friends_modal
+from .Friends.make_petition import make_petition
+from .Friends.petition_suggestion import petition_suggestion
 #
-from vivaciousness.Moves.Aptos_Account_Transfer.Relatives.open_modal import open_relatives_modal
-from vivaciousness.Moves.Aptos_Account_Transfer.Relatives.make_signature import make_signature
-#
-#from vivaciousness.Moves.Aptos_Account_Transfer.friends_driver_ask import friends_driver_ask
-#from vivaciousness.Moves.Aptos_Account_Transfer.relatives_driver.build_signed_transaction import build_ST_with_relatives
+from .Relatives.open_modal import open_relatives_modal
+from .Relatives.make_signature import make_signature
 #
 from vivaciousness.health_regions.connect import connect_to_driver
 from vivaciousness.health_regions.physics import derive_physics
@@ -42,18 +53,7 @@ def goto_address (driver_1, driver_1_ICAN_DNS_Address):
 	driver_1.get (driver_1_ICAN_DNS_Address)
 	
 
-''''
-throw_APT_vacation ({
-	"friends": {
-		"origin address": "",
-		"to address": "",
-		"amount APT": "",
-	},
-	"relatives": {
-		"origin address private key": ""
-	}
-})
-"'''
+
 def throw_APT_vacation (packet):
 	give_Octas_from_faucet ({
 		"icann_faucet_net_address": "https://faucet.devnet.aptoslabs.com/mint",
