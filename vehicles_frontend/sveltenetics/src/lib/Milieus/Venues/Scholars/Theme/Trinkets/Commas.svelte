@@ -3,15 +3,18 @@
 
 <script>
 
+////
+//
 import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
-
 import { onMount, onDestroy } from 'svelte'
+//
+//
 import Seeds_Trucks from '$lib/Versies/Trucks.svelte'
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
-
+//
+////
 
 let example_numeral = ""
-
 
 const parse_example_numeral = () => {
 	example_numeral = parse_with_commas ("12345678901234578901234567890")
@@ -27,7 +30,6 @@ const on_seeds_truck_change = ({ freight: _freight, happening }) => {
 	
 	parse_example_numeral ();
 }
-
 
 
 </script>

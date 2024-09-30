@@ -90,7 +90,7 @@ export const lease_Milieus_truck = () => {
 	let location = Location_Bracket.find ()
 	
 	
-	console.log ("Leasing Milieus Truck:", location [0], location [1])
+	// console.log ("Leasing Milieus Truck:", location [0], location [1])
 	
 	trucks [1] = build_truck ({
 		freight: {
@@ -112,10 +112,7 @@ export const check_Milieus_truck = () => {
 }
 export const monitor_Milieus_truck = (action) => {	
 	return trucks [1].monitor (({ freight }) => {
-		console.info ('Milieus Truck_Monitor', { freight })
-		
 		localStorage.setItem ("location", JSON.stringify (freight.location))
-		
 		action (freight);
 	})
 }

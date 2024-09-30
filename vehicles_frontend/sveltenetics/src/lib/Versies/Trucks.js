@@ -176,24 +176,12 @@ export const check_roomies_truck = () => {
 }
 export const monitor_roomies_truck = (action) => {	
 	return trucks [1].monitor (({ freight, property, value }) => {
-		// console.info ('Seeds Truck_Monitor', { freight })
-		
-		console.log ("property changed:", { property });
-		
-		
 		if (property === "commas_every") {
 			localStorage.setItem ("commas_every", value)
 		}
 		else if (property === "use_slang") {
 			localStorage.setItem ("use_slang", value)
 		}
-		
-		/*
-		if (property === "location") {
-			localStorage.setItem ("location", JSON.stringify (freight.location))
-		}
-		*/
-		
 		
 		action (freight);
 	})

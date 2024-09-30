@@ -58,14 +58,9 @@ export const build_truck = ({ freight }) => {
 			set (target, property, value, receiver) {
 				const current = target [ property ];
 				
+				// console.log ("set:", { target, property, value, receiver })
 				
-				console.log ("set:", {
-					target,
-					property,
-					
-					value,
-					receiver
-				})
+				
 				
 				const success = Reflect.set (target, property, value, receiver);
 				if (success && current !== value) {

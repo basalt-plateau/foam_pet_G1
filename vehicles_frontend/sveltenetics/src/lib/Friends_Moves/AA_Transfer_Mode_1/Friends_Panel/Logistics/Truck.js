@@ -253,28 +253,6 @@ export const monitor_truck = (action) => {
 	
 	return trucks [1].monitor (({ freight }) => {
 		
-		
-		//
-		//	This might be deprecated.
-		//
-		//
-		/* if (
-			latest_currency != freight.fields.currency ||
-			latest_amount != freight.fields.amount
-		) {
-			const previous_currency = latest_currency;
-			const previous_amount = latest_amount;
-			
-			latest_currency = freight.fields.currency;
-			latest_amount = freight.fields.amount;
-			
-			//
-			//	reset the problem to ""
-			//
-			//
-			freight.fields.problems.amount = ""
-		} */
-		
 
 		//
 		//	This modifies the "next" & "back" buttons.

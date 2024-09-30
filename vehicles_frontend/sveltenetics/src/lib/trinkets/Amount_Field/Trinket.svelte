@@ -140,7 +140,10 @@ const effect_change = async () => {
 		}
 	}
 	catch (exception) {
-		console.error (exception);
+		if (amount.length !== 0) {
+			console.error (exception);
+		}
+		
 		effects.problem = exception.message;
 	}
 	
