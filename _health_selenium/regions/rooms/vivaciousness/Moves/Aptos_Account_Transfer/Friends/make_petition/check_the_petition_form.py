@@ -1,5 +1,9 @@
 
 
+''''
+
+"'''
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
@@ -9,6 +13,7 @@ def check_the_petition_form (packet):
 	driver_1 = packet ["driver_1"]
 	address_from = packet ["address_from"]
 	address_to = packet ["address_to"]
+	amount_APT = packet ["amount_APT"]
 
 
 	#
@@ -67,7 +72,7 @@ def check_the_petition_form (packet):
 		textareas ["to_aptos_address"].send_keys (address_to)
 		
 		inputs ["amount"].clear ()
-		inputs ["amount"].send_keys ('0.01')
+		inputs ["amount"].send_keys (amount_APT)
 		
 		inputs ["transaction_expiration"].clear ()
 		inputs ["transaction_expiration"].send_keys ('600')

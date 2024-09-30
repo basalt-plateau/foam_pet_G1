@@ -210,10 +210,14 @@ onMount (() => {
 	//
 	freight.current.land = "Transaction_Fields"
 
-	Truck_Monitor = monitor_truck ((freight) => {
-		console.log ("Transaction Fields: Truck_Monitor", { freight })
+	Truck_Monitor = monitor_truck ((_freight) => {
+		let freight = _freight;
 	})
 	
+	//
+	//	This prepares the modal logistics with the
+	//	
+	//
 	const roomies_freight = ask_for_freight ();
 	freight.fields.ICANN_net_path = roomies_freight.net_path;
 	freight.fields.net_name = roomies_freight.net_name;
@@ -223,7 +227,6 @@ onMount (() => {
 onDestroy (() => {
 	Truck_Monitor.stop ()
 });
-
 
 
 

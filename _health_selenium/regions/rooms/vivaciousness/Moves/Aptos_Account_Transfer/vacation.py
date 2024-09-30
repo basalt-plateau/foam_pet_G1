@@ -1,22 +1,6 @@
 
 
 
-
-
-
-#
-#	python3 health.proc.py run --path="Moves/Aptos_Account_Transfer/Verification_1.Se.py"
-#
-
-''''
-	* open the ICAN Domain Address
-	
-	* change the inputs:
-		* devnet
-"'''
-
-
-
 #\
 #
 import traceback
@@ -38,6 +22,9 @@ from vivaciousness.Moves.Aptos_Account_Transfer.Friends.petition_suggestion impo
 from vivaciousness.Moves.Aptos_Account_Transfer.Relatives.open_modal import open_relatives_modal
 from vivaciousness.Moves.Aptos_Account_Transfer.Relatives.make_signature import make_signature
 #
+#from vivaciousness.Moves.Aptos_Account_Transfer.friends_driver_ask import friends_driver_ask
+#from vivaciousness.Moves.Aptos_Account_Transfer.relatives_driver.build_signed_transaction import build_ST_with_relatives
+#
 from vivaciousness.health_regions.connect import connect_to_driver
 from vivaciousness.health_regions.physics import derive_physics
 from vivaciousness.procedures.Faucet.Give import give_Octas_from_faucet
@@ -50,32 +37,24 @@ from vivaciousness.memo import proceed_through_memo
 #
 #/
 
-from vivaciousness.Moves.Aptos_Account_Transfer.vacation import throw_APT_vacation
-
-
-
+	
 def goto_address (driver_1, driver_1_ICAN_DNS_Address):
 	driver_1.get (driver_1_ICAN_DNS_Address)
 	
 
-
 ''''
-monitor_throw ({
+throw_APT_vacation ({
 	"friends": {
-		"captain": "",
-		
 		"origin address": "",
 		"to address": "",
 		"amount APT": "",
 	},
 	"relatives": {
-		"captain": "",
-		
 		"origin address private key": ""
 	}
 })
 "'''
-def monitor_throw (packet):
+def throw_APT_vacation (packet):
 	give_Octas_from_faucet ({
 		"icann_faucet_net_address": "https://faucet.devnet.aptoslabs.com/mint",
 		"amount_of_octas": "1e8",
@@ -99,12 +78,12 @@ def monitor_throw (packet):
 	#
 	#
 	change_net ({
-		"driver": packet ["relatives"] ["captain"],
+		"driver": relatives_captain,
 		"net_name": "devnet",
 		"net_path": "https://api.devnet.aptoslabs.com/v1"
 	})
 	[ relatives_modal_navigation_buttons ] = open_relatives_modal ({
-		"tailfin": packet ["relatives"] ["captain"],
+		"tailfin": relatives_captain,
 		"ICAN_DNS_Address": ""
 	})
 	#/
@@ -171,33 +150,3 @@ def monitor_throw (packet):
 	
 	
 	
-	
-def check_1 ():
-	plays = retrieve_plays ();
-	
-	##
-	#
-	accounts = plays ["accounts"]
-	#
-	origin_address = accounts ["1"] ["address"]
-	origin_private_key = accounts ["1"] ["private key"]
-	#
-	address_to = accounts ["2"] ["address"]
-	#
-	##
-	
-	throw_APT_vacation ({
-		"friends": {
-			"origin address": origin_address,
-			"to address": address_to,
-			"amount APT": "0.01",
-		},
-		"relatives": {
-			"origin address private key": origin_private_key
-		}
-	})
-
-	
-checks = {
-	'check 1': check_1
-}

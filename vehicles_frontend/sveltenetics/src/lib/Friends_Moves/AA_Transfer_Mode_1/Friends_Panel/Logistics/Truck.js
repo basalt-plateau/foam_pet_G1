@@ -248,9 +248,6 @@ let latest_amount_of_Octas = "1e8"
 let latest_amount = "1"
 let latest_currency = "1"
 export const monitor_truck = (action) => {	
-	
-	
-	
 	return trucks [1].monitor (({ freight }) => {
 		
 

@@ -59,7 +59,6 @@ export const ask_convert_APT_to_Octas = ({ APT }) => {
 	if (pair_fractional.length !== 8) {
 		throw new Error (`The APT amount after the decimal was not 8 digits.`)
 	}
-	
 	console.log ({ pair, pair_fractional })
 	
 	const squeeze = pair [0] + pair_fractional;
@@ -67,7 +66,6 @@ export const ask_convert_APT_to_Octas = ({ APT }) => {
 	
 	
 	const without_leading_zeroes = remove_leading_zeroes ({ Digits: squeeze })
-
 	return without_leading_zeroes;
 }
 

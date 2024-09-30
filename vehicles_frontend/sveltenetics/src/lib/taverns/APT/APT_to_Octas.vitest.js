@@ -7,7 +7,6 @@
 
 
 import { describe, it, expect } from 'vitest';
-
 import assert from 'assert'
 
 import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
@@ -71,10 +70,11 @@ describe ("APT to Octas drives", () => {
 		
 		it ("throws", async () => {
 			
-			assert_throw ("0.00000000001", `The APT amount after the decimal was not 8 digits.`)
-			assert_throw ("0.0000000001", `The APT amount after the decimal was not 8 digits.`)
-			assert_throw ("0.000000012", `The APT amount after the decimal was not 8 digits.`)
+			let exception_1 = `The APT amount after the decimal can't be more than 8 digits.`
 			
+			assert_throw ("0.00000000001", exception_1)
+			assert_throw ("0.0000000001", exception_1)
+			assert_throw ("0.000000012", exception_1)
 			
 			assert_throw ("0.0.00000012", `The APT amount wasn't two parts after gettings the parts around the decimal.`)
 

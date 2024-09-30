@@ -46,17 +46,20 @@ def make_petition (packet):
 	modal_navigation_buttons = packet ["modal_navigation_buttons"]
 	address_from = packet ["address_from"]
 	address_to = packet ["address_to"]
+	amount_APT = packet ["amount_APT"]
 	
 	
 	#\
 	#
-	#	Petition Form
+	#	Petition Form: Modify Fields
 	#
 	#
 	check_the_petition_form ({
 		"driver_1": driver_1,
+		
 		"address_from": packet ["address_from"],
-		"address_to": packet ["address_to"]
+		"address_to": packet ["address_to"],
+		"amount_APT": packet ["amount_APT"]
 	})
 	modal_navigation_buttons ["next"].click ()
 	#/
