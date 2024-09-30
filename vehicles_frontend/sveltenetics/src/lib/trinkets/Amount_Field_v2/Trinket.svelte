@@ -29,7 +29,9 @@
 	/>
 */
 
-////
+//\
+//
+import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 //
 import { onMount, onDestroy } from 'svelte';
 import Big from 'big.js'
@@ -37,24 +39,21 @@ import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitt
 //
 import { has_field } from 'procedures/object/has_field'
 //
-//
-import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
-import Alert_Info from '$lib/trinkets/Alerts/Info.svelte'
-//
-import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
-import { ask_convert_Octas_to_APT } from '$lib/taverns/APT/Octas_to_APT.js'
+///
 import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
-//
-////
+import Alert_Info from '$lib/trinkets/Alerts/Info.svelte'
+
+import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
+import { ask_convert_Octas_to_APT } from '$lib/taverns/APT/Octas_to_APT.js'
+	
 
 export let on_change = () => {}
 export let after_mount = () => {}
 
 import { build_truck } from '$lib/trucks'
-
-
 const trucks = {}
+
 const placeholders = Object.freeze ({
 	"APT": "Amount of APT",
 	"Octas": "Amount of Octas"
@@ -87,15 +86,29 @@ $: {
 	calculate_exponent ()
 }
 
-
-
-const change_amount = ({ Octas }) => {
-	assert_is_natural_numeral_string (Octas);
+const Octas_from_APT = async () => {
+	let proceeds = ""
 	
-	actual_amount_of_Octas = Octas;
+	try {
+		const Octas = await ask_convert_APT_to_Octas ({ 
+			APT: amount.toString ()
+		})
+		actual_amount_of_Octas = Octas;
+		effects.problem = ``
+		on_change ({
+			effects,
+			actual_amount_of_Octas,
+			
+			amount,
+			currency
+		})
+		return;
+	}
+	catch (exception) {
+		effects.problem = exception.message;
+	}
 	
-	effects.problem = ``
-	
+	actual_amount_of_Octas = ""
 	on_change ({
 		effects,
 		actual_amount_of_Octas,
@@ -103,8 +116,11 @@ const change_amount = ({ Octas }) => {
 		amount,
 		currency
 	})
+}
+
+
+const change_amount = () => {
 	
-	console.log ("changed amount");
 }
 
 
@@ -122,15 +138,22 @@ const effect_change = async () => {
 	
 	try {
 		if (currency === "APT") {
-			const Octas_as_string = await ask_convert_APT_to_Octas ({ 
-				APT: amount.toString ()
-			});
-			change_amount ({ Octas: Octas_as_string });
+			await Octas_from_APT ();				
 			return;
 		}
 		else if (currency === "Octas") {
 			const Octas_as_string = amount.toString ();
-			change_amount ({ Octas: Octas_as_string });
+			assert_is_natural_numeral_string (Octas_as_string);
+			
+			actual_amount_of_Octas = Octas_as_string;
+			effects.problem = ``
+			on_change ({
+				effects,
+				actual_amount_of_Octas,
+				
+				amount,
+				currency
+			})
 			return;
 		}
 		else {
@@ -138,7 +161,6 @@ const effect_change = async () => {
 		}
 	}
 	catch (exception) {
-		console.error (exception);
 		effects.problem = exception.message;
 	}
 	
@@ -231,7 +253,7 @@ const calculate_exponent = () => {1
 				
 				on:keyup={ amount_field_on_key_up }
 				
-				style="padding: 10px; border: 0; text-align: right;"
+				style="padding: 10px; border: 0"
 				class="input" 
 				
 				type="text" 

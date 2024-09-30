@@ -1,7 +1,8 @@
 
 
 /*
-	const Octas = ask_convert_Octas_to_APT ({ Octas: "1" })
+	import { ask_convert_Octas_to_APT } from '$lib/taverns/APT/Octas_to_APT.js'
+	const APT = ask_convert_Octas_to_APT ({ Octas: "1" })
 */
 
 //

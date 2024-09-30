@@ -123,6 +123,31 @@ const gas_unit_price_on_prepare = () => {
 ////
 
 
+////
+//
+//	Amount Field
+//
+let amount_field = ""
+const on_amount_change = ({ 
+	effects,
+	actual_amount_of_Octas
+}) => {
+	console.log ("on_amount_change", actual_amount_of_Octas)
+	
+	if (effects.problem === "") {
+		freight.fields.actual_amount_of_Octas = actual_amount_of_Octas;
+	}
+}
+const on_amount_prepare = () => {
+	amount_field.modify_field ("1")
+
+	freight.fields.actual_amount_of_Octas = "1";
+}
+//
+////
+
+
+
 let prepared = "no"
 let Truck_Monitor;
 let freight;
@@ -150,6 +175,7 @@ onDestroy (() => {
 	Truck_Monitor.stop ()
 });
 
+/*
 const on_amount_change = ({ 
 	effects,
 	actual_amount_of_Octas
@@ -160,7 +186,7 @@ const on_amount_change = ({
 		freight.fields.actual_amount_of_Octas = actual_amount_of_Octas;
 	}
 }
-
+*/
 
 let origin_address_trinket = ""
 const on_prepare_origin_address = () => {
@@ -408,7 +434,9 @@ p {
 		>1 APT = 1e8 Octas</p>
 		
 		<Amount_Field 
+			bind:this={ amount_field }
 			on_change={ on_amount_change }
+			on_prepare={ on_amount_prepare }			
 		/>
 	</div>
 
