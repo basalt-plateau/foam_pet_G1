@@ -28,9 +28,42 @@ import {
 	monitor_truck,
 } from '$lib/Friends_Moves/AA_Transfer_Mode_1/Friends_Panel/Logistics/Truck'
 //
+import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
+//
 //\
 //\\
 import { ask_for_freight } from '$lib/Versies/Trucks'
+import Field from '$lib/trinkets/Field/Trinket.svelte'
+
+
+////
+//
+//	Max Gas Amount
+//
+//
+let max_gas_amount_field = ""
+const max_gas_amount_on_change = ({ packet }) => {
+	const actual_packet_type = typeof packet;
+	
+	try {
+		assert_is_natural_numeral_string (packet)
+	}
+	catch (exception) {
+		return {
+			"problem": exception.message
+		}
+	}
+	
+	freight.fields.max_gas_amount = packet
+	
+	return {}
+}
+const max_gas_amount_on_prepare = () => {
+	max_gas_amount_field.modify_packet ("200000")
+}
+//
+////
+
 
 
 
@@ -51,7 +84,6 @@ onMount (() => {
 	Truck_Monitor = monitor_truck ((freight) => {
 		console.log ("Transaction Fields: Truck_Monitor", { freight })
 	})
-	
 	
 	const roomies_freight = ask_for_freight ();
 	freight.fields.ICANN_net_path = roomies_freight.net_path;
@@ -412,46 +444,12 @@ p {
 	
 	<div style="height: 0.2cm"></div>
 	
-	<div 
-		class="card variant-soft-primary p-1" 
-		style="
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			grid-template-rows: auto;
-			gap: 0.1cm;
-			
-			color: inherit
-		"
-	>		
-		<span 
-			class="badge variant-soft-primary"
-			style="
-				word-wrap: revert-layer;
-				white-space: preserve;
-			"
-		>Max Gas Amount, in Octas</span>
+	<Field 
+		logo="Max Gas Amount, in Octas"
 		
-		<label 
-			class="label"
-			style="display: flex; align-items: center;"
-		>
-			<input 
-				transaction_expiration
-			
-				bind:value={ freight.fields.max_gas_amount }
-				type="number" 
-				
-				class="input"
-				style="
-					text-indent: 10px; 
-					padding: 0.1cm;
-					padding-right: 0.3cm;
-				" 
-				
-				
-				placeholder="" 
-			/>
-		</label>
-	</div>
+		bind:this={ max_gas_amount_field }
+		on_change={ max_gas_amount_on_change }
+		on_prepare={ max_gas_amount_on_prepare }
+	/>
 </div>
 {/if}

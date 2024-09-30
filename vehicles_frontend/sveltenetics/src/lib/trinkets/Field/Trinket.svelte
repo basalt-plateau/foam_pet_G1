@@ -5,21 +5,25 @@
 /*
 	import Field from '$lib/trinkets/Field/Trinket.svelte'
 
-	const field_on_change = () => {
-		
+	const field_on_change = ({ packet }) => {
+		return {
+			problem: ""
+		}
+	}
+	
+	const field_on_prepare = () => {
+		field.modify_packet ("600")
 	}
 	
 	<Field 
 		logo="Max Gas Amount, in Octas"
 		
+		packet={ }
+		
 		bind:this={ field }
-		on_change={ field_on_change }		
+		on_change={ field_on_change }
+		on_prepare={ field_on_prepare }
 	/>
-	
-	
-	onMount (() => {
-		field.modify_packet ("600")
-	})
 */
 
 /*
@@ -35,6 +39,17 @@ import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 export let logo = ""
 export let packet_type = "number"
 export let on_change = () => {}
+export let on_prepare = () => {}
+
+//
+//
+export let packet = ""
+$: {
+	let _packet = packet;
+	verify_is_great ()
+}
+//
+//
 
 let problem_alert = "";
 
@@ -45,11 +60,10 @@ const is_bracket = (might) => {
 const verify_is_great = () => {
 	const proceeds = on_change ({ packet })
 	
-	
 	if (is_bracket (proceeds) && has_field (proceeds, "problem")) {
 		if (proceeds.problem.length >= 1) {
 			problem_alert = proceeds.problem
-			return;
+			return;on_prepare
 		}
 	}
 	
@@ -60,21 +74,15 @@ export const modify_packet = (fresh_packet) => {
 	packet = fresh_packet;
 }
 
-//
-//
-let packet = ""
-$: {
-	let _packet = packet;
-	verify_is_great ()
-}
-//
-//
+
 
 function typeAction(node) {
 	node.type = packet_type;
 }
 
-
+onMount (() => {
+	on_prepare ()
+})
 
 </script>
 

@@ -21,14 +21,10 @@ const packet_type = "number"
 const field_on_change = ({ packet }) => {
 	const actual_packet_type = typeof packet;
 	
-	console.log ("field_on_change", { packet });
-	
 	try {
 		assert_is_natural_numeral_string (packet)
 	}
 	catch (exception) {
-		console.error ({ exception });
-		
 		return {
 			"problem": exception.message
 		}

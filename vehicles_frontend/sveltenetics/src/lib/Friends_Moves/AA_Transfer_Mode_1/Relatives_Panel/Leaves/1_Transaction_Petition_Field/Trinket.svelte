@@ -2,7 +2,8 @@
 
 <script>
 
-///
+
+////
 //
 import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 import { getModalStore } from '@skeletonlabs/skeleton';
@@ -24,23 +25,24 @@ import {
 	parse_styles 
 } from '$lib/trinkets/styles/parse.js';
 import UT_Stringified from '$lib/PTO/Transaction/Unsigned/Stringified.svelte'
-//
-
-//
-//\
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Alert_Info from '$lib/trinkets/Alerts/Info.svelte'
 import Alert_Success from '$lib/trinkets/Alerts/Success.svelte'
-
-
+//
+//
 import Relatives_Truck from '../../Logistics/Truck.svelte'
+//
+//
+////
+
+
+
+
 
 
 let freight = {}
 let prepared = "no"
 const on_change = ({ freight: _freight, happening }) => {
-	console.log ("relatives truck on change", { freight, happening })
-	
 	freight = _freight;
 	
 	if (happening === "mounted") {
@@ -56,30 +58,6 @@ $: {
 	
 }
 
-/*
-import { 
-	retrieve_truck, 
-	monitor_truck,
-} from '$lib/Friends_Moves/AA_Transfer_Mode_1/Relatives_Panel/Logistics/Truck'
-let prepared = "no"
-let Truck_Monitor;
-let freight;
-onMount (async () => {
-	const Truck = retrieve_truck ()
-	freight = Truck.freight; 
-	
-	freight.current.land = "Unsigned_Transaction_Fields"
-	
-	Truck_Monitor = monitor_truck ((_freight) => {
-		freight = _freight;
-	})
-	
-	prepared = "yes"
-});
-onDestroy (() => {
-	Truck_Monitor.stop ()
-});
-*/
 
 
 let current_tab = 0;

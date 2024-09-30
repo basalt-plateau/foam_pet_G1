@@ -6,26 +6,33 @@
 //
 import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
 import { ConicGradient } from '@skeletonlabs/skeleton';
+import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+//
 import { onMount, onDestroy } from 'svelte';
 import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
+//
 //
 import { 
 	build_unsigned_tx_from_hexadecimal_string 
 } from '$lib/PTO/Transaction/Unsigned/from_hexadecimal_string'
-
-import { add_unsigned_transaction } from '../Screenplays/add_unsigned_transaction'
-
+import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
 import UT_Stringified from '$lib/PTO/Transaction/Unsigned/Stringified.svelte'
+import { 
+	retrieve_truck, 
+	monitor_truck,
+} from '$lib/Friends_Moves/AA_Transfer_Mode_1/Relatives_Panel/Logistics/Truck'
+//
+//
+import { add_unsigned_transaction } from '../Screenplays/add_unsigned_transaction'
 //
 //\
-import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
-import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+
+
 	
 let barcode_vision = ""
 const found = async (packet) => {
 	const { hexadecimal_string } = packet;
 	
-	console.log ('A barcode was found!')
 	if (freight.Unsigned_Transaction_Fields.camera.searching === "yes") {
 		freight.Unsigned_Transaction_Fields.camera.searching = "no"
 	}
@@ -42,15 +49,9 @@ const found = async (packet) => {
 	freight.Unsigned_Transaction_Fields.info_text = ""
 	freight.Unsigned_Transaction_Fields.alert_success = "The barcode was scanned and the unsigned transaction object built."
 }
-	
-	
 
 
 
-import { 
-	retrieve_truck, 
-	monitor_truck,
-} from '$lib/Friends_Moves/AA_Transfer_Mode_1/Relatives_Panel/Logistics/Truck'
 let prepared = "no"
 let Truck_Monitor;
 let freight;
