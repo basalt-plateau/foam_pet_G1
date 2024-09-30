@@ -183,7 +183,7 @@ let seeds = {
 				><Slang text="Offline Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
 					<span class="badge bg-initial">~ Offline Machine</span>
-					<span class="badge bg-initial">~ Offline Bongos</span>
+					<span class="badge bg-initial">~ Offline Accounting</span>
 					<span class="badge bg-initial">~ Beacon with Limited Connectivity</span>
 					<span class="badge bg-initial">~ Key Ring</span>
 				</p>
@@ -202,12 +202,9 @@ let seeds = {
 				><Slang text="Online Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
 					<span class="badge bg-initial">~ Online Machine</span>
-					<span class="badge bg-initial">~ Online Ocarina</span>
 					<span class="badge bg-initial">~ Internet Connected Beacon</span>
 					<span class="badge bg-initial">~ SOS Beacon</span>
 					<span class="badge bg-initial">~ Howl Amp</span>
-					<span class="badge bg-initial">~ Howl Woof</span>
-					<span class="badge bg-initial">~ .Comb</span>					
 				</p>
 			</div>
 		</div>

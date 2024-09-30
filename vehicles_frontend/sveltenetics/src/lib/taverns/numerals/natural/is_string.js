@@ -4,6 +4,10 @@
 	import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 */
 
+/*
+	This asserts that a string is a natural numeral.
+*/
+
 const valid_characters = "01234567890"
 
 export const assert_is_natural_numeral_string = (digit) => {

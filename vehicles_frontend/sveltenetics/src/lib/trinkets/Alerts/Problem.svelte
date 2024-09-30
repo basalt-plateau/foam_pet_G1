@@ -31,6 +31,8 @@ export let text = "";
 export let text_2 = "";
 export let show = "no"
 
+export let size = "regular"
+
 const conicStops = [
 	{ color: 'transparent', start: 0, end: 25 },
 	{ color: 'rgb(var(--color-primary-500))', start: 75, end: 100 }
@@ -47,26 +49,46 @@ let show_the_alert = (
 	show === "yes"
 )
 
+let aside_styles = `
+	display: flex; 
+	flex-direction: row;
+	align-items: center;
+	
+	padding: 12px; 
+`
+let progress_styles = ``
+if (size === "small") {
+	aside_styles = `
+		display: flex; 
+		flex-direction: row;
+		align-items: center;
+		
+		padding: 4px; 
+	`	
+	
+	progress_styles = `
+		transform: scale(0.7)
+	`
+}
+
+
 </script>
 
 {#if show_the_alert === true }
 <aside 
 	monitor="problem alert"
 	class="alert variant-filled-error" 
-	style="
-		display: flex; 
-		flex-direction: row;
-		align-items: center;
-		
-		padding: 12px; 
-		margin-top: 8px
-	"
+	style={ aside_styles }
 >	
-	<Eternal_1_Progress 
-		width={ "50px" } 
-		height={ "35px" }
-		color={ wait_color }
-	/>
+	<div
+		style={ progress_styles }
+	>
+		<Eternal_1_Progress 
+			width={ "50px" } 
+			height={ "35px" }
+			color={ wait_color }
+		/>
+	</div>
 	
 	<div 
 		style="

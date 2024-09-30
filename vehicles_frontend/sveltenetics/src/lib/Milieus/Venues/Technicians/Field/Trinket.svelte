@@ -12,16 +12,34 @@ import { onMount } from 'svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Field from '$lib/trinkets/Field/Trinket.svelte'
 
+import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 
 let field = ""
-const field_on_change = () => {
+
+const packet_type = "number"
+
+const field_on_change = ({ packet }) => {
+	const actual_packet_type = typeof packet;
 	
+	console.log ("field_on_change", { packet });
+	
+	try {
+		assert_is_natural_numeral_string (packet)
+	}
+	catch (exception) {
+		console.error ({ exception });
+		
+		return {
+			"problem": exception.message
+		}
+	}
+	
+	return {}
 }
 
 
-
 onMount (() => {
-	
+	field.modify_packet ("600")
 })
 
 
@@ -34,6 +52,8 @@ onMount (() => {
 	
 			bind:this={ field }
 			on_change={ field_on_change }
+			
+			packet_type={ packet_type }
 		/>
 	</div>
 </Leaf>
