@@ -50,7 +50,7 @@ import { remove_leading_zeroes } from '$lib/taverns/numerals/remove_leading_zero
 ////
 
 export let on_change = () => {}
-export let after_mount = () => {}
+export let on_prepare = () => {}
 
 import { build_truck } from '$lib/trucks'
 
@@ -92,7 +92,6 @@ $: {
 
 const change_amount = ({ Octas }) => {
 	assert_is_natural_numeral_string (Octas);
-	
 	actual_amount_of_Octas = remove_leading_zeroes ({ Digits: Octas });;
 	
 	effects.problem = ``
@@ -104,8 +103,6 @@ const change_amount = ({ Octas }) => {
 		amount,
 		currency
 	})
-	
-	console.log ("changed amount");
 }
 
 
@@ -154,11 +151,9 @@ const effect_change = async () => {
 
 let prepared = "no"
 onMount (async () => {
-	await after_mount ();
-	
-	// effect_change ()
-	
 	prepared = "yes"
+	
+	await on_prepare ();
 })
 
 export const modify_octas = () => {
@@ -241,9 +236,8 @@ const calculate_exponent = () => {1
 				
 				class="input-group-shim"
 				style="
-					height: 1.1cm;
 					width: 3cm;
-					border-radius: 4px;
+					border-radius: 8px;
 					text-align: center;
 					
 					margin-left: 0.1cm;

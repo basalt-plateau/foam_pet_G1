@@ -31,7 +31,7 @@ const on_amount_change = ({
 }
 
 const on_amount_prepare = () => {
-	amount_field.modify_field ("1");
+	amount_field.modify_octas ("1");
 }
 
 </script>
