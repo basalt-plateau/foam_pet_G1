@@ -45,6 +45,7 @@ import { ask_convert_APT_to_Octas } from '$lib/taverns/APT/APT_to_Octas.js'
 import { ask_convert_Octas_to_APT } from '$lib/taverns/APT/Octas_to_APT.js'
 import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
+import { remove_leading_zeroes } from '$lib/taverns/numerals/remove_leading_zeroes.js'
 //
 ////
 
@@ -92,7 +93,7 @@ $: {
 const change_amount = ({ Octas }) => {
 	assert_is_natural_numeral_string (Octas);
 	
-	actual_amount_of_Octas = Octas;
+	actual_amount_of_Octas = remove_leading_zeroes ({ Digits: Octas });;
 	
 	effects.problem = ``
 	
@@ -205,38 +206,52 @@ const calculate_exponent = () => {1
 		</aside>
 		
 		<div 
-			class="input-group input-group-divider grid-cols-[auto_1fr_auto]"
-			style="padding: 2px"
+			_class="input-group input-group-divider grid-cols-[auto_1fr_auto]"
+			style="
+				padding: 2px;
+				
+				display: flex;
+			"
 		>
+			<div class="label"
+				style="
+					width: 100%;
+				"
+			>
+				<input 
+					monitor="amount field"
+					amount_field
+					
+					bind:value={ amount }
+					on:keyup={ amount_field_on_key_up }
+					
+					style="padding: 10px; border: 0; text-align: right;"
+					class="input" 
+					
+					type="text" 
+					placeholder={ placeholder }
+				/>
+			</div>
+
 			<select 
+				monitor="currency chooser"
 				currency_chooser
 			
 				bind:value={ currency }
 				
 				class="input-group-shim"
 				style="
-					width: 100px;
-					border-top-left-radius: 20px;
-					border-bottom-left-radius: 20px;	
+					height: 1.1cm;
+					width: 3cm;
+					border-radius: 4px;
 					text-align: center;
+					
+					margin-left: 0.1cm;
 				"
 			>
 				<option>APT</option>
 				<option>Octas</option>
 			</select>
-			<input 
-				amount_field
-				
-				bind:value={ amount }
-				
-				on:keyup={ amount_field_on_key_up }
-				
-				style="padding: 10px; border: 0; text-align: right;"
-				class="input" 
-				
-				type="text" 
-				placeholder={ placeholder }
-			/>
 		</div>
 	</label>
 

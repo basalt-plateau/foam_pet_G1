@@ -3,6 +3,7 @@
 
 /*
 	import { remove_leading_zeroes } from '$lib/taverns/numerals/remove_leading_zeroes.js'
+	remove_leading_zeroes ({ Digits });
 
 */
 
