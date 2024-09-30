@@ -22,6 +22,8 @@ import Net_Choices from '$lib/PTO/Nets/Choices.svelte'
 //
 import Amount_Field from '$lib/trinkets/Amount_Field/Trinket.svelte'
 import Address_Qualities_Trinket from '$lib/trinkets/Address_Qualities/Trinket.svelte'
+import { ask_for_freight } from '$lib/Versies/Trucks'
+import Field from '$lib/trinkets/Field/Trinket.svelte'
 //
 import { 
 	retrieve_truck, 
@@ -32,10 +34,57 @@ import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/
 //
 //\
 //\\
-import { ask_for_freight } from '$lib/Versies/Trucks'
-import Field from '$lib/trinkets/Field/Trinket.svelte'
 
 
+
+
+
+////
+//
+//	Origin Address
+//
+//
+let origin_address_trinket = ""
+const on_prepare_origin_address = () => {
+	origin_address_trinket.change_address_hexadecimal_string (
+		freight.fields.from_address_hexadecimal_string
+	)
+}
+const on_change_origin_address = ({
+	effective,
+	address_hexadecimal_string,
+	exception
+}) => {
+	freight.fields.from_address_permitted = effective;
+	freight.fields.from_address_exception = exception;
+	freight.fields.from_address_hexadecimal_string = address_hexadecimal_string;
+}
+//
+////
+
+
+////
+//
+//	To Address
+//
+//
+let to_address_trinket = ""
+const on_prepare_to_address = () => {
+	to_address_trinket.change_address_hexadecimal_string (
+		freight.fields.to_address_hexadecimal_string
+	)
+}
+const on_change_to_address = ({
+	effective,
+	address_hexadecimal_string,
+	exception
+}) => {
+	freight.fields.to_address = effective;
+	freight.fields.to_address = exception;
+	freight.fields.to_address_hexadecimal_string = address_hexadecimal_string;
+}
+//
+////
 
 ////
 //
@@ -175,54 +224,14 @@ onDestroy (() => {
 	Truck_Monitor.stop ()
 });
 
-/*
-const on_amount_change = ({ 
-	effects,
-	actual_amount_of_Octas
-}) => {
-	console.log ("on_amount_change", actual_amount_of_Octas)
-	
-	if (effects.problem === "") {
-		freight.fields.actual_amount_of_Octas = actual_amount_of_Octas;
-	}
-}
-*/
-
-let origin_address_trinket = ""
-const on_prepare_origin_address = () => {
-	origin_address_trinket.change_address_hexadecimal_string (
-		freight.fields.from_address_hexadecimal_string
-	)
-}
-const on_change_origin_address = ({
-	effective,
-	address_hexadecimal_string,
-	exception
-}) => {
-	freight.fields.from_address_permitted = effective;
-	freight.fields.from_address_exception = exception;
-	freight.fields.from_address_hexadecimal_string = address_hexadecimal_string;
-}
 
 
-let to_address_trinket = ""
-const on_prepare_to_address = () => {
-	to_address_trinket.change_address_hexadecimal_string (
-		freight.fields.to_address_hexadecimal_string
-	)
-}
-const on_change_to_address = ({
-	effective,
-	address_hexadecimal_string,
-	exception
-}) => {
-	freight.fields.to_address = effective;
-	freight.fields.to_address = exception;
-	freight.fields.to_address_hexadecimal_string = address_hexadecimal_string;
-}
 
-
-const link = "https://explorer.aptoslabs.com/account/0x0000000000000000000000000000000000000000000000000000000000000001/modules/run/aptos_account/transfer"
+const link = [
+	"https://explorer.aptoslabs.com/account/",
+	"0x0000000000000000000000000000000000000000000000000000000000000001",
+	"/modules/run/aptos_account/transfer"
+].join ("");
 
 </script>
 
