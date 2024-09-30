@@ -68,26 +68,26 @@ export const add_commas = (number, choices = {}) => {
 	const comma_at = choices.comma_at || 5;
 	const line_break_at = choices.line_break_at || 25;
 	
-	
-	if ([ "string", "number" ].includes (typeof number) !== true) {
-		throw new Error (`Type "${ typeof number }" of digit "${ number }" was not prepared for.`);
-	}
+	console.log ({ number })
 	
 	let is_negative = "no"
-	let actual_number = 0;
+	let actual_number = "";
 	if (typeof number === "number") {
 		actual_number = number.toString ()
 	}
-	
-	if (typeof number === "string") {
-		if (number [0] === "-") {
-			actual_number = number.substring (1)
-			is_negative = "yes"
-		}
+	else if (typeof number === "string") {
+		actual_number = number
+	}
+	else {
+		throw new Error (`Type "${ typeof number }" of digit "${ number }" was not prepared for.`);
 	}
 	
+	if (actual_number [0] === "-") {
+		actual_number = actual_number.substring (1)
+		is_negative = "yes"
+	}
 	
-	
+	console.log ({ actual_number })
 	
 	let [ integer_part, decimal_part ] = actual_number.toString ().split('.');
 	console.log ({
@@ -99,11 +99,14 @@ export const add_commas = (number, choices = {}) => {
 	// Parse both integer and decimal parts
 	let parsed_integer_part = parse_integer_part (integer_part, { comma_at, with_line_breaks, line_break_at });
 	let parsed_decimal_part = parse_decimal_part (decimal_part, { comma_at, with_line_breaks });
+
+	let flip = is_negative === "yes" ? "-" : "";
+	
 	if (parsed_decimal_part === '') {
-		return parsed_integer_part;
+		return flip + parsed_integer_part;
 	}
 
 	// Combine integer and decimal parts
-	return `${ parsed_integer_part }.${ parsed_decimal_part }`;
+	return `${ flip }${ parsed_integer_part }.${ parsed_decimal_part }`;
 }
 

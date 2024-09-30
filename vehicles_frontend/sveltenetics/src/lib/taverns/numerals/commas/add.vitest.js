@@ -1,5 +1,5 @@
 
-// vitest "lib/taverns/numbers/add_commas.vitest.js
+// vitest "lib/taverns/numerals/commas/add.vitest.js"
 
 
 import { add_commas } from '$lib/taverns/numerals/commas/add'
@@ -13,12 +13,9 @@ describe ('add_commas', () => {
 	
 	describe ('comma_at 3', () => {
 		describe ('integer', () => {
-			it.only ('integer digits', () => {
+			it ('integer digits', () => {
 				expect (add_commas (-12345, { comma_at: 3 })).toBe ("-12,345");
-				
-				return;
 				expect (add_commas (0, { comma_at: 3 })).toBe ("0");
-				
 				expect (add_commas (412341234, { comma_at: 3 })).toBe ("412,341,234");
 				expect (add_commas (1234123412341234, { comma_at: 3 })).toBe ("1,234,123,412,341,234");
 			});
