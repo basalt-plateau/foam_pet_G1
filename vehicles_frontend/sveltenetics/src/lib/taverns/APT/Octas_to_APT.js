@@ -20,7 +20,6 @@
 //
 
 import { add_zeroes } from '$lib/taverns/numerals/add_zeroes.js'
-	
 import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 
 const divide_at_eight = (digit) => {

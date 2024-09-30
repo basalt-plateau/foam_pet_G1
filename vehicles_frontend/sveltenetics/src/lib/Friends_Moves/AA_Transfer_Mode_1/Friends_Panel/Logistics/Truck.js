@@ -18,7 +18,7 @@ const trucks = {}
 import { is_leaf_1_prepared } from "./Screenplays/is_leaf_1_prepared"
 
 export const verify_land = () => {
-	console.log ('verify land')
+	// console.log ('verify land')
 	
 	const freight = trucks [1].freight;
 	const current_land = freight.current.land;
@@ -147,10 +147,10 @@ export const refresh_truck = () => {
 				//
 				currency: "APT", // Octas
 				//
-				amount: 1,
-				amount_of_Octas: "1e8",
-				amount_of_APT: "1",
-				actual_amount_of_Octas: calculate_actual_octas ("1e8"),
+				// amount: 0,
+				// amount_of_Octas: "0",
+				// amount_of_APT: "0",
+				actual_amount_of_Octas: calculate_actual_octas ("0"),
 				//
 				//
 				transaction_expiration: "600",
@@ -258,7 +258,7 @@ export const monitor_truck = (action) => {
 		//	This might be deprecated.
 		//
 		//
-		if (
+		/* if (
 			latest_currency != freight.fields.currency ||
 			latest_amount != freight.fields.amount
 		) {
@@ -273,7 +273,7 @@ export const monitor_truck = (action) => {
 			//
 			//
 			freight.fields.problems.amount = ""
-		}
+		} */
 		
 
 		//

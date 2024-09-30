@@ -139,9 +139,9 @@ const on_amount_change = ({
 	}
 }
 const on_amount_prepare = () => {
-	amount_field.modify_field ("1")
-
-	freight.fields.actual_amount_of_Octas = "1";
+	amount_field.modify ({ 
+		Octas: freight.fields.actual_amount_of_Octas 
+	})
 }
 //
 ////
