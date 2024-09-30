@@ -39,12 +39,14 @@ import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
 import Refresh_Browser_Storage from '$lib/Versies/Rules/Refresh_Browser_Storage.svelte'
 //
 import Slang_Toggle from '$lib/trinkets/Slang/Toggle.svelte'
+import Scholars_Trucks from '$lib/Versies/Trucks.svelte'
 //
 ///
 
 
-import Scholars_Trucks from '$lib/Versies/Trucks.svelte'
+
 import { trends } from './Trinket.js'
+import Commas from './Trinkets/Commas.svelte'
 
 
 let seeds_freight = {}
@@ -231,6 +233,10 @@ a {
 				<RadioItem bind:group={theme} name="justify" value="Hacienda">Hacienda</RadioItem>
 			</RadioGroup>
 		</div>
+		
+		<div style="height: 0.2cm"></div>
+		
+		<Commas />
 		
 		<div style="height: 0.2cm"></div>
 		

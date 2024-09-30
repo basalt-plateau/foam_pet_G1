@@ -59,27 +59,43 @@ export const lease_roomies_truck = () => {
 	
 	let net_path = "https://api.mainnet.aptoslabs.com/v1"
 	let net_name = "mainnet"
-	let mode = "business"
-	
-	
-	
-	
-	// let origin_address = "http://localhost:22000"
-	// let origin_address = "https://" + the_domain;
-	// let origin_address = "/";
-	let origin_address = "https://foam.hair";
-	
 	if (typeof localStorage.net_name === "string") {
 		net_name = localStorage.net_name	
 	}
 	if (typeof localStorage.net_path === "string") {
 		net_path = localStorage.net_path	
 	}
+	
+	
+
+	
+	
+	
+	
+	let mode = "business"
 	if (typeof localStorage.mode === "string") {
 		mode = localStorage.mode	
 	}
+	
+	
+	// let origin_address = "http://localhost:22000"
+	// let origin_address = "https://" + the_domain;
+	// let origin_address = "/";
+	let origin_address = "https://foam.pet";
 	if (typeof localStorage.origin_address === "string") {
 		origin_address = localStorage.origin_address	
+	}
+	
+	
+	let commas_every = 5
+	if (typeof localStorage.commas_every === "number") {
+		commas_every = localStorage.commas_every	
+	}
+	
+	
+	let use_slang = "yes"
+	if (typeof localStorage.use_slang === "yes") {
+		use_slang = localStorage.use_slang	
 	}
 	
 	
@@ -108,7 +124,14 @@ export const lease_roomies_truck = () => {
 			net_name,
 			net_connected: "no",
 			
-			use_slang: "yes",
+			use_slang,
+			
+			commas_every,
+			
+			deep_example_1: {
+				deep_example_2: 1
+			},
+			
 			
 			window_width: window.innerWidth,
 			
@@ -152,10 +175,25 @@ export const check_roomies_truck = () => {
 	return trucks [1];
 }
 export const monitor_roomies_truck = (action) => {	
-	return trucks [1].monitor (({ freight }) => {
+	return trucks [1].monitor (({ freight, property, value }) => {
 		// console.info ('Seeds Truck_Monitor', { freight })
 		
-		localStorage.setItem ("location", JSON.stringify (freight.location))
+		console.log ("property changed:", { property });
+		
+		
+		if (property === "commas_every") {
+			localStorage.setItem ("commas_every", value)
+		}
+		else if (property === "use_slang") {
+			localStorage.setItem ("use_slang", value)
+		}
+		
+		/*
+		if (property === "location") {
+			localStorage.setItem ("location", JSON.stringify (freight.location))
+		}
+		*/
+		
 		
 		action (freight);
 	})

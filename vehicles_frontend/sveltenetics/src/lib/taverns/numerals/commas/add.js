@@ -12,13 +12,13 @@
 //	.123456 = .12345,6
 //	.1234567 = .1234567	
 //
-const parse_decimal_part = (part, { comma_at, with_line_breaks }) => {
+const parse_decimal_part = (part, { commas_every, with_line_breaks }) => {
 	if (!part) return '';
 
 	// Add trailing zeros if less than 5 digits
 	// part = part.padEnd (5, '0');
 
-	// Format the decimal part with commas comma_at 3 digits from the end
+	// Format the decimal part with commas commas_every 3 digits from the end
 	let result = '';
 	let length = part.length;
 
@@ -28,7 +28,7 @@ const parse_decimal_part = (part, { comma_at, with_line_breaks }) => {
 
 		result = result + part [i];
 
-		if (position_from_end % comma_at === 0 && i !== 0 && i !== last_index) {
+		if (position_from_end % commas_every === 0 && i !== 0 && i !== last_index) {
 			result = result + ',';
 		}
 	}
@@ -36,7 +36,7 @@ const parse_decimal_part = (part, { comma_at, with_line_breaks }) => {
 	return result;
 }
 
-const parse_integer_part = (part, { comma_at, line_break_at, with_line_breaks }) => {
+const parse_integer_part = (part, { commas_every, line_break_every, with_line_breaks }) => {
 	let result = '';
 	let length = part.length;
 
@@ -49,12 +49,12 @@ const parse_integer_part = (part, { comma_at, line_break_at, with_line_breaks })
 			if (with_line_breaks === "yes" && position_from_end % 25 === 0 && i !== 0) {
 				result = '\n' + result;
 			}
-			else if (position_from_end % comma_at === 0 && i !== 0 && i !== last_index) {
+			else if (position_from_end % commas_every === 0 && i !== 0 && i !== last_index) {
 				result = ' ' + result;
 			}
 		}
 		else {
-			if (position_from_end % comma_at === 0 && i !== 0 && i !== last_index) {
+			if (position_from_end % commas_every === 0 && i !== 0 && i !== last_index) {
 				result = ',' + result;
 			}
 		}
@@ -65,15 +65,22 @@ const parse_integer_part = (part, { comma_at, line_break_at, with_line_breaks })
 
 export const add_commas = (number, choices = {}) => {
 	const with_line_breaks = choices.with_line_breaks || "no";
-	const comma_at = choices.comma_at || 5;
-	const line_break_at = choices.line_break_at || 25;
-	
-	console.log ({ number })
+	const commas_every = choices.commas_every || 5;
+	const line_break_every = choices.line_break_every || 25;
 	
 	let is_negative = "no"
 	let actual_number = "";
 	if (typeof number === "number") {
 		actual_number = number.toString ()
+		
+		/*	
+			Return the scientific notation if
+			has an "e" in it.
+		*/
+		let lower_case_number = actual_number.toLowerCase ();
+		if (lower_case_number.indexOf ("e") >= 0) {
+			return actual_number;
+		}
 	}
 	else if (typeof number === "string") {
 		actual_number = number
@@ -87,18 +94,24 @@ export const add_commas = (number, choices = {}) => {
 		is_negative = "yes"
 	}
 	
-	console.log ({ actual_number })
 	
 	let [ integer_part, decimal_part ] = actual_number.toString ().split('.');
-	console.log ({
+	/* console.log ({
 		actual_number,
 		integer_part, 
 		decimal_part
-	})
+	}) */
 
 	// Parse both integer and decimal parts
-	let parsed_integer_part = parse_integer_part (integer_part, { comma_at, with_line_breaks, line_break_at });
-	let parsed_decimal_part = parse_decimal_part (decimal_part, { comma_at, with_line_breaks });
+	let parsed_integer_part = parse_integer_part (integer_part, { 
+		commas_every, 
+		with_line_breaks, 
+		line_break_every 
+	});
+	let parsed_decimal_part = parse_decimal_part (decimal_part, { 
+		commas_every, 
+		with_line_breaks 
+	});
 
 	let flip = is_negative === "yes" ? "-" : "";
 	

@@ -11,52 +11,52 @@ import assert from 'assert'
 describe ('add_commas', () => {
 
 	
-	describe ('comma_at 3', () => {
+	describe ('commas_every 3', () => {
 		describe ('integer', () => {
 			it ('integer digits', () => {
-				expect (add_commas (-12345, { comma_at: 3 })).toBe ("-12,345");
-				expect (add_commas (0, { comma_at: 3 })).toBe ("0");
-				expect (add_commas (412341234, { comma_at: 3 })).toBe ("412,341,234");
-				expect (add_commas (1234123412341234, { comma_at: 3 })).toBe ("1,234,123,412,341,234");
+				expect (add_commas (-12345, { commas_every: 3 })).toBe ("-12,345");
+				expect (add_commas (0, { commas_every: 3 })).toBe ("0");
+				expect (add_commas (412341234, { commas_every: 3 })).toBe ("412,341,234");
+				expect (add_commas (1234123412341234, { commas_every: 3 })).toBe ("1,234,123,412,341,234");
 			});
 			
 			it ('rational digits', () => {
-				expect (add_commas ("1.1234", { comma_at: 3 })).toBe ("1.123,4");
-				expect (add_commas ("-12345.12345", { comma_at: 3 })).toBe ("-12,345.123,45");
-				expect (add_commas ("-12345.12345", { comma_at: 3 })).toBe ("-12,345.123,45");
+				expect (add_commas ("1.1234", { commas_every: 3 })).toBe ("1.123,4");
+				expect (add_commas ("-12345.12345", { commas_every: 3 })).toBe ("-12,345.123,45");
+				expect (add_commas ("-12345.12345", { commas_every: 3 })).toBe ("-12,345.123,45");
 				
 				expect (
-					add_commas ("-123456789.123456789", { comma_at: 3 })
+					add_commas ("-123456789.123456789", { commas_every: 3 })
 				).toBe ("-123,456,789.123,456,789");
 			});
 		});
 	});
 	
-	describe ('comma_at 4', () => {
+	describe ('commas_every 4', () => {
 		describe ('integer', () => {
 			it ('integer digits', () => {
-				expect (add_commas (-12345, { comma_at: 4 })).toBe ("-1,2345");
-				expect (add_commas (-12345, { comma_at: 4 })).toBe ("-1,2345");
+				expect (add_commas (-12345, { commas_every: 4 })).toBe ("-1,2345");
+				expect (add_commas (-12345, { commas_every: 4 })).toBe ("-1,2345");
 				
-				expect (add_commas (0, { comma_at: 4 })).toBe ("0");
+				expect (add_commas (0, { commas_every: 4 })).toBe ("0");
 				
-				expect (add_commas (412341234, { comma_at: 4 })).toBe ("4,1234,1234");
-				expect (add_commas (1234123412341234, { comma_at: 4 })).toBe ("1234,1234,1234,1234");
+				expect (add_commas (412341234, { commas_every: 4 })).toBe ("4,1234,1234");
+				expect (add_commas (1234123412341234, { commas_every: 4 })).toBe ("1234,1234,1234,1234");
 			});
 			
 			it ('rational digits', () => {
-				expect (add_commas ("1.1234", { comma_at: 4 })).toBe ("1.1234");
-				expect (add_commas ("-12345.12345", { comma_at: 4 })).toBe ("-1,2345.1234,5");
-				expect (add_commas ("-12345.12345", { comma_at: 4 })).toBe ("-1,2345.1234,5");
+				expect (add_commas ("1.1234", { commas_every: 4 })).toBe ("1.1234");
+				expect (add_commas ("-12345.12345", { commas_every: 4 })).toBe ("-1,2345.1234,5");
+				expect (add_commas ("-12345.12345", { commas_every: 4 })).toBe ("-1,2345.1234,5");
 				
-				expect (add_commas ("-123456789.123456789", { comma_at: 4 })).toBe ("-1,2345,6789.1234,5678,9");
+				expect (add_commas ("-123456789.123456789", { commas_every: 4 })).toBe ("-1,2345,6789.1234,5678,9");
 			});
 		});
 	});
 	
 	
 	
-	describe ('comma_at 5', () => {
+	describe ('commas_every 5', () => {
 		describe ('integer', () => {
 			it ('0 digits', () => {
 				expect (

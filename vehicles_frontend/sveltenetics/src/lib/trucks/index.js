@@ -49,25 +49,31 @@ export const build_truck = ({ freight }) => {
 		const handler = {
 			get (target, property, receiver) {
 				try {
-					return new Proxy (target[property], handler);
+					return new Proxy (target [ property ], handler);
 				} 
 				catch (err) {
 					return Reflect.get (target, property, receiver);
 				}
 			},
 			set (target, property, value, receiver) {
-				const current = target [property];
+				const current = target [ property ];
 				
-				/*console.log ({
-					current,
-					"set_": {
-						target, property, value, receiver
-					}
-				})*/
+				
+				console.log ("set:", {
+					target,
+					property,
+					
+					value,
+					receiver
+				})
 				
 				const success = Reflect.set (target, property, value, receiver);
 				if (success && current !== value) {
-					on_change ();
+					on_change ({
+						target,
+						property,
+						value
+					});
 				}
 				
 				return success;
@@ -76,10 +82,16 @@ export const build_truck = ({ freight }) => {
 		
 		return new Proxy (obj, handler);
 	};
-	the_freight = monitor_deep (freight, () => {
+	the_freight = monitor_deep (freight, ({ property, target, value }) => {
 		change_count += 1
 		for (let E = 0; E < monitors.length; E++) {
-			monitors [E] ({ freight: the_freight })
+			monitors [E] ({ 
+				freight: the_freight,
+				
+				property,
+				target,
+				value
+			})
 		}
 	});
 	
