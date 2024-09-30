@@ -198,7 +198,7 @@ const calculate_exponent = () => {1
 
 {#if prepared === "yes"}
 <div>
-	<label class="label">
+	<div>
 		<aside class="alert variant-filled-warning">
 			<div class="alert-message"
 				style="
@@ -209,16 +209,17 @@ const calculate_exponent = () => {1
 				<p>It's calculated from the number provided and is the amount used.</p>
 			</div>
 		</aside>
+
 		
 		<div 
 			_class="input-group input-group-divider grid-cols-[auto_1fr_auto]"
 			style="
 				padding: 2px;
-				
 				display: flex;
 			"
 		>
-			<div class="label"
+			<label 
+				class="label"
 				style="
 					width: 100%;
 				"
@@ -230,21 +231,15 @@ const calculate_exponent = () => {1
 					bind:value={ amount }
 					on:keyup={ amount_field_on_key_up }
 					
-					style="padding: 10px; border: 0; text-align: right;"
+					style="padding: 10px 20px; text-align: right;"
 					class="input" 
 					
 					type="text" 
 					placeholder={ placeholder }
 				/>
-			</div>
+			</label>
 
-			<select 
-				monitor="currency chooser"
-				currency_chooser
-			
-				bind:value={ currency }
-				
-				class="input-group-shim"
+			<label 
 				style="
 					width: 3cm;
 					border-radius: 8px;
@@ -252,12 +247,26 @@ const calculate_exponent = () => {1
 					
 					margin-left: 0.1cm;
 				"
+				class="label"
 			>
-				<option>APT</option>
-				<option>Octas</option>
-			</select>
+				<select 
+					monitor="currency chooser"
+					currency_chooser
+				
+					bind:value={ currency }
+					
+					style="
+						height: 100%;
+						width: 100%;
+					"
+					class="select"
+				>
+					<option>APT</option>
+					<option>Octas</option>
+				</select>
+			</label>
 		</div>
-	</label>
+	</div>
 
 	
 	<div
@@ -353,16 +362,7 @@ const calculate_exponent = () => {1
 		</span>
 	</div>
 	
-	{#if first_input_occurred === "no" }
-	<Alert_Info 
-		text="Waiting for amount"
-		progress={{
-			show: "yes"
-		}}
-	/>
-	{/if}
-	
-	{#if effects.problem.length >= 1 && first_input_occurred === "yes" }
+	{#if effects.problem.length >= 1 }
 	<Problem_Alert 
 		text={ effects.problem }
 	/>
