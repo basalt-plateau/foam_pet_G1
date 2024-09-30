@@ -33,10 +33,11 @@
 //
 import { onMount, onDestroy } from 'svelte';
 import Big from 'big.js'
-import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitted.js'
 //
 import { has_field } from 'procedures/object/has_field'
 //
+//
+import { build_truck } from '$lib/trucks'
 //
 import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 import Alert_Info from '$lib/trinkets/Alerts/Info.svelte'
@@ -47,12 +48,13 @@ import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
 import { remove_leading_zeroes } from '$lib/taverns/numerals/remove_leading_zeroes.js'
 //
+//
+import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitted.js'
+//
 ////
 
 export let on_change = () => {}
 export let on_prepare = () => {}
-
-import { build_truck } from '$lib/trucks'
 
 
 const trucks = {}
@@ -91,6 +93,8 @@ $: {
 
 
 const change_amount = ({ Octas }) => {
+	console.log ("change_amount:", { Octas });
+	
 	assert_is_natural_numeral_string (Octas);
 	actual_amount_of_Octas = remove_leading_zeroes ({ Digits: Octas });;
 	
@@ -152,15 +156,21 @@ const effect_change = async () => {
 let prepared = "no"
 onMount (async () => {
 	prepared = "yes"
-	
 	await on_prepare ();
 })
 
-export const modify_octas = () => {
-	console.log ("modify_octas");
+
 	
-	const APT = ask_convert_Octas_to_APT ({ Octas: "1" })
-	console.log ("modify_octas", { APT });
+export const modify = ({ Octas }) => {
+	if (currency === "APT") {
+		const APT = ask_convert_Octas_to_APT ({ Octas })
+		amount = APT
+	}
+	else {
+		amount = Octas;
+	}
+	
+	change_amount ({ Octas });
 }
 
 
