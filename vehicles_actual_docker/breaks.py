@@ -34,49 +34,73 @@ packet_zip = f"Foam_Pet_{ version }.zip"
 tar_file = f"{ packet }/{file_name}"
 zip_tar_file = f"packet_zip/{ zip_file_name }"
 
-paths = {
-	"readme": {
-		"origin": str (normpath (join (
-			this_folder, 
-			f"the_build_readme.md"
-		))),
-		"destiny": str (normpath (join (
-			this_folder, 
-			f"the_build/{ packet }/readme.md"
-		)))
-	},
-	
-	"rules": {
-		"origin": str (normpath (join (
-			this_folder, 
-			f"building/Foam_Pet.Rules.{ version }.E.HTML"
-		))),
-		"destiny": str (normpath (join (
-			this_folder, 
-			f"the_build/{ packet }/Rules.{ version }.E.HTML"
-		)))
-	},
 
+''''
+	paths = retrieve_paths ({
+		"build_directory": "the_build_1"
+	})
+"'''
+def retrieve_paths (packet = {}):
+	build_directory = "the_build_1"
 	
-	"the_build": str (normpath (join (
-		this_folder, 
-		f"the_build"
-	))),
-	"distribution_directory": str (normpath (join (
-		this_folder, 
-		f"the_build/{ packet }"
-	))),
-	"image_built": str (normpath (join (
-		this_folder, 
-		f"the_build/{ packet }/{name}_{ version }.Docker_image.tar"
-	))),
-	
-	
-	"distribution_zip": str (normpath (join (
-		this_folder, 
-		f"the_build/{ packet_zip }"
-	)))
-}
+	return {
+		"readme": {
+			"origin": str (normpath (join (
+				this_folder, 
+				f"the_build_readme.md"
+			))),
+			"destiny": str (normpath (join (
+				this_folder, 
+				build_directory,
+				f"{ packet }/readme.md"
+			)))
+		},
+		
+		"rules": {
+			"origin": str (normpath (join (
+				this_folder, 
+				f"building/Foam_Pet.Rules.{ version }.E.HTML"
+			))),
+			"destiny": str (normpath (join (
+				this_folder, 
+				build_directory,
+				f"{ packet }/Rules.{ version }.E.HTML"
+			)))
+		},
+		
+		"the_build_1": {
+			"path": str (normpath (join (
+				this_folder, 
+				"the_build_1"
+			)))
+		},
+		
+		"the_build_2": {
+			"path": str (normpath (join (
+				this_folder, 
+				f"the_build_2"
+			)))
+		},
+		
+		"the_build": str (normpath (join (
+			this_folder, 
+			f"the_build_1"
+		))),
+		"distribution_directory": str (normpath (join (
+			this_folder, 
+			f"the_build_1/{ packet }"
+		))),
+		"image_built": str (normpath (join (
+			this_folder, 
+			f"the_build_1/{ packet }/{name}_{ version }.Docker_image.tar"
+		))),
+		
+		
+		"distribution_zip": str (normpath (join (
+			this_folder, 
+			f"the_build_1/{ packet_zip }"
+		)))
+	}
 
 
 
@@ -91,6 +115,8 @@ def run (screenplay):
 
 
 def check_image ():
+	paths = retrieve_paths ();
+
 	#
 	#	maybe:
 	#		[OS] docker rmi foam_pet:v1.3.0
@@ -100,30 +126,45 @@ def check_image ():
 	#		[OS] docker load -i image/Foam_Pet_v1_3_0.0.Docker_image.tar
 	#
 
+	shutil.copytree (
+		paths ["the_build_1"] ["path"],
+		paths ["the_build_2"] ["path"]
+	)
+	
+	
+	
+	
+	return;
+	
 	#
 	#	maybe:
 	#		docker exec -it foam_pet_1 bash -c "bash"
-	#	
 	#		docker logs foam_pet_1
 	#
 	arena_tar_file = f"image_arena/{file_name}"
 	arena_zip_tar_file = f"image_arena/{file_name}.zip"
 	arena_zip_tar_file_name = f"{file_name}.zip"
-
-	run (f"cp '{ zip_tar_file }' '{ arena_zip_tar_file }'");
+	
+	
+	
 	run (f"cd image_arena && unzip '{ arena_zip_tar_file_name }'");
 	
-	run (f"docker load -i '{ arena_tar_file }'")
 	
+	run (f"docker rmi foam_pet:v2_0_0.0");
+	
+	run (f"docker load -i '{ arena_tar_file }'")
 	run (f"docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)")
-
 	run (f'docker run --name foam_pet_1 -td -e HOST_IP=host.docker.internal -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 foam_pet:v1_3_0.0 /bin/bash -c "bash /embark.sh"')
+	
+	
 	
 	
 def make_docker_image ():
 	return;
 
 def save_docker_image ():
+	paths = retrieve_paths ();
+
 	distribution_zip = paths ['distribution_zip']
 
 	# run (f"docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian ");
