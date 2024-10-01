@@ -86,7 +86,7 @@ def clique ():
 			#	After this time limit, lingering checks are stopped
 			#	and reported as 
 			#
-			"time_limit": 60,
+			"time_limit": 120,
 			
 			#
 			#	[voluntary]

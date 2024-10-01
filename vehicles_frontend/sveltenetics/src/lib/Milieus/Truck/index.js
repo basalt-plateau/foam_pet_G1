@@ -49,8 +49,8 @@ const Location_Bracket = {
 		
 		let location = []
 		try {
-			if (has_field (localStorage, "location")) {
-				let local_storage_location = JSON.parse (localStorage.getItem ("location"));
+			if (has_field (sessionStorage, "location")) {
+				let local_storage_location = JSON.parse (sessionStorage.getItem ("location"));
 				if (Array.isArray (local_storage_location)) {
 					
 					/*
@@ -112,7 +112,7 @@ export const check_Milieus_truck = () => {
 }
 export const monitor_Milieus_truck = (action) => {	
 	return trucks [1].monitor (({ freight }) => {
-		localStorage.setItem ("location", JSON.stringify (freight.location))
+		sessionStorage.setItem ("location", JSON.stringify (freight.location))
 		action (freight);
 	})
 }

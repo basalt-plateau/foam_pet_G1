@@ -17,6 +17,12 @@
 			
 			
 			#
+			#	Need "localhost" to use prosthetic eye,
+			#	therefore there is overlap with ports of other
+			#	docker container.
+			#
+			
+			#
 			#	maybe:
 			#		docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 			#		docker container stop foam; docker container rm foam; 
@@ -34,10 +40,9 @@
 			
 			
 			#	
-			#	
-			#	cd vehicles_actual_docker/building
-			#	
-			#	-td starts the container in the background and keeps it on
+			#	cd vehicles_actual_docker
+			#
+			#		-td starts the container in the background and keeps it on
 			#	
 			[OS] docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian 
 			
@@ -51,15 +56,15 @@
 			#
 			#	Change These to the Latest Version:
 			#
-			#		cp /building/"Foam Rules.v1_6_1.0.E.HTML" /Rules.E.HTML
-			#		pip install foam_pet==1.6.1
+			#		cp /building/Foam_Pet.Rules.v2_0_0.0.E.HTML /Rules.E.HTML
+			#		pip install foam_pet==2.0.0
 			#
 			[Boat] bash /building/build.sh
 			
 			
 			#	
 			#	maybe:
-			#		ls /habitat/v_env/lib/python3.11/site-packages/foam_pet/sveltnetics_packets
+			#		ls /Metro/v_env/lib/python3.11/site-packages/foam_pet/sveltnetics_packets
 			#		cat /Metro/foam_pet_essence.py
 			#
 
@@ -75,7 +80,25 @@
 			
 			
 		<header>save image</header>
-		
+			
+			
+			#
+			#
+			#	This one isn't perfect..
+			#
+			#
+			
+			#
+			#
+			#	create the_build/Foam_Pet_v2_0_0.0
+			#	create the_build/Foam_Pet_v2_0_0.0/readme.md
+			#
+			
+			#
+			#
+			#	modify the variables
+			#
+			#
 			[OS] python3 breaks.py save_docker_image
 			
 

@@ -34,12 +34,13 @@ import json
 #
 #\
 
-from vivaciousness.accounts import ask_for_accounts
-accounts = ask_for_accounts ()
 
 def check_1 ():
 	driver_1 = connect_to_driver ();
 	plays = retrieve_plays ()
+	
+	accounts = plays ["accounts"]
+	
 	URL = plays ["URL"]
 	
 	account_address = accounts ["1"] ["address"];

@@ -48,6 +48,6 @@
  trove-classifiers     2024.9.12  Apache Software License                                                                          
  twine                 5.0.0      Apache Software License                                                                          
  urllib3               2.2.1      MIT License                                                                                      
- uv                    0.4.16     Apache Software License; MIT License                                                             
- virtualenv            20.26.5    MIT License                                                                                      
+ uv                    0.4.17     Apache Software License; MIT License                                                             
+ virtualenv            20.26.6    MIT License                                                                                      
  zipp                  3.18.1     MIT License                                                                                      

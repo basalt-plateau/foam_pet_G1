@@ -34,7 +34,9 @@ def make_signature (packet):
 	tailfin = packet ["tailfin"]
 	petition_hexadecimal_string = packet ["petition_hexadecimal_string"]
 	relatives_modal_navigation_buttons = packet ["relatives_modal_navigation_buttons"]
+	
 	origin_private_key = packet ["origin_private_key"]
+	origin_address_is_legacy = packet ["origin_address_is_legacy"]
 
 	#
 	#
@@ -61,12 +63,14 @@ def make_signature (packet):
 	
 	#
 	#
-	#	Signature Field
+	#	Signature Field: Creates Signature
 	#
 	#
 	monitor_signature_field ({
 		"tailfin": tailfin,
-		"origin_private_key": origin_private_key
+		
+		"origin_private_key": origin_private_key,
+		"origin_address_is_legacy": origin_address_is_legacy
 	})
 	relatives_modal_navigation_buttons ["next"].click ()
 	

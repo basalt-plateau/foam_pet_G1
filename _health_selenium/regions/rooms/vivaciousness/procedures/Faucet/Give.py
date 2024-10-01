@@ -22,6 +22,7 @@ from vivaciousness.procedures.loop import loop
 #
 #
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 #
 #
 import traceback
@@ -57,6 +58,7 @@ def give_Octas_from_faucet (packet):
 		"driver": driver_1
 	});
 	
+	
 	def open_the_faucet_modal ():
 		elements = {}
 		def find_the_button ():
@@ -66,7 +68,12 @@ def give_Octas_from_faucet (packet):
 			)
 			
 		loop (find_the_button)
-		elements ["faucet_button"].click ()
+		#loop (lambda : elements ["faucet_button"].click ());
+		
+		#actions = ActionChains (driver_1)
+		#actions.move_to_element (elements ["faucet_button"]).click().perform()
+		driver_1.execute_script("arguments[0].click();", elements ["faucet_button"])
+	
 	
 	
 	textareas = {}
@@ -102,6 +109,7 @@ def give_Octas_from_faucet (packet):
 	loop (choose_fields)
 	
 	buttons ["make_this_transaction"].click ()
+	
 	loop (check_for_success_message)
 	
 	assert (

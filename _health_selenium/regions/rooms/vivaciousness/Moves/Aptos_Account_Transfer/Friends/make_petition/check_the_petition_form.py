@@ -54,7 +54,7 @@ def check_the_petition_form (packet):
 		)
 		inputs ["transaction_expiration"] = driver_1.find_element (
 			By.CSS_SELECTOR, 
-			"[transaction_petition_fields] [transaction_expiration]"
+			"[transaction_petition_fields] [monitor='seconds until expiration']"
 		)
 	
 	loop (check_fields_existence)

@@ -238,6 +238,9 @@ Waiting on transaction success confirmation.
 	>
 		<button 
 			make_this_transaction
+			
+			monitor="ask for octas"
+			
 			style="margin-top: 10px"
 			on:click={ ask_for_Octas }
 			type="button" 

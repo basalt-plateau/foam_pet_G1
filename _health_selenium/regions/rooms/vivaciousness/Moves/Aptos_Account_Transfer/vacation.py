@@ -5,11 +5,22 @@
 throw_APT_vacation ({
 	"friends": {
 		"origin address": "",
+		
+		
+		
+		
 		"to address": "",
 		"amount APT": "",
 	},
 	"relatives": {
-		"origin address private key": ""
+		"origin address private key": "",
+		
+		#
+		#
+		#	TODO:
+		#
+		#
+		"origin address is legacy": "no",
 	}
 })
 "'''
@@ -37,10 +48,8 @@ from .Relatives.open_modal import open_relatives_modal
 from .Relatives.make_signature import make_signature
 #
 from vivaciousness.health_regions.connect import connect_to_driver
-from vivaciousness.health_regions.physics import derive_physics
 from vivaciousness.procedures.Faucet.Give import give_Octas_from_faucet
 from vivaciousness.procedures.loop import loop
-from vivaciousness.accounts import ask_for_accounts
 from vivaciousness.regions.Seeds.Features.change_net import change_net
 from vivaciousness.Milieus.navigate import Milieus_Navigate
 #
@@ -55,6 +64,10 @@ def goto_address (driver_1, driver_1_ICAN_DNS_Address):
 
 
 def throw_APT_vacation (packet):
+	origin_address_is_legacy = "no"
+	if ("origin address is legacy" in packet ["relatives"]):
+		origin_address_is_legacy = packet ["relatives"] ["origin address is legacy"]
+
 	give_Octas_from_faucet ({
 		"icann_faucet_net_address": "https://faucet.devnet.aptoslabs.com/mint",
 		"amount_of_octas": "1e8",
@@ -121,6 +134,7 @@ def throw_APT_vacation (packet):
 	friends_modal_navigation_buttons ["next"].click ()
 	#/
 	
+	
 	#\
 	#
 	#	Relatives Signature
@@ -131,7 +145,8 @@ def throw_APT_vacation (packet):
 		"relatives_modal_navigation_buttons": relatives_modal_navigation_buttons,
 		
 		"petition_hexadecimal_string": petition_hexadecimal_string,
-		"origin_private_key": packet ["relatives"] ["origin address private key"]
+		"origin_private_key": packet ["relatives"] ["origin address private key"],
+		"origin_address_is_legacy": origin_address_is_legacy
 	})
 	#/
 	

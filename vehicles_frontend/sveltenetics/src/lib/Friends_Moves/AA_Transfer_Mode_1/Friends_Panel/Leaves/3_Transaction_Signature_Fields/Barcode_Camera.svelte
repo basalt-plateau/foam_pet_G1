@@ -19,6 +19,10 @@ import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrco
 //
 //\
 
+import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
+
+	
+
 import { 
 	refresh_truck, 
 	retrieve_truck, 
@@ -91,13 +95,7 @@ const on_scan_error = () => {
 			"
 		>QR Barcode Camera</header>
 		<p>
-			<span>After signing at </span>
-			<a 
-				target="_blank"
-				href="/Relatives/Signatures"
-			>
-				/Relatives/Signatures
-			</a>
+			<span>After signing at "Relatives, Signatures"</span>
 		</p>
 		<p>a picture of the signatures barcode can be recorded here.</p>
 		

@@ -74,7 +74,10 @@ export const add_commas = (number, choices = {}) => {
 	
 	let is_negative = "no"
 	let actual_number = "";
-	if (typeof number === "number") {
+	if (
+		typeof number === "number" ||
+		typeof number === "bigint"
+	) {
 		actual_number = number.toString ()
 		
 		/*	

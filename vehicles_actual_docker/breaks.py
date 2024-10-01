@@ -4,24 +4,26 @@
 	Foam.v1_0_0.1.Docker_image.tar.zip
 "'''
 
+#
+#
 import os
 import click
-
-
 from os.path import dirname, join, normpath
 import pathlib
+import shutil
 import sys
+#
+#
 
 this_folder = pathlib.Path (__file__).parent.resolve ()
 
 
-version = "v1_3_0.0"
+version = "v2_0_0.0"
 name = "Foam_Pet"
 
 container_name = "foam_pet"
 image_name = "foam_pet"
 image_name_plus_version = f"{ image_name }:{ version }"
-
 
 file_name = f"{name}_{ version }.Docker_image.tar"
 zip_file_name = f"{ file_name }.zip"
@@ -30,31 +32,52 @@ packet = f"Foam_Pet_{ version }"
 packet_zip = f"Foam_Pet_{ version }.zip"
 
 tar_file = f"{ packet }/{file_name}"
-zip_tar_file = f"packet_zip/{file_name}.zip"
+zip_tar_file = f"packet_zip/{ zip_file_name }"
 
 paths = {
-	"rules_origin": str (normpath (join (this_folder, f"building/Foam_Pet.Rules.{ version }.E.HTML"))),
-	"rules_dest": str (normpath (join (
-		this_folder, 
-		f"the_build/{ packet }/Rules.{ version }.E.HTML"
-	))),
+	"readme": {
+		"origin": str (normpath (join (
+			this_folder, 
+			f"the_build_readme.md"
+		))),
+		"destiny": str (normpath (join (
+			this_folder, 
+			f"the_build/{ packet }/readme.md"
+		)))
+	},
 	
-	"image_built": str (normpath (join (this_folder, f"the_build/{ packet }/{name}_{ version }.Docker_image.tar"))),
+	"rules": {
+		"origin": str (normpath (join (
+			this_folder, 
+			f"building/Foam_Pet.Rules.{ version }.E.HTML"
+		))),
+		"destiny": str (normpath (join (
+			this_folder, 
+			f"the_build/{ packet }/Rules.{ version }.E.HTML"
+		)))
+	},
+
 	
 	"the_build": str (normpath (join (
 		this_folder, 
 		f"the_build"
 	))),
-	
 	"distribution_directory": str (normpath (join (
 		this_folder, 
 		f"the_build/{ packet }"
 	))),
+	"image_built": str (normpath (join (
+		this_folder, 
+		f"the_build/{ packet }/{name}_{ version }.Docker_image.tar"
+	))),
+	
+	
 	"distribution_zip": str (normpath (join (
 		this_folder, 
 		f"the_build/{ packet_zip }"
 	)))
 }
+
 
 
 def run (screenplay):
@@ -83,7 +106,6 @@ def check_image ():
 	#	
 	#		docker logs foam_pet_1
 	#
-
 	arena_tar_file = f"image_arena/{file_name}"
 	arena_zip_tar_file = f"image_arena/{file_name}.zip"
 	arena_zip_tar_file_name = f"{file_name}.zip"
@@ -102,47 +124,66 @@ def make_docker_image ():
 	return;
 
 def save_docker_image ():
-	
+	distribution_zip = paths ['distribution_zip']
 
 	# run (f"docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian ");
 
-	run (f"cp '{ rules_origin }' '{ rules_dest }'");
+	run (f"mkdir -p '{ paths ['distribution_directory'] }'")	
 
-
+	#
+	#	create:
+	#		readme.md
+	#		rules
+	#
+	shutil.copy (paths ["readme"] ["origin"], paths ["readme"] ["destiny"])
+	shutil.copy (paths ["rules"] ["origin"], paths ["rules"] ["destiny"])
+	
 	#
 	#
-	#
+	#	
 	#
 	#
 	run (f"docker rmi { image_name_plus_version }");
 
 
 	#
-	#
 	#	
 	#
 	#
 	run (f"docker stop { container_name }");
-
-
+	
+	
 	run (f"docker commit { container_name } { image_name_plus_version }")
+	
 	run (f"docker save -o { paths ['image_built'] } { image_name_plus_version }")
-	run (f"(cd '{ paths ['the_build'] }' && zip -r { packet_zip } { packet })")
-
+	
+	#
+	#
+	#	cd the_build 
+	#	zip Foam_Pet_v2_0_0.0 Foam_Pet_v2_0_0.0.zip
+	#
+	run (f"(cd '{ paths ['the_build'] }' && zip -r '{ packet_zip }' '{ packet }')")
+	
 	#
 	#
 	#	SHA
 	#		# [OS] gzip foam_pet_v1.0.0.tar
 	#
-	run (f"sha256sum {tar_file}")
-	run (f"sha256sum { packet_zip }")
-
-
-	run (f"chmod -R 777 '{ this_folder }'")
-
+	# run (f"(cd '{ paths ['distribution_directory'] }' && sha256sum { file_name })")
+	
 	#
-	#	79edcad08ba23f20d6450debd381bd4ec6dea89a42682016e2747fa2e7d5c67f  Foam_v1_6_1.0.Docker_image.tar
-	#	f45375320c63809711512e22126e25ea425d812f9a3f95307d852f6f11e84501  Foam_v1_6_1.0.Docker_image.tar.zip
+	#	Distribution ZIP
+	#
+	#	Checksums: 
+	#		SHA
+	#
+	run (f"(cd '{ paths ['the_build'] }' && sha256sum { distribution_zip })")
+	
+	
+	run (f"chmod -R 777 '{ this_folder }'")
+	
+	#
+	#	92344ad7e4e879046f91438739f5f0d82b6ee5e653d05bdc373c46fb68e4e212  Foam_Pet_v2_0_0.0.zip
 	#
 
 

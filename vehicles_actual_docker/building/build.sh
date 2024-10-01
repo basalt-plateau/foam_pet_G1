@@ -44,7 +44,7 @@ python3 -m venv v_env
 #
 #
 cd /Metro
-pip install foam_pet==1.3.0
+pip install foam_pet==2.0.0
 foam_pet build
 foam_pet demux_hap build_unverified_certificates
 foam_pet ventures on	

@@ -282,12 +282,7 @@ let selected_option = "barcode"
 						text-align: center;
 					"
 				>
-					<span>The <b>Barcode</b> can be scanned and signed from: </span> 
-					<a 
-						class="anchor" 
-						href="/Relatives/Signatures"
-						target="_blank"
-					>/Relatives/Signatures</a>
+					<span>The <b>Barcode</b> can be scanned and signed from "Relatives, Signatures"</span> 
 				</p>
 			
 				<Barcode_Visual 

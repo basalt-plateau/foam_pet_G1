@@ -34,6 +34,8 @@ export let location = [ "", "" ]
 export let is_open_location = []
 export let component = ""
 export let style = ""
+export let fresh_panel = "no"
+
 export let component_props = {}
 $: {
 	let _component_props = component_props;
@@ -96,9 +98,25 @@ onDestroy (() => {
 }); 
 
 
+
+
+
+
 let button_tapped = () => {
 	console.log ("button_tapped:", location [0], location [1])
 
+	/*
+		TODO:
+			This should open to a session storage location.
+	*/
+	if (fresh_panel === "yes") {
+		const panel = window.open ("/", '_blank');
+		panel.onload = function() {
+			panel.sessionStorage.setItem ('location', 'value');
+			console.log ({ panel });
+		};
+		return;
+	}
 	
 	Scholars_Trucks_Freight.location = [ 
 		location [0],

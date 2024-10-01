@@ -23,7 +23,10 @@
 		[modify value]
 			elements ["amount_field"].clear ()
 			elements ["amount_field"].send_keys ('9999')
-
+			
+		[click]
+			driver_1.execute_script("arguments[0].click();", elements ["faucet_button"])
+			
 		[check value]
 			def input_amount_is (amount):
 				assert (elements ["amount_field"].get_attribute ('value') == amount)

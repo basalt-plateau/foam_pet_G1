@@ -122,10 +122,15 @@ const sign_the_transaction = async () => {
 						padding: 0 10px;
 					"
 				>No</span>
-				<SlideToggle 
-					name="slide" 
-					bind:checked={ address_is_legacy } 
-				/>
+				<div
+					monitor="address is legacy lot"
+					style="inline-flex"
+				>
+					<SlideToggle 
+						name="slide" 
+						bind:checked={ address_is_legacy } 
+					/>
+				</div>
 				<span
 					style="
 						padding: 0 10px;
