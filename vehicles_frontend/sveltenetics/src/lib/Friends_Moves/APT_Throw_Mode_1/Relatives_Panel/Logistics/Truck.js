@@ -15,7 +15,7 @@ onMount (async () => {
 	const Truck = retrieve_truck ()
 	freight = Truck.freight; 
 	
-	freight.current.land = "Transaction_Fields"
+	freight.current_land = "Transaction_Fields"
 	
 	Truck_Monitor = monitor_truck ((_freight) => {
 		freight = _freight;
@@ -82,7 +82,7 @@ export const verify_land = () => {
 	
 	
 	const freight = trucks [1].freight;
-	const current_land = freight.current.land;
+	const current_land = freight.current_land;
 	
 	console.log ('verify land', { current_land })
 	

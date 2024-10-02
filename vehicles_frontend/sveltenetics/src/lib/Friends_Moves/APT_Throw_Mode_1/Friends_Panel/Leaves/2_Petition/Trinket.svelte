@@ -89,7 +89,7 @@ onMount (async () => {
 	//
 	//
 	//
-	freight.current.land = "Unsigned_Transaction"
+	freight.current_land = "Unsigned_Transaction"
 
 	Truck_Monitor = monitor_truck ((_freight) => {
 		freight = _freight;

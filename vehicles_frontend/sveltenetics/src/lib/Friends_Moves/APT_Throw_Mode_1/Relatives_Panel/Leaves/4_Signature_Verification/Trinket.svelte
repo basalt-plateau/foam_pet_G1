@@ -30,7 +30,7 @@ onMount (async () => {
 	const Truck = retrieve_truck ()
 	freight = Truck.freight; 
 	
-	freight.current.land = "Signature_Verification"
+	freight.current_land = "Signature_Verification"
 	
 	Truck_Monitor = monitor_truck ((_freight) => {
 		freight = _freight;

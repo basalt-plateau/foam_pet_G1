@@ -11,7 +11,12 @@ deactivate
 . /Metro/.venv/bin/activate
 
 
+export PATH="/root/.local/bin:$PATH"
+
+
 export PATH=$PATH:~/.bun/bin
+
+
 export PATH=$PATH:/Metro/vehicles/foam_pet/__glossary
 
 #

@@ -38,7 +38,7 @@ onMount (async () => {
 	const Truck = retrieve_truck ()
 	freight = Truck.freight; 
 	
-	freight.current.land = "Transaction_Signature_Fields"
+	freight.current_land = "Transaction_Signature_Fields"
 	
 	Truck_Monitor = monitor_truck ((_freight) => {
 		console.log ("Transaction Signature Fields: Truck_Monitor", { _freight })

@@ -3,13 +3,41 @@
 <pre>
 		
 	<nav>
-		<header>Move</header>
+		<header>Map</header>
 		
-		https://aptos.dev/en/build/smart-contracts/book/package-upgrades
+			https://aptos.dev/en/build/smart-contracts/book/package-upgrades
+		
+			cd /Metro/vehicles_moves/01_Scratch/Map
 		
 	</nav>
 
 	<main>
+		<article>
+			<header>1. init</header>
+			<code>
+			
+				#
+				#
+				#	create a fresh:
+				#
+				#		* package name in Move.toml
+				#
+				#		* module name in Volcano.move: 
+				#			module pilot::Might_4 {
+				#
+				#		* in "rooms/story_theme.py" change:
+				#			"module name"
+				#			"pilot address"
+				#
+				#
+				
+				aptos init --assume-yes
+				
+				python3 story.py compile
+				python3 story.py publish
+			</code>		
+		</article>
+	
 		<article>
 			<header>publish</header>
 			<code>

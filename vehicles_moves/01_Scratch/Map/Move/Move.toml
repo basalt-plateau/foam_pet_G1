@@ -1,12 +1,12 @@
 
 
 [package]
-name = "Map_1"
+name = "Map_2"
 version = "1.0.0"
 authors = []
 
 [addresses]
-founder = "_"
+pilot = "_"
 
 [dev-addresses]
 

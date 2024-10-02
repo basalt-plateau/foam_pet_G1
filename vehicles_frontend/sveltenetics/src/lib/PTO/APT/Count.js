@@ -33,7 +33,7 @@ export const ask_APT_count = async ({
 	address_hexadecimal_string,
 	net_path
 }) => {
-	console.info ({ net_path })
+	// console.info ({ net_path })
 	
 	var resource = `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`
 

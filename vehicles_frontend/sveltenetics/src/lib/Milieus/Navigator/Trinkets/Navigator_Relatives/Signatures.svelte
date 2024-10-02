@@ -4,7 +4,10 @@
 
 //
 //
-import ScanQRCode from 'lucide-svelte/icons/scan-qr-code'
+// import ScanQRCode from 'lucide-svelte/icons/scan-qr-code'
+import PawPrint from 'lucide-svelte/icons/paw-print'
+import Cigarette from 'lucide-svelte/icons/cigarette'
+import Banknote from 'lucide-svelte/icons/banknote'
 //
 //
 
@@ -18,6 +21,6 @@ import ScanQRCode from 'lucide-svelte/icons/scan-qr-code'
 		gap: 5%;
 	"
 >
-	<ScanQRCode />
 	<span>Signatures</span>
+	<PawPrint />
 </div>

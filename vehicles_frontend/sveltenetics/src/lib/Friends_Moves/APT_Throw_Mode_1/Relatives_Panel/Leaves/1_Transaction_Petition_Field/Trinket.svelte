@@ -46,7 +46,7 @@ const on_change = ({ freight: _freight, happening }) => {
 	freight = _freight;
 	
 	if (happening === "mounted") {
-		freight.current.land = "Unsigned_Transaction_Fields"
+		freight.current_land = "Unsigned_Transaction_Fields"
 		prepared = "yes"
 	}
 }

@@ -33,7 +33,13 @@
 		}
 	})
 	
-	let monitor = await monitor_truck (() => {
+	let monitor = await monitor_truck (({
+		freight,
+		
+		property,
+		target,
+		value
+	}) => {
 		
 	})
 	monitor.stop ()

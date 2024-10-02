@@ -2,13 +2,18 @@
 
 <script>
 
-import Signatures_Component from './Navigator_Relatives/Signatures.svelte'
-
-
-import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
-
+//
+//
 import { onMount, onDestroy } from 'svelte'
+//
+//
 import { check_Milieus_truck, monitor_Milieus_truck } from '$lib/Milieus/Truck'
+import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
+//
+//
+import Signatures_Component from './Navigator_Relatives/Signatures.svelte'
+//
+//
 
 let mode = check_Milieus_truck ().freight.mode;
 let location = check_Milieus_truck ().freight.location;

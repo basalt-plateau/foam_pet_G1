@@ -6,8 +6,6 @@
 /*
 	import Address_Qualities_Trinket from '$lib/trinkets/Address_Qualities/Trinket.svelte'
 
-	
-
 	let origin_address = {
 		effective: "no",
 		address_hexadecimal_string: "",

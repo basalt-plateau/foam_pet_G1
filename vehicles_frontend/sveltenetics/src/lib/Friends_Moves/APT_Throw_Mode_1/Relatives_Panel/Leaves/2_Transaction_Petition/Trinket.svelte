@@ -82,7 +82,7 @@ let freight;
 onMount (async () => {
 	const Truck = retrieve_truck ()
 	freight = Truck.freight; 
-	freight.current.land = "Unsigned_Transaction"
+	freight.current_land = "Unsigned_Transaction"
 	make_info_alerts ();
 	
 	Truck_Monitor = monitor_truck ((_freight) => {

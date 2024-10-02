@@ -5,7 +5,21 @@ the_name="poetry_uv"
 
 
 pip install uv poetry
+
+
+#/
+#
+#	obtain:
+#		1. bun
+#		2. aptos cli
+#
 apt install unzip; curl -fsSL https://bun.sh/install | bash; . /root/.bashrc
+#
+curl -fsSL "https://aptos.dev/scripts/install_cli.py" | python3
+export PATH="/root/.local/bin:$PATH"
+#
+#\
+
 
 #
 #	source /Metro/_plays/source_1.sh

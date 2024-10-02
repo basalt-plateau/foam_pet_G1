@@ -83,7 +83,7 @@ onMount (async () => {
 	//
 	//
 	//
-	freight.current.land = "Petition_Verification"
+	freight.current_land = "Petition_Verification"
 
 	Truck_Monitor = monitor_truck ((_freight) => {
 		freight = _freight;

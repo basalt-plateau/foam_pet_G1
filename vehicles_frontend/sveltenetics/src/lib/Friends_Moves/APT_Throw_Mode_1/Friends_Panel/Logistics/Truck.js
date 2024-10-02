@@ -28,26 +28,30 @@ export const verify_land = () => {
 	// console.log ('verify land')
 	
 	const freight = trucks [1].freight;
-	const current_land = freight.current.land;
+	const current_land = freight.current_land;
 	
-	trucks [1].freight.current.note = "Unfinished"
+	console.log ("verify land");
 	
-	if (current_land === "Transaction_Fields") {
-		/*
-			from_address_hexadecimal_string
-			to_address_hexadecimal_string
-			amount
-			
-			transaction_expiration
-		*/
+	
+	
+	/*
+		from_address_hexadecimal_string
+		to_address_hexadecimal_string
+		amount
+		
+		transaction_expiration
+	*/
+	/* if (current_land === "Transaction_Fields") {
+		
 		
 		// check if leaf 1 is prepared
 		
 		trucks [1].freight.current.back = "no"
-		trucks [1].freight.current.next = "yes"
+		trucks [1].freight.current.next = "no"
 		// trucks [1].freight.current.note = `The "from" address isn't `
-	}
-	else if (current_land === "Petition_Verification") {
+	}*/
+	
+	if (current_land === "Petition_Verification") {
 		trucks [1].freight.current.back = "yes"
 		trucks [1].freight.current.next = "yes"
 	}
@@ -101,12 +105,10 @@ export const refresh_truck = () => {
 				showing: "no"
 			},
 			
-			
 			current_land: "Transaction_Fields",
 			
-			
 			current: {
-				land: "Transaction_Fields",
+				// land: "Transaction_Fields",
 				next: "no",
 				back: "no",
 				note: "Unfinished"
@@ -156,6 +158,7 @@ export const refresh_truck = () => {
 				currency: "APT", // Octas
 				//
 				actual_amount_of_Octas: calculate_actual_octas ("0"),
+				actual_amount_of_Octas_problem: "",
 				//
 				//
 				transaction_expiration: "600",
@@ -253,18 +256,17 @@ let latest_amount_of_Octas = "1e8"
 let latest_amount = "1"
 let latest_currency = "1"
 export const monitor_truck = (action) => {	
-	return trucks [1].monitor (({ freight }) => {
+	return trucks [1].monitor (({ freight, property, value, target }) => {
+		console.info ("property:", { property, value, target });
 		
-		
-		
-		
-		
-		//
-		//
-		//	This modifies the "next" & "back" buttons.
-		//
-		//
-		verify_land ()
+		if (property === "current_land") {
+			//
+			//
+			//	This modifies the "next" & "back" buttons.
+			//
+			//
+			verify_land ()
+		}
 		
 		action (freight);
 	})

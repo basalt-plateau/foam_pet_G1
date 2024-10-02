@@ -48,7 +48,7 @@ onMount (async () => {
 	const Truck = retrieve_truck ()
 	freight = Truck.freight; 
 	
-	freight.current.land = "Ask_Consensus"
+	freight.current_land = "Ask_Consensus"
 	
 	Truck_Monitor = monitor_truck ((_freight) => {
 		freight = _freight;

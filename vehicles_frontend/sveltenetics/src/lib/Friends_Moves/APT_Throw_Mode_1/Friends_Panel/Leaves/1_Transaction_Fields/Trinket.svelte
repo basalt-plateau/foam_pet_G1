@@ -29,6 +29,7 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 import { 
 	retrieve_truck, 
 	monitor_truck,
+	verify_land
 } from '$lib/Friends_Moves/APT_Throw_Mode_1/Friends_Panel/Logistics/Truck'
 //
 import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
@@ -38,6 +39,74 @@ import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/
 
 
 
+let prepared = "no"
+let Truck_Monitor;
+let freight;
+onMount (() => {
+	const Truck = retrieve_truck ()
+	freight = Truck.freight; 
+	
+	//
+	//
+	//
+	//
+	freight.current_land = "Transaction_Fields"
+
+	Truck_Monitor = monitor_truck ((_freight) => {
+		let freight = _freight;
+	})
+	
+	//
+	//	This prepares the modal logistics with the
+	//	
+	//
+	const roomies_freight = ask_for_freight ();
+	freight.fields.ICANN_net_path = roomies_freight.net_path;
+	freight.fields.net_name = roomies_freight.net_name;
+	
+	prepared = "yes"
+});
+onDestroy (() => {
+	Truck_Monitor.stop ()
+});
+
+
+
+
+const check_can_go_on = () => {
+	
+	freight.current.back = "no"
+	
+	/*
+	if (freight.fields.from_address_permitted !== "yes") {
+		freight.current.next = "no"
+		freight.current.note = `There's a problem with the "Origin Address".` + freight.fields.from_address_exception 
+		return;
+	}
+	*/
+	
+	/*
+	if (freight.fields.to_address_permitted !== "yes") {
+		freight.current.next = "no"
+		freight.current.note = `There's a problem with the "To Address".`
+		return;
+	}
+	*/
+	
+	
+	if (freight.fields.actual_amount_of_Octas_problem !== "") {
+		freight.current.next = "no"
+		freight.current.note = `There's a problem with the "Amount".  ` + freight.fields.actual_amount_of_Octas_problem
+		return;
+	}
+	
+	
+	
+	// verify_land ();
+	
+	
+	freight.current.next = "yes"
+}
 
 
 ////
@@ -56,9 +125,13 @@ const on_change_origin_address = ({
 	address_hexadecimal_string,
 	exception
 }) => {
+	// console.log ("on_change_origin_address", { effective, exception });
+	
 	freight.fields.from_address_permitted = effective;
 	freight.fields.from_address_exception = exception;
 	freight.fields.from_address_hexadecimal_string = address_hexadecimal_string;
+	
+	check_can_go_on ();
 }
 //
 ////
@@ -80,12 +153,43 @@ const on_change_to_address = ({
 	address_hexadecimal_string,
 	exception
 }) => {
-	freight.fields.to_address = effective;
-	freight.fields.to_address = exception;
+	// console.log ("on_change_to_address", { effective, exception });
+	
+	freight.fields.to_address_permitted = effective;
+	freight.fields.to_address_exception = exception;
 	freight.fields.to_address_hexadecimal_string = address_hexadecimal_string;
+	
+	check_can_go_on ();
 }
 //
 ////
+
+////
+//
+//	Amount Field
+//
+let amount_field = ""
+const on_amount_change = ({ 
+	effects,
+	actual_amount_of_Octas
+}) => {
+	console.log ("on_amount_change", actual_amount_of_Octas)
+	
+	
+	freight.fields.actual_amount_of_Octas_problem = effects.problem;
+	
+	if (effects.problem === "") {
+		freight.fields.actual_amount_of_Octas = actual_amount_of_Octas;
+	}
+}
+const on_amount_prepare = () => {
+	amount_field.modify ({ 
+		Octas: freight.fields.actual_amount_of_Octas 
+	})
+}
+//
+////
+
 
 ////
 //
@@ -173,61 +277,10 @@ const gas_unit_price_on_prepare = () => {
 ////
 
 
-////
-//
-//	Amount Field
-//
-let amount_field = ""
-const on_amount_change = ({ 
-	effects,
-	actual_amount_of_Octas
-}) => {
-	console.log ("on_amount_change", actual_amount_of_Octas)
-	
-	if (effects.problem === "") {
-		freight.fields.actual_amount_of_Octas = actual_amount_of_Octas;
-	}
-}
-const on_amount_prepare = () => {
-	amount_field.modify ({ 
-		Octas: freight.fields.actual_amount_of_Octas 
-	})
-}
-//
-////
 
 
 
-let prepared = "no"
-let Truck_Monitor;
-let freight;
-onMount (() => {
-	const Truck = retrieve_truck ()
-	freight = Truck.freight; 
-	
-	//
-	//
-	//
-	//
-	freight.current.land = "Transaction_Fields"
 
-	Truck_Monitor = monitor_truck ((_freight) => {
-		let freight = _freight;
-	})
-	
-	//
-	//	This prepares the modal logistics with the
-	//	
-	//
-	const roomies_freight = ask_for_freight ();
-	freight.fields.ICANN_net_path = roomies_freight.net_path;
-	freight.fields.net_name = roomies_freight.net_name;
-	
-	prepared = "yes"
-});
-onDestroy (() => {
-	Truck_Monitor.stop ()
-});
 
 
 
@@ -315,23 +368,27 @@ p {
 						<ol class="list">
 							<li>
 								<span class="badge p-2 variant-soft-primary">1. online</span>
-								<span class="flex-auto">Generate the petition</span>
+								<span class="flex-auto">Petition Form</span>
 							</li>
 							<li>
 								<span class="badge p-2 variant-soft-tertiary">2. offline</span>
-								<span class="flex-auto">Scan the petition QR code</span>
+								<span class="flex-auto">Petition QR Code Scan</span>
 							</li>
 							<li>
 								<span class="badge p-2 variant-soft-tertiary">3. offline</span>
-								<span class="flex-auto">Verify & Sign the petition</span>
+								<span class="flex-auto">Petition Verification</span>
+							</li>
+							<li>
+								<span class="badge p-2 variant-soft-tertiary">3. offline</span>
+								<span class="flex-auto">Petition Signature</span>
 							</li>
 							<li>
 								<span class="badge p-2 variant-soft-primary">4. online</span>
-								<span class="flex-auto">Scan the signature QR code</span>
+								<span class="flex-auto">Signature QR Code Scan</span>
 							</li>
 							<li>
 								<span class="badge p-2 variant-soft-primary">5. online</span>
-								<span class="flex-auto">Ask to commit the petition</span>
+								<span class="flex-auto">Petition Throw</span>
 							</li>
 						</ol>
 					</div>
