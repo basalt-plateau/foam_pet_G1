@@ -40,7 +40,7 @@ zip_tar_file = f"packet_zip/{ zip_file_name }"
 		"build_directory": "the_build_1"
 	})
 "'''
-def retrieve_paths (packet = {}):
+def retrieve_paths (theme = {}):
 	build_directory = "the_build_1"
 	
 	return {
@@ -79,7 +79,8 @@ def retrieve_paths (packet = {}):
 			"path": str (normpath (join (
 				this_folder, 
 				f"the_build_2"
-			)))
+			))),
+			
 		},
 		
 		"the_build": str (normpath (join (
@@ -116,7 +117,10 @@ def run (screenplay):
 
 def check_image ():
 	paths = retrieve_paths ();
-
+	
+	name = "Foam_Pet_v2_0_0.0"
+	image_name = "foam_pet:v2_0_0.0"
+	
 	#
 	#	maybe:
 	#		[OS] docker rmi foam_pet:v1.3.0
@@ -125,37 +129,28 @@ def check_image ():
 	#		[OS] unzip foam_pet_v1.3.0-1.tar.zip
 	#		[OS] docker load -i image/Foam_Pet_v1_3_0.0.Docker_image.tar
 	#
-
+	shutil.rmtree (paths ["the_build_2"] ["path"])
 	shutil.copytree (
 		paths ["the_build_1"] ["path"],
 		paths ["the_build_2"] ["path"]
 	)
 	
 	
-	
-	
-	return;
+	zip_file_path = paths ["the_build_2"] ["path"] + "/" + name + ".zip"
+	build_directory = paths ["the_build_2"] ["path"] + "/" + name;
+	docker_image_tar = paths ["the_build_2"] ["path"] + "/" + name + "/Foam_Pet_v2_0_0.0.Docker_image.tar"
 	
 	#
-	#	maybe:
-	#		docker exec -it foam_pet_1 bash -c "bash"
-	#		docker logs foam_pet_1
+	#	1. delete the directory "Foam_Pet_v2_0_0.0"
+	#	2. unzip zip file
+	#	3. docker load the .tar
 	#
-	arena_tar_file = f"image_arena/{file_name}"
-	arena_zip_tar_file = f"image_arena/{file_name}.zip"
-	arena_zip_tar_file_name = f"{file_name}.zip"
-	
-	
-	
-	run (f"cd image_arena && unzip '{ arena_zip_tar_file_name }'");
-	
-	
-	run (f"docker rmi foam_pet:v2_0_0.0");
-	
-	run (f"docker load -i '{ arena_tar_file }'")
+	shutil.rmtree (build_directory)
+	run (f"""cd '{ paths ["the_build_2"] ["path"] }' && unzip '{ zip_file_path }'""");
+	run (f"docker rmi { image_name }");
+	run (f"docker load -i '{ docker_image_tar }'")
 	run (f"docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)")
-	run (f'docker run --name foam_pet_1 -td -e HOST_IP=host.docker.internal -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 foam_pet:v1_3_0.0 /bin/bash -c "bash /embark.sh"')
-	
+	run (f'docker run --name foam_pet_1 -td -e HOST_IP=host.docker.internal -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 { image_name } /bin/bash -c "bash /embark.sh"')
 	
 	
 	
@@ -166,11 +161,9 @@ def save_docker_image ():
 	paths = retrieve_paths ();
 
 	distribution_zip = paths ['distribution_zip']
-
-	# run (f"docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian ");
-
-	run (f"mkdir -p '{ paths ['distribution_directory'] }'")	
-
+	
+	run (f"mkdir -p '{ paths ['distribution_directory'] }'")
+	
 	#
 	#	create:
 	#		readme.md
@@ -185,8 +178,8 @@ def save_docker_image ():
 	#
 	#
 	run (f"docker rmi { image_name_plus_version }");
-
-
+	
+	
 	#
 	#	
 	#

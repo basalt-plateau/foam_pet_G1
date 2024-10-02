@@ -15,7 +15,7 @@ def retrieve_plays ():
 	URL = "https://localhost"
 	
 	# URL = "http://localhost:22000"
-	#URL = "https://45.77.86.6"
+	#URL = "https://144.202.113.169/"
 
 	open_browser = "yes"
 	open_browser = "yes"
@@ -25,7 +25,9 @@ def retrieve_plays ():
 	has_memo = "no"
 	"'''
 	
-	URL = "http://localhost:22000"
+	#URL = "https://144.202.113.169/"
+	#URL = "http://localhost:22000"
+	URL = "https://foam.pet"	
 	has_memo = "yes"
 	
 

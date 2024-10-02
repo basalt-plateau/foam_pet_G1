@@ -21,7 +21,7 @@ import { parse_styles } from '$lib/trinkets/styles/parse'
 //
 //	Modals
 //
-import Layer_Octas_Gifts_Friends from '$lib/Friends_Moves/AA_Transfer_Mode_1/Friends_Panel/Trinket.svelte'
+import Layer_Octas_Gifts_Friends from '$lib/Friends_Moves/APT_Throw_Mode_1/Friends_Panel/Trinket.svelte'
 import Layer_Faucet from '$lib/Friends_Moves/Faucet/Trinket.svelte'
 import Friends_Move_Coin_Transfer_Mode_1 from '$lib/Friends_Moves/Coin_Transfer_Mode_1/Friends_Move/Trinket.svelte'
 import Transaction_Modal from '$lib/Friends_Moves/Transaction/Friends_Move/Trinket.svelte'

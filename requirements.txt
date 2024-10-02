@@ -144,7 +144,7 @@ pygments==2.18.0
     #   rich
 pyinotify==0.9.6
     # via ships
-pymongo==4.9.1
+pymongo==4.10.1
     # via
     #   biotech
     #   emergency
@@ -165,7 +165,7 @@ requests==2.32.3
     #   biotech
     #   body-scan
     #   emergency
-rich==13.8.1
+rich==13.9.1
     # via
     #   biotech
     #   emergency
@@ -212,7 +212,7 @@ tinydb==4.8.0
     #   biotech
     #   body-scan
     #   emergency
-tomli==2.0.1
+tomli==2.0.2
     # via foam-pet (pyproject.toml)
 tracerite==1.1.1
     # via sanic
@@ -223,6 +223,7 @@ typing-extensions==4.12.2
     #   limits
     #   multidict
     #   pydash
+    #   rich
     #   sanic
 ujson==5.10.0
     # via sanic

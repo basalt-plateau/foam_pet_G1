@@ -19,7 +19,7 @@
 //
 import { parse_styles } from '$lib/trinkets/styles/parse.js';
 import Panel from '$lib/trinkets/panel/trinket.svelte'
-import AA_Transfer_Mode_1_Relatives_Panel from '$lib/Friends_Moves/AA_Transfer_Mode_1/Relatives_Panel/Trinket.svelte'
+import APT_Throw_Mode_1_Relatives_Panel from '$lib/Friends_Moves/APT_Throw_Mode_1/Relatives_Panel/Trinket.svelte'
 //
 //
 import { onMount } from 'svelte'
@@ -65,7 +65,7 @@ const open_consideration_modal = async () => {
 		backdropClasses: '!p-0',
 		
 		component: {
-			ref: AA_Transfer_Mode_1_Relatives_Panel,
+			ref: APT_Throw_Mode_1_Relatives_Panel,
 			props: { 
 				modal_store
 			}
