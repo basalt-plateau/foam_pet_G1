@@ -163,7 +163,7 @@ let tabSet = 0
 				</li>
 				<li>
 					<span class="badge-icon p-4 variant-soft-primary">2</span>
-					<span class="flex-auto"><Slang text="Signatures"/> is for signing for Friends Vacations</span>
+					<span class="flex-auto"><Slang text="Signatures"/> is for signing for Friends Talents</span>
 				</li>
 			</ol>
 		</div>

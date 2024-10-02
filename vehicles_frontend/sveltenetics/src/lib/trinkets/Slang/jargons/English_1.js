@@ -34,17 +34,17 @@ export const English_1 = {
 	//
 	//	Characters
 	//
-	"Account": "Totem",
-	"Accounts": "Totems",
-	"an_Account": "a Totem",
-	"An_Account": "A Totem",
+	"Account": "Jersey",
+	"Accounts": "Jerseys",
+	"an_Account": "a Jersey",
+	"An_Account": "A Jersey",
 
 	// Character
 	"Address": "Address",
 	"Addresses": "Addresses",
 	
 	//
-	//	Party, Family, Dynasty, Pod
+	//	Jersey, Family, Dynasty, Pod
 	//	Islands, Constellation, Fest
 	//
 	"consensus": "Fest",
@@ -130,8 +130,9 @@ export const English_1 = {
 	// Organs
 	// Meteor
 	// Machine
-	"Machine": "Lodge",
-	"Machines": "Lodges",
+	// Lodge
+	"Machine": "Trinket",
+	"Machines": "Trinket",
 	
 	//
 	// 	Howl
@@ -140,11 +141,11 @@ export const English_1 = {
 	// 	Relatives Meteor
 	//	Friends Zone
 	//
-	"Online Machine": "Friends Lodge",
-	"Online_Machines": "Friends Lodges",
-	"an_Online_Machine": "a Friends Lodge",
+	"Online Machine": "Friends Trinket",
+	"Online_Machines": "Friends Trinket",
+	"an_Online_Machine": "a Friends Trinket",
 	//
-	"Offline_Machine": "Relatives Lodges",
-	"Offline Machine": "Relatives Lodge",
-	"an_Offline_Machine": "a Relatives Lodge",
+	"Offline_Machine": "Relatives Trinket",
+	"Offline Machine": "Relatives Trinket",
+	"an_Offline_Machine": "a Relatives Trinket",
 }

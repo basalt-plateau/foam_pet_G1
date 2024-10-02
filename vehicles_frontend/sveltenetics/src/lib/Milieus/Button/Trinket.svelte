@@ -6,8 +6,8 @@
 	import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 
 	<Milieus_Button
-		name={ "Vacations" }
-		location={[ "Friends", "Vacations" ]}
+		name={ "Talents" }
+		location={[ "Friends", "Talents" ]}
 		is_open_location={[ "Friends" ]}
 	/>
 */
@@ -16,8 +16,8 @@
 	import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 
 	<Milieus_Button
-		name={ "Vacations" }
-		location={[ "Friends", "Vacations" ]}
+		name={ "Talents" }
+		location={[ "Friends", "Talents" ]}
 		component=""
 	/>
 */

@@ -7,7 +7,7 @@
 <script>
 	
 /*
-	Vacations:
+	Talents:
 		@ Plays
 
 	Friends_Moves:
@@ -75,8 +75,8 @@ let friends_pronunciation = "gwadenyawotch"
 </style>
 
 <svelte:head>
-	<title>Vacations</title>
-	<meta name="description" content="Vacations" />
+	<title>Talents</title>
+	<meta name="description" content="Talents" />
 </svelte:head>
 
 
@@ -108,13 +108,13 @@ let friends_pronunciation = "gwadenyawotch"
 				font-size: 2.5em;
 				text-align: center;
 			"
-		>Vacations</header>
+		>Talents</header>
 		<p
 			style="
 				text-align: center;
 				font-size: 1.2em;
 			"
-		>These vacations require a connection to <Slang text="Aptos" />.</p>
+		>These require a connection to <Slang text="Aptos" />.</p>
 	</div>
 	
 	<div style="height: 0.3cm"></div>

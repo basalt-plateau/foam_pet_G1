@@ -29,9 +29,9 @@ import Scholars_Hints from './Venues/Scholars/Hints/Trinket.svelte'
 import Scholars_Theme from './Venues/Scholars/Theme/Trinket.svelte'
 import Scholars_Wild from './Venues/Scholars/Wild/Trinket.svelte'
 
-import Friends_Vacations from './Venues/Friends/Vacations/Trinket.svelte'
+import Friends_Talents from './Venues/Friends/Talents/Trinket.svelte'
 
-import Relatives_Totems from './Venues/Relatives/Totems/Trinket.svelte'
+import Relatives_Jerseys from './Venues/Relatives/Jerseys/Trinket.svelte'
 import Relatives_Hints from './Venues/Relatives/Hints/Trinket.svelte'
 import Relatives_Signatures from './Venues/Relatives/Signatures/Trinket.svelte'
 
@@ -57,11 +57,11 @@ let Milieus = {
 		"Theme": Scholars_Theme
 	},
 	"Friends": {
-		"Vacations": Friends_Vacations
+		"Talents": Friends_Talents
 	},
 	"Relatives": {
 		"Hints": Relatives_Hints,
-		"Totems": Relatives_Totems,
+		"Jerseys": Relatives_Jerseys,
 		"Signatures": Relatives_Signatures
 	},
 	"Technicians": {

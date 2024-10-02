@@ -36,9 +36,9 @@ onDestroy (() => {
 {#if location [0] === "Friends" }
 <div>
 	<Milieus_Button
-		name={ "Vacations" }
-		location={[ "Friends", "Vacations" ]}
-		is_open_location={[ "Friends", "Vacations" ]}
+		name={ "Talents" }
+		location={[ "Friends", "Talents" ]}
+		is_open_location={[ "Friends", "Talents" ]}
 	/>
 </div>
 {/if}

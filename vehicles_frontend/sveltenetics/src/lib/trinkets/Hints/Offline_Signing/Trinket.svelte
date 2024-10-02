@@ -112,8 +112,8 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 									<span>A <Slang text="Petition" /> can be formed from the <Slang text="Online Machine" /> at</span>
 									<Milieus_Button
 										style="display: inline-block;"
-										name={ "Vacations" }
-										location={[ "Friends", "Vacations" ]}
+										name={ "Talents" }
+										location={[ "Friends", "Talents" ]}
 										is_open_location={[ "Friends" ]}
 									/>
 								</p>

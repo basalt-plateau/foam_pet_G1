@@ -112,7 +112,7 @@ let relatives_name_2 = '/pictures/relatives.svg';
 		monitor="Friends"
 	
 		name={ names.friends }
-		location={[ "Friends", "Vacations" ]}
+		location={[ "Friends", "Talents" ]}
 		is_open_location={[ "Friends" ]}
 		
 		style={ buttons_styles }
