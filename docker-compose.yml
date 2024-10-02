@@ -7,8 +7,8 @@
 
 
 #
-#
-# 	docker network create --subnet=192.168.0.0/24 bios_net
+#	docker network rm strings_1
+# 	docker network create --subnet=192.168.0.0/24 strings_1
 #
 
 #version: '3'
@@ -16,18 +16,16 @@
 services:
   jumps:
     image: jumps:v2.1.0
-    container_name: template_poetry_uv.1
+    container_name: Foam_Pet.1
     networks:
-      bios_net:
-        ipv4_address: 192.168.0.10
+      strings_1:
+        ipv4_address: 192.168.0.11
     volumes:
-      - .:/habitat
+      - .:/Metro
     stdin_open: true
     tty: true
     privileged: true
 
 networks:
-  bios_net:
+  strings_1:
     external: true
-
-

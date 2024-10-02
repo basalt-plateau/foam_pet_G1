@@ -56,6 +56,7 @@ import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitt
 export let on_change = () => {}
 export let on_prepare = () => {}
 
+export let display_sci_note_estimate = "no"
 
 const trucks = {}
 const placeholders = Object.freeze ({
@@ -285,6 +286,7 @@ const calculate_exponent = () => {1
 			margin: 4px 0;
 		"
 	>
+		{#if display_sci_note_estimate === "yes" }
 		<span 
 			class="badge variant-soft"
 			style="
@@ -322,8 +324,8 @@ const calculate_exponent = () => {1
 				>Octas</span>
 			</div>
 		</span>
-		
 		<div style="height: 6px; width: 6px"></div>
+		{/if}
 		
 		<span 
 			class="badge variant-soft"
