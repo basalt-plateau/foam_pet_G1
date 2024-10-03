@@ -9,7 +9,7 @@ import { onMount, onDestroy } from 'svelte'
 //
 import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
-import Relatives from '$lib/Letters/Relatives.svelte'
+import Loyals from '$lib/Letters/Loyals.svelte'
 import { parse_styles } from '$lib/trinkets/styles/parse'
 //
 //
@@ -41,21 +41,21 @@ onDestroy (() => {
 
 
 let buttons_styles = ""
-let relatives_button_styles = {}
+let loyals_button_styles = {}
 const build = () => {
 	mode = check_roomies_truck ().freight.mode;
 	window_width = check_roomies_truck ().freight.window_width;
 	
 	if (window_width > 800) {
 		buttons_styles = 'padding: 0.2cm 0.6cm; margin: 0 0.1cm; font-size: 1.2em'
-		relatives_button_styles = {
+		loyals_button_styles = {
 			height: "27px",
 			width: "60px"
 		}
 	}
 	else {
 		buttons_styles = ''
-		relatives_button_styles = {}
+		loyals_button_styles = {}
 	}
 }
 
@@ -69,12 +69,12 @@ let names = {
 	friends: (
 		"ጓደኛዎች"
 	),
-	relatives: (
+	loyals: (
 		"ᐊᔭᖅ"
 	)	
 }
 
-let relatives_name_2 = '/pictures/relatives.svg';
+let loyals_name_2 = '/pictures/loyals.svg';
 
 /*
 	<img 
@@ -117,14 +117,14 @@ let relatives_name_2 = '/pictures/relatives.svg';
 	/>
 	
 	<Milieus_Button
-		monitor="Relatives"
+		monitor="Loyals"
 	
-		location={[ "Relatives", "Hints" ]}
-		is_open_location={[ "Relatives" ]}
+		location={[ "Loyals", "Hints" ]}
+		is_open_location={[ "Loyals" ]}
 		
-		component={ Relatives }
+		component={ Loyals }
 		component_props={{
-			style: relatives_button_styles
+			style: loyals_button_styles
 		}}
 		
 		style={ buttons_styles }

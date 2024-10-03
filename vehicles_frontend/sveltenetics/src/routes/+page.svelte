@@ -64,7 +64,7 @@ const mode = check_roomies_truck ().freight.mode;
 		
 		<p
 			style="font-size: 1em; text-align: center"
-		>This <Slang text="Pet" /> is a <Slang text="Friends_Habitat" /> + a <Slang text="Relatives_Habitat" />.</p>
+		>This <Slang text="Pet" /> is a <Slang text="Friends_Habitat" /> + a <Slang text="Loyals_Habitat" />.</p>
 
 		
 		<div style="height: 0.25cm"></div>
@@ -122,7 +122,7 @@ const mode = check_roomies_truck ().freight.mode;
 				<div class="card p-4">
 					<p
 						style="text-align: center"
-					><Slang text="Relatives_Habitat" /></p>
+					><Slang text="Loyals_Habitat" /></p>
 					<p style="font-size: 1em; text-align: center">
 						<span class="badge variant-filled-primary">@ Cold Wallet</span>
 						<span class="badge variant-filled-primary">@ Offline Wallet</span>
@@ -311,14 +311,14 @@ const mode = check_roomies_truck ().freight.mode;
 							text-align: center;
 							padding: 0cm 0;
 						"
-					>Relatives</header>
+					>Loyals</header>
 				</svelte:fragment>
 				<svelte:fragment slot="content">
 					<div>
 						<p
 							style="font-size: 1em; text-align: center"
 						>	
-							<span>The <b>Relatives</b> region should be used on a <Slang text="Offline Machine" /></span>
+							<span>The <b>Loyals</b> region should be used on a <Slang text="Offline Machine" /></span>
 						</p>
 					</div>
 				</svelte:fragment>

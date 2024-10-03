@@ -11,7 +11,6 @@
 	Important:
 		Navigator
 		Scholars_Truck
-
 */
 
 
@@ -31,9 +30,9 @@ import Scholars_Wild from './Venues/Scholars/Wild/Trinket.svelte'
 
 import Friends_Talents from './Venues/Friends/Talents/Trinket.svelte'
 
-import Relatives_Jerseys from './Venues/Relatives/Jerseys/Trinket.svelte'
-import Relatives_Hints from './Venues/Relatives/Hints/Trinket.svelte'
-import Relatives_Signatures from './Venues/Relatives/Signatures/Trinket.svelte'
+import Loyals_Jerseys from './Venues/Loyals/Jerseys/Trinket.svelte'
+import Loyals_Hints from './Venues/Loyals/Hints/Trinket.svelte'
+import Loyals_Signatures from './Venues/Loyals/Signatures/Trinket.svelte'
 
 import Technicians_Map from './Venues/Technicians/Trinket.svelte'
 import Technicians_Address_Qualities from './Venues/Technicians/Address_Qualities/Trinket.svelte'
@@ -46,7 +45,6 @@ import Technicians_Net_Choices from './Venues/Technicians/Nets_Choices/Trinket.s
 import Technicians_Polytope from './Venues/Technicians/Polytope/Trinket.svelte'
 import Technicians_Slang from './Venues/Technicians/Slang/Trinket.svelte'
 import Technicians_Field from './Venues/Technicians/Field/Trinket.svelte'
-
 //
 ////
 
@@ -59,10 +57,10 @@ let Milieus = {
 	"Friends": {
 		"Talents": Friends_Talents
 	},
-	"Relatives": {
-		"Hints": Relatives_Hints,
-		"Jerseys": Relatives_Jerseys,
-		"Signatures": Relatives_Signatures
+	"Loyals": {
+		"Hints": Loyals_Hints,
+		"Jerseys": Loyals_Jerseys,
+		"Signatures": Loyals_Signatures
 	},
 	"Technicians": {
 		"Map": Technicians_Map,

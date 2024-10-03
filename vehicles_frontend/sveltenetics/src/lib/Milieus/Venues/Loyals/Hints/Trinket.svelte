@@ -3,8 +3,7 @@
 
 <script>
 
-
-////
+//\\
 //
 import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';	
 import { TreeView, TreeViewItem, RecursiveTreeView } from '@skeletonlabs/skeleton';
@@ -21,6 +20,53 @@ import Beacons from './Beacons/Trinket.svelte'
 //
 ////
 
+import Loyals from '$lib/Letters/Loyals.svelte'
+
+
+/*
+let loyals_name = (
+	"家庭"	
+)
+*/
+
+
+/*
+// 
+//
+//
+//
+//
+var loyals_name = (
+	"ᎤᏓᏅᏙᏗ"
+)
+var loyals_language = "Cherokee";
+var loyals_pronunciation = "udanvdo"
+
+
+// 
+//
+//
+//
+//
+let loyals_name = (
+	"ᐊᔭᖅ"
+)
+let loyals_language = "Inuktitut";
+let loyals_pronunciation = "ajaaq"
+*/
+
+
+// 
+//
+//
+//
+//
+var loyals_name = "Loyals"
+var loyals_language = "Foam Pet";
+var loyals_pronunciation = ""
+
+
+
 
 let tabSet = 0
 
@@ -29,7 +75,7 @@ let tabSet = 0
 
 
 <svelte:head>
-	<title>Marafiki</title>
+	<title>{ loyals_name }</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
@@ -45,6 +91,33 @@ let tabSet = 0
 	"
 >
 	<div
+		class="card p-1"
+		style="
+			width: 100%;
+		"
+	>
+		<p
+			style="
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			"
+		>
+			<span
+				style="
+					display: inline-flex;
+					align-items: center;
+				"
+			><Loyals /></span>
+			<span style="width: 10px"> </span>
+			<span>might be { loyals_language } for "loyals".</span>
+		</p>
+	</div>
+
+	<div style="height: 0.2cm"></div>
+
+	<div
 		class="card p-4"
 		style="
 			padding: 1cm;
@@ -53,20 +126,12 @@ let tabSet = 0
 	>
 		<header
 			style="
+				display: none;
 				font-size: 2.5em;
 				text-align: center;
 			"
-		>家庭</header>
-		
-		<p
-			style="
-				text-align: center;
-				font-size: 1.2em;
-			"
-		>"家庭" is like equivalent to "loyals".</p>
-		
-		<div style="height: 0.25cm"></div>
-		
+		>{ loyals_name }</header>
+				
 		<p
 			style="
 				text-align: center;

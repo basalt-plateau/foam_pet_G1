@@ -18,7 +18,7 @@ into this: foam_pet_v1.0.0-1.tar
 </script>
 
 <svelte:head>
-	<title>Relatives, Hints</title>
+	<title>Loyals, Hints</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 

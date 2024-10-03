@@ -67,7 +67,7 @@ const regions_map = [{
 		"href": "/Friends/Moves"
 	}]
 },{
-	"name": "Relatives",
+	"name": "Loyals",
 	"has": [{
 		"name": "Addresses"
 	}]
@@ -97,7 +97,7 @@ const regions_map = [{
 			"href": "/Friends/Moves"
 		}]
 	},{
-		"name": "Relatives",
+		"name": "Loyals",
 		"has": [{
 			"name": "Addresses"
 		}]
@@ -370,7 +370,7 @@ button {
 							margin: 0;
 						"
 					>
-						<span>Relatives</span>
+						<span>Loyals</span>
 					</button>
 				</div>
 				
@@ -400,7 +400,7 @@ button {
 				<span>Friends</span>
 			</button>
 			<button type="button" class="btn variant-filled">
-				<span>Relatives</span>
+				<span>Loyals</span>
 			</button>
 		</div>
 	</div>

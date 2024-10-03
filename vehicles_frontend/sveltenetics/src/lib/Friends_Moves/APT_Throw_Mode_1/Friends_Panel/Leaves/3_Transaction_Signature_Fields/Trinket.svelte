@@ -76,7 +76,7 @@ let current_tab = 0;
 					<p
 						style="text-align: center"
 					>
-						<span>A signature made in the Relatives form can be added here.</span> 
+						<span>A signature made in the Loyals form can be added here.</span> 
 					</p>
 				</svelte:fragment>
 			</AccordionItem>

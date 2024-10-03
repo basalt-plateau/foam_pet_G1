@@ -395,14 +395,14 @@ let seeds = {
 							text-align: center;
 							padding: 0cm 0;
 						"
-					>Relatives</header>
+					>Loyals</header>
 				</svelte:fragment>
 				<svelte:fragment slot="content">
 					<div>
 						<p
 							style="font-size: 1em; text-align: center"
 						>	
-							<span>The <b>Relatives</b> region should be used on a <Slang text="Offline Machine" /></span>
+							<span>The <b>Loyals</b> region should be used on a <Slang text="Offline Machine" /></span>
 						</p>
 					</div>
 				</svelte:fragment>

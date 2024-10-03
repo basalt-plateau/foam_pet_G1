@@ -3,7 +3,7 @@
 
 
 /*
-	// Relatives
+	// Loyals
 
 	import { 
 		create_TP_AO_from_hexadecimal_string 

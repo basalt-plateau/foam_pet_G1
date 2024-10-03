@@ -84,8 +84,8 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 						<span><Slang text="An_Account" /> can be found at</span>
 						<Milieus_Button
 							name={ "Jerseys" }
-							location={[ "Relatives", "Jerseys" ]}
-							is_open_location={[ "Relatives", "Jerseys" ]}
+							location={[ "Loyals", "Jerseys" ]}
+							is_open_location={[ "Loyals", "Jerseys" ]}
 							style="display: inline-block"
 						/>
 					</p>
@@ -124,8 +124,8 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 						<span>To allow a vacation, the vacation <Slang text="Petition" /> needs to be <Slang text="signed" /> for at</span>
 						<Milieus_Button
 							name={ "Signatures" }
-							location={[ "Relatives", "Signatures" ]}
-							is_open_location={[ "Relatives", "Signatures" ]}
+							location={[ "Loyals", "Signatures" ]}
+							is_open_location={[ "Loyals", "Signatures" ]}
 							style="display: inline-block"
 						/>
 					</p>

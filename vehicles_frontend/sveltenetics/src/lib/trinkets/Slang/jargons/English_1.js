@@ -111,11 +111,11 @@ export const English_1 = {
 	
 	//
 	// 	Moon Wallet
-	// 	Relatives_Habitat
+	// 	Loyals_Habitat
 	// 	Meteor Wallet		
-	// 	Relatives Wallet
+	// 	Loyals Wallet
 	//
-	"Relatives_Habitat": "Relatives Soft Where",
+	"Loyals_Habitat": "Loyals Soft Where",
 	
 	//
 	// 	Planet Metropolis
@@ -138,14 +138,14 @@ export const English_1 = {
 	// 	Howl
 	// 	Island + Mainlan
 	// 	Planet Machine + Meteor Machine
-	// 	Relatives Meteor
+	// 	Loyals Meteor
 	//	Friends Zone
 	//
 	"Online Machine": "Friends Trinket",
 	"Online_Machines": "Friends Trinket",
 	"an_Online_Machine": "a Friends Trinket",
 	//
-	"Offline_Machine": "Relatives Trinket",
-	"Offline Machine": "Relatives Trinket",
-	"an_Offline_Machine": "a Relatives Trinket",
+	"Offline_Machine": "Loyals Trinket",
+	"Offline Machine": "Loyals Trinket",
+	"an_Offline_Machine": "a Loyals Trinket",
 }

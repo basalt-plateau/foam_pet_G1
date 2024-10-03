@@ -30,8 +30,8 @@ import Milieus_Trucks from '$lib/Milieus/Truck/Trinket.svelte'
 //
 import Buttons_Panel from './Trinkets/Buttons_Panel.svelte'
 import Net_Trinket from './Trinkets/Net.svelte'
-import Relative_Caution_Alert from './Trinkets/Relative_Caution_Alert.svelte'
-import Signatures from './Trinkets/Navigator_Relatives/Signatures.svelte'
+import Online_Caution_Alert from './Trinkets/Online_Caution_Alert.svelte'
+import Signatures from './Trinkets/Navigator_Loyals/Signatures.svelte'
 import The_Map_Trinket from './Trinkets/The_Map/Trinket.svelte'
 //
 ////
@@ -41,7 +41,7 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 import Navigator_1 from './Trinkets/Navigator_1.svelte'
 import Navigator_Scholars from './Trinkets/Navigator_Scholars.svelte'
 import Navigator_Friends from './Trinkets/Navigator_Friends.svelte'
-import Navigator_Relatives from './Trinkets/Navigator_Relatives.svelte'
+import Navigator_Loyals from './Trinkets/Navigator_Loyals.svelte'
 
 
 
@@ -108,13 +108,13 @@ const on_seeds_truck_change = ({ freight: _freight, happening }) => {
 			>
 				<Navigator_Scholars />
 				<Navigator_Friends />
-				<Navigator_Relatives />
+				<Navigator_Loyals />
 			</div>
 		</nav>
 		
 		<Net_Trinket />
 		
-		<Relative_Caution_Alert />
+		<Online_Caution_Alert />
 	</div>
 	{/if}
 </div>

@@ -29,6 +29,8 @@ import { onMount, onDestroy } from 'svelte'
 import { AppRail, AppRailTile, AppRailAnchor } from '@skeletonlabs/skeleton';
 import { LightSwitch } from '@skeletonlabs/skeleton';
 import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+import { SlideToggle } from '@skeletonlabs/skeleton';
+//
 import * as AptosSDK from "@aptos-labs/ts-sdk";
 //
 //
@@ -43,6 +45,7 @@ import Scholars_Trucks from '$lib/Versies/Trucks.svelte'
 //
 ///
 
+import Beauty from './Trinkets/Beauty.svelte'
 
 
 import { trends } from './Trinket.js'
@@ -139,8 +142,6 @@ onMount (() => {
 });
 
 
-
-
 </script>
 
 <style>
@@ -185,54 +186,7 @@ a {
 		
 		<div style="height: 0.2cm"></div>
 		
-		<div
-			class="card p-4"
-			style="
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-			"
-		>
-			<div
-				class="card p-2 variant-soft-surface"
-				style="
-					padding: 0.2cm 1cm;
-					margin: 0.2cm 0 0.5cm;
-				"
-			>
-				<header
-					style="
-						font-size: 1.4em;
-						line-height: 100%;
-					"
-				>Beauty</header>
-			</div>
-			
-			<div style="width: 10px"></div>
-			<div
-				class="card p-2 variant-filled-primary"
-				style="
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					gap: 8px;
-				"
-			>
-				<div>Nocturnal</div>
-				<LightSwitch />
-				<div>Diurnal</div>
-			</div>
-			
-			<div style="height: 0.2cm"></div>
-			
-			<RadioGroup>
-				<RadioItem bind:group={theme} name="justify" value="Atolls">Atolls</RadioItem>
-				<RadioItem bind:group={theme} name="justify" value="PTO">PTO</RadioItem>
-				<RadioItem bind:group={theme} name="justify" value="rhubarb">Rhubarb</RadioItem>
-				<RadioItem bind:group={theme} name="justify" value="Hacienda">Hacienda</RadioItem>
-			</RadioGroup>
-		</div>
+		<Beauty />
 		
 		<div style="height: 0.2cm"></div>
 		

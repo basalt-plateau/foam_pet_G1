@@ -42,6 +42,7 @@ import { lease_Milieus_truck, give_back_Milieus_truck } from '$lib/Milieus/Truck
 
 
 
+
 ///
 //
 import "../app.css";
@@ -114,7 +115,7 @@ beforeUpdate (async () => {
 </script>
 
 
-
+<svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
 
 <div 
 	in:fade={{ duration: 500 }} 

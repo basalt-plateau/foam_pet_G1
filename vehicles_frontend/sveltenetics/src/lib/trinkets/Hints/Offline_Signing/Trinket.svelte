@@ -145,8 +145,8 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 									<Milieus_Button
 										style="display: inline-block;"
 										name={ "Signatures" }
-										location={[ "Relatives", "Signatures" ]}
-										is_open_location={[ "Relatives" ]}
+										location={[ "Loyals", "Signatures" ]}
+										is_open_location={[ "Loyals" ]}
 									/>
 								</p>
 							</div>
