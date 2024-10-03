@@ -16,7 +16,7 @@ import Installation_with_Docker from '$lib/trinkets/Wild/Docker/Trinket.svelte'
 import Code_Wall from '$lib/trinkets/Code_Wall/Trinket.svelte' 
 //
 //
-import Beacons from './Beacons/Trinket.svelte'
+
 //
 ////
 
@@ -158,20 +158,19 @@ let tabSet = 0
 				<li>
 					<span class="badge-icon p-4 variant-soft-primary">1</span>
 					<span class="flex-auto">
-						<Slang text="Accounts"/> is for choosing an <Slang text="Account"/>
+						<Slang text="Accounts"/> is for choosing <Slang text="Account"/>
 					</span>
 				</li>
 				<li>
 					<span class="badge-icon p-4 variant-soft-primary">2</span>
-					<span class="flex-auto"><Slang text="Impressions"/> is for signing for Friends Talents</span>
+					<span class="flex-auto"><Slang text="Impressions"/> is for using <Slang text="Account"/> to allow a <Slang text="Petition"/>.</span>
 				</li>
 			</ol>
 		</div>
 	</div>
 	
+
 	<!-- 
-	<div style="height: 0.5cm"></div>
-	<Beacons /> 
 	
 	
 	<div style="height: 0.5cm"></div>

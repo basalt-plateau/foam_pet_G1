@@ -13,9 +13,8 @@ import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 import Caution from '$lib/trinkets/_Caution/Trinket.svelte'
 //
-import Offline_Machine_Tutorial from '$lib/places/Scholars/Offline_Machine_Tutorial.svelte'
-import Online_Machine_Tutorial from '$lib/places/Scholars/Online_Machine_Tutorial.svelte'
 import Offline_Signing_Hints from '$lib/trinkets/Hints/Offline_Signing/Trinket.svelte'
+import Beacons from '$lib/trinkets/Hints/Beacons/Trinket.svelte'
 //
 import { check_roomies_truck } from '$lib/Versies/Trucks'
 import Slang_Cipher from '$lib/trinkets/Slang/Cipher.svelte'
@@ -23,12 +22,15 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 //
 import Taxonomy from '$lib/trinkets/Taxonomy/Bling.svelte'
 //
+//
+import Getting_Moving from './Getting_Moving/Trinket.svelte'
+import Preparation_Tutorial from './Preparation_Tutorial/Trinket.svelte'
+//
 ////
 
 
-import Getting_Moving from './Getting_Moving/Trinket.svelte'
-import Preparation_Tutorial from './Preparation_Tutorial/Trinket.svelte'
-	
+
+
 	
 ////
 //
@@ -301,55 +303,7 @@ let seeds = {
 	
 	<div style="height: 0.5cm"></div>
 	
-	
-	<div class="card p-4">		
-		<div style="height: 0.25cm"></div>
-		
-		<header 
-			style="
-				font-size: 2em; 
-				text-align: center;
-				padding: 0cm 0;
-			"
-		><Slang text="Machines" /></header>
-		
-		<div style="height: 0.5cm" ></div>
-		<hr class="!border-t-2" />
-		<div style="height: 0.5cm" ></div>
-		
-		<div class="card p-2 variant-soft">
-			<Accordion>
-				<AccordionItem>
-					<svelte:fragment slot="summary">
-						<div>
-							<p><Slang text="Offline Machine" /> Tutorial</p>
-						</div>
-					</svelte:fragment>
-					<svelte:fragment slot="content">
-						<Offline_Machine_Tutorial />
-					</svelte:fragment>
-				</AccordionItem>
-			</Accordion>
-		</div>
-		
-		<div style="height: 0.25cm"></div>
-		
-		<div class="card p-2 variant-soft">
-			<Accordion>
-				<AccordionItem>
-					<svelte:fragment slot="summary">
-						<div>
-							<p><Slang text="Online Machine" /> Tutorial</p>
-						</div>
-					</svelte:fragment>
-					<svelte:fragment slot="content">
-						<Online_Machine_Tutorial />
-					</svelte:fragment>
-				</AccordionItem>
-			</Accordion>
-		</div>
-	</div>
-	
+	<Beacons />
 	
 	<div style="height: 0.5cm"></div>
 	

@@ -5,9 +5,6 @@
 import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 
-
-
-
 </script>
 
 
@@ -18,7 +15,7 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 	"
 >
 	<Accordion>
-		<AccordionItem open>
+		<AccordionItem>
 			<svelte:fragment slot="summary">
 				<header
 					style="
@@ -61,7 +58,7 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 								text-align: center;
 							"
 						>
-							<span><Slang text="Offline Machine" /> should be connected to the public lattices,<br /></span>
+							<span><Slang text="Online Machine" /> should be connected to the public lattices,<br /></span>
 							<span>such as ethernet, wifi, bluetooth, NFC, towers, satellites, etc.</span>
 						</p>
 						
@@ -156,7 +153,7 @@ import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 							style="
 								text-align: center;
 							"
-						>and where <Slang text="Aptos" /> <Slang text="Transactions" /> should be signed.</p>
+						>and where <Slang text="Aptos" /> <Slang text="Petitions" /> should be signed.</p>
 					</div>
 				</div>
 			</svelte:fragment>
