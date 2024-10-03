@@ -26,10 +26,6 @@
 //
 
 import { onMount, onDestroy } from 'svelte'
-import { AppRail, AppRailTile, AppRailAnchor } from '@skeletonlabs/skeleton';
-import { LightSwitch } from '@skeletonlabs/skeleton';
-import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
-import { SlideToggle } from '@skeletonlabs/skeleton';
 //
 import * as AptosSDK from "@aptos-labs/ts-sdk";
 //
@@ -46,9 +42,6 @@ import Scholars_Trucks from '$lib/Versies/Trucks.svelte'
 ///
 
 import Beauty from './Trinkets/Beauty.svelte'
-
-
-import { trends } from './Trinket.js'
 import Commas from './Trinkets/Commas.svelte'
 
 
@@ -89,55 +82,8 @@ let every_net_enhance = ({
 
 
 
-/*
-	
-	Theme is part of 
-	
-*/
-let theme = ""
 let mounted = "no"
-$: {
-	let _theme = theme;
-	change_theme ({ theme })
-}
-const change_theme = ({ theme: _theme }) => {
-	console.log ("change_theme:", _theme)
-	
-	if (typeof _theme === 'string' && _theme.length >= 1) {
-		localStorage.setItem ('body-theme', _theme);
-		document.body.setAttribute ('data-theme', _theme)
-		theme = _theme;
-		
-		console.log ({ _theme })
-	}
-}
-
-const ask_for_theme = () => {
-	let local_storage_theme = localStorage.getItem ('body-theme');
-	if (
-		typeof local_storage_theme === "string" &&
-		local_storage_theme.length >= 1
-	) {
-		return local_storage_theme;
-	}
-	
-	let body_theme = document.body.getAttribute ('data-theme') 
-	if (
-		typeof body_theme === "string" &&
-		body_theme.length >= 1
-	) {
-		return body_theme;
-	}
-	
-	return ''
-}
-
 onMount (() => {
-	let theme = ask_for_theme ()
-	
-	change_theme ({ 
-		theme
-	});
 	mounted = "yes"
 });
 

@@ -11,9 +11,7 @@ import { SlideToggle } from '@skeletonlabs/skeleton';
 import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
 /*
-	
 	Theme is part of 
-	
 */
 let theme = ""
 let mounted = "no"
@@ -32,6 +30,38 @@ const change_theme = ({ theme: _theme }) => {
 		console.log ({ _theme })
 	}
 }
+
+
+const ask_for_theme = () => {
+	let local_storage_theme = localStorage.getItem ('body-theme');
+	if (
+		typeof local_storage_theme === "string" &&
+		local_storage_theme.length >= 1
+	) {
+		return local_storage_theme;
+	}
+	
+	let body_theme = document.body.getAttribute ('data-theme') 
+	if (
+		typeof body_theme === "string" &&
+		body_theme.length >= 1
+	) {
+		return body_theme;
+	}
+	
+	return ''
+}
+
+
+onMount (() => {
+	let theme = ask_for_theme ()
+	
+	change_theme ({ 
+		theme
+	});
+	mounted = "yes"
+});
+
 
 
 let visibility = false;
