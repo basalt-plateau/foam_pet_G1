@@ -13,7 +13,7 @@ import Seeds_Trucks from '$lib/Versies/Trucks.svelte'
 import { check_roomies_truck } from '$lib/Versies/Trucks'
 //
 //
-import Signatures_Component from './Navigator_Loyals/Signatures.svelte'
+import Impressions_Component from './Navigator_Loyals/Impressions.svelte'
 //
 //
 
@@ -86,17 +86,17 @@ const build = () => {
 		style={ buttons_styles }
 	/>
 	<Milieus_Button
-		name={ "Jerseys" }
-		location={[ "Loyals", "Jerseys" ]}
-		is_open_location={[ "Loyals", "Jerseys" ]}
+		name={ "Bling" }
+		location={[ "Loyals", "Bling" ]}
+		is_open_location={[ "Loyals", "Bling" ]}
 		
 		style={ buttons_styles }
 	/>
 	<Milieus_Button
-		name={ "Signatures" }
-		location={[ "Loyals", "Signatures" ]}
-		is_open_location={[ "Loyals", "Signatures" ]}
-		component={ Signatures_Component }
+		name={ "Impressions" }
+		location={[ "Loyals", "Impressions" ]}
+		is_open_location={[ "Loyals", "Impressions" ]}
+		component={ Impressions_Component }
 		
 		style={ buttons_styles }
 	/>

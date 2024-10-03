@@ -34,10 +34,10 @@ export const English_1 = {
 	//
 	//	Characters
 	//
-	"Account": "Jersey",
-	"Accounts": "Jerseys",
-	"an_Account": "a Jersey",
-	"An_Account": "A Jersey",
+	"Account": "Bling",
+	"Accounts": "Bling",
+	"an_Account": "a Bling",
+	"An_Account": "A Bling",
 
 	// Character
 	"Address": "Address",
@@ -83,7 +83,7 @@ export const English_1 = {
 	//
 	"signature": "Signature",
 	"Signature": "Signature",
-	"Signatures": "Signatures",
+	"Impressions": "Impressions",
 	"Sign": "Sign",
 	"Signer": "Signer",		
 	"Signing": "Signing",

@@ -31,7 +31,7 @@ import Milieus_Trucks from '$lib/Milieus/Truck/Trinket.svelte'
 import Buttons_Panel from './Trinkets/Buttons_Panel.svelte'
 import Net_Trinket from './Trinkets/Net.svelte'
 import Online_Caution_Alert from './Trinkets/Online_Caution_Alert.svelte'
-import Signatures from './Trinkets/Navigator_Loyals/Signatures.svelte'
+import Impressions from './Trinkets/Navigator_Loyals/Impressions.svelte'
 import The_Map_Trinket from './Trinkets/The_Map/Trinket.svelte'
 //
 ////

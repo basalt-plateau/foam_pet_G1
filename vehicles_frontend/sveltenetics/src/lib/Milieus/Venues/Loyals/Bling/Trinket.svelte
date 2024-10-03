@@ -13,23 +13,23 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
 import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 //
+import Bike from 'lucide-svelte/icons/bike';
+//
 //
 import { parse_styles } from '$lib/trinkets/styles/parse.js';
 import Panel from '$lib/trinkets/panel/trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Address_from_Keyboard from '$lib/PTO/Accounts/Trinkets/Address_from_Keyboard/Trinket.svelte'
 import Address_from_Private_Key from '$lib/PTO/Accounts/Trinkets/Address_from_Private_Key/Trinket.svelte'
+import Slang from '$lib/trinkets/Slang/Trinket.svelte'
+import Abstract_Ownership from '$lib/PTO/Accounts/Trinkets/Abstract_Ownership/Trinket.svelte'
+import Abstract_Math from '$lib/PTO/Accounts/Trinkets/Abstract_Math/Trinket.svelte'
 //
 //
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
 //
 //
 ////
-import Slang from '$lib/trinkets/Slang/Trinket.svelte'
-import Bike from 'lucide-svelte/icons/bike';
-
-import Abstract_Ownership from '$lib/PTO/Accounts/Trinkets/Abstract_Ownership/Trinket.svelte'
-import Abstract_Math from '$lib/PTO/Accounts/Trinkets/Abstract_Math/Trinket.svelte'
 
 
 let tabSet = 0;
@@ -65,27 +65,37 @@ const modify_keys_count = () => {
 <Leaf>
 <main addresses monitor="accounts">
 	<Panel>
+		<div style="height: 2cm" />
+	
 		<header
 			style="{parse_styles ({
 				'display': 'flex',
 				'text-align': 'center',
 				'font-size': '2em',
-				'padding': '1cm',
-				
 				'justify-content': 'center'
 			})}"
 		>
 			<Slang text="Accounts" /> 
 		</header>
 		
+		
+		<div style="height: 1cm" />
+		
 		<p
 			style="
 				text-align: center;
 			"
-		><Slang text="An_Account" /> can be <Slang text="driven" /> with a <Slang text="Private Key" /> is necessary to suggest changes to the <Slang text="Address" />.</p>
+		><Slang text="Account" /> is a <Slang text="Private Key" /> that has 1 or more <Slang text="Addresses" />.</p>
 		
 		<div style="height: 0.5cm" />
 		
+		<p
+			style="
+				text-align: center;
+			"
+		>The <Slang text="Private Key" /> is necessary to suggest changes to an <Slang text="Address" />.</p>
+		
+		<div style="height: 2cm" />
 	</Panel>
 
 	<div style="height: 20px"></div>

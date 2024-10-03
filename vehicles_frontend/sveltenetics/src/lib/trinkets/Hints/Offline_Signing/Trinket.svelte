@@ -22,13 +22,13 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	
 	<header
 		style="font-size: 2em; text-align: center"
-	><Slang text="Signatures" /></header>
+	><Slang text="Impressions" /></header>
 
 	<div style="height: 1cm"></div>
 
 	<p
 		style="text-align: center"
-	><Slang text="Signatures" /> are the go ahead necessary for the <Slang text="consensus" /> to add a <Slang text="transaction" /> to the <Slang text="blockchain" />.</p> 
+	><Slang text="Impressions" /> are the go ahead necessary for the <Slang text="consensus" /> to add a <Slang text="transaction" /> to the <Slang text="blockchain" />.</p> 
 	
 	<div style="height: 0.5cm"></div>
 	
@@ -40,7 +40,7 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	
 	
 	<p style="text-align: center">
-		<span><b>Petition</b> + <b>Signature</b> + <b><Slang text="consensus" /> Signatures</b> -> </span>
+		<span><b>Petition</b> + <b>Signature</b> + <b><Slang text="consensus" /> Impressions</b> -> </span>
 		<span><Slang text="transaction" /> on the <Slang text="blockchain" /></span>
 	</p>
 
@@ -144,8 +144,8 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 									<span>A <Slang text="Petition" /> replica can then be sent to the <Slang text="Offline Machine" /> at</span>
 									<Milieus_Button
 										style="display: inline-block;"
-										name={ "Signatures" }
-										location={[ "Loyals", "Signatures" ]}
+										name={ "Impressions" }
+										location={[ "Loyals", "Impressions" ]}
 										is_open_location={[ "Loyals" ]}
 									/>
 								</p>

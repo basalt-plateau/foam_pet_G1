@@ -87,7 +87,7 @@ onMount (() => {
 </script>
 
 <svelte:head>
-	<title>Signatures</title>
+	<title>Impressions</title>
 </svelte:head>
 
 <Leaf>

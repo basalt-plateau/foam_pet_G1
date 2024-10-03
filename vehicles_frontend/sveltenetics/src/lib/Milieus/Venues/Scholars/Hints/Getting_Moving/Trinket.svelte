@@ -10,7 +10,7 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 
 /*
 	1. (Tough) Foam Pet Adoption.
-	2. Choose a Jersey
+	2. Choose a Bling
 	3. Go on a vacation
 */
 
@@ -83,9 +83,9 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 					<p style="text-align: center;">
 						<span><Slang text="An_Account" /> can be found at</span>
 						<Milieus_Button
-							name={ "Jerseys" }
-							location={[ "Loyals", "Jerseys" ]}
-							is_open_location={[ "Loyals", "Jerseys" ]}
+							name={ "Bling" }
+							location={[ "Loyals", "Bling" ]}
+							is_open_location={[ "Loyals", "Bling" ]}
 							style="display: inline-block"
 						/>
 					</p>
@@ -123,9 +123,9 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 					<p style="text-align: center;">
 						<span>To allow a vacation, the vacation <Slang text="Petition" /> needs to be <Slang text="signed" /> for at</span>
 						<Milieus_Button
-							name={ "Signatures" }
-							location={[ "Loyals", "Signatures" ]}
-							is_open_location={[ "Loyals", "Signatures" ]}
+							name={ "Impressions" }
+							location={[ "Loyals", "Impressions" ]}
+							is_open_location={[ "Loyals", "Impressions" ]}
 							style="display: inline-block"
 						/>
 					</p>
