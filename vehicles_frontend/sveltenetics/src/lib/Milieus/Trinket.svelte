@@ -26,7 +26,7 @@ import Milieus_Truck from '$lib/Milieus/Truck/Trinket.svelte'
 //
 import Scholars_Hints from './Venues/Scholars/Hints/Trinket.svelte'
 import Scholars_Theme from './Venues/Scholars/Theme/Trinket.svelte'
-import Scholars_Wild from './Venues/Scholars/Wild/Trinket.svelte'
+import Scholars_Garden from './Venues/Scholars/Garden/Trinket.svelte'
 
 import Friends_Talents from './Venues/Friends/Talents/Trinket.svelte'
 
@@ -51,7 +51,7 @@ import Technicians_Field from './Venues/Technicians/Field/Trinket.svelte'
 let Milieus = {
 	"Scholars": {
 		"Hints": Scholars_Hints,
-		"Wild": Scholars_Wild,
+		"Garden": Scholars_Garden,
 		"Theme": Scholars_Theme
 	},
 	"Friends": {

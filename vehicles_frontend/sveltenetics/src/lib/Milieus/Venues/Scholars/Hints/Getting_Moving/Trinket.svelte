@@ -47,9 +47,9 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 						<span>A <Slang text="Pet" /> can be adopted from </span>
 						
 						<Milieus_Button
-							name={ "Wild" }
-							location={[ "Scholars", "Wild" ]}
-							is_open_location={[ "Scholars", "Wild" ]}
+							name={ "Garden" }
+							location={[ "Scholars", "Garden" ]}
+							is_open_location={[ "Scholars", "Garden" ]}
 							style="display: inline-block"
 						/>
 					</div>

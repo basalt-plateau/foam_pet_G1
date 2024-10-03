@@ -24,7 +24,7 @@
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 //
-import Installation_with_Docker from '$lib/trinkets/Wild/Docker/Trinket.svelte'
+import Installation_with_Docker from './Garden/Docker/Trinket.svelte'
 
 </script>
 
@@ -42,8 +42,8 @@ a {
 </style>
 
 <svelte:head>
-	<title>Wild</title>
-	<meta name="description" content="Wild" />
+	<title>Garden</title>
+	<meta name="description" content="Garden" />
 </svelte:head>
 
 <Leaf>
@@ -55,7 +55,7 @@ a {
 					font-size: 2em; 
 					text-align: center;
 				"
-			>Wild</header>
+			>Garden</header>
 			<div style="height: 0.5cm"></div>
 			<p
 				style="

@@ -111,8 +111,8 @@ onDestroy (() => {
 				<p style="line-height: inherit;">
 					<span>A <Slang text="Pet" /> for <Slang text="an_Offline_Machine" /> can be adopted from </span>
 					<Milieus_Button
-						name={ "Wild" }
-						location={[ "Scholars", "Wild" ]}
+						name={ "Garden" }
+						location={[ "Scholars", "Garden" ]}
 						is_open_location={[ "Scholars" ]}
 					/>
 				</p>

@@ -13,7 +13,7 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 //
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
-import Installation_with_Docker from '$lib/trinkets/Wild/Docker/Trinket.svelte'
+import Installation_with_Docker from '$lib/trinkets/Garden/Docker/Trinket.svelte'
 import Code_Wall from '$lib/trinkets/Code_Wall/Trinket.svelte' 
 //
 //
