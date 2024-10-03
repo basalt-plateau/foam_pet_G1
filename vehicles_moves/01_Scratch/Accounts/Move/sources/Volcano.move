@@ -10,7 +10,6 @@ module pilot::Map_2 {
 	
 	
 	struct Place {}
-
 	struct Map {}
 	
 	

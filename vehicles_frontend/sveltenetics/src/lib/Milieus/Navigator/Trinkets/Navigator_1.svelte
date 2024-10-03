@@ -46,8 +46,6 @@ const build = () => {
 	mode = check_roomies_truck ().freight.mode;
 	window_width = check_roomies_truck ().freight.window_width;
 	
-	console.log ("build", window_width)
-	
 	if (window_width > 800) {
 		buttons_styles = 'padding: 0.2cm 0.6cm; margin: 0 0.1cm; font-size: 1.2em'
 		relatives_button_styles = {

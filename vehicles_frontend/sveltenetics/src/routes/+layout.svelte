@@ -33,7 +33,7 @@ import { lease_roomies_truck, give_back_roomies_truck } from '$lib/Versies/Truck
 import Milieus_Trinket from '$lib/Milieus/Trinket.svelte'
 import Milieus_Truck from '$lib/Milieus/Truck/Trinket.svelte'
 //
-import Navigator_Bottom from '$lib/Milieus/Navigator_Bottom/Trinket.svelte'
+import Navigator_Foundation from '$lib/Milieus/Navigator_Foundation/Trinket.svelte'
 //
 import { lease_Milieus_truck, give_back_Milieus_truck } from '$lib/Milieus/Truck'
 //
@@ -186,7 +186,7 @@ beforeUpdate (async () => {
 				width: 100%;
 			"
 		>
-			<Navigator_Bottom />	
+			<Navigator_Foundation />	
 		</div>
 		
 		<div style="height: 0.25cm"></div>

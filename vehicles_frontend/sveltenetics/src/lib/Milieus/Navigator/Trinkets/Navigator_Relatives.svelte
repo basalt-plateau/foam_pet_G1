@@ -9,6 +9,8 @@ import { onMount, onDestroy } from 'svelte'
 //
 import { check_Milieus_truck, monitor_Milieus_truck } from '$lib/Milieus/Truck'
 import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
+import Seeds_Trucks from '$lib/Versies/Trucks.svelte'
+import { check_roomies_truck } from '$lib/Versies/Trucks'
 //
 //
 import Signatures_Component from './Navigator_Relatives/Signatures.svelte'
@@ -33,10 +35,33 @@ onMount (async () => {
 	
 	Scholars_Trucks_Prepared = "yes"
 });
-
 onDestroy (() => {
 	Scholars_Trucks_Monitor.stop ()
 }); 
+
+
+let seeds_freight = {}
+let seeds_trucks_prepared = "no"
+const on_seeds_truck_change = ({ freight: _freight, happening }) => {
+	seeds_freight = _freight;
+	if (happening === "mounted") {
+		seeds_trucks_prepared = "yes"
+	}
+	
+	build ();
+}
+
+let buttons_styles = ""
+const build = () => {
+	let window_width = check_roomies_truck ().freight.window_width;
+	if (window_width > 800) {
+		buttons_styles = 'padding: 0.15cm 0.55cm; margin: 0 0.1cm; font-size: 1.2em'
+	}
+	else {
+		buttons_styles = ''
+	}
+}
+
 
 </script>
 
@@ -48,22 +73,34 @@ onDestroy (() => {
 		gap: 0.2cm;
 	"
 >
+	<Seeds_Trucks 
+		on_change={ on_seeds_truck_change } 
+	/>
+
+	{#if seeds_trucks_prepared === "yes"}
 	<Milieus_Button
 		name={ "Hints" }
 		location={[ "Relatives", "Hints" ]}
 		is_open_location={[ "Relatives", "Hints" ]}
+		
+		style={ buttons_styles }
 	/>
 	<Milieus_Button
 		name={ "Jerseys" }
 		location={[ "Relatives", "Jerseys" ]}
 		is_open_location={[ "Relatives", "Jerseys" ]}
+		
+		style={ buttons_styles }
 	/>
 	<Milieus_Button
 		name={ "Signatures" }
 		location={[ "Relatives", "Signatures" ]}
 		is_open_location={[ "Relatives", "Signatures" ]}
 		component={ Signatures_Component }
+		
+		style={ buttons_styles }
 	/>
+	{/if}
 </div>
 {/if}
 

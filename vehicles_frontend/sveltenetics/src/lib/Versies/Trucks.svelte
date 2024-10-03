@@ -48,7 +48,6 @@ onMount (async () => {
 	
 	on_change ({ freight, happening: "mounted" })
 });
-
 onDestroy (() => {
 	Truck_Monitor.stop ()
 });

@@ -7,6 +7,8 @@ the_name="poetry_uv"
 pip install uv poetry
 
 
+apt install curl haproxy -y
+
 #/
 #
 #	obtain:

@@ -58,8 +58,6 @@ ecdsa==0.18.0
     # via foam-pet (pyproject.toml)
 emergency==2.0.0
     # via foam-pet (pyproject.toml)
-exceptiongroup==1.2.2
-    # via anyio
 flask==3.0.3
     # via
     #   biotech
@@ -219,11 +217,8 @@ tracerite==1.1.1
 typing-extensions==4.12.2
     # via
     #   foam-pet (pyproject.toml)
-    #   anyio
     #   limits
-    #   multidict
     #   pydash
-    #   rich
     #   sanic
 ujson==5.10.0
     # via sanic
