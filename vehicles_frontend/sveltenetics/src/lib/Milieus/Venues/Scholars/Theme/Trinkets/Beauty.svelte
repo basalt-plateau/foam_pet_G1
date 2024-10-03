@@ -10,6 +10,10 @@ import { LightSwitch } from '@skeletonlabs/skeleton';
 import { SlideToggle } from '@skeletonlabs/skeleton';
 import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
+import { modeOsPrefers, modeUserPrefers, modeCurrent } from '@skeletonlabs/skeleton';
+import { getModeOsPrefers, getModeUserPrefers, getModeAutoPrefers } from '@skeletonlabs/skeleton';
+import { setModeUserPrefers, setModeCurrent } from '@skeletonlabs/skeleton';
+
 /*
 	Theme is part of 
 */
@@ -17,10 +21,10 @@ let theme = ""
 let mounted = "no"
 $: {
 	let _theme = theme;
-	change_theme ({ theme })
+	change_tints ({ theme })
 }
-const change_theme = ({ theme: _theme }) => {
-	console.log ("change_theme:", _theme)
+const change_tints = ({ theme: _theme }) => {
+	console.log ("change_tints:", _theme)
 	
 	if (typeof _theme === 'string' && _theme.length >= 1) {
 		localStorage.setItem ('body-theme', _theme);
@@ -28,7 +32,7 @@ const change_theme = ({ theme: _theme }) => {
 		theme = _theme;
 		
 		console.log ({ _theme })
-	}
+	}	
 }
 
 
@@ -56,7 +60,7 @@ const ask_for_theme = () => {
 onMount (() => {
 	let theme = ask_for_theme ()
 	
-	change_theme ({ 
+	change_tints ({ 
 		theme
 	});
 	mounted = "yes"
@@ -64,11 +68,13 @@ onMount (() => {
 
 
 
-let visibility = false;
+let visibility = $modeCurrent || false;
 const change_visibility = () => {
-	console.log ("change_visibility:", { visibility });
+	// console.log ("change_visibility:", { visibility });
+	$modeCurrent = visibility;
+	setModeUserPrefers ($modeCurrent);
+	setModeCurrent ($modeCurrent);
 }
-
 $: {
 	let _visibility = visibility;
 	change_visibility ();	
