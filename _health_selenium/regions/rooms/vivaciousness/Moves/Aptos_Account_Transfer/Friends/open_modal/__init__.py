@@ -63,7 +63,7 @@ def open_friends_modal (packet):
 	#
 	#
 	Milieus_Navigate ({
-		"location": [ "Friends", "Vacations" ],
+		"location": [ "Friends", "Talents" ],
 		"driver": driver
 	});
 	

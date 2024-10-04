@@ -54,7 +54,7 @@ def give_Octas_from_faucet (packet):
 	
 	
 	Milieus_Navigate ({
-		"location": [ "Friends", "Vacations" ],
+		"location": [ "Friends", "Talents" ],
 		"driver": driver_1
 	});
 	

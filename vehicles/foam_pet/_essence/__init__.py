@@ -11,7 +11,10 @@
 '''
 
 
-
+'''
+	from foam_pet._essence import turn_off_external_essence
+	turn_off_external_essence ()
+'''
 
 '''
 	objective:
@@ -56,7 +59,7 @@ def build_essence ():
 	if (essence_built == "yes"):
 		return;
 
-	if (use_external_essence == "yes"):
+	if (use_external_essence ["answer"] == "yes"):
 		essence_path = seek_essence ({
 			"name": "foam_pet_essence.py"
 		})

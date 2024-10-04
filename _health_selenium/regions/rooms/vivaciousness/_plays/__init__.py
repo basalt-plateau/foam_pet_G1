@@ -6,29 +6,35 @@ plays = retrieve_plays ();
 
 ''''
 "1": {
-				"private key": "89ABC8DE9FABDE0716253407612534071562348F9AEDBC8F9EADBC0127653425",
-				"address": "522D906C609A3D23B90F072AD0DC74BF857FB002E211B852CE38AD6761D4C8FD"
-			},
+	"private key": "89ABC8DE9FABDE0716253407612534071562348F9AEDBC8F9EADBC0127653425",
+	"address": "522D906C609A3D23B90F072AD0DC74BF857FB002E211B852CE38AD6761D4C8FD"
+},
 "'''
 
-def retrieve_plays ():
-	URL = "https://localhost"
+def flask_build ():
+	open_browser = "yes"
+	URL = "http://172.17.0.2:2300"
+	has_memo = "yes"
 	
-	# URL = "http://localhost:22000"
-	#URL = "https://144.202.113.169/"
+	return [ open_browser, URL, has_memo ]
 
+def online_build ():
 	open_browser = "yes"
-	open_browser = "yes"
+	URL = "https://foam.pet"
+	has_memo = "yes"
 	
-	''''
+	return [ open_browser, URL, has_memo ]
+
+def dev_build ():
+	open_browser = "yes"
 	URL = "http://localhost:21000"
 	has_memo = "no"
-	"'''
 	
-	#URL = "https://144.202.113.169/"
-	#URL = "http://localhost:22000"
-	URL = "https://foam.pet"	
-	has_memo = "yes"
+	return [ open_browser, URL, has_memo ]
+
+
+def retrieve_plays ():
+	[ open_browser, URL, has_memo ] = dev_build ();
 	
 
 	return {

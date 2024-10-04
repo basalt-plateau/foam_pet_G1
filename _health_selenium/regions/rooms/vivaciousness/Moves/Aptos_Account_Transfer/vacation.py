@@ -44,8 +44,8 @@ from .Friends.open_modal import open_friends_modal
 from .Friends.make_petition import make_petition
 from .Friends.petition_suggestion import petition_suggestion
 #
-from .Relatives.open_modal import open_relatives_modal
-from .Relatives.make_signature import make_signature
+from .Loyals.open_modal import open_relatives_modal
+from .Loyals.make_signature import make_signature
 #
 from vivaciousness.health_regions.connect import connect_to_driver
 from vivaciousness.procedures.Faucet.Give import give_Octas_from_faucet
@@ -87,7 +87,7 @@ def throw_APT_vacation (packet):
 
 	#\
 	#
-	#	Relatives Modal
+	#	Loyals Modal
 	#
 	#
 	change_net ({
@@ -137,7 +137,7 @@ def throw_APT_vacation (packet):
 	
 	#\
 	#
-	#	Relatives Signature
+	#	Loyals Signature
 	#
 	#
 	[ signature_hexadecimal_string ] = make_signature ({

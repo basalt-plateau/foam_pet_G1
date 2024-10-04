@@ -3,7 +3,7 @@
 
 #
 #
-#	python3 health.proc.py run --path="Regions/Relatives/Addresses/From_Private_Key.Se.py"
+#	python3 health.proc.py run --path="Regions/Loyals/Addresses/From_Private_Key.Se.py"
 #
 #
 
@@ -35,7 +35,7 @@ def check_1 ():
 	driver.get (URL)
 	proceed_through_memo ({ "driver": driver });
 	Milieus_Navigate ({
-		"location": [ "Relatives", "Totems" ],
+		"location": [ "Loyals", "Bling" ],
 		"driver": driver
 	});
 	

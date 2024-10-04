@@ -29,7 +29,7 @@ def open_relatives_modal (packet):
 	# tailfin.get (ICAN_DNS_Address)
 	
 	Milieus_Navigate ({
-		"location": [ "Relatives", "Signatures" ],
+		"location": [ "Loyals", "Impressions" ],
 		"driver": tailfin
 	});
 	
