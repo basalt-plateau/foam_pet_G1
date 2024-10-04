@@ -32,7 +32,7 @@ import { check_roomies_truck, monitor_roomies_truck } from '$lib/Versies/Trucks'
 //
 //
 import { nocturnalize } from './screenplays/nocturnalize'
-import { English_1 } from './jargons/English_1'
+import { American_1 } from './jargons/American_1'
 //
 ////
 
@@ -42,7 +42,7 @@ const legend = {
 	"Francais": {},
 	"Spanish": {},
 	
-	"English": English_1,
+	"English": American_1,
 }
 
 // let legendary = legend [ language ] [ text ]
