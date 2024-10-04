@@ -27,11 +27,7 @@ const on_modal_change = () => {}
 
 let current = 1;
 const on_next_pressed = () => {
-	console.info ("on_next_pressed")
-	
 	polytope_modal.advance (({ freight }) => {
-		console.log 
-		
 		if (freight.next.permitted === "yes") {
 			current += 1
 		}

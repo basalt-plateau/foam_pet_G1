@@ -58,7 +58,6 @@ onMount (async () => {
 	
 	Seeds_Trucks_Monitor = monitor_roomies_truck ((_freight) => {
 		Seeds_Trucks_Freight = _freight;
-		
 		modify ();
 	})
 	
@@ -110,13 +109,13 @@ onDestroy (() => {
 	>
 		<p
 			style="
-				padding: 0.5cm;
+				padding: 0.1cm 0.4cm;
 			"
 		>off</p>
 		<SlideToggle name="slide" bind:checked={ use_slang_boolean } />
 		<p
 			style="
-				padding: 0.5cm;
+				padding: 0.1cm 0.4cm;
 			"
 		>on</p>
 	</div>

@@ -24,6 +24,8 @@ let mode = check_roomies_truck ().freight.mode;
 
 let navigator_1;
 
+let location = []
+
 let seeds_freight = {}
 let seeds_trucks_prepared = "no"
 const on_seeds_truck_change = ({ freight: _freight, happening }) => {
@@ -31,6 +33,8 @@ const on_seeds_truck_change = ({ freight: _freight, happening }) => {
 	if (happening === "mounted") {
 		seeds_trucks_prepared = "yes"
 	}
+	
+	location = seeds_freight.location
 }
 
 
@@ -44,10 +48,21 @@ const on_seeds_truck_change = ({ freight: _freight, happening }) => {
 	<hr class="!border-t-2" />
 	<div class="bg-surface-100-800-token w-full"
 		style="
-			padding: 0 2px;
+			display: flex;
+			align-items: center;
+			justify-content: left;
+			gap: 6px;
+			
+			padding: 2px;
 		"
 	>
-		<p>{ seeds_freight.location }</p>
+		{#each location as location_ }
+		<span class="badge variant-filled-surface"
+			style="
+				padding: 2px 4px;
+			"
+		>{ location_ }</span>
+		{/each}
 	</div>
 </nav>
 {/if}
