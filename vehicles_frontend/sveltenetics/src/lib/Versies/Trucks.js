@@ -10,17 +10,19 @@ import * as AptosSDK from "@aptos-labs/ts-sdk";
 //
 //
 import { has_field } from 'procedures/object/has_field'
+import { rhythm_filter } from 'procedures/dates/rhythm-filter'
 //
 //
 import { build_truck } from '$lib/trucks'
 import { parse_styles } from '$lib/trinkets/styles/parse'
+import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
 //
 //
 import { the_ledger_ask_loop_creator } from './Screenplays/is_connected'
 //
 ////
 
-import { rhythm_filter } from 'procedures/dates/rhythm-filter'
+
 
 
 let the_ledger_ask_loop;
@@ -66,11 +68,7 @@ export const lease_roomies_truck = () => {
 		net_path = localStorage.net_path	
 	}
 	
-	
 
-	
-	
-	
 	
 	let mode = "business"
 	if (typeof localStorage.mode === "string") {
@@ -88,13 +86,20 @@ export const lease_roomies_truck = () => {
 	
 	
 	let commas_every = 5
-	if (typeof localStorage.commas_every === "number") {
-		commas_every = localStorage.commas_every	
+	if (typeof localStorage.commas_every === "string") {
+		try {
+			assert_is_natural_numeral_string (localStorage.commas_every)
+			commas_every = parseInt (localStorage.commas_every)
+		}		
+		catch (exception) {
+			// Like if the assertion failed.. exception note not important.
+			// console.info (exception)
+		}
 	}
 	
 	
 	let use_slang = "yes"
-	if (typeof localStorage.use_slang === "yes") {
+	if (typeof localStorage.use_slang === "string") {
 		use_slang = localStorage.use_slang	
 	}
 	
@@ -182,6 +187,7 @@ export const monitor_roomies_truck = (action) => {
 		else if (property === "use_slang") {
 			localStorage.setItem ("use_slang", value)
 		}
+
 		
 		action (freight);
 	})

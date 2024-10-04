@@ -15,9 +15,8 @@ import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
 ////
 
 let example_numeral = ""
-
 const parse_example_numeral = () => {
-	example_numeral = parse_with_commas ("12345678901234578901234567890")
+	example_numeral = parse_with_commas ("12346578901234567890.0987654321")
 }
 
 let seeds_freight = {}

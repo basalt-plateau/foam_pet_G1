@@ -2,6 +2,7 @@
 
 /*
 	import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
+	assert_is_natural_numeral_string ("987654321")
 */
 
 /*

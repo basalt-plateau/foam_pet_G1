@@ -85,7 +85,7 @@ const modify_keys_count = () => {
 			style="
 				text-align: center;
 			"
-		><Slang text="Account" /> is a <Slang text="Private Key" /> that has 1 or more <Slang text="Addresses" />.</p>
+		><Slang text="Accounts" /> are a <Slang text="Private Key" /> that have 1 or more <Slang text="Addresses" />.</p>
 		
 		<div style="height: 0.5cm" />
 		
@@ -93,7 +93,7 @@ const modify_keys_count = () => {
 			style="
 				text-align: center;
 			"
-		>The <Slang text="Private Key" /> is necessary to suggest changes to an <Slang text="Address" />.</p>
+		><Slang text="A_Private_Key" /> is necessary to act as <Slang text="an_Address" />.</p>
 		
 		<div style="height: 2cm" />
 	</Panel>

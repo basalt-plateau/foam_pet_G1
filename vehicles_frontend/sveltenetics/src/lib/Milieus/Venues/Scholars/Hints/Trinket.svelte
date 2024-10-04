@@ -20,7 +20,7 @@ import { check_roomies_truck } from '$lib/Versies/Trucks'
 import Slang_Cipher from '$lib/trinkets/Slang/Cipher.svelte'
 import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 //
-import Taxonomy from '$lib/trinkets/Taxonomy/Bling.svelte'
+import Taxonomy from '$lib/trinkets/Taxonomy/Pet.svelte'
 //
 //
 import Getting_Moving from './Getting_Moving/Trinket.svelte'
@@ -188,6 +188,7 @@ let seeds = {
 					<span class="badge bg-initial">~ Offline Accounting</span>
 					<span class="badge bg-initial">~ Beacon with Limited Connectivity</span>
 					<span class="badge bg-initial">~ Key Ring</span>
+					<span class="badge bg-initial">~ Loyal Pet</span>					
 				</p>
 			</div>
 			
@@ -209,6 +210,7 @@ let seeds = {
 					<span class="badge bg-initial">~ Howl Amp</span>
 					<span class="badge bg-initial">~ Emergency Kiosk</span>
 					<span class="badge bg-initial">~ Checkout</span>
+					<span class="badge bg-initial">~ Friendly Pet</span>
 				</p>
 			</div>
 		</div>

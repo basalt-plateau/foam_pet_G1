@@ -10,7 +10,7 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 
 /*
 	1. (Tough) Foam Pet Adoption.
-	2. Choose a Bling
+	2. Choose a Beings
 	3. Go on a vacation
 */
 
@@ -83,9 +83,9 @@ import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 					<p style="text-align: center;">
 						<span><Slang text="An_Account" /> can be found at</span>
 						<Milieus_Button
-							name={ "Bling" }
-							location={[ "Loyals", "Bling" ]}
-							is_open_location={[ "Loyals", "Bling" ]}
+							name={ "Beings" }
+							location={[ "Loyals", "Beings" ]}
+							is_open_location={[ "Loyals", "Beings" ]}
 							style="display: inline-block"
 						/>
 					</p>

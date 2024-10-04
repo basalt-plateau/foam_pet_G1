@@ -2,7 +2,7 @@
 
 <script>
 
-// import Taxonomy from '$lib/trinkets/Taxonomy/Bling.svelte'
+// import Taxonomy from '$lib/trinkets/Taxonomy/Beings.svelte'
 
 </script>
 

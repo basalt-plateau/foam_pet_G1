@@ -150,7 +150,7 @@ pynacl==1.5.0
     # via foam-pet (pyproject.toml)
 pyyaml==6.0.2
     # via sanic-ext
-redis==5.1.0
+redis==5.1.1
     # via
     #   biotech
     #   emergency
@@ -163,7 +163,7 @@ requests==2.32.3
     #   biotech
     #   body-scan
     #   emergency
-rich==13.9.1
+rich==13.9.2
     # via
     #   biotech
     #   emergency

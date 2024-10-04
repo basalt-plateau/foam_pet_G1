@@ -86,9 +86,9 @@ const build = () => {
 		style={ buttons_styles }
 	/>
 	<Milieus_Button
-		name={ "Bling" }
-		location={[ "Loyals", "Bling" ]}
-		is_open_location={[ "Loyals", "Bling" ]}
+		name={ "Beings" }
+		location={[ "Loyals", "Beings" ]}
+		is_open_location={[ "Loyals", "Beings" ]}
 		
 		style={ buttons_styles }
 	/>

@@ -283,10 +283,7 @@ onDestroy (() => {
 		<div style="height: 12px"></div>
 		<p
 			style="text-align: center; font-size: 1em"
-		>The <Slang text="Blockchain" /> is currently based on the responses from one address.</p>
-		<p
-			style="text-align: center; font-size: 1em"
-		>Asking for responses from multiple addresses is on the agenda.</p>
+		>The <Slang text="Blockchain" /> is currently based on the response from one address.</p>
 	</div>
 	<select 
 		nets-choices

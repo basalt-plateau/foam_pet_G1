@@ -30,7 +30,7 @@ import Scholars_Garden from './Venues/Scholars/Garden/Trinket.svelte'
 
 import Friends_Talents from './Venues/Friends/Talents/Trinket.svelte'
 
-import Loyals_Bling from './Venues/Loyals/Bling/Trinket.svelte'
+import Loyals_Beings from './Venues/Loyals/Beings/Trinket.svelte'
 import Loyals_Hints from './Venues/Loyals/Hints/Trinket.svelte'
 import Loyals_Impressions from './Venues/Loyals/Impressions/Trinket.svelte'
 
@@ -59,7 +59,7 @@ let Milieus = {
 	},
 	"Loyals": {
 		"Hints": Loyals_Hints,
-		"Bling": Loyals_Bling,
+		"Beings": Loyals_Beings,
 		"Impressions": Loyals_Impressions
 	},
 	"Technicians": {

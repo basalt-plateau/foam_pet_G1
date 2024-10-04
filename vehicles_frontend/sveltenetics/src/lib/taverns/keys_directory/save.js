@@ -26,10 +26,10 @@ const save_YAML_to_OS = (yamlString, fileName) => {
 	const a = document.createElement('a');
 	a.href = url;
 	a.download = fileName || 'document.yaml';
-	document.body.appendChild(a);
+	document.body.appendChild (a);
 	a.click();    
 	window.URL.revokeObjectURL(url);
-	document.body.removeChild(a);
+	document.body.removeChild (a);
 }
 
 export const save_keys = async ({

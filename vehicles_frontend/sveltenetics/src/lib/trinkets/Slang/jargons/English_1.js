@@ -1,5 +1,88 @@
 
 
+const blockchain = {
+	//			
+	//	Map		
+	//	Dream, Story, Note	
+	//			
+	"blockchain": "Dream",
+	"Blockchain": "Dream",
+	"Block": "Story",
+	"transaction": "Note",
+	"Transaction": "Note",
+	"Transactions": "Notes",
+}
+
+const account = {
+	//
+	//	Vehicles, Exosuit
+	//
+	//	Characters
+	//
+	"Account": "Being",
+	"Accounts": "Beings",
+	"an_Account": "a Being",
+	"An_Account": "A Being",
+	
+	//
+	//	Character
+	//	Avatar, Body
+	//
+	"Address": "Abstract",
+	"An_Address": "An Abstract",	
+	"an_Address": "an Abstract",		
+	"Addresses": "Abstracts",
+	
+	//
+	//
+	//	Language
+	//	
+	//
+	"Key": "Key",
+	"Keys": "Keys",
+	
+	//
+	//
+	"private key": "presence",
+	"Private Key": "Presence",
+	"A_Private_Key": "A presence",	
+	"a_Private_Key": "a Presence",	
+	"Private Keys": "Presence",
+	
+	//
+	//
+	"public key": "reflection",
+	"Public Key": "Reflection"	,
+	"Public Keys": "Reflections",
+	
+	//
+	//
+	//	Ink
+	//	Tat, Impression
+	//
+	"signature": "impression",
+	"Signature": "Impression",
+	"Signatures": "Impressions",
+	"Sign": "Impress",
+	"Signer": "Impressor",		
+	"Signing": "Impressing",
+	"Signed": "Impressed",
+	"signed": "ipressed",
+}
+
+const consensus = {
+	//
+	//	Jersey, Family, Dynasty, Pod
+	//	Islands, Constellation, Fest
+	//
+	"consensus": "Fest",
+	"Consensus": "Fest",
+	"Node": "Node",
+}
+
+
+
+
 
 export const English_1 = {
 	// "Pet": "Orbital Covergence Softwhere",	
@@ -10,11 +93,11 @@ export const English_1 = {
 
 	"label": "foam pet",
 	"labels": "foam pets",		
-		
 	"Pet": "Foam Pet",	
 	"Pets": "Foam Pets",	
 	
 	//
+	//	ICANNIANA Lagrange Neural Lattice
 	//	ICANN+IANA Lagrange Neural Lattice
 	//	ICANN+IANA Lagrange Neuron
 	//	ICANN+IANA 
@@ -24,90 +107,22 @@ export const English_1 = {
 	//	Net, Hammock
 	//	Mesh
 	//
-	"Internet_Location": "Web",
-	"Internet": "Web",
+	"Internet_Location": "ICANNIANA Neural Libration Lattice",
+	"Internet": "ICANNIANA Neural Libration Lattice",
 	
-	"Aptos": "Aptos",
+	// "Aptos": "Aptos",
 	
-	//
-	//	Vehicles, Exosuit
-	//
-	//	Characters
-	//
-	"Account": "Bling",
-	"Accounts": "Bling",
-	"an_Account": "a Bling",
-	"An_Account": "A Bling",
+	...account,
+	...blockchain,
+	
 
-	// Character
-	"Address": "Address",
-	"Addresses": "Addresses",
-	
-	//
-	//	Jersey, Family, Dynasty, Pod
-	//	Islands, Constellation, Fest
-	//
-	"consensus": "Fest",
-	"Consensus": "Fest",
-	
-	//
-	//
-	//	
-	//
-	//
-	"Block": "Story",
-	
-	//			
-	//	Map		
-	//	Story	
-	//			
-	"blockchain": "Dream",
-	"Blockchain": "Dream",
-
-	//
-	//
-	//	Language
-	//	
-	//
-	"Key": "Key",
-	"Keys": "Keys",
-	
-	"Node": "Node",
 	
 	"Sender": "Sender",
-	
-	//
-	//
-	//	Ink
-	//	Tat
-	//
-	"signature": "Signature",
-	"Signature": "Signature",
-	"Impressions": "Impressions",
-	"Sign": "Sign",
-	"Signer": "Signer",		
-	"Signing": "Signing",
-	"Signed": "Signed",
-	"signed": "signed",
-
-	
-
-	// Play
-	// Note
-	"transaction": "Note",
-	"Transaction": "Note",
-	"Transactions": "Notes",
 
 	"Petition": "Petition",
 	"Petitions": "Petitions",
 	
-	"private key": "private key",
-	"Private Key": "Private Key",
-	"Private Keys": "Private Keys",
 	
-	"public key": "public key",
-	"Public Key": "Public Key"	,
-	"Public Keys": "Public Keys",
 	
 	//
 	// 	Moon Wallet
