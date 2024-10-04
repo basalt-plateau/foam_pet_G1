@@ -27,7 +27,7 @@ export default defineConfig({
 		}
 	},
 
-	
+
 	build: {
 		transpile: ['@sveltejs/vite-plugin-svelte'],
 		rollupOptions: {
@@ -43,8 +43,15 @@ export default defineConfig({
 		sourcemap: true
 	},
 	
+	
+	/*
+		If problem, might need to install node.js
+	*/
 	test: {
-		include: ['src/**/*.{test,spec,vitest}.{js,ts}']
+		environment: 'jsdom',
+		include: [
+			'src/**/*.{test,spec,vitest}.{js,ts}'
+		]
 	},
 	
 	kit: {

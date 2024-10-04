@@ -16,8 +16,8 @@ export default defineConfig({
                 'vertical-align': 'middle'
             }
         }),
-        presetWind(),
-        presetAtoUI()
+        presetWind (),
+        presetAtoUI ()
     ],
     transformers: [transformerVariantGroup(), transformerDirectives()]
 });

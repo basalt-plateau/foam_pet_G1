@@ -4,6 +4,8 @@
 the_name="poetry_uv"
 
 
+mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+
 pip install uv poetry
 
 
