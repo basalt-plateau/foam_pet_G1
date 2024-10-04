@@ -38,18 +38,25 @@ def connect_to_driver ():
 	plays = retrieve_plays ();
 
 
-	print ("""
+	print (f"""
 	
-		connect_to_driver
+	
+		connect_to_driver:
+		
+			Firefox_path = "{ firefox_path }"
 	
 	
 	
 	""");
 
+	#
+	#	https://www.selenium.dev/documentation/webdriver/browsers/firefox/
+	#	https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions
+	#	https://github.com/SeleniumHQ/seleniumhq.github.io/blob/trunk/examples/python/tests/drivers/test_options.py
+	#	https://github.com/SeleniumHQ/seleniumhq.github.io/blob/trunk/examples/python/tests/browsers/test_firefox.py
+	#
 	options = webdriver.FirefoxOptions ()
-	options.binary_location = firefox_path
-	
-	
+	options.binary_location = firefox_path	
 	if (plays ["open browser"] != "yes"):
 		options.add_argument("-headless")
 	
@@ -59,7 +66,13 @@ def connect_to_driver ():
 	
 	""");
 	
-	driver = webdriver.Firefox (options = options)
+	
+	#service = Service (executable_path = gecko_driver_path)
+	
+	driver = webdriver.Firefox (
+		options = options
+		#service = service
+	)
 	
 	print (f"""
 	

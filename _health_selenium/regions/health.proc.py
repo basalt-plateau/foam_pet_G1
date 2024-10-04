@@ -39,12 +39,14 @@ def clique ():
 	#
 	@click.command ("run")
 	@click.option ('--path', help='', default = '')
-	def command_run (path):	
+	@click.option ('--pattern', help = '', default = '.Se.py')
+	def command_run (path, pattern):	
 		if (len (path) >= 1):
 			glob_string = monitors_path + '/' + path
 			db_directory = False
 		else:
-			glob_string = monitors_path + '/**/*.Se.py'
+			#glob_string = monitors_path + '/**/*.Se.py'
+			glob_string = monitors_path + '/**/*' + pattern;
 			db_directory = normpath (join (this_directory, "DB"))
 	
 		print ("glob string:", glob_string);
@@ -77,7 +79,7 @@ def clique ():
 			#	of checks that can be run at the 
 			#	same time.
 			#
-			"simultaneous_capacity": 9,
+			"simultaneous_capacity": 1,
 
 			#
 			#	[voluntary]
