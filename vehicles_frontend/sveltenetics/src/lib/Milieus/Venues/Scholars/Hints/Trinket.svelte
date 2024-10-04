@@ -207,6 +207,8 @@ let seeds = {
 					<span class="badge bg-initial">~ Internet Connected Beacon</span>
 					<span class="badge bg-initial">~ SOS Beacon</span>
 					<span class="badge bg-initial">~ Howl Amp</span>
+					<span class="badge bg-initial">~ Emergency Kiosk</span>
+					<span class="badge bg-initial">~ Checkout</span>
 				</p>
 			</div>
 		</div>

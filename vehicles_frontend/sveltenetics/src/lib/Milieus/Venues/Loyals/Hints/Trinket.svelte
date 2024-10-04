@@ -12,7 +12,6 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 //
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
-import Installation_with_Docker from '$lib/trinkets/Garden/Docker/Trinket.svelte'
 import Code_Wall from '$lib/trinkets/Code_Wall/Trinket.svelte' 
 //
 //
@@ -168,15 +167,7 @@ let tabSet = 0
 			</ol>
 		</div>
 	</div>
-	
 
-	<!-- 
-	
-	
-	<div style="height: 0.5cm"></div>
-	<Installation_with_Docker />
-	-->
-	
 	<div style="height: 1cm"></div>
 
 </div>

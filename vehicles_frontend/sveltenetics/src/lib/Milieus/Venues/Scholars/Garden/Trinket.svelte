@@ -24,7 +24,7 @@
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 //
-import Installation_with_Docker from './Garden/Docker/Trinket.svelte'
+import Installation_with_Docker from './Docker/Trinket.svelte'
 
 </script>
 
