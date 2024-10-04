@@ -3,7 +3,7 @@
 <script>
 
 
-import Polytope from '$lib/trinkets/Polytope/Polytope_Modal.svelte'
+import Polytope from '$lib/trinkets/Polytope/Fabric.svelte'
 
 import _merge from 'lodash/merge'
 

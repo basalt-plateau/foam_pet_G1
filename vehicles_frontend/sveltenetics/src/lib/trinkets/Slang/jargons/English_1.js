@@ -61,6 +61,8 @@ const account = {
 	//	Tat, Impression
 	//
 	"signature": "impression",
+	"A_signature": "An impression",
+	"a_signature": "an impression",
 	"Signature": "Impression",
 	"Signatures": "Impressions",
 	"Sign": "Impress",
@@ -114,7 +116,7 @@ export const English_1 = {
 	
 	...account,
 	...blockchain,
-	
+	...consensus,
 
 	
 	"Sender": "Sender",

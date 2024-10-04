@@ -4,7 +4,7 @@
 
 // import Friends_Move_Coin_Transfer_Mode_1 from '$lib/Friends_Moves/Coin_Transfer_Mode_1/Friends_Move/Trinket.svelte'
 
-import Polytope from '$lib/trinkets/Polytope/Polytope_Modal.svelte'
+import Polytope from '$lib/trinkets/Polytope/Fabric.svelte'
 
 import _merge from 'lodash/merge'
 

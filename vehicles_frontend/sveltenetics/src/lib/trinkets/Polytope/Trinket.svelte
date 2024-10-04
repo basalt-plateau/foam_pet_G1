@@ -38,7 +38,7 @@ const prepare = () => {
 }
 */
 
-import Polytope_Modal from './Polytope_Modal.svelte'
+import Polytope from './Fabric.svelte'
 
 import { onMount } from 'svelte'
 import { Modal, getModalStore } from '@skeletonlabs/skeleton';
@@ -63,7 +63,7 @@ export const open_the_position = ({
 		modalClasses: '!bg-red-500',
 		
 		component: {
-			ref: Polytope_Modal,
+			ref: Polytope,
 			props: { 
 				modal_store,
 				name

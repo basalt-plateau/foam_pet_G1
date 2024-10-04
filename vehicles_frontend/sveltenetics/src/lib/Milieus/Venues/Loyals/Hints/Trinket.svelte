@@ -162,7 +162,11 @@ let tabSet = 0
 				</li>
 				<li>
 					<span class="badge-icon p-4 variant-soft-primary">2</span>
-					<span class="flex-auto"><Slang text="Impressions"/> is for using <Slang text="Account"/> to allow a <Slang text="Petition"/>.</span>
+					
+					<span class="flex-auto">
+						To ask the <Slang text="Consensus"/> to add a <Slang text="Transaction"/>,
+						a <Slang text="Petition"/> with <Slang text="a_signature"/> is necessary.
+					</span>
 				</li>
 			</ol>
 		</div>

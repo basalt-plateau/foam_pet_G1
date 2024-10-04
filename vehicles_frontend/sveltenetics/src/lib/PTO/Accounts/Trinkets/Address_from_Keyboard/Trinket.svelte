@@ -729,7 +729,7 @@ onMount (() => {
 			on:click={ save }
 			style="{ parse_styles (choose_button_trends) }"
 		>
-			Save as Directory to OS
+			Tempt <Slang text="Account" /> to the OS
 		</button>
 	</div>
 </div>

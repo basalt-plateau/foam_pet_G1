@@ -16,7 +16,6 @@ import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 import Bike from 'lucide-svelte/icons/bike';
 //
 //
-import { parse_styles } from '$lib/trinkets/styles/parse.js';
 import Panel from '$lib/trinkets/panel/trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Address_from_Keyboard from '$lib/PTO/Accounts/Trinkets/Address_from_Keyboard/Trinket.svelte'
@@ -27,6 +26,7 @@ import Abstract_Math from '$lib/PTO/Accounts/Trinkets/Abstract_Math/Trinket.svel
 //
 //
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
+import { parse_styles } from '$lib/trinkets/styles/parse.js';
 //
 //
 ////

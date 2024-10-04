@@ -1,9 +1,12 @@
 
 
+
+
+
 <script>
 
 
-import Polytope from '$lib/trinkets/Polytope/Fabric.svelte'
+import Polytope from '$lib/trinkets/Polytope/Polytope_Modal.svelte'
 import _merge from 'lodash/merge'
 
 
