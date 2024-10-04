@@ -1,16 +1,23 @@
 
 
+''''
+	from foam_pet.adventures.harbor_basin import turn_on_harbor
+"'''
+
+''''
+	TODO:
+		* Allow CORS
+		* 
+"'''
 
 
 #/
 #
 from foam_pet._essence import retrieve_essence
-from foam_pet.features.pecuniary.APT_to_Octas import convert_APT_to_Octas
-from foam_pet.features.pecuniary.Octas_to_APT import convert_Octas_to_APT
 from foam_pet.features.harbors.generate_inventory_paths import generate_inventory_paths
 from foam_pet.features.harbor_locations.rules_form import (
-	send_rules_sanique, 
-	check_allow_proceed_sanique
+	check_allow_proceed_flask,
+	send_rules_flask
 )
 #
 #
@@ -31,13 +38,21 @@ from fractions import Fraction
 #\
 
 
+from flask import Flask, send_file, Response, jsonify
+
+
 turn_on_caching = "no"
 
+def turn_on_harbor (packet):
+	if ("port" in packet):
+		port = packet ["port"]
+	else:
+		port = 2300;
 
-def regions_guests (vue_regions_packet):
 	essence = retrieve_essence ()
-	
-	
+
+	app = Flask(__name__)
+
 	##/
 	build_path = essence ["sveltnetics"] ["build_path"];
 	the_index = build_path + "/index.html"
@@ -48,30 +63,23 @@ def regions_guests (vue_regions_packet):
 		print ("front_path:", front_path)
 		pass;
 	##\
-	
-	
-	app = vue_regions_packet ["app"]
-	guest_addresses = sanic.Blueprint ("guest", url_prefix = "/")
-	app.blueprint (guest_addresses)
-	
-	''''
-	@guest_addresses.route ("/")
-	async def home (request):
-		return await sanic_response.file (the_index)
-	"'''	
+
+
+	@app.route ('/')
+	def home ():
+		if check_allow_proceed_flask () != "yes":
+			return send_rules_flask ()
 		
-	@guest_addresses.route ("/")
-	async def home (request):
-		if check_allow_proceed_sanique (request.cookies) != "yes":
-			return send_rules_sanique (sanic_response)
+		print ("home");
 		
-		return await sanic_response.file (the_index)
-			
+		return send_file (the_index);
 		
-	@guest_addresses.route ("/<path:path>")
-	async def assets_route (request, path):
-		if check_allow_proceed_sanique (request.cookies) != "yes":
-			return send_rules_sanique (sanic_response)
+		#return await sanic_response.file (the_index)
+
+	@app.route ("/<path:path>")
+	def assets_route (path):
+		if check_allow_proceed_flask () != "yes":
+			return send_rules_flask ()
 			
 	
 		the_path = False
@@ -81,28 +89,54 @@ def regions_guests (vue_regions_packet):
 				content_type = front_inventory_paths [ the_path ] ["mime"]
 				content = front_inventory_paths [ the_path ] ["content"]
 				
+				#print ("content:", content)
+				
 				headers = {}
 				if (turn_on_caching == "yes"):
 					headers ["Custom-Header-1"] = "custom"
 					headers ["Cache-Control"] ="private, max-age=31536000"
 					
 					#"Expires": "0"
-					
+				
+				'''
 				return sanic_response.raw (
 					content, 
 					content_type = content_type,
 					headers = headers
 				)
+				'''				
+				response = Response (
+					content, 
+					content_type = content_type, 
+					headers = headers
+				)
+				
+				return response;
 				
 		except Exception as E:
 			print ("E:", E)
 		
+			response = jsonify ({
+				"note": "An anomaly occurred while processing.",
+				"the_path": the_path
+			})
+			response.status_code = 600  # Custom status code (201 Created)
+			#response.headers['X-Custom-Header'] = 'CustomValue'  # Custom header
+			
+			return response
+			
+			''''
 			return sanic_response.json ({
 				"note": "An anomaly occurred while processing.",
 				"the_path": the_path
 			}, status = 600)
-			
-		return await sanic_response.file (the_index)
+			"'''
+		
+		return send_file (the_index);
+		#return await sanic_response.file (the_index)
 
-
-	
+	app.run (
+		host = '0.0.0.0', 
+		port = port,
+		debug = True
+	)

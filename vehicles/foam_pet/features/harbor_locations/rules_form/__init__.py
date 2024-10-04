@@ -5,39 +5,46 @@
 "'''
 
 ''''
-from foam_pet.adventures.sanique.harbor.rules_form import send_rules, check_allow_proceed
+	Sanic:
+
 @guest_addresses.route ("/")
-async def home (request):
-	cookies = request.cookies;
-	
-	if check_allow_proceed (request.cookies) == "yes":
-		await sanic_response.file (the_index)
-		return
+	async def home (request):
+		if check_allow_proceed_sanique (request.cookies) != "yes":
+			return send_rules_sanique (sanic_response)
+"'''
+
+''''
+	Flask:
+		from foam_pet.features.harbor_locations.rules_form import (
+			check_allow_proceed_flask,
+			send_rules_flask
+		)
 		
-	send_rules (sanic_response)
+		if check_allow_proceed_flask () != "yes":
+			return send_rules_flask ()
 "'''
 
-''''
-	Declaration
-		Statement
-		Sign
-		Notification
-		Notice
-		Memo
-"'''
+from flask import Flask, request, Response
 
-''''
-* has external links
-* requires saving packets in the browser.
-"'''
+def check_allow_proceed_flask ():
+    try:
+        allow_proceed = request.cookies.get ('allow_proceed')
+        if allow_proceed == "yes":
+            return "yes"
+    
+    except Exception as E:
+        print ("allow proceed exception:", E)
+    
+    return "no"
 
-''''
-<p>Once open, the party that agrees to this must take full responsibility for every play that happens on the opened trinket.</p>
-<p>The party agrees to allow this trinket to save bits to browser local storage.</p>
-"'''
+def send_rules_flask ():
+	return Response (
+        rules_form ({}),
+        content_type = "text/html",
+        headers = {}
+    )
 
-
-def check_allow_proceed (cookies):
+def check_allow_proceed_sanique (cookies):
 	try:
 		allow_proceed = cookies.get ('allow_proceed')
 		if allow_proceed == "yes":
@@ -48,9 +55,7 @@ def check_allow_proceed (cookies):
 			
 	return "no"
 
-def send_rules (sanic_response):
-	print ("send rules")
-
+def send_rules_sanique (sanic_response):
 	return sanic_response.raw (
 		rules_form ({}), 
 		content_type = "text/html",

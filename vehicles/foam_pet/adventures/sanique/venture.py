@@ -7,15 +7,16 @@
 	sanique_adventure ()
 '''
 
-#/
 #
-from ._controls.on import turn_on_sanique
-from ._controls.off import turn_off_sanique
-from ._controls.is_on import check_sanique_status
 #
 from foam_pet._essence import retrieve_essence
 #
-#\
+#
+from ._plays.on import turn_on_sanique
+from ._plays.off import turn_off_sanique
+from ._plays.is_on import check_sanique_status
+#
+#
 
 def sanique_venture ():
 	essence = retrieve_essence ()

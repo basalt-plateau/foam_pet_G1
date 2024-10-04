@@ -22,6 +22,7 @@ from foam_pet.adventures.ventures import retrieve_ventures
 #
 from .group import clique as clique_group
 from .parrot import parrot as parrot_group
+from .ventures import ventures_group
 #
 #\
 
@@ -98,6 +99,7 @@ def clique ():
 		print ("venture import exception:", E)
 	
 	group.add_command (parrot_group ())
+	group.add_command (ventures_group ())
 	
 	group ()
 

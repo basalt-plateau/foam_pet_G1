@@ -39,6 +39,14 @@ import os
 #\
 
 
+use_external_essence = {
+	"answer": "yes"
+}
+
+def turn_off_external_essence ():
+	use_external_essence ["answer"] = "no"
+	
+
 essence = {}
 essence_built = "no"
 
@@ -48,10 +56,15 @@ def build_essence ():
 	if (essence_built == "yes"):
 		return;
 
-	essence_path = seek_essence ({
-		"name": "foam_pet_essence.py"
-	})
-	external_essence = scan_essence (essence_path)
+	if (use_external_essence == "yes"):
+		essence_path = seek_essence ({
+			"name": "foam_pet_essence.py"
+		})
+		external_essence = scan_essence (essence_path)
+	else:
+		essence_path = "/"
+		external_essence = {}
+		
 	internal_essence = merge_essence (external_essence, essence_path)
 
 	for key in internal_essence:

@@ -119,7 +119,8 @@ $: {
 		"
 	>
 		<div>Nocturnal</div>
-		<LightSwitch />
+
+		<!-- <LightSwitch /> -->
 		
 		<SlideToggle name="slide" bind:checked={ visibility } />
 		

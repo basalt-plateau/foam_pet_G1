@@ -27,8 +27,6 @@ def retrieve_ventures ():
 	return ventures_map ({
 		"map": essence ["ventures"] ["path"],
 		"ventures": [
-			
-		
 			demux_hap_venture (),
 			sanique_venture ()
 		]
