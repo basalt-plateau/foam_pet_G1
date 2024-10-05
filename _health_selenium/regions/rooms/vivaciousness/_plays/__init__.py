@@ -33,8 +33,15 @@ def dev_build ():
 	return [ open_browser, URL, has_memo ]
 
 
+def built_build ():
+	open_browser = "yes"
+	URL = "http://localhost:22000"
+	has_memo = "yes"
+	
+	return [ open_browser, URL, has_memo ]
+
 def retrieve_plays ():
-	[ open_browser, URL, has_memo ] = dev_build ();
+	[ open_browser, URL, has_memo ] = built_build ();
 	
 
 	return {

@@ -38,7 +38,7 @@ def check_1 ():
 	driver.get (URL)
 	proceed_through_memo ({ "driver": driver });
 	Milieus_Navigate ({
-		"location": [ "Loyals", "Bling" ],
+		"location": [ "Loyals", "Accounts" ],
 		"driver": driver
 	});
 	

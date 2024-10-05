@@ -138,5 +138,5 @@ def turn_on_harbor (packet):
 	app.run (
 		host = '0.0.0.0', 
 		port = port,
-		debug = True
+		#debug = True
 	)

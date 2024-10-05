@@ -90,13 +90,13 @@ pymongo==4.10.1
     # via emergency
 pysocks==1.7.1
     # via urllib3
-redis==5.1.0
+redis==5.1.1
     # via emergency
 requests==2.32.3
     # via
     #   body-scan
     #   emergency
-rich==13.9.1
+rich==13.9.2
     # via emergency
 sanic==23.12.2
     # via emergency
