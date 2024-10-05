@@ -61,6 +61,9 @@ const account = {
 	
 	//
 	//
+	//	Reflection, Abstrakt
+	//
+	//
 	"public key": "reflection",
 	"Public Key": "Reflection"	,
 	"Public Keys": "Reflections",
@@ -68,22 +71,22 @@ const account = {
 	////
 	//
 	//	Ink, Tat, Impression
-	//	Story, Abstract
+	//	Story, Boast, Claim
 	//
-	"signature": "abstract",
-	"A_signature": "An abstract",
-	"a_signature": "an abstract",
-	"Signature": "Abstract",
-	"Signatures": "Abstracts",
+	"signature": "boast",
+	"A_signature": "a boast",
+	"a_signature": "a boast",
+	"Signature": "Boast",
+	"Signatures": "Boasts",
 	//
-	"Sign": "Create Abstract",
+	"Sign": "Boast",
 	//
-	"Signer": "Abstracter",		
+	"Signer": "Boaster",		
 	//
-	"Signing": "Abstracting",
+	"Signing": "Boasting",
 	//
-	"Signed": "Abstracted",
-	"signed": "abstracted",
+	"Signed": "Boasted",
+	"signed": "boasted",
 	//
 	////
 }

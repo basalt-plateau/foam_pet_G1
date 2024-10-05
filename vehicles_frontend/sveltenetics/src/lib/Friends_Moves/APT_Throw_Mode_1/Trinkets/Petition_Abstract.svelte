@@ -7,8 +7,8 @@
 <script>
 
 /*
-	import Petition_Abstract from '$lib/Friends_Moves/APT_Throw_Mode_1/Trinkets/Petition_Abstract.svelte'
-	<Petition_Abstract 
+	import Petition_Boast from '$lib/Friends_Moves/APT_Throw_Mode_1/Trinkets/Petition_Boast.svelte'
+	<Petition_Boast 
 		AO_parsed={ AO_parsed }
 	/>
 */
@@ -82,7 +82,7 @@ const make_info_alerts = () => {
 						font-size: 1.25em;
 						padding: 0cm 0;
 					"
-				>Abstract</header>
+				>Boast</header>
 			</svelte:fragment>
 			<svelte:fragment slot="content">
 				<div class="table-container">

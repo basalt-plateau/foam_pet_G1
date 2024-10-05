@@ -54,6 +54,8 @@ var built = []
 //
 export let style = ""
 export let text = ""
+export let reveal = "yes"
+export let badge = "yes"
 $: {
 	let _text = text;
 	build ();
@@ -61,9 +63,12 @@ $: {
 //
 ////
 
+let actual_styles = ``;
 
 let use_slang;
 const build = () => {
+	
+	
 	try {
 		if (Seeds_Trucks_Freight && has_field (Seeds_Trucks_Freight, "use_slang")) {
 			if (use_slang !== Seeds_Trucks_Freight.use_slang) {
@@ -77,10 +82,13 @@ const build = () => {
 				}
 			}
 		}
+		
 	}
 	catch (exception) {
 		console.error (exception)
 	}
+	
+	actual_styles = build_styles ();
 }
 
 
@@ -109,32 +117,53 @@ onDestroy (() => {
 }); 
 
 
-let actual_styles = `
-	display: inline-block;
-	
-	color: inherit;
-			
-	font-weight: bold;
-	font-size: 1em;
-	padding: 0.3em;
-	
-	white-space: break-spaces;
-	
-	border-bottom: 2px solid rgb(var(--color-primary-500) / 0.8);
-	
-	transition: .75s transform, width .5s;
-	transform: rotateX(0deg);
-	
-	cursor: pointer;
-` + style;
+const build_styles = () => {
+	let actual_styles = `
+		display: inline-block;
+		
+		color: inherit;
+		
+		font-size: 1em;
+		white-space: break-spaces;
+		
+		transition: .75s transform, width .5s;
+		transform: rotateX(0deg);
+	`;
 
+	if (use_slang === "yes") {
+		actual_styles += `
+			cursor: pointer;
+		`;
+	}
+
+	console.log ({ use_slang });
+
+	if (badge === "yes") {
+		actual_styles += `
+			font-weight: bold;
+			padding: 0.3em;
+			border-bottom: 2px solid rgb(var(--color-primary-500) / 0.8);
+		`
+	}
+	else {
+		actual_styles += `
+			background: none;
+		`
+	}
+
+	actual_styles += style;
+
+	return actual_styles;
+}
+
+actual_styles = build_styles ();
 
 
 let timeout_1;
 let timeout_2;
 let timeout_3;
 let reveal_slang = ({ element, text, original }) => {
-	if (use_slang === "yes") {
+	if (use_slang === "yes" && reveal === "yes") {
 		console.log ("reveal_slang", { element });
 		
 		clearTimeout (timeout_1)

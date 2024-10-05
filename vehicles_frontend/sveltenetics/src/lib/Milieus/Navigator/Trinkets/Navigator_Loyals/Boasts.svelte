@@ -10,7 +10,9 @@ import Cigarette from 'lucide-svelte/icons/cigarette'
 import Banknote from 'lucide-svelte/icons/banknote'
 //
 //
+import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 
+	
 
 </script>
 
@@ -21,6 +23,10 @@ import Banknote from 'lucide-svelte/icons/banknote'
 		gap: 5%;
 	"
 >
-	<span>Abstracts</span>
+	<Slang 
+		text={ "Signatures" } 
+		reveal={ "no" }
+		badge={ "no" }
+	/>
 	<!-- <PawPrint /> -->
 </div>

@@ -136,8 +136,8 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 									<span>A <Slang text="Petition" /> replica can then be sent to the <Slang text="Offline Machine" /> at</span>
 									<Milieus_Button
 										style="display: inline-block;"
-										name={ "Abstracts" }
-										location={[ "Loyals", "Abstracts" ]}
+										name={ "Signatures" }
+										location={[ "Loyals", "Signatures" ]}
 										is_open_location={[ "Loyals" ]}
 									/>
 								</p>

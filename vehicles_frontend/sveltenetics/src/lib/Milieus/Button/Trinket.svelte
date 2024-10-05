@@ -24,7 +24,8 @@
 
 import { onMount, onDestroy } from 'svelte'
 import { check_Milieus_truck, monitor_Milieus_truck } from '$lib/Milieus/Truck'
-
+import Slang from '$lib/trinkets/Slang/Trinket.svelte'
+	
 
 export let monitor = ""
 
@@ -168,7 +169,11 @@ let untapped = "variant-filled-primary"
 	{#if typeof component === "function" }
 	<svelte:component this={ component } {...component_props} />
 	{:else}
-	{ name }
+	<Slang 
+		text={ name } 
+		reveal={ "no" }
+		badge={ "no" }
+	/>
 	{/if}
 </button>
 {/if}

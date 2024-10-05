@@ -95,7 +95,7 @@ const on_scan_error = () => {
 			"
 		>QR Barcode Camera</header>
 		<p>
-			<span>After signing at "Loyals, Abstracts"</span>
+			<span>After signing at "Loyals, Boasts"</span>
 		</p>
 		<p>a picture of the signatures barcode can be recorded here.</p>
 		

@@ -21,8 +21,8 @@ import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Address_from_Keyboard from '$lib/PTO/Accounts/Trinkets/Address_from_Keyboard/Trinket.svelte'
 import Address_from_Private_Key from '$lib/PTO/Accounts/Trinkets/Address_from_Private_Key/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
-import Abstract_Ownership from '$lib/PTO/Accounts/Trinkets/Abstract_Ownership/Trinket.svelte'
-import Abstract_Math from '$lib/PTO/Accounts/Trinkets/Abstract_Math/Trinket.svelte'
+import Signature_Ownership from '$lib/PTO/Accounts/Trinkets/Signature_Ownership/Trinket.svelte'
+import Signature_Math from '$lib/PTO/Accounts/Trinkets/Signature_Math/Trinket.svelte'
 //
 //
 import { parse_with_commas } from '$lib/taverns/numbers/parse_with_commas'
@@ -115,8 +115,8 @@ const modify_keys_count = () => {
 					>Hints</header>
 				</svelte:fragment>
 				<svelte:fragment slot="content">				
-					<Abstract_Ownership />
-					<Abstract_Math />					
+					<Signature_Ownership />
+					<Signature_Math />					
 				</svelte:fragment>
 			</AccordionItem>
 		</Accordion>

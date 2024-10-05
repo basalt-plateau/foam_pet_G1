@@ -160,11 +160,15 @@ let tabSet = 0
 						<Slang text="Accounts"/> is for choosing <Slang text="Account"/>
 					</span>
 				</li>
-				<li>
+				<li
+					style="
+						line-height: 2em;
+					"
+				>
 					<span class="badge-icon p-4 variant-soft-primary">2</span>
 					
 					<span class="flex-auto">
-						To ask the <Slang text="Consensus"/> to add a <Slang text="Transaction"/>,
+						To ask the <Slang text="Consensus"/> to add a <Slang text="Transaction"/> to the <Slang text="Blockchain"/>,
 						a <Slang text="Petition"/> with <Slang text="a_signature"/> is necessary.
 					</span>
 				</li>
