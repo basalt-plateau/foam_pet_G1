@@ -25,12 +25,12 @@ const account = {
 	//
 	//	Players, Vehicles, Exosuit
 	//	Characters
-	//	Volition
+	//	Volition, Estate
 	//
-	"Account": "Player",
-	"Accounts": "Players",
-	"an_Account": "a Player",
-	"An_Account": "A Player",
+	"Account": "Estate",
+	"Accounts": "Estates",
+	"an_Account": "a Estate",
+	"An_Account": "A Estate",
 	
 	//
 	//	Avatar, Character, Body, VIN
