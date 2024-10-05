@@ -262,9 +262,9 @@ let selected_option = "barcode"
 					<span>This <b>Hexadecimal String</b> can be cloned and pasted into</span>
 					<a 
 						class="anchor" 
-						href="/Loyals/Impressions"
+						href="/Loyals/Abstracts"
 						target="_blank"
-					>/Loyals/Impressions</a>
+					>/Loyals/Abstracts</a>
 				</p>
 				
 				<div monitor="hexadecimal">
@@ -282,7 +282,7 @@ let selected_option = "barcode"
 						text-align: center;
 					"
 				>
-					<span>The <b>Barcode</b> can be scanned and signed from "Loyals, Impressions"</span> 
+					<span>The <b>Barcode</b> can be scanned and signed from "Loyals, Abstracts"</span> 
 				</p>
 			
 				<Barcode_Visual 

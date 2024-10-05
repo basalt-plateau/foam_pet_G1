@@ -2,7 +2,7 @@
 
 <script>
 
-// import Taxonomy from '$lib/trinkets/Taxonomy/Beings.svelte'
+// import Taxonomy from '$lib/trinkets/Taxonomy/Players.svelte'
 
 </script>
 
@@ -26,7 +26,7 @@
 	
 	<span class="badge variant-filled-primary">
 		<span>Nature</span>
-		<span class="badge variant-filled">Life</span>
+		<span class="badge variant-filled">Advantage</span>
 	</span>
 
 	<div style="height: 0.1cm"></div>

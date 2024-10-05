@@ -3,34 +3,43 @@
 const blockchain = {
 	//			
 	//	Map		
-	//	Dream, Story, Note	
+	//	[ Dream, Story, Note ]	
 	//			
-	"blockchain": "Dream",
-	"Blockchain": "Dream",
-	"Block": "Story",
-	"transaction": "Note",
-	"Transaction": "Note",
-	"Transactions": "Notes",
+	"blockchain": "Board",
+	"Blockchain": "Board",
+	"Block": "Turn",
+	
+	"transaction": "adaptation",
+	"Transaction": "Adaptation",
+	"Transactions": "Adaptations",
+	
+	//
+	//	Treaty, Bargain
+	//
+	//
+	"Petition": "Petition",
+	"Petitions": "Petitions",
 }
 
 const account = {
 	//
-	//	Vehicles, Exosuit
+	//	Players, Vehicles, Exosuit
 	//	Characters
+	//	Volition
 	//
-	"Account": "Being",
-	"Accounts": "Beings",
-	"an_Account": "a Being",
-	"An_Account": "A Being",
+	"Account": "Player",
+	"Accounts": "Players",
+	"an_Account": "a Player",
+	"An_Account": "A Player",
 	
 	//
-	//	Character
-	//	Avatar, Body
+	//	Avatar, Character, Body, VIN
+	//	Pieces
 	//
-	"Address": "Abstract",
-	"An_Address": "An Abstract",	
-	"an_Address": "an Abstract",		
-	"Addresses": "Abstracts",
+	"Address": "Address",
+	"An_Address": "An Address",	
+	"an_Address": "an Address",		
+	"Addresses": "Addresses",
 	
 	//
 	//
@@ -41,12 +50,14 @@ const account = {
 	"Keys": "Keys",
 	
 	//
+	//	Liberty, Life, Volition
 	//
-	"private key": "presence",
-	"Private Key": "Presence",
-	"A_Private_Key": "A presence",	
-	"a_Private_Key": "a Presence",	
-	"Private Keys": "Presence",
+	//
+	"private key": "advantage",
+	"Private Key": "Advantage",
+	"A_Private_Key": "An Advantage",	
+	"a_Private_Key": "an Advantage",	
+	"Private Keys": "Advantages",
 	
 	//
 	//
@@ -54,21 +65,27 @@ const account = {
 	"Public Key": "Reflection"	,
 	"Public Keys": "Reflections",
 	
+	////
 	//
+	//	Ink, Tat, Impression
+	//	Story, Abstract
 	//
-	//	Ink
-	//	Tat, Impression
+	"signature": "abstract",
+	"A_signature": "An abstract",
+	"a_signature": "an abstract",
+	"Signature": "Abstract",
+	"Signatures": "Abstracts",
 	//
-	"signature": "impression",
-	"A_signature": "An impression",
-	"a_signature": "an impression",
-	"Signature": "Impression",
-	"Signatures": "Impressions",
-	"Sign": "Impress",
-	"Signer": "Impressor",		
-	"Signing": "Impressing",
-	"Signed": "Impressed",
-	"signed": "ipressed",
+	"Sign": "Create Abstract",
+	//
+	"Signer": "Abstracter",		
+	//
+	"Signing": "Abstracting",
+	//
+	"Signed": "Abstracted",
+	"signed": "abstracted",
+	//
+	////
 }
 
 const consensus = {
@@ -120,8 +137,7 @@ export const American_1 = {
 	
 	"Sender": "Sender",
 
-	"Petition": "Petition",
-	"Petitions": "Petitions",
+	
 	
 	
 	

@@ -21,37 +21,27 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	<div style="height: 1cm"></div>
 	
 	<header
-		style="font-size: 2em; text-align: center"
-	><Slang text="Impressions" /></header>
+		style="font-size: 2.5em; text-align: center"
+	><Slang text="Signatures" /></header>
 
 	<div style="height: 1cm"></div>
-
-	<p
-		style="text-align: center"
-	><Slang text="Impressions" /> are the go ahead necessary for the <Slang text="consensus" /> to add a <Slang text="transaction" /> to the <Slang text="blockchain" />.</p> 
-	
-	<div style="height: 0.5cm"></div>
-	
-	<p
-		style="text-align: center"
-	><Slang text="Private Key" /> + <b>Petition</b> -> <b>Signature</b></p> 
-	
-	<div style="height: 0.5cm"></div>
-	
-	
-	<p style="text-align: center">
-		<span><b>Petition</b> + <b>Signature</b> + <b><Slang text="consensus" /> Impressions</b> -> </span>
-		<span><Slang text="transaction" /> on the <Slang text="blockchain" /></span>
-	</p>
-
-	<div style="height: .5cm"></div>
 	<hr class="!border-t-2" />
-	<div style="height: .5cm"></div>
+	<div style="height: 1cm"></div>
 	
 	<p
 		style="font-size: 1em; text-align: center"
 	>
-		<span>An offline machine can communicate with an online machine with a QR code signatures.</span>			
+		<span><Slang text="Signatures" /> show that <Slang text="an_Account" /> endorses a <Slang text="Petition" />.</span>			
+	</p> 
+
+	<div style="height: 1cm"></div>
+	<hr class="!border-t-2" />
+	<div style="height: 1cm"></div>
+
+	<p
+		style="font-size: 1em; text-align: center"
+	>
+		<span>An <Slang text="Offline Machine" /> can communicate with an <Slang text="Online Machine" /> with QR code <Slang text="Signatures" />.</span>			
 	</p> 
 
 	<div style="height: 0.5cm"></div>
@@ -59,9 +49,11 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	<p
 		style="font-size: 1em; text-align: center"
 	>
-		<span>Thus, the <Slang text="Private Key" /> nevers needs to be sent to an online machine.</span>
+		<span>Thus, <Slang text="Private Keys" /> nevers needs to be sent to an <Slang text="Online Machine" />.</span>
 	</p>
 	
+	<div style="height: 1cm"></div>
+	<hr class="!border-t-2" />
 	<div style="height: 1cm"></div>
 	
 	<div class="card p-2 variant-filled-primary">
@@ -144,8 +136,8 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 									<span>A <Slang text="Petition" /> replica can then be sent to the <Slang text="Offline Machine" /> at</span>
 									<Milieus_Button
 										style="display: inline-block;"
-										name={ "Impressions" }
-										location={[ "Loyals", "Impressions" ]}
+										name={ "Abstracts" }
+										location={[ "Loyals", "Abstracts" ]}
 										is_open_location={[ "Loyals" ]}
 									/>
 								</p>
@@ -238,6 +230,4 @@ import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 			</AccordionItem>
 		</Accordion>
 	</div>
-	
-	<div style="height: 1cm"></div>
 </div>

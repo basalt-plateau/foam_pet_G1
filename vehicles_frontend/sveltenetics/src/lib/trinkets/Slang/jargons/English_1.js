@@ -20,7 +20,7 @@ const account = {
 	//	Characters
 	//
 	"Account": "Being",
-	"Accounts": "Beings",
+	"Accounts": "Players",
 	"an_Account": "a Being",
 	"An_Account": "A Being",
 	
@@ -58,13 +58,13 @@ const account = {
 	//
 	//
 	//	Ink
-	//	Tat, Impression
+	//	Tat, Abstract
 	//
 	"signature": "impression",
 	"A_signature": "An impression",
 	"a_signature": "an impression",
-	"Signature": "Impression",
-	"Signatures": "Impressions",
+	"Signature": "Abstract",
+	"Signatures": "Abstracts",
 	"Sign": "Impress",
 	"Signer": "Impressor",		
 	"Signing": "Impressing",

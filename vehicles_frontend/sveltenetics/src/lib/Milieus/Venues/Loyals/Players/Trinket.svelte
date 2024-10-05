@@ -85,7 +85,7 @@ const modify_keys_count = () => {
 			style="
 				text-align: center;
 			"
-		><Slang text="Accounts" /> are a <Slang text="Private Key" /> that have 1 or more <Slang text="Addresses" />.</p>
+		><Slang text="Accounts" /> each have 1 <Slang text="Private Key" /> that has 1 or more <Slang text="Addresses" />.</p>
 		
 		<div style="height: 0.5cm" />
 		

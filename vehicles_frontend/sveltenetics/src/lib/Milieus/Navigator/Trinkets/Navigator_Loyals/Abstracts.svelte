@@ -21,6 +21,6 @@ import Banknote from 'lucide-svelte/icons/banknote'
 		gap: 5%;
 	"
 >
-	<span>Impressions</span>
-	<PawPrint />
+	<span>Abstracts</span>
+	<!-- <PawPrint /> -->
 </div>

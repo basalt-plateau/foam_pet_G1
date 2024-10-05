@@ -110,13 +110,52 @@ onDestroy (() => {
 
 
 let actual_styles = `
+	display: inline-block;
+	
 	color: inherit;
 			
 	font-weight: bold;
 	font-size: 1em;
+	padding: 0.3em;
 	
 	white-space: break-spaces;
+	
+	border-bottom: 2px solid rgb(var(--color-primary-500) / 0.8);
+	
+	transition: .75s transform, width .5s;
+	transform: rotateX(0deg);
+	
+	cursor: pointer;
 ` + style;
+
+
+
+let timeout_1;
+let timeout_2;
+let timeout_3;
+let reveal_slang = ({ element, text, original }) => {
+	if (use_slang === "yes") {
+		console.log ("reveal_slang", { element });
+		
+		clearTimeout (timeout_1)
+		clearTimeout (timeout_2)
+		clearTimeout (timeout_3)
+		
+		element.style.transform = 'rotateX(360deg)';
+		
+		timeout_1 = setTimeout (() => {
+			element.textContent = original;
+		}, 250)
+		
+		timeout_2 = setTimeout (() => {
+			element.style.transform = 'rotateX(0deg)';
+		}, 2000)
+		
+		timeout_3 = setTimeout (() => {
+			element.textContent = text;
+		}, 2250)
+	}
+}
 
 </script>
 
@@ -129,6 +168,14 @@ let actual_styles = `
 		<span><code
 			class="code"
 			style={ actual_styles }
+			
+			on:click={(event) => { 
+				reveal_slang ({ 
+					element: event.target, 
+					original: part.original,
+					text: part.text 
+				})
+			}}
 		>{ part.text }</code></span>
 	{:else}
 		<span>{ part.text }</span>

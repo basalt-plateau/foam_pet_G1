@@ -11,28 +11,23 @@
 		@ Bicycle
 		
 	@ Identity
-		
 */
 
 ////
-///
-//
-import { parse_styles } from '$lib/trinkets/styles/parse.js';
-import Panel from '$lib/trinkets/panel/trinket.svelte'
-import APT_Throw_Mode_1_Loyals_Panel from '$lib/Friends_Moves/APT_Throw_Mode_1/Loyals_Panel/Trinket.svelte'
-//
 //
 import { onMount } from 'svelte'
 import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
 import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 //
-//\
-//\\
+//
+import { parse_styles } from '$lib/trinkets/styles/parse.js';
+import Panel from '$lib/trinkets/panel/trinket.svelte'
+import APT_Throw_Mode_1_Loyals_Panel from '$lib/Friends_Moves/APT_Throw_Mode_1/Loyals_Panel/Trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 import Offline_Signing_Hints from '$lib/trinkets/Hints/Offline_Signing/Trinket.svelte'
-
-
+//
+////
 
 const trends = {
 	article: parse_styles ({
@@ -87,7 +82,7 @@ onMount (() => {
 </script>
 
 <svelte:head>
-	<title>Impressions</title>
+	<title>Abstracts</title>
 </svelte:head>
 
 <Leaf>

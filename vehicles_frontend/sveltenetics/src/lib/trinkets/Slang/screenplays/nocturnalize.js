@@ -75,12 +75,14 @@ export const nocturnalize = ({
 			
 			if (slang === "yes") {
 				saying.push ({
+					original: search_1,
 					text: legend_language [ search_1 ],
 					code: "yes"
 				})
 			}
 			else {
 				saying.push ({
+					original: search_1,
 					text: search_1,
 					code: "yes"
 				})
@@ -90,12 +92,14 @@ export const nocturnalize = ({
 			// This checks for 2 word legends
 			if (slang === "yes") {
 				saying.push ({
+					original: search_2,
 					text: legend_language [ search_2 ],
 					code: "yes"
 				})
 			}
 			else {
 				saying.push ({
+					original: search_2,
 					text: search_2,
 					code: "yes"
 				})
@@ -105,6 +109,7 @@ export const nocturnalize = ({
 		}
 		else {
 			saying.push ({
+				original: search_2,
 				text: search_1
 			})
 		}
