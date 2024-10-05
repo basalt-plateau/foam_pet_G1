@@ -13,7 +13,7 @@ import { onMount } from 'svelte'
 import nlp from 'compromise/one'
 import { nocturnalize } from './screenplays/nocturnalize'
 
-import { English_1 } from './jargons/English_1'
+import { American_1 } from './jargons/American_1'
 
 
 const organize_slang = (bracket) => {
@@ -29,7 +29,7 @@ const organize_slang = (bracket) => {
 	return organized
 }
 
-const organized = organize_slang (English_1)
+const organized = organize_slang (American_1)
 
 console.log ({ organized })
 

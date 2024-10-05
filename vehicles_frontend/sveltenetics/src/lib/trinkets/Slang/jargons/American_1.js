@@ -128,8 +128,8 @@ export const American_1 = {
 	//	Net, Hammock
 	//	Mesh
 	//
-	"Internet_Location": "ICANNIANA Neural Libration Lattice",
-	"Internet": "ICANNIANA Neural Libration Lattice",
+	"Internet_Location": "Icanniana Neural Libration Lattice",
+	"Internet": "Icanniana Neural Libration Lattice",
 	
 	// "Aptos": "Aptos",
 	

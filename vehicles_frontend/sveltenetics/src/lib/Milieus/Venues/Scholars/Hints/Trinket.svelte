@@ -231,7 +231,7 @@ let seeds = {
 				text-align: center;
 			"
 		>
-			<span>Seeking to amplify friendliness,</span> 
+			<span>Striving to amplify friendliness,</span> 
 			<br />
 			<span>literature with slang can be found throughout.</span>
 		</p>

@@ -136,7 +136,7 @@ const build_styles = () => {
 		`;
 	}
 
-	console.log ({ use_slang });
+	// console.log ({ use_slang });
 
 	if (badge === "yes") {
 		actual_styles += `

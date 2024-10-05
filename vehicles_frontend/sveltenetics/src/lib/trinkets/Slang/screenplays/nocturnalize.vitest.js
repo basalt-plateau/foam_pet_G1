@@ -50,17 +50,17 @@ describe ('nocturnalize', () => {
 		
 		const built = nocturnalize ({ legend_language, text });
 		const expected = [
-			{ text: 'This' },
-			{ text: ' ' },
-			{ text: 'is' },
-			{ text: ' ' },
-			{ text: 'a' },
-			{ text: ' ' },
-			{ text: 'Group', code: 'yes' },
-			{ text: '.' }
+			{ original: 'This is', text: 'This' },
+			{ original: '   ', text: ' ' },
+			{ original: 'is a', text: 'is' },
+			{ original: '   ', text: ' ' },
+			{ original: 'a consensus', text: 'a' },
+			{ original: '  .', text: ' ' },
+			{ original: 'consensus', text: 'Group', code: 'yes' },
+			{ original: '', text: '.' }
 		]
 		
-		console.log ({ built })
+		console.log ({ built, expected })
 		
 		assert (is_equal (built, expected), true)
 	});
@@ -70,19 +70,19 @@ describe ('nocturnalize', () => {
 		
 		const built = nocturnalize ({ legend_language, text });
 		const expected = [
-			{ text: 'This' },
-			{ text: ' ' },
-			{ text: 'is' },
-			{ text: ' ' },
-			{ text: 'a' },
-			{ text: ' ' },
-			{ text: 'Howl Beacon', code: 'yes' },
-			{ text: ' ' },
-			{ text: 'field' },
-			{ text: '.' }			
+			{ original: 'This is', text: 'This' },
+			{ original: '   ', text: ' ' },
+			{ original: 'is a', text: 'is' },
+			{ original: '   ', text: ' ' },
+			{ original: 'a Online', text: 'a' },
+			{ original: '   ', text: ' ' },
+			{ original: 'Online Machine', text: 'Howl Beacon', code: 'yes' },
+			{ original: '  .', text: ' ' },
+			{ original: '', text: 'field' },
+			{ original: '', text: '.' }			
 		]
 		
-		console.log ({ built })
+		console.log ({ built, expected })
 		
 		assert (is_equal (built, expected), true)
 	});

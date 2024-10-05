@@ -1,5 +1,9 @@
 
 
+
+
+
+
 import { has_field } from 'procedures/object/has_field'
 
 /*
@@ -35,7 +39,7 @@ const retrieve_search_2 = ({ last, E, words }) => {
 	/* if iterator is less than 2 before last, there is a search_2 */
 	
 	let search_2 = ""
-	if (E + 1 <= last) {
+	if (E + 2 <= last) {
 		search_2 = words [E] + " " + words [E + 2]
 	}
 	
@@ -57,7 +61,6 @@ export const nocturnalize = ({
 	var saying = []
 	
 	const words = split ({ text })
-	// console.log ({ words })
 	
 	const last = words.length - 1;
 	for (let E = 0; E <= last; E++) {
@@ -67,8 +70,7 @@ export const nocturnalize = ({
 		const search_1 = words [E];
 		let search_2 = retrieve_search_2 ({ last, E, words })
 
-		
-		// console.log ({ search_1, search_2 });
+		console.log ({ search_1, search_2 });
 		
 		if (has_field (legend_language, search_1)) {
 			// This checks for 1 word legends
