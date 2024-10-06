@@ -125,11 +125,11 @@ onMount (() => {
 						padding: 12px 36px;
 						margin-top: 10px
 					"
-				>APT Acquiescence</button>
+				>APT Nourish</button>
 			</div>
 			<div style="height: 10px"></div>
 			<article style="{ trends.article }">
-				<p style="text-align: center">This is for signing for an "APT Acquiescence".</p>
+				<p style="text-align: center">This is for signing for an "APT Nourish".</p>
 			</article>
 			<div style="height: 0.5cm"></div>
 		</Panel>
