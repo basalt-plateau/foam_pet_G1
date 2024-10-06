@@ -22,7 +22,7 @@ import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 //
 import { parse_styles } from '$lib/trinkets/styles/parse.js';
 import Panel from '$lib/trinkets/panel/trinket.svelte'
-import APT_Throw_Mode_1_Loyals_Panel from '$lib/Les_Talents/APT_Throw_Mode_1/Loyals_Panel/Trinket.svelte'
+import APT_Entrust_Mode_1_Loyals_Panel from '$lib/Les_Talents/APT_Entrust_Mode_1/Loyals_Panel/Trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 import Offline_Signing_Hints from '$lib/trinkets/Hints/Offline_Signing/Trinket.svelte'
@@ -60,7 +60,7 @@ const open_consideration_modal = async () => {
 		backdropClasses: '!p-0',
 		
 		component: {
-			ref: APT_Throw_Mode_1_Loyals_Panel,
+			ref: APT_Entrust_Mode_1_Loyals_Panel,
 			props: { 
 				modal_store
 			}
@@ -125,11 +125,11 @@ onMount (() => {
 						padding: 12px 36px;
 						margin-top: 10px
 					"
-				>APT Nourish</button>
+				>APT Entrust</button>
 			</div>
 			<div style="height: 10px"></div>
 			<article style="{ trends.article }">
-				<p style="text-align: center">This is for signing for an "APT Nourish".</p>
+				<p style="text-align: center">This is for signing for an "APT Entrust".</p>
 			</article>
 			<div style="height: 0.5cm"></div>
 		</Panel>

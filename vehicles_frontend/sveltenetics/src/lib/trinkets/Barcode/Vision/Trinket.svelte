@@ -51,7 +51,7 @@ export let found = () => {}
 export let styles = {}
 
 let actual_styles = parse_styles (Object.assign ({}, {
-	"height": "100px", 
+	"height": "400px", 
 	"width": "100%",
 	"max-width": "600px", 
 	"margin": "0 auto"
@@ -101,7 +101,7 @@ const open_camera = () => {
 	
 	if (true) {
 		HTML5_QR_Barcode_Scanner = new Html5QrcodeScanner (
-			"barcode_visuals", 
+			"barcode_vision", 
 			config
 		);
 
@@ -141,6 +141,7 @@ onDestroy (async () => {
 
 
 <div 
-	id='barcode_visuals'
+	monitor="barcode vision"
+	id='barcode_vision'
 	style={ actual_styles }
 ></div>
