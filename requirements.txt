@@ -54,7 +54,7 @@ cx-freeze==7.2.3
     # via foam-pet (pyproject.toml)
 deprecated==1.2.14
     # via limits
-dnspython==2.6.1
+dnspython==2.7.0
     # via pymongo
 ecdsa==0.18.0
     # via foam-pet (pyproject.toml)

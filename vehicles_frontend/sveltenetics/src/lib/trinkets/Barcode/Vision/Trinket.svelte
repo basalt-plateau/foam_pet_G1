@@ -3,13 +3,17 @@
 <script>
 
 /*
-	import Barcode_Vision from '$lib/trinkets/Barcode_Vision/Trinket.svelte'
+	import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
 	
 	const found = () => {}
 	
 	<Barcode_Vision
 		bind:this={ barcode_vision }
 		found={ found }
+		
+		styles={{
+			
+		}}
 	/>
 */
 
@@ -35,12 +39,23 @@ import { ConicGradient } from '@skeletonlabs/skeleton';
 import { onMount, onDestroy } from 'svelte';
 import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode, Html5QrcodeSupportedFormats } from "html5-qrcode";
 //
+//
+import { parse_styles } from '$lib/trinkets/styles/parse'
+//
 //\
 
 import { unpack_string } from '../_Screenplays/unpack'
 
 
 export let found = () => {}
+export let styles = {}
+
+let actual_styles = parse_styles (Object.assign ({}, {
+	"height": "100px", 
+	"width": "100%",
+	"max-width": "600px", 
+	"margin": "0 auto"
+}, styles))
 
 let can_scan = "yes"
 const stop = () => {
@@ -56,7 +71,6 @@ const on_camera_success = async (decodedText, decodedResult) => {
 	
 	found ({
 		hexadecimal_string,
-		
 		decodedText,
 		decodedResult
 	})
@@ -69,29 +83,6 @@ const on_camera_error = function () {
 let HTML5_QR_Barcode_Scanner;
 
 const open_camera = () => {
-	/*
-	Html5Qrcode.
-	getCameras ().
-	then (devices => {
-		console.log ({ devices })
-		
-		if (devices && devices.length) {
-			var cameraId = devices [0].id;
-			// .. use this to start scanning.
-		}
-	}).
-	catch (err => {
-		console.error (err)
-	});
-
-	const formatsToSupport = [
-		Html5QrcodeSupportedFormats.QR_CODE,
-		Html5QrcodeSupportedFormats.UPC_A,
-		Html5QrcodeSupportedFormats.UPC_E,
-		Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
-	];
-	*/
-	
 	const config = {
 		fps: 10,
 		qrbox: {
@@ -111,53 +102,19 @@ const open_camera = () => {
 	if (true) {
 		HTML5_QR_Barcode_Scanner = new Html5QrcodeScanner (
 			"barcode_visuals", 
-			config, 
-			/* verbose= */ false
+			config
 		);
-		
-		console.info ({ HTML5_QR_Barcode_Scanner })
-		
 
 		HTML5_QR_Barcode_Scanner.render (
 			on_camera_success,
 			on_camera_error
 		);
 		
-		console.info ({ HTML5_QR_Barcode_Scanner })
 	}
-	
-	if (false) {
-		let HTML5_QR_Barcode_Scanner = new Html5QrcodeScanner (
-			"barcode_visuals", 
-			config, 
-			/* verbose= */ false
-		);
-		
-		
-		
-		//
-		// facingMode [ "environment", "user" ]
-		//
-		//
-		HTML5_QR_Barcode_Scanner.start (
-			{ 
-				facingMode: "environment" 
-			}, 
-			config, 
-			on_camera_success,
-			on_camera_error
-		);
-	}
-	
-	
 }
 
 const stop_the_scan = () => {
-	console.info ("stop_the_scan")
-	
 	if (HTML5_QR_Barcode_Scanner) {
-		console.info ("stopping")
-		
 		HTML5_QR_Barcode_Scanner.pause ()		
 		// HTML5_QR_Barcode_Scanner.clear ()
 	}
@@ -183,25 +140,7 @@ onDestroy (async () => {
 </script>
 
 
-<div>
-	<div 
-		id='barcode_visuals'
-		style="
-			height: 400px; 
-			width: 100%; 
-			max-width: 600px; 
-			margin: 0 auto;
-		"
-	></div>
-	
-	<button 
-		style="
-			display: none;
-		"
-	
-		type="button" 
-		class="btn variant-filled"
-		
-		on:click={ stop_the_scan }
-	>Stop The Scan</button>
-</div>
+<div 
+	id='barcode_visuals'
+	style={ actual_styles }
+></div>

@@ -31,16 +31,21 @@ import Panel from '$lib/trinkets/panel/trinket.svelte'
 import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 //
-import Stats_Wall from '$lib/Friends_Moves/Stats/Wall.svelte'
-//
+import Stats_Wall from '$lib/Les_Talents/Stats/Wall.svelte'
 //
 import { parse_styles } from '$lib/trinkets/styles/parse'
 //
+import { open_bit_throw } from '$lib/Les_Talents/Bit_Throw/open'
+//
+//
+import { modal_plugs, trends } from './Trinket'
+//
 //\
 
-	
 
-import { modal_plugs, trends } from './Trinket'
+
+
+
 
 const modal_store = getModalStore ();
 
@@ -154,7 +159,7 @@ let friends_pronunciation = "gwadenyawotch"
 						align-items: center;
 					"
 				>
-					<p>APT Throw</p>
+					<p>APT Diversify</p>
 				</button>
 			</div>
 
@@ -181,6 +186,30 @@ let friends_pronunciation = "gwadenyawotch"
 			</span> 
 			
 			-->
+		</Panel>
+		
+		<Panel styles={ trends.panel }>		
+			<div class="relative inline-block">
+				<button 
+					monitor="bit pitch"
+					
+					on:click={ () => { open_bit_throw ({ modal_store }); } }
+					type="button" 
+					class="btn bg-gradient-to-br variant-gradient-primary-secondary"
+					style="
+						font-size: 1.3em;
+						padding: 12px 54px;
+						margin-top: 10px;
+						
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+					"
+				>
+					<p>Bit Pitch</p>
+				</button>
+			</div>
 		</Panel>
 		
 		<Panel styles={ trends.panel }>		

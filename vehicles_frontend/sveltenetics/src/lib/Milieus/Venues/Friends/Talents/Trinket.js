@@ -21,13 +21,14 @@ import { parse_styles } from '$lib/trinkets/styles/parse'
 //
 //	Modals
 //
-import Layer_Octas_Gifts_Friends from '$lib/Friends_Moves/APT_Throw_Mode_1/Friends_Panel/Trinket.svelte'
-import Layer_Faucet from '$lib/Friends_Moves/Faucet/Trinket.svelte'
-import Friends_Move_Coin_Transfer_Mode_1 from '$lib/Friends_Moves/Coin_Transfer_Mode_1/Friends_Move/Trinket.svelte'
-import Transaction_Modal from '$lib/Friends_Moves/Transaction/Friends_Move/Trinket.svelte'
-import Address_Search_Modal from '$lib/Friends_Moves/Address_Search/Trinket.svelte'
+import Layer_Octas_Gifts_Friends from '$lib/Les_Talents/APT_Throw_Mode_1/Friends_Panel/Trinket.svelte'
+import Layer_Faucet from '$lib/Les_Talents/Faucet/Trinket.svelte'
+import Les_Talents_Coin_Transfer_Mode_1 from '$lib/Les_Talents/Coin_Transfer_Mode_1/Friends_Move/Trinket.svelte'
+import Transaction_Modal from '$lib/Les_Talents/Transaction/Friends_Move/Trinket.svelte'
+import Address_Search_Modal from '$lib/Les_Talents/Address_Search/Trinket.svelte'
 //
 ////
+
 
 
 export const modal_plugs = ({
@@ -87,7 +88,7 @@ export const modal_plugs = ({
 			type: 'component',
 			backdropClasses: '!p-0',
 			component: {
-				ref: Friends_Move_Coin_Transfer_Mode_1,
+				ref: Les_Talents_Coin_Transfer_Mode_1,
 				props: { 
 					modal_store
 				}

@@ -1,6 +1,11 @@
 
 
 import click
+import ships.paths.directory.rsync as rsync
+import ships.paths.directory.check_equality as check_equality
+
+import json
+import pprint
 
 def parrot ():
 	@click.group ("parrot")
@@ -8,19 +13,49 @@ def parrot ():
 		pass
 
 	
-	@group.command ("check")
-	@click.option ('--path', required = True)
-	def search (path):
-		print ("not built.")
+	@group.command ("check_EQ")
+	@click.option ('--origin', required = True)
+	@click.option ('--to', required = True)
+	def search (origin, to):
+		report = check_equality.start (
+			origin,
+			to
+		)	
+		
+		pprint.pprint (report)
+		
+		assert (
+			report ==
+			{'1': {}, '2': {}}
+		)
+		
+		
 	
 		return;
 		
 	@group.command ("equalize")
-	@click.option ('--path', required = True)
-	def search (path):
-		print ("not built.")
-	
-		return;
+	@click.option ('--origin', required = True)
+	@click.option ('--to', required = True)
+	def search (origin, to):
+		rsync.process ({
+			"from": "",
+			"to": "",
+			
+			#
+			#	if "no", return the process script, but don't run it
+			#
+			#	if "yes", start rsync
+			#
+			"start": "yes",
+			
+			
+			#
+			#
+			#	Maybe: if "yes", restart rsync on change to "to"
+			#
+			#
+			"sense": "no"
+		})
 
 	return group
 

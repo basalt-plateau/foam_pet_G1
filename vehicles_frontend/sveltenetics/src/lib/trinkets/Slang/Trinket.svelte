@@ -142,7 +142,9 @@ const build_styles = () => {
 		actual_styles += `
 			font-weight: bold;
 			padding: 0.3em;
-			border-bottom: 2px solid rgb(var(--color-primary-500) / 0.8);
+			border: 2px solid rgb(var(--color-primary-500) / 0.1);
+			background: rgb(var(--color-primary-500) / 0.1);
+			border-radius: 10px;
 		`
 	}
 	else {
