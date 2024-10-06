@@ -159,7 +159,7 @@ let friends_pronunciation = "gwadenyawotch"
 						align-items: center;
 					"
 				>
-					<p>APT Diversify</p>
+					<p>APT Acquiescence</p>
 				</button>
 			</div>
 
