@@ -34,12 +34,12 @@ from foam_pet._essence import turn_off_external_essence
 def ventures_group ():
 	# essence = retrieve_essence ()
 
-	@click.group ("offline_ventures")
+	@click.group ("harbor")
 	def group ():
 		pass;
 	
 	
-	@group.command ("start")
+	@group.command ("open")
 	def command__health ():	
 		turn_off_external_essence ()
 		turn_on_harbor ({});

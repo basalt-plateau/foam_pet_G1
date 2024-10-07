@@ -1,14 +1,46 @@
 
+#----
+#
+import Emergency
+#
+#
+import rich
+#
+#
+import json
+import pathlib
+from os.path import dirname, join, normpath
+import os
+import sys
+import subprocess
+#
+#----
 
-
-
-
-def monitor_health (packet):
-	glob_string = packet ["glob_string"]
-	vehicles = packet ["vehicles"]
-	this_vehicle = packet ["this_vehicle"]
-	db_directory = packet ["db_directory"]
+def monitor_health (packet = {}):
+	#glob_string = packet ["glob_string"]
+	#vehicles = packet ["vehicles"]
+	#this_vehicle = packet ["this_vehicle"]
+	#db_directory = packet ["db_directory"]
 	
+	if ("argv" in packet):
+		argv = packet ["argv"]
+	else:
+		argv = []
+
+	name = "foam_pet"
+	this_directory = pathlib.Path (__file__).parent.resolve ()
+
+	vehicles = "/Metro/vehicles"
+	this_vehicle = str (normpath (join (vehicles, f"foam_pet")))
+
+	if (len (argv) >= 2):
+		glob_string = this_vehicle + '/' + argv [1]
+		db_directory = False
+	else:
+		glob_string = this_vehicle + '/**/status_*.py'
+		db_directory = normpath (join (this_directory, "DB"))
+
+	print ("glob string:", glob_string)
 
 	promote = Emergency.on ({
 		"glob_string": glob_string,

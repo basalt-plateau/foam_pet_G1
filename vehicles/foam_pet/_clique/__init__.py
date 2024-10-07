@@ -27,6 +27,9 @@ from .ventures import ventures_group
 #\
 
 
+from foam_pet._health import monitor_health
+
+
 #mixes_clique = importlib.import_module ("foam_pet.mixes._clique").mixes_clique
 
 def build (essence_path):
@@ -70,6 +73,8 @@ def clique ():
 		CWD = os.getcwd ()
 		
 		print ("health")
+		
+		monitor_health ();
 
 	group.add_command (command__health)
 	#

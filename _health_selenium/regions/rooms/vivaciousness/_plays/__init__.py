@@ -43,7 +43,6 @@ def built_build ():
 def retrieve_plays ():
 	[ open_browser, URL, has_memo ] = built_build ();
 	
-
 	return {
 		#
 		#	whether to show the browser, "yes"
@@ -56,7 +55,6 @@ def retrieve_plays ():
 		"has_memo": has_memo,
 		
 		"accounts": {
-			
 			"1": {
 				"private key": "8EB524379EADB4071EADBC9EDAC8FE9DA63426178F9ECBDAE234163F0E9CBE8D",
 				"public key": "D18B0A6CBC824212100520ABBC6395D9B11272424284809F33C7CC42DB4F65C5",

@@ -31,7 +31,7 @@ coverage==7.6.1
     # via emergency
 deepdiff==7.0.1
     # via foam-pet-health-selenium (pyproject.toml)
-dnspython==2.6.1
+dnspython==2.7.0
     # via pymongo
 emergency==2.0.0
     # via foam-pet-health-selenium (pyproject.toml)
