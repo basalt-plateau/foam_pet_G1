@@ -2,7 +2,7 @@
 
 
 # Foam pet  
-Foam can interact with Aptos with offline bling   
+This pet can interact with Aptos with offline bling   
 like a "laptop", "desktop", etc.   
 
 A Foam Pet with a Docker Vehicle or a PyPI vehicle   
