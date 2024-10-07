@@ -22,7 +22,9 @@ def parrot ():
 			to
 		)	
 		
-		pprint.pprint (report)
+		pprint.pprint ({
+			"equality check report": report
+		})
 		
 		assert (
 			report ==
@@ -38,8 +40,8 @@ def parrot ():
 	@click.option ('--to', required = True)
 	def search (origin, to):
 		rsync.process ({
-			"from": "",
-			"to": "",
+			"from": origin,
+			"to": to,
 			
 			#
 			#	if "no", return the process script, but don't run it
@@ -56,6 +58,20 @@ def parrot ():
 			#
 			"sense": "no"
 		})
+		
+		report = check_equality.start (
+			origin,
+			to
+		)	
+		
+		pprint.pprint ({
+			"equality check report": report
+		})
+		
+		assert (
+			report ==
+			{'1': {}, '2': {}}
+		)
 
 	return group
 

@@ -14,6 +14,16 @@ foam_pet_1 parrot check_EQ \
 "'''
 
 ''''
+foam_pet_1 parrot equalize \
+--origin "/Metro/vehicles/foam_pet/_health/monitors/parrot/status_1/example_equality" \
+--to "/Metro/vehicles/foam_pet/_health/monitors/parrot/status_1/example_equality_2"
+
+foam_pet_1 parrot check_EQ \
+--origin "/Metro/vehicles/foam_pet/_health/monitors/parrot/status_1/example_equality" \
+--to "/Metro/vehicles/foam_pet/_health/monitors/parrot/status_1/example_equality_2"
+"'''
+
+''''
 	TODO:
 		foam_pet parrot equalize
 		foam_pet parrot check_EQ
