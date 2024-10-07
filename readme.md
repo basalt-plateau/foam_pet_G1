@@ -44,4 +44,4 @@ This is the pet with a PyPI vehicle.
 ----
 
 ## Details
-Metro.E.HTML has the details.  
+Regolith.E.HTML has the details.  
