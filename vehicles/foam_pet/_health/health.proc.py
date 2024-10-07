@@ -28,6 +28,7 @@ add_paths_to_system ([
 ])
 
 
+from foam_pet._health import monitor_health
 
 monitor_health ({
 	"argv": sys.argv

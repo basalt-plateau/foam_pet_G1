@@ -19,6 +19,7 @@
 			#
 			#
 			apt install nodejs -y
+			(cd /Metro/vehicles_frontend/sveltenetics && bun install)
 			(cd /Metro/vehicles_frontend/sveltenetics && bun run vitest)
 		
 			#
@@ -29,7 +30,6 @@
 			#			package.json
 			#			svelte.config.js
 			#
-			(cd /Metro/vehicles_frontend/sveltenetics && bun install)
 			(cd /Metro/vehicles_frontend/sveltenetics && bun run build)
 			
 			#
@@ -45,7 +45,8 @@
 			#	Backend: Health Monitor
 			#
 			#
-			python3 /Metro/vehicles/foam_pet/_health/health.proc.py
+			foam_pet_1 health
+			# python3 /Metro/vehicles/foam_pet/_health/health.proc.py
 			
 			#
 			#	E2E: Docker Health
@@ -64,8 +65,7 @@
 			#	Backend: Licenses
 			#
 			#
-			pip install pip-licenses
-			pip-licenses > /Metro/vehicles/foam_pet/PyPI.licenses.txt
+			(pip install pip-licenses && pip-licenses > /Metro/vehicles/foam_pet/PyPI.licenses.txt)
 			
 			
 			
@@ -101,8 +101,8 @@
 			#	A git tag with the current version number
 			#
 			#
-			git tag 3.0.0
-			git push --tags
+			git add --all && git commit -m "4.0.0" && git push
+			git tag 4.0.0 && git push --tags
 			
 			
 			#
