@@ -11,8 +11,8 @@ can be adopted from here.
 
 ## Rules
 This is a friendly pet.    
-Please be friendly and festive with your pet and follow the rules.  
-Playing with, training, and cloning your pet is most likely 100% legit. 
+Please be festive with your pet.  
+Amicability, training, and cloning your pet is most likely legit. 
 
 ### Cytes, Tissues, Organs
 The aggregate of the licensing rules from Cytes, Tissues, Organs
