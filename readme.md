@@ -2,7 +2,10 @@
 
 
 # Foam pet  
-This is a pet that can interact with Aptos from offline.  
+This is a pet that can interact with Aptos from offline.    
+
+A Foam Pet with a Docker Vehicle or a PyPI vehicle   
+can be adopted from here.  
 
 ----
 
@@ -21,22 +24,15 @@ At present, the rules are the "gpl-3.0-standalone License".
 
 ----
 
-## Preface
-A Foam PyPI vehicle and a Foam docker vehicle
-can be built from here.
+## Adoption :: Docker Images
+The is the pet with a Docker vehicle.     
+(https://github.com/basalt-plateau/foam_pet/releases)[https://github.com/basalt-plateau/foam_pet/releases]
 
 ----
 
-## PyPI
+## Adoption :: PyPI
 This is the pet with a PyPI vehicle.  
-https://pypi.org/project/foam_pet
-
-----
-
-## Docker Images
-This is the pet with a Docker vehicle.     
-The pet can sign Aptos transactions from an offline machine.    
-https://github.com/basalt-plateau/foam_pet_docker_images 
+(https://pypi.org/project/foam_pet)[https://pypi.org/project/foam_pet]
 
 ----
 

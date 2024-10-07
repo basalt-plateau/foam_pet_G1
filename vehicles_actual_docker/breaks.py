@@ -18,11 +18,16 @@ import sys
 this_folder = pathlib.Path (__file__).parent.resolve ()
 
 
-version = "v2_0_0.0"
+version = "v5_0_0.0"
 name = "Foam_Pet"
 
 container_name = "foam_pet"
 image_name = "foam_pet"
+
+####
+#
+#
+#
 image_name_plus_version = f"{ image_name }:{ version }"
 
 file_name = f"{name}_{ version }.Docker_image.tar"
@@ -33,6 +38,8 @@ packet_zip = f"Foam_Pet_{ version }.zip"
 
 tar_file = f"{ packet }/{file_name}"
 zip_tar_file = f"packet_zip/{ zip_file_name }"
+#
+####
 
 
 ''''
@@ -59,12 +66,12 @@ def retrieve_paths (theme = {}):
 		"rules": {
 			"origin": str (normpath (join (
 				this_folder, 
-				f"building/Foam_Pet.Rules.{ version }.E.HTML"
+				f"building/Foam_Pet.Rules.E.HTML"
 			))),
 			"destiny": str (normpath (join (
 				this_folder, 
 				build_directory,
-				f"{ packet }/Rules.{ version }.E.HTML"
+				f"{ packet }/Foam_Pet.Rules.E.HTML"
 			)))
 		},
 		
@@ -80,7 +87,6 @@ def retrieve_paths (theme = {}):
 				this_folder, 
 				f"the_build_2"
 			))),
-			
 		},
 		
 		"the_build": str (normpath (join (
@@ -110,6 +116,7 @@ def run (screenplay):
 	print ("----")
 	print ("screenplay:", screenplay)
 	print ()
+	input ("Press Enter to go on:")
 	os.system (screenplay)
 	print ("----")
 
@@ -118,8 +125,9 @@ def run (screenplay):
 def check_image ():
 	paths = retrieve_paths ();
 	
-	name = "Foam_Pet_v2_0_0.0"
-	image_name = "foam_pet:v2_0_0.0"
+	name = "Foam_Pet_v5_0_0.0"
+	image_name = "foam_pet:v5_0_0.0"
+	docker_image_name = "Foam_Pet_v5_0_0.0.Docker_image.tar"
 	
 	#
 	#	maybe:
@@ -138,7 +146,7 @@ def check_image ():
 	
 	zip_file_path = paths ["the_build_2"] ["path"] + "/" + name + ".zip"
 	build_directory = paths ["the_build_2"] ["path"] + "/" + name;
-	docker_image_tar = paths ["the_build_2"] ["path"] + "/" + name + "/Foam_Pet_v2_0_0.0.Docker_image.tar"
+	docker_image_tar = paths ["the_build_2"] ["path"] + "/" + name + "/" + docker_image_name
 	
 	#
 	#	1. delete the directory "Foam_Pet_v2_0_0.0"

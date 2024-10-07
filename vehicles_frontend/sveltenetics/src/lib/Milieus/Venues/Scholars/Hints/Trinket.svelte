@@ -185,9 +185,9 @@ let seeds = {
 				><Slang text="Offline Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
 					<span class="badge bg-initial">~ Offline Machine</span>
-					<span class="badge bg-initial">~ Offline Accounting</span>
+					<span class="badge bg-initial">~ Offline Signing</span>
 					<span class="badge bg-initial">~ Beacon with Limited Connectivity</span>
-					<span class="badge bg-initial">~ Key Ring</span>
+					<span class="badge bg-initial">~ Keys Ring</span>
 					<span class="badge bg-initial">~ Loyal Pet</span>	
 				</p>
 			</div>
@@ -204,13 +204,14 @@ let seeds = {
 					style="text-align: center; font-size: 1.5em;"
 				><Slang text="Online Machine" /></p>
 				<p style="font-size: 1em; text-align: center; line-height: 2em">
-					<span class="badge bg-initial">~ Online Machine</span>
-					<span class="badge bg-initial">~ Internet Connected Beacon</span>
+					<span class="badge bg-initial">~ Emergency Dispatch Buttons</span>
 					<span class="badge bg-initial">~ SOS Beacon</span>
-					<span class="badge bg-initial">~ Howl Amp</span>
 					<span class="badge bg-initial">~ Emergency Kiosk</span>
-					<span class="badge bg-initial">~ Checkout</span>
+					<span class="badge bg-initial">~ Howl Amp</span>
+					<span class="badge bg-initial">~ Internet Connected Beacon</span>
 					<span class="badge bg-initial">~ Friendly Pet</span>
+					<span class="badge bg-initial">~ Online Machine</span>
+					<span class="badge bg-initial">~ Checkout</span>
 				</p>
 			</div>
 		</div>

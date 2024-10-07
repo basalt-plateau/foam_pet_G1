@@ -40,24 +40,20 @@
 			
 			
 			#	
-			#	cd vehicles_actual_docker
-			#
+			#	1. cd vehicles_actual_docker
 			#		-td starts the container in the background and keeps it on
+			#
+			#	2. Open the container
 			#	
-			[OS] docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian 
-			
-			#
-			#
-			#	Open the container..
-			#
-			#
+			[OS] docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian
 			[OS] docker exec -it foam_pet bash -c "bash"
 			
+
+			
 			#
-			#	Change These to the Latest Version:
+			#	In "/building/build.sh" change this:
 			#
-			#		cp /building/Foam_Pet.Rules.v2_0_0.0.E.HTML /Rules.E.HTML
-			#		pip install foam_pet==2.0.0
+			#		pip install foam_pet==5.0.0
 			#
 			[Boat] bash /building/build.sh
 			
@@ -90,8 +86,13 @@
 			
 			#
 			#
-			#	create the_build/Foam_Pet_v2_0_0.0
-			#	create the_build/Foam_Pet_v2_0_0.0/readme.md
+			#	A "foam_pet" container needs to be running for this.
+			#
+			#
+			
+			#
+			#	
+			#	modify "the_build_readme.md"
 			#
 			
 			#
@@ -101,11 +102,22 @@
 			#
 			[OS] python3 breaks.py save_docker_image
 			
+			
+			#
+			#	Foam_Pet_v5_0_0.0.zip
+			#		SHA: a5b444dc9a0405ebacc233d9d2f87e42012f9441768a83287a8dae6a38cc1b58
+			#
 
 		<header>check the image</header>	
 			
-			
+			#
+			#
+			#	modify these variables
+			#
+			#
 			[OS] python3 breaks.py check_image
+			
+			
 			
 			#
 			#
