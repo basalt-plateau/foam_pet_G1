@@ -135,6 +135,8 @@ const on_next_pressed = () => {
 		else if (panel_name === "Receive Bits") {
 			if (received_bits.length >= 1) {
 				panel_name = "Receive Bits, Received"
+				freight.next.permitted = "no"
+				freight.back.permitted = "yes"
 			}
 		}
 		
@@ -154,6 +156,9 @@ const on_back_pressed = () => {
 			panel_name = "Receive Bits"
 			freight.next.permitted = "yes"
 			freight.back.permitted = "no"
+			
+			bits = ""
+			received_bits = ""
 		}
 
 		
