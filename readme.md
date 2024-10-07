@@ -39,7 +39,7 @@ The is the pet with a Docker vehicle.
 
 ## Adoption :: PyPI
 This is the pet with a PyPI vehicle.  
-[https://pypi.org/project/foam_pet)(https://pypi.org/project/foam_pet)
+[https://pypi.org/project/foam_pet](https://pypi.org/project/foam_pet)
 
 ----
 
