@@ -12,7 +12,7 @@ can be adopted from here.
 
 ## Rules (License) 
 This is a friendlyl, loyal pet.  
-Please be festive with your pet.
+Please be festive with your pet.   
 Amicability, training, and cloning your pet is most likely legit.  
 
 ### Adoption Location
