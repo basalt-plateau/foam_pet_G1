@@ -42,6 +42,13 @@ $: freight = {
 		has: 'yes',
 		text: 'Unfinished',
 		permitted: "no",
+		
+		show_waiting: "no",
+		
+		//
+		// This means that there's info about what is required
+		// to advance.
+		//
 		has_alert: "yes",
 		go: () => {
 			
@@ -286,7 +293,7 @@ let wait_color = document.documentElement.classList.contains ("dark") ? "#000000
 				<button 
 					modal-next
 				
-					disabled={ freight.next.permitted != "yes" && freight.next.has_alert != "yes" }
+					disabled={ freight.next.permitted != "yes" }
 					on:click={ freight.next.go }
 					
 					class="btn variant-filled" 
@@ -295,7 +302,7 @@ let wait_color = document.documentElement.classList.contains ("dark") ? "#000000
 						
 					"
 				>
-					{#if freight.next.permitted != "yes" }
+					{#if freight.next.permitted != "yes" && freight.next.show_waiting === "yes" }
 					<span
 						style="
 							position: absolute;
@@ -312,11 +319,11 @@ let wait_color = document.documentElement.classList.contains ("dark") ? "#000000
 							color={ wait_color }
 						/>
 					</span>
+					<div style="width: 20px;"></div>
 					{/if}
 					<span
 						style="
 							position: relative;
-							margin-left: 40px;
 						"
 					>
 						{ freight.next.text }

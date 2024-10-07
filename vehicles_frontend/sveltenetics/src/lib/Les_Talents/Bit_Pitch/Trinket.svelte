@@ -31,19 +31,71 @@ import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
 //
 //
 import Alert_Success from '$lib/trinkets/Alerts/Success.svelte'
+import Code_Wall from '$lib/trinkets/Code_Wall/Trinket.svelte' 
 	
 
-
+const alert_success_note = "The bits were received successfully."
+let received_bits = "";
 let barcode_vision = ""
 const on_barcode_found = async ({ hexadecimal_string }) => {
-	console.info ({ hexadecimal_string });
-	
+	received_bits = hexadecimal_string;
 	barcode_vision.stop_the_scan ();
+	
+	on_next_pressed ();
 }
 	
+let panel_name = "Send Bits"
+
+let direction = "send"
+$: {
+	let _direction = direction;
+	if (typeof polytope_modal === "object") {
+		if (_direction === "send") {
+			polytope_modal.advance (({ freight }) => {
+				panel_name = "Send Bits"
+				freight.next.permitted = "yes"
+				freight.back.permitted = "no"
+				
+				return freight;		
+			})
+		}
+		else {
+			polytope_modal.advance (({ freight }) => {
+				panel_name = "Receive Bits"
+				freight.next.permitted = "no"
+				freight.back.permitted = "no"
+				
+				return freight;		
+			})
+		}
+	}
+}
 
 let bits = ""
-let direction = "send"
+$: {
+	let _bits = bits;
+	
+	console.info ("bits changed", _bits, typeof polytope_modal === "object");
+	
+	if (typeof polytope_modal === "object") {
+		if (panel_name === "Send Bits") {
+			if (_bits.length >= 1) {
+				polytope_modal.advance (({ freight }) => {
+					freight.next.permitted = "yes"
+					return freight;		
+				})
+			}
+			else {
+				polytope_modal.advance (({ freight }) => {
+					freight.next.permitted = "no"
+					return freight;		
+				})
+			}
+		}
+
+	}
+}
+
 
 const prepare = () => {
 	return {
@@ -62,27 +114,29 @@ const on_click = () => {
 	})
 }
 
-const on_modal_change = () => {}
+let polytope_freight = {}
+const on_modal_change = () => {
+	
+}
 
-let current = 1;
+
 const on_next_pressed = () => {
 	console.info ("on_next_pressed")
 	
 	polytope_modal.advance (({ freight }) => {
 		
-		if (freight.panel_name === "Send Bits") {
-			current += 1
-			
-			freight.panel_name = "Send Bits, QR Code"
+		if (panel_name === "Send Bits") {
+			panel_name = "Send Bits, QR Code"
 			freight.next.permitted = "no"
+			freight.next.has_alert = "no"
+			
 			freight.back.permitted = "yes"
 		}
-		else if (freight.panel_name === "Send Bits, QR Code") {
-			
-			
+		else if (panel_name === "Receive Bits") {
+			if (received_bits.length >= 1) {
+				panel_name = "Receive Bits, Received"
+			}
 		}
-		
-
 		
 		return freight;		
 	})
@@ -91,14 +145,16 @@ const on_back_pressed = () => {
 	console.info ("on_back_pressed")
 	
 	polytope_modal.advance (({ freight }) => {
-		if (freight.panel_name === "Send Bits, QR Code") {
-			current -= 1
-			
-			freight.panel_name = "Send Bits"
+		if (panel_name === "Send Bits, QR Code") {
+			panel_name = "Send Bits"
 			freight.next.permitted = "yes"
 			freight.back.permitted = "no"
 		}
-		
+		else if (panel_name === "Receive Bits, Received") {
+			panel_name = "Receive Bits"
+			freight.next.permitted = "yes"
+			freight.back.permitted = "no"
+		}
 
 		
 		return freight;		
@@ -110,9 +166,6 @@ const on_prepare = () => {
 		return _merge ({}, freight, {
 			showing: 'yes',
 			name: 'Bit Pitch',
-			
-			
-			panel_name: 'Send Bits',
 			
 			unfinished: {
 				showing: 'no',
@@ -132,7 +185,7 @@ const on_prepare = () => {
 				//	{ text: "Unfinished", permitted: "no" }
 				//
 				text: 'Next',
-				permitted: "yes",
+				permitted: "no",
 				has_alert: "yes",
 				go: () => {
 					on_next_pressed ()
@@ -186,8 +239,7 @@ const on_prepare = () => {
 			<RadioItem bind:group={ direction } name="justify" value={ "receive" }>Receive</RadioItem>
 		</RadioGroup>
 		
-		{#if direction === "send" }
-		{#if current === 1 }
+		{#if panel_name === "Send Bits" }
 		<div 
 			style="
 				width: 100%;
@@ -222,7 +274,7 @@ const on_prepare = () => {
 				/>
 			</label>
 		</div>
-		{:else if current === 2}
+		{:else if panel_name === "Send Bits, QR Code"}
 		<label 
 			style="
 				padding: 1em;
@@ -234,8 +286,7 @@ const on_prepare = () => {
 				hexadecimal_string={ bits }
 			/>
 		</label>
-		{/if}
-		{:else}
+		{:else if panel_name === "Receive Bits"}
 		<div
 			style="
 				height: 100%;
@@ -243,6 +294,13 @@ const on_prepare = () => {
 				padding-top: 1cm;
 			"
 		>
+			{#if received_bits.length >= 1 }
+			<Alert_Success 
+				text={ alert_success_note }
+			/>
+			<div style="height: 1cm" />
+			{/if}
+		
 			<Barcode_Vision
 				bind:this={ barcode_vision }
 				found={ on_barcode_found }
@@ -253,6 +311,21 @@ const on_prepare = () => {
 					'max-width': '1000px'
 				}}
 			/>
+		</div>
+		{:else if panel_name === "Receive Bits, Received"}
+		<div
+			style="
+				height: 100%;
+				width: 100%;
+				padding-top: 1cm;
+			"
+		>
+			<div class="card p-4 variant-filled-primary">
+				<Code_Wall 
+					text={ received_bits } 
+					can_clone={ "yes" }
+				/>
+			</div>
 		</div>
 		{/if}
 	</div>
