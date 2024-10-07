@@ -30,13 +30,13 @@ etc. of the Pet.
 
 ## Adoption :: Docker Images
 The is the pet with a Docker vehicle.     
-(https://github.com/basalt-plateau/foam_pet/releases)[https://github.com/basalt-plateau/foam_pet/releases]
+[https://github.com/basalt-plateau/foam_pet/releases](https://github.com/basalt-plateau/foam_pet/releases)
 
 ----
 
 ## Adoption :: PyPI
 This is the pet with a PyPI vehicle.  
-(https://pypi.org/project/foam_pet)[https://pypi.org/project/foam_pet]
+[https://pypi.org/project/foam_pet](https://pypi.org/project/foam_pet)
 
 ----
 
