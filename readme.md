@@ -2,25 +2,29 @@
 
 
 # Foam pet  
-This is a pet that can interact with Aptos from offline.    
+Foam can interact with Aptos with offline bling   
+like a "laptop", "desktop", etc.   
 
 A Foam Pet with a Docker Vehicle or a PyPI vehicle   
-can be adopted from here.  
+can be adopted from here.   
 
 ----
 
 ## Rules
-This is a friendly pet.    
-Please be festive with your pet.  
-Amicability, training, and cloning your pet is most likely legit. 
-
-### Cytes, Tissues, Organs
-The aggregate of the licensing rules from Cytes, Tissues, Organs
-laboratories can be found at "vehicles/foam_pet/frontend_licenses.csv"
+This is a scholarly, friendly, loyal pet.     
+Please be festive with your pet.   
+Amicability, training, and cloning your pet is most likely legit.  
 
 ### Adoption Location
-The adoption location has rules for pets in the "./vehicles/foam_pet/[rules]" directory.  
-At present, the rules are the "gpl-3.0-standalone License".  
+The adoption location has rules for pets in the "foam_pet/[rules]" directory.  
+At present, the rules are the "gpl-3.0-standalone License".   
+
+### Laboratory Rules
+The aggregate of the licensing rules from these   
+can be found at "foam_pet/frontend_licenses.csv".  
+These pertain to the organelles, cytes, tissues,  
+organs, organisms, climates, haciendas, towns,  
+etc. of the Pet.  
 
 ----
 

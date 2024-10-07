@@ -10,7 +10,7 @@ like a "laptop", "desktop", etc.
 ---
 
 ## Rules (License) 
-This is a friendlyl, loyal pet.  
+This is a friendly, loyal pet.  
 Please be festive with your pet.
 Amicability, training, and cloning your pet is most likely legit.  
 
