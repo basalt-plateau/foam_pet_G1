@@ -7,8 +7,8 @@
 <script>
 
 /*
-	import Petition_Claim from '$lib/Les_Talents/APT_Entrust_Mode_1/Trinkets/Petition_Claim.svelte'
-	<Petition_Claim 
+	import Petition_Flourish from '$lib/Les_Talents/APT_Entrust_Mode_1/Trinkets/Petition_Flourish.svelte'
+	<Petition_Flourish 
 		AO_parsed={ AO_parsed }
 	/>
 */
@@ -82,7 +82,7 @@ const make_info_alerts = () => {
 						font-size: 1.25em;
 						padding: 0cm 0;
 					"
-				>Claim</header>
+				>Flourish</header>
 			</svelte:fragment>
 			<svelte:fragment slot="content">
 				<div class="table-container">

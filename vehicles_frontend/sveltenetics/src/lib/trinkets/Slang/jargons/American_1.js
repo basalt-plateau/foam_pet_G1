@@ -22,6 +22,9 @@ const blockchain = {
 }
 
 const account = {
+	
+	"Sender": "Sender",
+	
 	//
 	//	Players, Vehicles, Exosuit
 	//	Characters
@@ -71,34 +74,40 @@ const account = {
 	////
 	//
 	//	Ink, Tat, Impression
-	//	Story, Boast, Claim
+	//	Story, Boast, Flourish
 	//
-	"signature": "boast",
-	"A_signature": "a boast",
-	"a_signature": "a boast",
-	"Signature": "Claim",
-	"Signatures": "Claims",
+	"signature": "Flourish",
+	"A_signature": "a Flourish",
+	"a_signature": "a Flourish",
+	"Signature": "Flourish",
+	"Signatures": "Flourishes",
 	//
-	"Sign": "Claim",
+	"Sign": "Flourish",
 	//
-	"Signer": "Claimer",		
+	"Signer": "Flourisher",		
 	//
-	"Signing": "Claiming",
+	"Signing": "Flourishing",
 	//
-	"Signed": "Claimed",
-	"signed": "boasted",
+	"Signed": "Flourished",
+	"signed": "Flourished",
 	//
 	////
 }
 
 const consensus = {
 	//
-	//	Jersey, Family, Dynasty, Pod
-	//	Islands, Constellation, Fest
+	//	Maintenance, Leaders, Care,
+	//	Theater
 	//
 	"consensus": "Fest",
 	"Consensus": "Fest",
-	"Node": "Node",
+	
+	//
+	//
+	//	Pet
+	//
+	//
+	"Node": "Node"
 }
 
 
@@ -138,7 +147,7 @@ export const American_1 = {
 	...consensus,
 
 	
-	"Sender": "Sender",
+	
 
 	
 	

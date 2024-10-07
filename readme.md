@@ -34,9 +34,9 @@ https://pypi.org/project/foam_pet
 ----
 
 ## Docker Images
-This is the pet with a Docker vehicle.   
-The pet can sign Aptos transactions from an offline machine.  
-https://github.com/basalt-plateau/foam-docker-images  
+This is the pet with a Docker vehicle.     
+The pet can sign Aptos transactions from an offline machine.    
+https://github.com/basalt-plateau/foam_pet_docker_images 
 
 ----
 

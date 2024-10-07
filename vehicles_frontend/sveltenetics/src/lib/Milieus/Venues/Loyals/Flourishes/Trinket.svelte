@@ -82,7 +82,7 @@ onMount (() => {
 </script>
 
 <svelte:head>
-	<title>Claims</title>
+	<title>Flourishes</title>
 </svelte:head>
 
 <Leaf>
