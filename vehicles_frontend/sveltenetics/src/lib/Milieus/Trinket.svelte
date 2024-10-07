@@ -32,7 +32,7 @@ import Friends_Talents from './Venues/Friends/Talents/Trinket.svelte'
 
 import Loyals_Players from './Venues/Loyals/Players/Trinket.svelte'
 import Loyals_Hints from './Venues/Loyals/Hints/Trinket.svelte'
-import Loyals_Boasts from './Venues/Loyals/Boasts/Trinket.svelte'
+import Loyals_Claims from './Venues/Loyals/Claims/Trinket.svelte'
 
 import Technicians_Map from './Venues/Technicians/Trinket.svelte'
 import Technicians_Address_Qualities from './Venues/Technicians/Address_Qualities/Trinket.svelte'
@@ -60,7 +60,7 @@ let Milieus = {
 	"Loyals": {
 		"Hints": Loyals_Hints,
 		"Accounts": Loyals_Players,
-		"Signatures": Loyals_Boasts
+		"Signatures": Loyals_Claims
 	},
 	"Technicians": {
 		"Map": Technicians_Map,

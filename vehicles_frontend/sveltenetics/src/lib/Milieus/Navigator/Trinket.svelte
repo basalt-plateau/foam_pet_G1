@@ -26,22 +26,24 @@ import { check_roomies_truck } from '$lib/Versies/Trucks'
 //
 import { check_Milieus_truck } from '$lib/Milieus/Truck'
 import Milieus_Trucks from '$lib/Milieus/Truck/Trinket.svelte'
+import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
 //
 //
 import Buttons_Panel from './Trinkets/Buttons_Panel.svelte'
 import Net_Trinket from './Trinkets/Net.svelte'
 import Online_Caution_Alert from './Trinkets/Online_Caution_Alert.svelte'
-import Boasts from './Trinkets/Navigator_Loyals/Boasts.svelte'
 import The_Map_Trinket from './Trinkets/The_Map/Trinket.svelte'
+//
+import Navigator_1 from './Trinkets/Navigator_1.svelte'
+import Navigator_Scholars from './Trinkets/Navigator_Scholars.svelte'
+import Navigator_Friends from './Trinkets/Navigator_Friends.svelte'
+import Navigator_Loyals from './Trinkets/Navigator_Loyals/Trinket.svelte'
 //
 ////
 
 	
-import Milieus_Button from '$lib/Milieus/Button/Trinket.svelte'
-import Navigator_1 from './Trinkets/Navigator_1.svelte'
-import Navigator_Scholars from './Trinkets/Navigator_Scholars.svelte'
-import Navigator_Friends from './Trinkets/Navigator_Friends.svelte'
-import Navigator_Loyals from './Trinkets/Navigator_Loyals.svelte'
+
+
 
 
 

@@ -76,16 +76,16 @@ const account = {
 	"signature": "boast",
 	"A_signature": "a boast",
 	"a_signature": "a boast",
-	"Signature": "Boast",
-	"Signatures": "Boasts",
+	"Signature": "Claim",
+	"Signatures": "Claims",
 	//
-	"Sign": "Boast",
+	"Sign": "Claim",
 	//
-	"Signer": "Boaster",		
+	"Signer": "Claimer",		
 	//
-	"Signing": "Boasting",
+	"Signing": "Claiming",
 	//
-	"Signed": "Boasted",
+	"Signed": "Claimed",
 	"signed": "boasted",
 	//
 	////

@@ -13,7 +13,7 @@ import Seeds_Trucks from '$lib/Versies/Trucks.svelte'
 import { check_roomies_truck } from '$lib/Versies/Trucks'
 //
 //
-import Boasts_Component from './Navigator_Loyals/Boasts.svelte'
+import Claims_Component from './Signatures.svelte'
 //
 //
 
@@ -96,7 +96,7 @@ const build = () => {
 		name={ "Signatures" }
 		location={[ "Loyals", "Signatures" ]}
 		is_open_location={[ "Loyals", "Signatures" ]}
-		component={ Boasts_Component }
+		component={ Claims_Component }
 		
 		style={ buttons_styles }
 	/>
