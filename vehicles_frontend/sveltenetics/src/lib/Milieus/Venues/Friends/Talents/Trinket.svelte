@@ -35,7 +35,7 @@ import Stats_Wall from '$lib/Les_Talents/Stats/Wall.svelte'
 //
 import { parse_styles } from '$lib/trinkets/styles/parse'
 //
-import { open_bit_throw } from '$lib/Les_Talents/Bit_Pitch/open'
+import { open_bit_throw } from '$lib/Les_Talents/Bit_Pack/open'
 //
 //
 import { modal_plugs, trends } from './Trinket'
@@ -207,7 +207,7 @@ let friends_pronunciation = "gwadenyawotch"
 						align-items: center;
 					"
 				>
-					<p>Bit Pitch</p>
+					<p>Bit Pack</p>
 				</button>
 			</div>
 		</Panel>

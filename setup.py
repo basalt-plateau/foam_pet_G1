@@ -13,12 +13,19 @@ build_exe_options = {
 }
 '''
 
+# .py_3_11
+name = "Foam_Pet_3_0_0.0.linux-x86_64"
+
+#base = "Win32GUI"
+base = "gui"
+
 setup(
     name = "foam_pet_cx",
     version = "0.1",
     description = "",
     options = {
 		"build_exe": {
+			"build_exe": f"build/{ name }",
 			"include_path": [
 				"vehicles"
 			],
@@ -27,6 +34,9 @@ setup(
 		}
 	},
     executables = [
-		Executable ("vehicles/foam_pet/start.py", base = "gui")
+		Executable (
+			"vehicles/foam_pet/foam_pet.py", 
+			base = base
+		)
 	],
 )

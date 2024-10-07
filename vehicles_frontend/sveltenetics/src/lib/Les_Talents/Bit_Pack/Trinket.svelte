@@ -13,8 +13,8 @@
 <script>
 
 /*
-	import Bit_Pitch from '$lib/Les_Talents/Bit_Pitch/Trinket.svelte'
-	import { open_bit_throw } from '$lib/Les_Talents/Bit_Pitch/open.js'
+	import Bit_Pack from '$lib/Les_Talents/Bit_Pack/Trinket.svelte'
+	import { open_bit_throw } from '$lib/Les_Talents/Bit_Pack/open.js'
 */
 
 
@@ -170,7 +170,7 @@ const on_prepare = () => {
 	polytope_modal.advance (({ freight }) => {
 		return _merge ({}, freight, {
 			showing: 'yes',
-			name: 'Bit Pitch',
+			name: 'Bit Pack',
 			
 			unfinished: {
 				showing: 'no',
