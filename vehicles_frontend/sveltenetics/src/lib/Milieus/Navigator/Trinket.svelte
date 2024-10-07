@@ -41,10 +41,6 @@ import Navigator_Loyals from './Trinkets/Navigator_Loyals/Trinket.svelte'
 //
 ////
 
-	
-
-
-
 
 
 let navigator_1;

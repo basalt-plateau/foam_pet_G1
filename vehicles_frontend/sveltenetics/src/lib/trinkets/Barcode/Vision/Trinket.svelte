@@ -5,11 +5,15 @@
 /*
 	import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
 	
-	const found = () => {}
+	const on_barcode_found = async ({ hexadecimal_string }) => {
+		// stop scanning if found.
+		
+		barcode_vision.stop_the_scan ();
+	}
 	
 	<Barcode_Vision
 		bind:this={ barcode_vision }
-		found={ found }
+		found={ on_barcode_found }
 		
 		styles={{
 			
@@ -113,7 +117,7 @@ const open_camera = () => {
 	}
 }
 
-const stop_the_scan = () => {
+export const stop_the_scan = () => {
 	if (HTML5_QR_Barcode_Scanner) {
 		HTML5_QR_Barcode_Scanner.pause ()		
 		// HTML5_QR_Barcode_Scanner.clear ()

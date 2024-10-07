@@ -13,8 +13,8 @@
 <script>
 
 /*
-	import Bit_Throw from '$lib/Les_Talents/Bit_Throw/Trinket.svelte'
-	import { open_bit_throw } from '$lib/Les_Talents/Bit_Throw/open.js'
+	import Bit_Pitch from '$lib/Les_Talents/Bit_Pitch/Trinket.svelte'
+	import { open_bit_throw } from '$lib/Les_Talents/Bit_Pitch/open.js'
 */
 
 
@@ -30,10 +30,16 @@ import Leaf from '$lib/trinkets/Layout/Leaf/Trinket.svelte'
 import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
 //
 //
+import Alert_Success from '$lib/trinkets/Alerts/Success.svelte'
+	
+
 
 let barcode_vision = ""
-const found = () => {}
+const on_barcode_found = async ({ hexadecimal_string }) => {
+	console.info ({ hexadecimal_string });
 	
+	barcode_vision.stop_the_scan ();
+}
 	
 
 let bits = ""
@@ -63,16 +69,20 @@ const on_next_pressed = () => {
 	console.info ("on_next_pressed")
 	
 	polytope_modal.advance (({ freight }) => {
-		if (freight.next.permitted === "yes") {
+		
+		if (freight.panel_name === "Send Bits") {
 			current += 1
+			
+			freight.panel_name = "Send Bits, QR Code"
+			freight.next.permitted = "no"
+			freight.back.permitted = "yes"
 		}
-		else {
-			if (freight.next.has_alert === "yes") {
-				freight.unfinished.showing = "yes"
-			}
+		else if (freight.panel_name === "Send Bits, QR Code") {
+			
+			
 		}
 		
-		console.info ({ freight })
+
 		
 		return freight;		
 	})
@@ -81,16 +91,15 @@ const on_back_pressed = () => {
 	console.info ("on_back_pressed")
 	
 	polytope_modal.advance (({ freight }) => {
-		if (freight.next.permitted === "yes") {
+		if (freight.panel_name === "Send Bits, QR Code") {
 			current -= 1
-		}
-		else {
-			if (freight.next.has_alert === "yes") {
-				freight.unfinished.showing = "yes"
-			}
+			
+			freight.panel_name = "Send Bits"
+			freight.next.permitted = "yes"
+			freight.back.permitted = "no"
 		}
 		
-		console.info ({ freight })
+
 		
 		return freight;		
 	})
@@ -101,6 +110,9 @@ const on_prepare = () => {
 		return _merge ({}, freight, {
 			showing: 'yes',
 			name: 'Bit Pitch',
+			
+			
+			panel_name: 'Send Bits',
 			
 			unfinished: {
 				showing: 'no',
@@ -163,6 +175,12 @@ const on_prepare = () => {
 				margin: 0 auto;
 			"
 	>
+		<div style="height: 1cm" />
+	
+		<p>Bits can be sent and received from here.</p>
+
+		<div style="height: 1cm" />
+
 		<RadioGroup>
 			<RadioItem bind:group={ direction } name="justify" value={ "send" }>Send</RadioItem>
 			<RadioItem bind:group={ direction } name="justify" value={ "receive" }>Receive</RadioItem>
@@ -170,25 +188,40 @@ const on_prepare = () => {
 		
 		{#if direction === "send" }
 		{#if current === 1 }
-		<label 
+		<div 
 			style="
-				padding: 1em;
 				width: 100%;
+				margin: 1em;
 			"
-			class="label"
+			class="card p-4"
 		>
-			<textarea 
-				bind:value={ bits }
-			
+			<p
 				style="
-					padding: 1em;
+					text-align: center;
+					padding: 0.5cm;
+				"
+			>After entering bits, the "Next" button forms a barcode.</p>
+		
+			<label 
+				style="
+					
 					width: 100%;
 				"
-				class="textarea" 
-				rows="4" 
-				placeholder="" 
-			/>
-		</label>
+				class="label"
+			>
+				<textarea 
+					bind:value={ bits }
+				
+					style="
+						padding: 1em;
+						width: 100%;
+					"
+					class="textarea" 
+					rows="4" 
+					placeholder="" 
+				/>
+			</label>
+		</div>
 		{:else if current === 2}
 		<label 
 			style="
@@ -212,7 +245,7 @@ const on_prepare = () => {
 		>
 			<Barcode_Vision
 				bind:this={ barcode_vision }
-				found={ found }
+				found={ on_barcode_found }
 				
 				styles={{
 					'height': '100%',
