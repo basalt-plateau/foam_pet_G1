@@ -9,15 +9,33 @@ mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED
 pip install uv poetry
 
 
-apt install curl haproxy nodejs -y
+apt install curl haproxy -y
+
+#\
+#
+#	NVM + Node.js
+#	
+#
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install 20
+#
+#/
 
 #/
 #
 #	obtain:
-#		1. bun
-#		2. aptos cli
+#		* bun
+#		* pnpm
+#		* aptos cli
 #
 apt install unzip; curl -fsSL https://bun.sh/install | bash; . /root/.bashrc
+#
+export SHELL=/bin/bash 
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+. /root/.bashrc
 #
 curl -fsSL "https://aptos.dev/scripts/install_cli.py" | python3
 export PATH="/root/.local/bin:$PATH"

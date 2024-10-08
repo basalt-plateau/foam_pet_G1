@@ -1,0 +1,142 @@
+@aptos-labs/aptos-faucet-client@0.2.0 [license(s): Apache 2.0]
+└── package.json:  Apache 2.0
+
+@aptos-labs/ts-sdk@1.29.0 [license(s): Apache, Apache-2.0]
+├── package.json:  Apache-2.0
+└── license files: Apache
+
+@floating-ui/dom@1.6.11 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+@lucide/lab@0.1.2 [license(s): ISC]
+├── package.json:  ISC
+└── license files: ISC
+
+@skeletonlabs/skeleton@2.10.2 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+@skeletonlabs/tw-plugin@0.4.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+@sveltejs/adapter-node@5.2.5 [license(s): MIT]
+└── package.json:  MIT
+
+@sveltejs/adapter-static@3.0.5 [license(s): MIT]
+└── package.json:  MIT
+
+@typescript-eslint/types@7.18.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+@typescript-eslint/typescript-estree@7.18.0 [license(s): BSD-2-Clause]
+└── package.json:  BSD-2-Clause
+
+@typescript-eslint/visitor-keys@7.18.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+@zxing/browser@0.1.5 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+@zxing/library@0.21.2 [license(s): Apache, MIT]
+├── package.json:  MIT
+└── license files: Apache
+
+animejs@3.2.2 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+ato-ui@0.4.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+big.js@6.2.2 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+bits-ui@0.21.12 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+bwip-js@4.5.1 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+chart.js@4.4.4 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+chartjs-plugin-streaming@2.0.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+compromise@14.14.1 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+fraction.js@4.3.7 [license(s): MIT]
+├── package.json:  MIT
+├── license files: MIT
+└── readme files: MIT
+
+html5-qrcode@2.3.8 [license(s): Apache, Apache-2.0]
+├── package.json:  Apache-2.0
+└── license files: Apache
+
+js-yaml@4.1.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+jsoneditor@10.1.0 [license(s): Apache, Apache-2.0]
+├── package.json:  Apache-2.0
+└── license files: Apache
+
+jszip@3.10.1 [license(s): (MIT OR GPL-3.0-or-later), GPL, MIT]
+├── package.json:  (MIT OR GPL-3.0-or-later)
+├── license files: GPL, MIT
+└── readme files: GPL, MIT
+
+license-report@6.7.0 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+lodash@4.17.21 [license(s): MIT]
+└── package.json:  MIT
+
+lucide-svelte@0.408.0 [license(s): ISC]
+├── package.json:  ISC
+├── license files: ISC
+└── readme files: ISC
+
+pako@2.1.0 [license(s): (MIT AND Zlib), MIT]
+├── package.json:  (MIT AND Zlib)
+├── license files: MIT
+└── readme files: MIT
+
+postcss@8.4.47 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+procedures@1.1.0 [license(s): ISC]
+└── package.json:  ISC
+
+svelte-preprocess@6.0.3 [license(s): MIT]
+└── package.json:  MIT
+
+sveltenetics@0.0.1 [license(s): Apache, BSD, GPL, ISC, MIT, Public Domain, WTFPL]
+└── license files: Apache, BSD, GPL, ISC, MIT, Public Domain, WTFPL
+
+tailwindcss@3.4.13 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+unocss@0.61.3 [license(s): MIT]
+├── package.json:  MIT
+└── license files: MIT
+
+LICENSES: (MIT AND Zlib), (MIT OR GPL-3.0-or-later), Apache, Apache 2.0, Apache-2.0, BSD, BSD-2-Clause, GPL, ISC, MIT, Public Domain, WTFPL
+

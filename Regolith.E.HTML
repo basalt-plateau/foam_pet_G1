@@ -60,7 +60,8 @@
 				<header>install</header>
 					(cd /Metro/vehicles_frontend/sveltenetics && rm -rf node_modules)
 					(cd /Metro/vehicles_frontend/sveltenetics && bun install)
-				
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm build)
+			
 				<header>dev mode</header>
 					(cd /Metro/vehicles_frontend/sveltenetics && bun run foam)
 					localStorage.setItem ("mode", "nurture")

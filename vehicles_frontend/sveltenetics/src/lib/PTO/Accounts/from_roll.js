@@ -27,8 +27,6 @@ import * as AptosSDK from "@aptos-labs/ts-sdk";
 	AptosSDK.Account.generate ()
 */
 
-import { ed25519 } from '@noble/curves/ed25519';
-
 import { string_from_Uint8Array } from '$lib/taverns/hexadecimal/string_from_Uint8Array'
 import { Uint8Array_from_string } from '$lib/taverns/hexadecimal/Uint8Array_from_string'
 
