@@ -10,20 +10,19 @@ like a "laptop", "desktop", etc.
 ---
 
 ## Rules (License) 
-This is a friendly, loyal pet.    
-Please be festive with your pet.  
-Amicability, training, and cloning your pet is most likely legit.  
+This is a scholarly, friendly, loyal (mixed) pet.   
+Please be festive with pets.   
+Amicability with, training, and cloning foam pets   
+is likely to amplify friendliness.  
 
-### Adoption Location
-The adoption location has rules for pets in the "foam_pet/[rules]" directory.  
-At present, the rules are the "gpl-3.0-standalone License".   
+### Adoption Location (Originals)
+At present, these rules are the "gpl-3.0-standalone License".    
+Details are at "foam_pet/Rules.E.HTML" 
 
-### Laboratory Rules
-The aggregate of the licensing rules from these   
-can be found at "foam_pet/frontend_licenses.csv".  
-These pertain to the organelles, cytes, tissues,  
-organs, organisms, climates, haciendas, towns,  
-etc. of the Pet.  
+### Laboratory Rules (Clones)
+Details for the Organelles, cytes, tissues, organs, organisms,   
+climates, haciendas, towns, etc. can also  
+be found at "foam_pet/Rules.E.HTML"
 
 
 

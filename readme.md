@@ -11,19 +11,23 @@ can be adopted from here.
 ----
 
 ## Rules
-This is a scholarly, friendly, loyal (mixed) pet.   
-Please be festive with pets.   
-Amicability with, training, and cloning foam pets   
-is likely to amplify friendliness.  
+This is a pet.
 
-### Adoption Location (Originals)
-At present, these rules are the "gpl-3.0-standalone License".    
-Details are at "foam_pet/Rules.E.HTML" 
+### Git Repository
+#### Git Repository :: Originals
+[__Novel/__rules/gpl-3.0-standalone.html](__Novel/__rules/gpl-3.0-standalone.html)   
+are the rules for the originals in this git repository.
 
-### Laboratory Rules (Clones)
-Details for the Organelles, cytes, tissues, organs, organisms,   
-climates, haciendas, towns, etc. can also  
-be found at "foam_pet/Rules.E.HTML"
+#### Git Repository :: Clones
+##### Docker Debian
+[vehicles_actual_docker/building/docker-debian](vehicles_actual_docker/building/docker-debian) 
+[vehicles_actual_docker/building/docker-debian/LICENSE](vehicles_actual_docker/building/docker-debian/LICENSE) 
+
+### Git Repository :: Clones that aren't attached to the repo, but are used by releases.
+#### PyPI
+The details for the PyPI module can be found at these:
+[vehicles/foam_pet/readme.md](vehicles/foam_pet/readme.md)
+[vehicles/foam_pet/Rules.E.HTML](vehicles/foam_pet/Rules.E.HTML)
 
 ----
 
