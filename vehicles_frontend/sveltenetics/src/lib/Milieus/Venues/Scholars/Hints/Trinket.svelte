@@ -69,7 +69,6 @@ const show_rules = () => {
 	open_rules ({ modal_store });
 }
 
-show_rules ();
 
 </script>
 
@@ -454,15 +453,6 @@ show_rules ();
 			type="button" 
 			class="btn variant-filled"
 		>Show Rules</button>
-		
-		<p>
-			<span>The rules for festivities with <Slang text="Pet" /> can be found in the <b>readme.md</b> <b>Rules</b> at</span>
-			<br />
-			<a 
-				target="_blank"
-				href="https://github.com/basalt-plateau/foam_pet"
-			>https://github.com/basalt-plateau/foam_pet</a>
-		</p>
 	</div>
 	
 	<div style="height: 0.5cm"></div>
