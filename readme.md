@@ -12,8 +12,8 @@ can be adopted from here.
 
 ## Rules
 This is a scholarly, friendly, loyal pet.     
-Please be festive with your pet.   
-Amicability, training, and cloning your pet is most likely legit.  
+Please be festive with pets.   
+Amicability, training, and cloning foam pets is most likely legit.  
 
 ### Adoption Location
 The adoption location has rules for pets in the "foam_pet/[rules]" directory.  

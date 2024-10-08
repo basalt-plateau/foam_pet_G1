@@ -38,7 +38,11 @@ def regions_guests (vue_regions_packet):
 	essence = retrieve_essence ()
 	
 	
-	##/
+	#--
+	#
+	#
+	#
+	#
 	build_path = essence ["sveltnetics"] ["build_path"];
 	the_index = build_path + "/index.html"
 	the_assets = build_path + "/assets"
@@ -47,19 +51,20 @@ def regions_guests (vue_regions_packet):
 	for front_path in front_inventory_paths:
 		print ("front_path:", front_path)
 		pass;
-	##\
+	#
+	#--
 	
 	
+	
+	#--
+	#
+	#	Guest Routes
+	#
+	#
 	app = vue_regions_packet ["app"]
 	guest_addresses = sanic.Blueprint ("guest", url_prefix = "/")
 	app.blueprint (guest_addresses)
 	
-	''''
-	@guest_addresses.route ("/")
-	async def home (request):
-		return await sanic_response.file (the_index)
-	"'''	
-		
 	@guest_addresses.route ("/")
 	async def home (request):
 		if check_allow_proceed_sanique (request.cookies) != "yes":

@@ -423,6 +423,65 @@ let seeds = {
 		</ol>
 	</div>
 	
+	<div style="height: 0.5cm"></div>
+	
+	<div
+		class="card p-4"
+		style="
+			margin: 0 auto;
+			text-align: center;
+		"
+	>
+		<header 
+			style="
+				font-size: 2em; 
+				text-align: center;
+				padding: 0cm 0;
+			"
+		>Ethics</header>
+		
+		<p>
+			<span>The rules for festivities with <Slang text="Pet" /> can be found in the <b>readme.md</b> <b>Rules</b> at</span>
+			<br />
+			<a 
+				target="_blank"
+				href="https://github.com/basalt-plateau/foam_pet"
+			>https://github.com/basalt-plateau/foam_pet</a>
+		</p>
+	</div>
+	
+	<div style="height: 0.5cm"></div>
+	
+	<div
+		class="card p-4"
+		style="
+			margin: 0 auto;
+			text-align: center;
+		"
+	>
+		<header 
+			style="
+				font-size: 2em; 
+				text-align: center;
+				padding: 0cm 0;
+			"
+		>Asks</header>
+		
+		<p>
+			<span>For any asks please open an <b>issue</b> or <b>pull request</b> at</span>
+			<br />
+			<a 
+				target="_blank"
+				href="https://github.com/basalt-plateau/foam_pet/issues"
+			>https://github.com/basalt-plateau/foam_pet/issues</a>
+			<br />
+			<a 
+				target="_blank"
+				href="https://github.com/basalt-plateau/foam_pet/pulls"
+			>https://github.com/basalt-plateau/foam_pet/pulls</a>
+		</p>
+	</div>
+	
 	<div style="height: 5cm"></div>
 </Leaf>
 

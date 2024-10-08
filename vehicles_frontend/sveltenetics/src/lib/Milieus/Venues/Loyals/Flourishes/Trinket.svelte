@@ -86,54 +86,58 @@ onMount (() => {
 </svelte:head>
 
 <Leaf>
-<div monitor="signatures leaf">
-	<div style="height: 1cm"></div>
+	<div monitor="signatures leaf">
+		<div style="height: 1cm"></div>
+		
+		<Offline_Signing_Hints />
+		
+		<div style="height: 1cm"></div>
+		
+		<section
+			style={ parse_styles ({
+				position: 'relative',
+				display: 'grid',
+				'width': '100%',
+				'grid-template-columns': 'repeat(auto-fit, minmax(400px, 1fr))',
+				'grid-gap': '10px'
+			}) }
+		>
+			<Panel styles={ trends.panel }>			
+				<div style="height: 0.5cm"></div>
+				<div class="relative inline-block">
+					<span class="badge variant-soft-primary absolute -right-0 z-10"
+						style="
+							display: none;
+							left: 50%;
+							bottom: -30px;
+							transform: translateX(-50%);
+						"
+					>Version 1</span>
+					<button 
+						monitor="give"
+						
+						on:click={ open_consideration_modal }
+						type="button" 
+						
+						class="btn bg-gradient-to-br variant-gradient-primary-secondary"
+						style="
+							font-size: 1.3em;
+							padding: 12px 36px;
+							margin-top: 10px
+						"
+					>APT Entrust</button>
+				</div>
+				<div style="height: 10px"></div>
+				<article style="{ trends.article }">
+					<p style="text-align: center">This is for signing for an "APT Entrust".</p>
+				</article>
+				<div style="height: 0.5cm"></div>
+			</Panel>
+		</section>
+		
+		<div style="height: 5cm"></div>
+	</div>
 	
-	<Offline_Signing_Hints />
-	
-	<div style="height: 1cm"></div>
-	
-	<section
-		style={ parse_styles ({
-			position: 'relative',
-			display: 'grid',
-			'width': '100%',
-			'grid-template-columns': 'repeat(auto-fit, minmax(400px, 1fr))',
-			'grid-gap': '10px'
-		}) }
-	>
-		<Panel styles={ trends.panel }>			
-			<div style="height: 0.5cm"></div>
-			<div class="relative inline-block">
-				<span class="badge variant-soft-primary absolute -right-0 z-10"
-					style="
-						display: none;
-						left: 50%;
-						bottom: -30px;
-						transform: translateX(-50%);
-					"
-				>Version 1</span>
-				<button 
-					monitor="give"
-					
-					on:click={ open_consideration_modal }
-					type="button" 
-					
-					class="btn bg-gradient-to-br variant-gradient-primary-secondary"
-					style="
-						font-size: 1.3em;
-						padding: 12px 36px;
-						margin-top: 10px
-					"
-				>APT Entrust</button>
-			</div>
-			<div style="height: 10px"></div>
-			<article style="{ trends.article }">
-				<p style="text-align: center">This is for signing for an "APT Entrust".</p>
-			</article>
-			<div style="height: 0.5cm"></div>
-		</Panel>
-	</section>
-</div>
+
 </Leaf>
 
