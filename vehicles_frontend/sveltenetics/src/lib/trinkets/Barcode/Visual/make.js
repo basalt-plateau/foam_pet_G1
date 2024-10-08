@@ -18,13 +18,12 @@
 
 import { BrowserQRCodeSvgWriter } from '@zxing/browser';
 import pako from 'pako';
-import bwipjs from 'bwip-js';
 
 import { pack_string } from '../_Screenplays/pack'
 import { unpack_string } from '../_Screenplays/unpack'
 
 import { make_with_zxing } from './make_with_zxing'
-import { make_with_bwip } from './make_with_bwip'
+// import { make_with_bwip } from './make_with_bwip'
 
 
 export const make_barcode = ({

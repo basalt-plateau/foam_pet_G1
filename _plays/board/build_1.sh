@@ -1,13 +1,11 @@
 
 
 
-the_name="poetry_uv"
 
 
 mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
 
 pip install uv poetry
-
 
 apt install curl haproxy -y
 
@@ -24,23 +22,35 @@ nvm install 20
 #
 #/
 
+#\
+#
+#	Bun
+#	
+#
+# apt install unzip; curl -fsSL https://bun.sh/install | bash; . /root/.bashrc
+#
 #/
+
+#\
 #
-#	obtain:
-#		* bun
-#		* pnpm
-#		* aptos cli
-#
-apt install unzip; curl -fsSL https://bun.sh/install | bash; . /root/.bashrc
+#	PNPM
+#	
 #
 export SHELL=/bin/bash 
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 . /root/.bashrc
 #
+#/
+
+#\
+#
+#	Aptos Cli
+#
+#
 curl -fsSL "https://aptos.dev/scripts/install_cli.py" | python3
 export PATH="/root/.local/bin:$PATH"
 #
-#\
+#/
 
 
 #

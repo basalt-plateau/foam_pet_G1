@@ -27,17 +27,6 @@
 @sveltejs/adapter-static@3.0.5 [license(s): MIT]
 └── package.json:  MIT
 
-@typescript-eslint/types@7.18.0 [license(s): MIT]
-├── package.json:  MIT
-└── license files: MIT
-
-@typescript-eslint/typescript-estree@7.18.0 [license(s): BSD-2-Clause]
-└── package.json:  BSD-2-Clause
-
-@typescript-eslint/visitor-keys@7.18.0 [license(s): MIT]
-├── package.json:  MIT
-└── license files: MIT
-
 @zxing/browser@0.1.5 [license(s): MIT]
 ├── package.json:  MIT
 └── license files: MIT
@@ -59,10 +48,6 @@ big.js@6.2.2 [license(s): MIT]
 └── license files: MIT
 
 bits-ui@0.21.12 [license(s): MIT]
-├── package.json:  MIT
-└── license files: MIT
-
-bwip-js@4.5.1 [license(s): MIT]
 ├── package.json:  MIT
 └── license files: MIT
 
@@ -100,10 +85,6 @@ jszip@3.10.1 [license(s): (MIT OR GPL-3.0-or-later), GPL, MIT]
 ├── license files: GPL, MIT
 └── readme files: GPL, MIT
 
-license-report@6.7.0 [license(s): MIT]
-├── package.json:  MIT
-└── license files: MIT
-
 lodash@4.17.21 [license(s): MIT]
 └── package.json:  MIT
 
@@ -138,5 +119,5 @@ unocss@0.61.3 [license(s): MIT]
 ├── package.json:  MIT
 └── license files: MIT
 
-LICENSES: (MIT AND Zlib), (MIT OR GPL-3.0-or-later), Apache, Apache 2.0, Apache-2.0, BSD, BSD-2-Clause, GPL, ISC, MIT, Public Domain, WTFPL
+LICENSES: (MIT AND Zlib), (MIT OR GPL-3.0-or-later), Apache, Apache 2.0, Apache-2.0, BSD, GPL, ISC, MIT, Public Domain, WTFPL
 

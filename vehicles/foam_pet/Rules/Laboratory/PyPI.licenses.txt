@@ -37,6 +37,6 @@
  tomlkit               0.13.2       MIT License                          
  trove-classifiers     2024.9.12    Apache Software License              
  urllib3               2.2.3        MIT License                          
- uv                    0.4.18       Apache Software License; MIT License 
+ uv                    0.4.19       Apache Software License; MIT License 
  virtualenv            20.26.6      MIT License                          
  zipp                  3.20.2       MIT License                          

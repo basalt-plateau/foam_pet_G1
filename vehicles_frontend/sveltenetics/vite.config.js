@@ -48,6 +48,10 @@ export default defineConfig({
 		If problem, might need to install node.js
 	*/
 	test: {
+		//
+		//	possibilities:
+		//		https://github.com/capricorn86/happy-dom
+		//
 		environment: 'jsdom',
 		include: [
 			'src/**/*.{test,spec,vitest}.{js,ts}'

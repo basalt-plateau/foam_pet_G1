@@ -23,8 +23,6 @@ import { fiberize_committed_transaction } from '$lib/PTO/Transaction/Committed/F
 import Address_Qualities from '$lib/trinkets/Address_Qualities/Trinket.svelte'
 import Panel from '$lib/trinkets/panel/trinket.svelte'	
 
-import JSONEditor from 'jsoneditor';
-import 'jsoneditor/dist/jsoneditor.css';
 
 const trends = {
 	article: parse_styles ({
@@ -58,13 +56,9 @@ const on_change = ({
 }
 
 let the_object_element = ""
-let editor = ""
 
 onMount (async () => {
-	editor = new JSONEditor (the_object_element, {
-		// mode: 'tree'
-	});
-	editor.set ({});
+
 });
 onDestroy (() => {}); 
 

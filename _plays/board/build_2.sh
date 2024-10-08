@@ -13,9 +13,13 @@ deactivate
 
 export PATH="/root/.local/bin:$PATH"
 
-
-export PATH=$PATH:~/.bun/bin
-
+#\
+#	
+#	Bun
+#
+#export PATH=$PATH:~/.bun/bin
+#
+#/
 
 export PATH=$PATH:/Metro/vehicles/foam_pet/__glossary
 

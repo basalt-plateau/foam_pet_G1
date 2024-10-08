@@ -438,7 +438,7 @@ let seeds = {
 				text-align: center;
 				padding: 0cm 0;
 			"
-		>Ethics</header>
+		>Tenets</header>
 		
 		<p>
 			<span>The rules for festivities with <Slang text="Pet" /> can be found in the <b>readme.md</b> <b>Rules</b> at</span>

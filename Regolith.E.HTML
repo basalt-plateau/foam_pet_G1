@@ -59,17 +59,17 @@
 			<h3>svelte</h3>
 				<header>install</header>
 					(cd /Metro/vehicles_frontend/sveltenetics && rm -rf node_modules)
-					(cd /Metro/vehicles_frontend/sveltenetics && bun install)
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm install)
 					(cd /Metro/vehicles_frontend/sveltenetics && pnpm build)
 			
 				<header>dev mode</header>
-					(cd /Metro/vehicles_frontend/sveltenetics && bun run foam)
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm run foam)
 					localStorage.setItem ("mode", "nurture")
 					localStorage.setItem ("origin_address", "http://localhost:22000")
 					
 				<header>health</header>
-					(cd /Metro/vehicles_frontend/sveltenetics && bun run health)
-					(cd /Metro/vehicles_frontend/sveltenetics && bun add flowbite-svelte flowbite)
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm run health)
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm add flowbite-svelte flowbite)
 					
 				<header>build</header>
 					
@@ -79,12 +79,12 @@
 					#
 					#	This does a forget as well.
 					#
-					(cd /Metro/vehicles_frontend/sveltenetics && bun run build)
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm run build)
 					
 					# (cp -R /Metro/vehicles_frontend/sveltenetics/src /Metro/vehicles/foam_pet/sveltnetics_src)
 					
 				<haeder>build licenses</header>
-					(cd /Metro/vehicles_frontend/sveltenetics && bun run build_licenses)
+					(cd /Metro/vehicles_frontend/sveltenetics && pnpm run build_licenses)
 					
 		<header>health</header>
 			<header>Selenium</header>

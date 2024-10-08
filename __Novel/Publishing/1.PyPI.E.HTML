@@ -12,16 +12,7 @@
 			#
 			. /Metro/_plays/board/build_1.sh
 			
-		
-			#//
-			#/
-			#	Frontend: Vitest + Lint
-			#
-			#
-			apt install nodejs -y
-			(cd /Metro/vehicles_frontend/sveltenetics && bun install)
-			(cd /Metro/vehicles_frontend/sveltenetics && bun run vitest)
-		
+			
 			#
 			#
 			#	Frontend: Build + Licenses
@@ -31,14 +22,25 @@
 			#			svelte.config.js
 			#
 			(cd /Metro/vehicles_frontend/sveltenetics && bun run build)
+		
+			#//
+			#/
+			#	Frontend: Vitest + Lint
+			#
+			#
+			(cd /Metro/vehicles_frontend/sveltenetics && pnpm run health)
+		
 			
 			#
 			#
-			#	Frontend: Build + Licenses
+			#	Backend: Build + Licenses
 			#
 			#
 			foam_pet_1 demux_hap build_unverified_certificates
+			(pip install pip-licenses && pip-licenses > /Metro/vehicles/foam_pet/Rules/Laboratory/PyPI.licenses.txt)
 			foam_pet_1 ventures refresh
+		
+			(pip-licenses --format=json --output-file=licenses.json)
 		
 			#
 			#
@@ -57,17 +59,7 @@
 			#		cd aptos_metropolis/foam_pet/_health_selenium/regions
 			#		python3 health.proc.py run
 			#
-			
-			
-			
-			#
-			#
-			#	Backend: Licenses
-			#
-			#
-			(pip install pip-licenses && pip-licenses > /Metro/vehicles/foam_pet/PyPI.licenses.txt)
-			
-			
+
 			
 			#
 			#	poetry auth

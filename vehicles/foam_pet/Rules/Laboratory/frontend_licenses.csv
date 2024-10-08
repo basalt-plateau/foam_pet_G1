@@ -7,16 +7,12 @@ name,version,directory,repository,summary,from package.json,from license,from re
 @skeletonlabs/tw-plugin,0.4.0,/Metro/vehicles_frontend/sveltenetics/node_modules/@skeletonlabs/tw-plugin,https://github.com/skeletonlabs/skeleton,MIT,MIT,MIT,
 @sveltejs/adapter-node,5.2.5,/Metro/vehicles_frontend/sveltenetics/node_modules/@sveltejs/adapter-node,https://github.com/sveltejs/kit,MIT,MIT,,
 @sveltejs/adapter-static,3.0.5,/Metro/vehicles_frontend/sveltenetics/node_modules/@sveltejs/adapter-static,https://github.com/sveltejs/kit,MIT,MIT,,
-@typescript-eslint/types,7.18.0,/Metro/vehicles_frontend/sveltenetics/node_modules/@typescript-eslint/types,https://github.com/typescript-eslint/typescript-eslint,MIT,MIT,MIT,
-@typescript-eslint/typescript-estree,7.18.0,/Metro/vehicles_frontend/sveltenetics/node_modules/@typescript-eslint/typescript-estree,https://github.com/typescript-eslint/typescript-eslint,BSD-2-Clause,BSD-2-Clause,,
-@typescript-eslint/visitor-keys,7.18.0,/Metro/vehicles_frontend/sveltenetics/node_modules/@typescript-eslint/visitor-keys,https://github.com/typescript-eslint/typescript-eslint,MIT,MIT,MIT,
 @zxing/browser,0.1.5,/Metro/vehicles_frontend/sveltenetics/node_modules/@zxing/browser,https://github.com/zxing-js/browser,MIT,MIT,MIT,
 @zxing/library,0.21.2,/Metro/vehicles_frontend/sveltenetics/node_modules/@zxing/library,https://github.com/zxing-js/library,Apache;MIT,MIT,Apache,
 animejs,3.2.2,/Metro/vehicles_frontend/sveltenetics/node_modules/animejs,juliangarnier/anime,MIT,MIT,MIT,
 ato-ui,0.4.0,/Metro/vehicles_frontend/sveltenetics/node_modules/ato-ui,https://github.com/bennymi/ato-ui,MIT,MIT,MIT,
 big.js,6.2.2,/Metro/vehicles_frontend/sveltenetics/node_modules/big.js,https://github.com/MikeMcl/big.js,MIT,MIT,MIT,
 bits-ui,0.21.12,/Metro/vehicles_frontend/sveltenetics/node_modules/bits-ui,github:huntabyte/bits-ui,MIT,MIT,MIT,
-bwip-js,4.5.1,/Metro/vehicles_frontend/sveltenetics/node_modules/bwip-js,https://github.com/metafloor/bwip-js,MIT,MIT,MIT,
 chart.js,4.4.4,/Metro/vehicles_frontend/sveltenetics/node_modules/chart.js,https://github.com/chartjs/Chart.js,MIT,MIT,MIT,
 chartjs-plugin-streaming,2.0.0,/Metro/vehicles_frontend/sveltenetics/node_modules/chartjs-plugin-streaming,https://github.com/nagix/chartjs-plugin-streaming,MIT,MIT,MIT,
 compromise,14.14.1,/Metro/vehicles_frontend/sveltenetics/node_modules/compromise,http://github.com/spencermountain/compromise,MIT,MIT,MIT,
@@ -25,7 +21,6 @@ html5-qrcode,2.3.8,/Metro/vehicles_frontend/sveltenetics/node_modules/html5-qrco
 js-yaml,4.1.0,/Metro/vehicles_frontend/sveltenetics/node_modules/js-yaml,nodeca/js-yaml,MIT,MIT,MIT,
 jsoneditor,10.1.0,/Metro/vehicles_frontend/sveltenetics/node_modules/jsoneditor,https://github.com/josdejong/jsoneditor,Apache;Apache-2.0,Apache-2.0,Apache,
 jszip,3.10.1,/Metro/vehicles_frontend/sveltenetics/node_modules/jszip,https://github.com/Stuk/jszip,(MIT OR GPL-3.0-or-later);GPL;MIT,(MIT OR GPL-3.0-or-later),GPL;MIT,GPL;MIT
-license-report,6.7.0,/Metro/vehicles_frontend/sveltenetics/node_modules/license-report,https://github.com/kessler/license-report,MIT,MIT,MIT,
 lodash,4.17.21,/Metro/vehicles_frontend/sveltenetics/node_modules/lodash,lodash/lodash,MIT,MIT,,
 lucide-svelte,0.408.0,/Metro/vehicles_frontend/sveltenetics/node_modules/lucide-svelte,https://github.com/lucide-icons/lucide,ISC,ISC,ISC,ISC
 pako,2.1.0,/Metro/vehicles_frontend/sveltenetics/node_modules/pako,nodeca/pako,(MIT AND Zlib);MIT,(MIT AND Zlib),MIT,MIT

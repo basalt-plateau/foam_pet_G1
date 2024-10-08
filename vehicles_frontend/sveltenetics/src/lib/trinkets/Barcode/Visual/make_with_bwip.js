@@ -1,6 +1,7 @@
 
 
-
+//	The licensing for this one is kinda tough,
+//	so commenting this for now.
 
 /*
 	barcode: [ 'azteccode', 'Aztec Code' ],
@@ -17,9 +18,6 @@
 	></canvas>
 */
 
-import bwipjs from 'bwip-js';
-
-
 /*
 	make_with_bwip ({
 		barcode_element, 
@@ -27,6 +25,10 @@ import bwipjs from 'bwip-js';
 		size
 	})
 */
+
+/*
+import bwipjs from 'bwip-js';
+
 export const make_with_bwip = ({
 	barcode_element,
 	packed_hexadecimal_string,
@@ -59,3 +61,4 @@ export const make_with_bwip = ({
 	
 	barcode_element.innerHTML = SVG;
 }
+*/
