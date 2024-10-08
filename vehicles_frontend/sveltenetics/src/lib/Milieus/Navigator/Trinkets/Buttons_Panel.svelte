@@ -7,7 +7,7 @@
 
 
 import { goto } from '$app/navigation';
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 import { onMount, onDestroy } from 'svelte';
 
 /*

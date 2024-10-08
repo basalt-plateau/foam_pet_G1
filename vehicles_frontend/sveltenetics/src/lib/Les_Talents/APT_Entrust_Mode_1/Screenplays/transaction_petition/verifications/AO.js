@@ -1,6 +1,6 @@
 
 
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 
 export const verify_TP_AO = ({
 	TP_AO

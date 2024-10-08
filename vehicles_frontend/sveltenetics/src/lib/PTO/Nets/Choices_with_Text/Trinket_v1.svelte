@@ -40,7 +40,7 @@ import { request_ledger_info } from '$lib/PTO/General/Ledger_Info.API'
 import { loop } from '$lib/taverns/loop'
 //
 //
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 import { ConicGradient } from '@skeletonlabs/skeleton';
 import { onMount, onDestroy } from 'svelte'
 //

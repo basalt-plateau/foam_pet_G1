@@ -25,7 +25,7 @@
 import { string_from_Uint8Array } from '$lib/taverns/hexadecimal/string_from_Uint8Array'
 import { Uint8Array_from_string } from '$lib/taverns/hexadecimal/Uint8Array_from_string'
 
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 
 import _cloneDeep from 'lodash/cloneDeep'
 import _isEqual from 'lodash/isEqual'

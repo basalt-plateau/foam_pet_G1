@@ -8,7 +8,7 @@
 	<Slang_Cipher />
 */
 
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 import { onMount } from 'svelte'
 import nlp from 'compromise/one'
 import { nocturnalize } from './screenplays/nocturnalize'

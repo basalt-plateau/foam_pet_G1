@@ -41,7 +41,7 @@ import { loop } from '$lib/taverns/loop'
 import Slang from '$lib/trinkets/Slang/Trinket.svelte'
 //
 //
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 import { ConicGradient } from '@skeletonlabs/skeleton';
 import { onMount, onDestroy } from 'svelte'
 //

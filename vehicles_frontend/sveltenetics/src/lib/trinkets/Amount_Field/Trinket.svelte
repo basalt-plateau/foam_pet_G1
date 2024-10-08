@@ -34,7 +34,7 @@
 import { onMount, onDestroy } from 'svelte';
 import Big from 'big.js'
 //
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 //
 //
 import { build_truck } from '$lib/trucks'

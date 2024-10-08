@@ -35,7 +35,7 @@
 */
 
 import { onMount } from 'svelte'
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 
 import Problem_Alert from '$lib/trinkets/Alerts/Problem.svelte'
 

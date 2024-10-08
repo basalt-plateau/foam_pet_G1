@@ -18,7 +18,7 @@
 import * as AptosSDK from "@aptos-labs/ts-sdk";
 //
 //
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 //
 //
 import { build_truck } from '$lib/trucks'

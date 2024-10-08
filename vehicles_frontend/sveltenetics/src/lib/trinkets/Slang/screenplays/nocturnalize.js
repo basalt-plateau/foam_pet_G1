@@ -4,7 +4,7 @@
 
 
 
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 
 /*
 	This splits both " " and "."

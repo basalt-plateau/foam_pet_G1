@@ -29,7 +29,7 @@ import Big from 'big.js'
 import { ask_convert_APT_to_Octas } from '$lib/origin/math/APT_to_Octas.RPC.js'
 import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitted.js'
 //
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 //
 ///
 

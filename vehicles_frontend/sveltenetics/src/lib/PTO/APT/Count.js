@@ -26,7 +26,7 @@ import { Uint8Array_from_string } from '$lib/taverns/hexadecimal/Uint8Array_from
 
 import Fraction from 'fraction.js';
 
-import { furnish_string } from 'procedures/furnish/string'
+import { obtain_string } from '$lib/taverns/procedures/obtain/string'
 
 
 export const ask_APT_count = async ({
@@ -48,8 +48,8 @@ export const ask_APT_count = async ({
 	
 	if (status === 404) {
 		const enhanced = await proceeds.json ()
-		const error_code = furnish_string (enhanced, [ 'error_code' ], '');
-		const message = furnish_string (enhanced, [ 'message' ], '');
+		const error_code = obtain_string (enhanced, [ 'error_code' ], '');
+		const message = obtain_string (enhanced, [ 'message' ], '');
 		
 		let exception = ""
 		if (error_code === "resource_not_found") {

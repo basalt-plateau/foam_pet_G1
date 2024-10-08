@@ -9,8 +9,8 @@
 import * as AptosSDK from "@aptos-labs/ts-sdk";
 //
 //
-import { has_field } from 'procedures/object/has_field'
-import { rhythm_filter } from 'procedures/dates/rhythm-filter'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
+import { rhythm_filter } from '$lib/taverns/procedures/dates/rhythm-filter'
 //
 //
 import { build_truck } from '$lib/trucks'

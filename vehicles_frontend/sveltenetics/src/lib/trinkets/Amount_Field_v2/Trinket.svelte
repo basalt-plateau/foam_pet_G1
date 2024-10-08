@@ -37,7 +37,7 @@ import { onMount, onDestroy } from 'svelte';
 import Big from 'big.js'
 import { Octas_string_is_permitted } from './Screenplays/Octas_string_is_permitted.js'
 //
-import { has_field } from 'procedures/object/has_field'
+import { has_field } from '$lib/taverns/procedures/object/has_field'
 //
 ///
 import { assert_is_natural_numeral_string } from '$lib/taverns/numerals/natural/is_string'
