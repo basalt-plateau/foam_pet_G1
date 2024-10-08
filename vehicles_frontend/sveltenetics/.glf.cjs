@@ -23,9 +23,17 @@
 		 "madge": "^8.0.0",
 */
 
+/*
+    "build_licenses": "pnpm run licensing_csv && pnpm run licensing_details",
+	"licensing": "yarn licenses list --json",
+	"licensing_2": "pnpm licenses > /Metro/vehicles/foam_pet/Rules/Laboratory/frontend_licenses_report.txt",
+    "licensing_csv": "nlf -c -d > /Metro/vehicles/foam_pet/Rules/Laboratory/frontend_licenses.csv",
+    "licensing_details": "nlf -d -s simple > /Metro/vehicles/foam_pet/Rules/Laboratory/frontend_licenses_summary.txt",
+*/
+
 module.exports = {
 	inputs: ["./package.json"],
-	output: "/Metro/vehicles/foam_pet/Rules/Laboratory/frontend_tenets.txt",
+	output: "/Metro/vehicles/foam_pet/Rules/Laboratory/frontend_tenets_full.txt",
 	overwrite: true,
 	eol: "lf",
 	ci: true,
