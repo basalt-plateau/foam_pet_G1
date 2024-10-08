@@ -101,12 +101,21 @@ packaging==24.1
     # via
     #   cx-freeze
     #   limits
+    #   pipdeptree
 patchelf==0.17.2.1
     # via cx-freeze
 pexpect==4.9.0
     # via
     #   biotech
     #   emergency
+pip==24.2
+    # via pipdeptree
+pip-licenses==5.0.0
+    # via foam-pet (pyproject.toml)
+pipdeptree==2.23.4
+    # via foam-pet (pyproject.toml)
+prettytable==3.11.0
+    # via pip-licenses
 psutil==5.9.8
     # via
     #   botanist
@@ -186,6 +195,8 @@ tinydb==4.8.1
     #   biotech
     #   body-scan
     #   emergency
+tomli==2.0.2
+    # via pip-licenses
 tracerite==1.1.1
     # via sanic
 typing-extensions==4.12.2
@@ -201,6 +212,8 @@ uvloop==0.20.0
     # via sanic
 ventures==1.7.1
     # via foam-pet (pyproject.toml)
+wcwidth==0.2.13
+    # via prettytable
 websockets==13.1
     # via sanic
 werkzeug==3.0.4

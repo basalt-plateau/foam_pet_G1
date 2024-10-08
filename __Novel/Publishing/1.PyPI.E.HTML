@@ -37,10 +37,17 @@
 			#
 			#
 			foam_pet_1 demux_hap build_unverified_certificates
-			(pip install pip-licenses && pip-licenses > /Metro/vehicles/foam_pet/Rules/Laboratory/PyPI.licenses.txt)
 			foam_pet_1 ventures refresh
 		
-			(pip-licenses --format=json --output-file=licenses.json)
+		
+			#
+			#
+			#	Backend: Tenets
+			#
+			#
+			pip install pip-licenses
+			pip-licenses --with-license-file --format=json > /Metro/vehicles/foam_pet/Rules/Laboratory/PyPI_tenets_full.json
+			pip-licenses > /Metro/vehicles/foam_pet/Rules/Laboratory/PyPI_tenets_outline.txt
 		
 			#
 			#
