@@ -16,7 +16,7 @@
 		style="
 			text-align: center;
 		"
-	>There a prebuilt docker images with installation tutorials at this link:</p>
+	>There are prebuilt docker images with installation tutorials at this link:</p>
 	
 	<div style="height: 0.1cm"></div>
 
@@ -26,11 +26,11 @@
 		"
 	>
 		<a 
-			href="https://github.com/basalt-plateau/foam_pet_docker_images/releases" 
+			href="https://github.com/basalt-plateau/foam_pet/releases" 
 			target="_blank" 
 			class="anchor"
 		>
-			<span>https://github.com/basalt-plateau/foam_pet_docker_images/releases</span>
+			<span>https://github.com/basalt-plateau/foam_pet/releases</span>
 		</a>	
 	</p>
 	

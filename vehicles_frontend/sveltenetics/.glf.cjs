@@ -33,12 +33,12 @@
 
 module.exports = {
 	inputs: ["./package.json"],
-	output: "/Metro/vehicles/foam_pet/Rules/Laboratory/frontend_tenets_full.txt",
+	output: "/Metro/vehicles/foam_pet/Rules/Laboratory/frontend_rules_full.txt",
 	overwrite: true,
 	eol: "lf",
 	ci: true,
 	noSpinner: true,
 	replace: {
-        "rc@1.2.8": "./LICENSE.MIT"
+        // "rc@1.2.8": "./LICENSE.MIT"
     }
 };

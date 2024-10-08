@@ -1,8 +1,8 @@
 
 
 
-# Foam pet  
-This pet can interact with Aptos with offline bling   
+# Foam Pet
+This pet can interact with Aptos with offline trinkets   
 like a "laptop", "desktop", etc.   
 
 A Foam Pet with a Docker Vehicle or a PyPI vehicle   
@@ -11,29 +11,25 @@ can be adopted from here.
 ----
 
 ## Rules
-This is a scholarly, friendly, loyal pet.     
+This is a scholarly, friendly, loyal (mixed) pet.   
 Please be festive with pets.   
-Amicability, training, and cloning foam pets is most likely legit.  
+Amicability with, training, and cloning foam pets   
+is likely to amplify friendliness.  
 
-### Adoption Location
-The adoption location has rules for pets in the "foam_pet/[rules]" directory.  
-At present, the rules are the "gpl-3.0-standalone License".   
+### Adoption Location (Originals)
+At present, these rules are the "gpl-3.0-standalone License".    
+Details are at "foam_pet/Rules.E.HTML" 
 
-### Laboratory Rules
-The aggregate of the licensing rules from these   
-can be found at "foam_pet/frontend_licenses.csv".  
-These pertain to the organelles, cytes, tissues,  
-organs, organisms, climates, haciendas, towns,  
-etc. of the Pet.  
+### Laboratory Rules (Clones)
+Details for the Organelles, cytes, tissues, organs, organisms,   
+climates, haciendas, towns, etc. can also  
+be found at "foam_pet/Rules.E.HTML"
 
 ----
 
 ## Adoption :: Docker Images
 The is the pet with a Docker vehicle.     
 [https://github.com/basalt-plateau/foam_pet/releases](https://github.com/basalt-plateau/foam_pet/releases)
-
-### Healthiest
-[https://github.com/basalt-plateau/foam_pet/releases/tag/docker_image_v5.0.0.0](https://github.com/basalt-plateau/foam_pet/releases/tag/docker_image_v5.0.0.0)
 
 ----
 

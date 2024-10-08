@@ -16,7 +16,7 @@ readme = "vehicles/foam_pet/readme.md"
 packages = [
     { include = "foam_pet", from = "vehicles" },
 ]
-license = "Mix: GPL-3.0-only + frontend mixes licenses"
+license = "Mix: GPL-3.0-only for originals + Laboratory Rules"
 
 exclude = [
 	"vehicles/foam_pet/_status/DB/**",
@@ -36,7 +36,7 @@ python = "^3.10"
 Emergency = "^2.0.0"
 somatic = "^3.0.3"
 ships = "^1.3.8"
-ventures = "^1.6.0" 
+ventures = "^3.0.0" 
 #
 click = "^8.1.7"
 pydash = "^8.0.1"
