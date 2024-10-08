@@ -11,25 +11,7 @@ can be adopted from here.
 ----
 
 ## Rules
-```
-This is a pet.
-
-Git Repository:
-	Git Repository :: Originals
-		[__Novel/__rules/gpl-3.0-standalone.html](__Novel/__rules/gpl-3.0-standalone.html)     
-		are the rules for the originals in this git repository.   
-
-	Git Repository :: Clones
-		Docker Debian
-			[vehicles_actual_docker/building/docker-debian](vehicles_actual_docker/building/docker-debian)   
-			[vehicles_actual_docker/building/docker-debian/LICENSE](vehicles_actual_docker/building/docker-debian/LICENSE)   
-
-	Git Repository :: Clones that aren't attached to the repo, but are used by releases.
-		PyPI 
-			The details for the PyPI module can be found at these:  
-			[vehicles/foam_pet/readme.md](vehicles/foam_pet/readme.md)  
-			[vehicles/foam_pet/Rules.E.HTML](vehicles/foam_pet/Rules.E.HTML)
-```
+[Regolith.Rules.E.HTML](Regolith.Rules.E.HTML)
 
 ----
 
@@ -47,3 +29,5 @@ This is the pet with a PyPI vehicle.
 
 ## Details
 [Regolith.E.HTML](Regolith.E.HTML) has the details.  
+
+
