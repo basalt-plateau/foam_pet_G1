@@ -6,6 +6,9 @@ import { defineConfig } from 'vitest/config';
 import path from 'path'
 import UnoCSS from 'unocss/vite';
 
+
+
+
 /*
 	entryFileNames: '[name].[hash].js',
 	chunkFileNames: '[name].[hash].js',
@@ -14,7 +17,9 @@ import UnoCSS from 'unocss/vite';
 
 export default defineConfig({
 	plugins: [
-		sveltekit (), 
+		sveltekit ({
+			// paths: { base: '/svelte' }
+		}), 
 		UnoCSS ()
 	],
 

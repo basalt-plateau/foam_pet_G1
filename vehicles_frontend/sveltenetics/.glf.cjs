@@ -33,7 +33,7 @@
 
 module.exports = {
 	inputs: ["./package.json"],
-	output: "/Metro/vehicles/foam_pet/Rules/Laboratory/frontend_rules_full.txt",
+	output: "/Metro/vehicles/foam_pet/Rules/Laboratory/frontend_rules_entire.txt",
 	overwrite: true,
 	eol: "lf",
 	ci: true,

@@ -81,8 +81,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       procedures:
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^2.0.0
+        version: 2.0.0
       svelte-preprocess:
         specifier: ^6.0.2
         version: 6.0.3(@babel/core@7.25.7)(postcss-load-config@4.0.2(postcss@8.4.47))(postcss@8.4.47)(svelte@4.2.19)(typescript@5.6.2)
@@ -2227,8 +2227,8 @@ packages:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  procedures@1.1.0:
-    resolution: {integrity: sha512-9swwqMDH0t1ruwpArhDGqP+2mjhPNc87FYyQJuhc9bAjyGHVQEtsVChSBRdcGha9owiHThHmbGZChrPpshC8aA==}
+  procedures@2.0.0:
+    resolution: {integrity: sha512-FjBqCF4JSzGiOyTG2zn0WZy+E4GYDMU8DuRhX8CiyJIMPEHYojLRedOj+lEjkx2TXf3nV8GmCFMV8NJUfJtUug==}
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -5005,7 +5005,7 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.3.1
 
-  procedures@1.1.0:
+  procedures@2.0.0:
     dependencies:
       lodash: 4.17.21
 

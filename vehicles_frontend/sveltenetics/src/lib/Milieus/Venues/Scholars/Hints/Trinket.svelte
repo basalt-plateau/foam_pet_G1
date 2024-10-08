@@ -28,8 +28,11 @@ import Preparation_Tutorial from './Preparation_Tutorial/Trinket.svelte'
 //
 ////
 
+import { Modal, getModalStore } from '@skeletonlabs/skeleton';
+import { open_rules } from '$lib/Milieus/Venues/Scholars/Hints/Rules/open'
 
-
+const modal_store = getModalStore ();
+	
 
 	
 ////
@@ -61,6 +64,12 @@ let seeds = {
 		"aṟiñarhal"
 	)
 }
+
+const show_rules = () => {
+	open_rules ({ modal_store });
+}
+
+show_rules ();
 
 </script>
 
@@ -438,7 +447,13 @@ let seeds = {
 				text-align: center;
 				padding: 0cm 0;
 			"
-		>Tenets</header>
+		>Rules</header>
+		
+		<button
+			on:click={ show_rules }
+			type="button" 
+			class="btn variant-filled"
+		>Show Rules</button>
 		
 		<p>
 			<span>The rules for festivities with <Slang text="Pet" /> can be found in the <b>readme.md</b> <b>Rules</b> at</span>

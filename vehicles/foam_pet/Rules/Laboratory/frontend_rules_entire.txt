@@ -3,16 +3,30 @@ https://www.npmjs.com/package/generate-license-file
 
 The following npm package may be included in this product:
 
- - procedures@1.1.0
+ - procedures@2.0.0
 
 This package contains the following license and notice below:
 
 <pre>
-
-	Any of the licenses in the "./_license/options"
-	directory may be considered the terms that this
-	module is governed by.
-
+	<header>Organism Cloning Rules</header>
+	<p>
+		This is an organism called "procedures".
+		
+		Cloning the entire organism or parts of the "procedures" 
+		organism is allowed.
+		
+		Remixing clones is allowed.
+		Including remixed clones or unremixed clones in mixes is approved.
+		
+		Distribution of these is allowed:
+		"mixes with remixed or unremixed clones", 
+		"remixed clones", 
+		"clones"
+		
+		Any of the above for any purpose is allowed.
+		
+		~ BGraceful
+	</p>
 </pre>
 
 -----------

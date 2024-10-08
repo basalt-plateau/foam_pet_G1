@@ -46,7 +46,6 @@ import { modal_plugs, trends } from './Trinket'
 
 
 
-
 const modal_store = getModalStore ();
 
 const {

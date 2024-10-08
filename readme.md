@@ -11,7 +11,12 @@ can be adopted from here.
 ----
 
 ## Rules
-[Regolith.Rules.E.HTML](Regolith.Rules.E.HTML)
+### Git Repository Rules
+[Regolith.Rules.Git Repository.E.HTML](Regolith.Rules.Git Repository.E.HTML)
+
+### Domain Rules
+[Regolith.Rules.Domain.E.HTML](Regolith.Rules.Domain.E.HTML)
+
 
 ----
 
