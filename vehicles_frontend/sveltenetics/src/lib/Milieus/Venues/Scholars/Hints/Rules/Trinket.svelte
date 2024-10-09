@@ -49,6 +49,7 @@ let panel_name = "Send Bits"
 
 let rules_entire_link = "/Rules/Laboratory/frontend_rules_entire.txt"
 let rules_legend_link = "/Rules/Laboratory/frontend_rules_legend.txt"
+let rules_originals_link = "/Rules/Laboratory/Frontend_Rules_Originals.HTML"
 
 const prepare = () => {
 	return {
@@ -127,7 +128,8 @@ const on_prepare = () => {
 	})
 }
 
-let show = "Legend";
+let show = "Originals";
+let clones_show = "Legend"
 
 </script>
 
@@ -144,7 +146,7 @@ let show = "Legend";
 			height: 100%;
 			width: 100%;
 			
-			display: flex;
+			// display: flex;
 			// justify-content: center;
 			align-items: center;
 			
@@ -155,48 +157,150 @@ let show = "Legend";
 			margin: 0 auto;
 			"
 	>
-		<RadioGroup>
-			<RadioItem bind:group={ show } name="justify" value={ "Legend" }>Legend</RadioItem>
-			<RadioItem bind:group={ show } name="justify" value={ "Entire" }>Entire</RadioItem>
-		</RadioGroup>
+		<div
+			style="
+				padding: 0.25cm 0;
+				text-align: center;
+			"
+		>
+			<RadioGroup>
+				<RadioItem bind:group={ show } name="justify" value={ "Originals" }>Originals</RadioItem>	
+				<RadioItem bind:group={ show } name="justify" value={ "Clones" }>Clones</RadioItem>	
+				<RadioItem bind:group={ show } name="justify" value={ "Anatomy" }>Anatomy</RadioItem>
+			</RadioGroup>
+		</div>
 					
 		<div style="height: 0.5cm"></div>			
 					
 		<div 
 			style="
 				width: 100%;
-				height: 100%;
 			"
 			class="card p-4"
 		>
-			{#if show === "Legend" }
-			<iframe
-				src={ rules_legend_link }
-				
+			{#if show === "Originals" }
+			<div
 				style="
-					width: 100%;
-					height: 100%;
+					text-align: center;
 				"
-
-				frameborder="0"
-				title="Rules Legend"
 			>
-			</iframe>
-			{/if}
+				<header
+					style="
+						font-size: 2em;
+					"
+				>Originals</header>
+				
+				<p>These are the sources.</p>
 			
-			{#if show === "Entire" }
-			<iframe
-				src={ rules_entire_link }
+				<div style="height: 0.5cm"></div>	
 				
-				style="
-					width: 100%;
-					height: 100%;
-				"
+				<div class="card p-1">
+					<iframe
+						src={ rules_originals_link }
+						
+						style="
+							width: 100%;
+							height: 100%;
+						"
 
-				frameborder="0"
-				title="Rules Entire"
+						frameborder="0"
+						title="Rules Legend"
+					>
+					</iframe>
+				</div>
+			</div>
+			{/if}
+		
+			{#if show === "Anatomy" }
+			<div
+				style="
+					text-align: center;
+				"
 			>
-			</iframe>
+				<header
+					style="
+						font-size: 2em;
+					"
+				>Anatomy</header>
+				
+				<p>These are the sources.</p>
+			
+				<div style="height: 0.5cm"></div>	
+			
+				<span 
+					style="
+						line-height: 2em;
+						text-align: center;
+					"
+					class="flex-auto"
+				>
+					<a 
+						style="display: block"
+						class="anchor" 
+						href="https://github.com/basalt-plateau/foam_pet"
+						target="_blank"
+					>https://github.com/basalt-plateau/foam_pet</a>
+					<a 
+						style="display: block"
+						class="anchor" 
+						href="https://gitlab.com/basalt_plateau/foam_pet"
+						target="_blank"
+					>https://gitlab.com/basalt_plateau/foam_pet</a>
+				</span>
+			</div>
+			{/if}
+		
+			{#if show === "Clones" }
+				<div
+					style="
+						text-align: center;
+					"
+				>
+					<header>Clones</header>
+					
+					<p></p>
+					
+					<div style="height: 0.5cm"></div>	
+				
+					<RadioGroup>
+						<RadioItem bind:group={ clones_show } name="justify" value={ "Legend" }>Legend</RadioItem>
+						<RadioItem bind:group={ clones_show } name="justify" value={ "Entire" }>Entire</RadioItem>
+					</RadioGroup>
+					
+					<div style="height: 0.5cm"></div>
+				</div>
+				
+				<div class="card p-1">
+					{#if clones_show === "Legend" }
+					<iframe
+						src={ rules_legend_link }
+						
+						style="
+							width: 100%;
+							height: 25cm;
+						"
+
+						frameborder="0"
+						title="Rules Legend"
+					>
+					</iframe>
+					{/if}
+					
+					{#if clones_show === "Entire" }
+					<iframe
+						src={ rules_entire_link }
+						
+						style="
+							width: 100%;
+							height: 25cm;
+						"
+
+						frameborder="0"
+						title="Rules Entire"
+					>
+					</iframe>
+					{/if}
+				</div>
 			{/if}
 		</div>
 	</div>

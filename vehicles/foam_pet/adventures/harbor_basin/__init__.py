@@ -25,7 +25,6 @@ import sanic
 from sanic import Sanic
 from sanic_ext import openapi
 import sanic.response as sanic_response
-from sanic_limiter import Limiter, get_remote_address
 #
 #
 import json

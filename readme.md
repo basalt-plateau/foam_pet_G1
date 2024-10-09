@@ -12,7 +12,7 @@ can be adopted from here.
 
 ## Rules
 ### Git Repository Rules
-[Regolith.Rules.Git Repository.E.HTML](Regolith.Rules.Git Repository.E.HTML)
+[Regolith.Rules.Git_Repository.E.HTML](Regolith.Rules.Git_Repository.E.HTML)
 
 ### Domain Rules
 [Regolith.Rules.Domain.E.HTML](Regolith.Rules.Domain.E.HTML)

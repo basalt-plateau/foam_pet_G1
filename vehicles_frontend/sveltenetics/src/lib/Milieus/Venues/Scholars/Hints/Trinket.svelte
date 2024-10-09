@@ -397,39 +397,6 @@ const show_rules = () => {
 		</Accordion>
 	</div>
 	
-	<div style="height: 0.5cm"></div>
-	
-	<div
-		class="card p-4"
-		style="
-			margin: 0 auto;
-		"
-	>
-		<ol class="list">
-			<li>
-				<span class="badge p-4 variant-soft-primary">Anatomy</span>
-				<span 
-					style="
-						line-height: 2em;
-					"
-					class="flex-auto"
-				>
-					<a 
-						style="display: block"
-						class="anchor" 
-						href="https://gitlab.com/basalt_plateau/foam_pet"
-						target="_blank"
-					>https://gitlab.com/basalt_plateau/foam_pet</a>
-					<a 
-						style="display: block"
-						class="anchor" 
-						href="https://github.com/basalt-plateau/foam_pet"
-						target="_blank"
-					>https://github.com/basalt-plateau/foam_pet</a>
-				</span>
-			</li>
-		</ol>
-	</div>
 	
 	<div style="height: 0.5cm"></div>
 	
