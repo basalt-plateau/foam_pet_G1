@@ -32,7 +32,8 @@ import Barcode_Vision from '$lib/trinkets/Barcode/Vision/Trinket.svelte'
 //
 import Alert_Success from '$lib/trinkets/Alerts/Success.svelte'
 import Code_Wall from '$lib/trinkets/Code_Wall/Trinket.svelte' 
-
+import Slang from '$lib/trinkets/Slang/Trinket.svelte'
+	
 
 const alert_success_note = "The bits were received successfully."
 let received_bits = "";
@@ -139,12 +140,12 @@ let clones_show = "Legend"
 	on_change={ on_modal_change }
 	on_prepare={ on_prepare }
 >
-	
 	<div 
 		slot="leaves"
 		style="
-			height: 100%;
 			width: 100%;
+			
+			padding: 1cm 0 3cm;
 			
 			// display: flex;
 			// justify-content: center;
@@ -190,17 +191,17 @@ let clones_show = "Legend"
 					"
 				>Originals</header>
 				
-				<p>These are the sources.</p>
+				<p>Original <Slang text="Pet" /> foam (frontend) is subject to these rules.</p>
 			
 				<div style="height: 0.5cm"></div>	
 				
-				<div class="card p-1">
+				<div class="card p-1 variant-filled-primary">
 					<iframe
 						src={ rules_originals_link }
 						
 						style="
 							width: 100%;
-							height: 100%;
+							height: 25cm;
 						"
 
 						frameborder="0"
@@ -256,10 +257,18 @@ let clones_show = "Legend"
 						text-align: center;
 					"
 				>
-					<header>Clones</header>
+					<header
+						style="
+							font-size: 2em;
+						"
+					>Clones</header>
 					
-					<p></p>
+					<div style="height: 0.5cm"></div>
 					
+					<p><Slang text="Pet" /> is made from these.</p>
+					<p><b>Legend</b> is the name of every frontend license.</p>
+					<p><b>Entire</b> has the every frontend licenses.</p>
+				
 					<div style="height: 0.5cm"></div>	
 				
 					<RadioGroup>
@@ -270,7 +279,7 @@ let clones_show = "Legend"
 					<div style="height: 0.5cm"></div>
 				</div>
 				
-				<div class="card p-1">
+				<div class="card p-1 variant-filled-primary">
 					{#if clones_show === "Legend" }
 					<iframe
 						src={ rules_legend_link }

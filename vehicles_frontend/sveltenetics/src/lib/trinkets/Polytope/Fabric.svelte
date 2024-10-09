@@ -141,6 +141,7 @@ let wait_color = document.documentElement.classList.contains ("dark") ? "#000000
 				display: flex;
 				justify-content: center;
 				flex-direction: column;
+				height: 50px;
 			"
 		>
 			<header
@@ -182,7 +183,7 @@ let wait_color = document.documentElement.classList.contains ("dark") ? "#000000
 			justify-content: space-between;
 		"
 	>
-		<div style="height: 2cm" />	
+		<div style="height: 50px" />	
 		<div
 			style="
 				height: 100%;
@@ -191,7 +192,7 @@ let wait_color = document.documentElement.classList.contains ("dark") ? "#000000
 		>
 			<slot name="leaves"></slot>
 		</div>
-		<div style="height: 3cm" />
+		<div style="height: 70px" />
 	</div>
 	{:else}
 	<div

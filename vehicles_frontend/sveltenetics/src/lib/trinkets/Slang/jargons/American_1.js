@@ -28,7 +28,7 @@ const account = {
 	//
 	//	Players, Vehicles, Exosuit
 	//	Characters
-	//	Volition, Estate
+	//	Volition, Estate, Motto
 	//
 	"Account": "Estate",
 	"Accounts": "Estates",

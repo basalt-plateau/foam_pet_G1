@@ -264,6 +264,30 @@ const show_rules = () => {
 	</div>
 	
 	<div style="height: 0.5cm"></div>
+	
+	<div
+		class="card p-4"
+		style="
+			margin: 0 auto;
+			text-align: center;
+		"
+	>
+		<header 
+			style="
+				font-size: 2em; 
+				text-align: center;
+				padding: 0cm 0;
+			"
+		>Rules</header>
+		
+		<button
+			on:click={ show_rules }
+			type="button" 
+			class="btn variant-filled"
+		>Show Rules</button>
+	</div>
+	
+	<div style="height: 0.5cm"></div>
 
 	<div class="card p-4">
 		<div style="height: 1cm"></div>
@@ -396,31 +420,7 @@ const show_rules = () => {
 			</AccordionItem>
 		</Accordion>
 	</div>
-	
-	
-	<div style="height: 0.5cm"></div>
-	
-	<div
-		class="card p-4"
-		style="
-			margin: 0 auto;
-			text-align: center;
-		"
-	>
-		<header 
-			style="
-				font-size: 2em; 
-				text-align: center;
-				padding: 0cm 0;
-			"
-		>Rules</header>
-		
-		<button
-			on:click={ show_rules }
-			type="button" 
-			class="btn variant-filled"
-		>Show Rules</button>
-	</div>
+
 	
 	<div style="height: 0.5cm"></div>
 	
