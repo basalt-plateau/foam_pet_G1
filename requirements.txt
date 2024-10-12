@@ -179,7 +179,7 @@ somatic==3.0.3
     # via
     #   foam-pet (pyproject.toml)
     #   ventures
-tinydb==4.8.1
+tinydb==4.8.2
     # via
     #   biotech
     #   body-scan
