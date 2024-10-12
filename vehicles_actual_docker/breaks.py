@@ -18,7 +18,7 @@ import sys
 this_folder = pathlib.Path (__file__).parent.resolve ()
 
 
-version = "v5_0_0.0"
+version = "v6_0_0.0"
 name = "Foam_Pet"
 
 container_name = "foam_pet"
@@ -116,7 +116,7 @@ def run (screenplay):
 	print ("----")
 	print ("screenplay:", screenplay)
 	print ()
-	input ("Press Enter to go on:")
+	#input ("Press Enter to go on:")
 	os.system (screenplay)
 	print ("----")
 
@@ -125,9 +125,9 @@ def run (screenplay):
 def check_image ():
 	paths = retrieve_paths ();
 	
-	name = "Foam_Pet_v5_0_0.0"
-	image_name = "foam_pet:v5_0_0.0"
-	docker_image_name = "Foam_Pet_v5_0_0.0.Docker_image.tar"
+	name = "Foam_Pet_v6_0_0.0"
+	image_name = "foam_pet:v6_0_0.0"
+	docker_image_name = "Foam_Pet_v6_0_0.0.Docker_image.tar"
 	
 	#
 	#	maybe:

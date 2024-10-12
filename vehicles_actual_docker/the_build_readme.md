@@ -5,7 +5,7 @@
 
 ## Load Docker Image
 ```
-docker load -i Foam_Pet_v5_0_0.0.Docker_image.tar
+docker load -i Foam_Pet_v6_0_0.0.Docker_image.tar
 ```
 
 

@@ -48,6 +48,12 @@
 			[OS] docker run --name foam_pet -td -p 22000:22000 -p 21000:21000 -p 443:443 -p 80:80 -v ./building:/building jitesoft/debian
 			[OS] docker exec -it foam_pet bash -c "bash"
 			
+			
+			#
+			#
+			#	check the internal status
+			#		
+			#
 
 			
 			#
@@ -57,12 +63,6 @@
 			#
 			[Boat] bash /building/build.sh
 			
-			
-			#	
-			#	maybe:
-			#		ls /Metro/v_env/lib/python3.11/site-packages/foam_pet/sveltnetics_packets
-			#		cat /Metro/foam_pet_essence.py
-			#
 
 			
 			#
@@ -90,9 +90,9 @@
 			#
 			#
 			
-			#
 			#	
 			#	modify "the_build_readme.md"
+			#		docker load -i Foam_Pet_v6_0_0.0.Docker_image.tar
 			#
 			
 			#
@@ -104,8 +104,8 @@
 			
 			
 			#
-			#	Foam_Pet_v5_0_0.0.zip
-			#		SHA: a5b444dc9a0405ebacc233d9d2f87e42012f9441768a83287a8dae6a38cc1b58
+			#	Foam_Pet_v6_0_0.0.zip
+			#		sha256: 854d9d2172a84cf021faa871123c2bda6d147449cf498734352d8afa54456244
 			#
 
 		<header>check the image</header>	
@@ -116,7 +116,6 @@
 			#
 			#
 			[OS] python3 breaks.py check_image
-			
 			
 			
 			#

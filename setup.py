@@ -14,7 +14,7 @@ build_exe_options = {
 '''
 
 # .py_3_11
-name = "Foam_Pet_3_0_0.0.linux-x86_64"
+name = "Foam_Pet_6_0_0.0.linux-x86_64"
 
 #base = "Win32GUI"
 base = "gui"
